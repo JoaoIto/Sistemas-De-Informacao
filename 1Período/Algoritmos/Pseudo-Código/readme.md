@@ -1,5 +1,5 @@
 # Pseudo-código 
-- (29/08/2022)
+- (29/08/2022) - (05/09/2022)
 
 -- ***Pseudo-código* é basicamente um conceito de se escrever suas próprias linhas de código, para que seja assim uma forma de entender a partir da sua lógica e linguagem de fala padrão, uma melhor forma e mais didádica de se entender lógica da programação!**
 
@@ -10,7 +10,7 @@ Deste modo foi desenvolvido alguns exercícios para o deselvolvimento de lógica
 Observe os exercícios abaixo:
 
 ---
-
+## Cálculo de média:
 1. **Escreva um algoritmo que permita calcular a média das duas notas de um aluno. Também deve informar se ele foi aprovado ou reprovado, sabendo que a média necessária para a aprovação é 7.**
 
 ```jsx
@@ -82,6 +82,7 @@ escreva("Aluno aprovado");
 ```
 
 ---
+## Salario por hora:
 
 2. **Considere uma empresa que paga os seus funcionários semanalmente por hora em até 40 horas. Caso o funcionário trabalhe mais que meta de horas, ele recebe 10% a mais no seu salário. Caso não, tenha uma multa de 3%. Calcule o salário do funcionário**
 
@@ -118,6 +119,7 @@ escreva("O salário do funcionário é:"+ totalSalario)
 ```
 
 ---
+## IMC
 
 3. **Considere o cálculo de um indivíduo para uma clínica fitness, na qual deve ser mostrado os indivíduos a serem necessários para vários tipos de exercício, sendo assim, precisa-se entender qual o valor do IMC de cada indivíduo, e ainda sabendo se ele está em cada sub-classe de classificação...**
 
@@ -146,7 +148,7 @@ escreva("Abaixo do peso");
 
 ---
 
-### Salário líquido
+## Salário líquido
 
 ```jsx
 **inicio**
@@ -166,6 +168,48 @@ se (salario > 2500) entao
 escreva("Salário é de: "+ (salario -= 20%));
 
 **fim**
+```
+
+---
+
+## Empréstimo:
+
+1. **Escreva um algoritmo que implemente um guia financeiro para empréstimo. O usuário deve informar: valor do empréstimo, a taxa de juros, a quantidade de parcelas, e salário do cliente. Caso o valor da parcela seja maior que metade do salário do cliente, o resultado deve imprimir não recomendado!**
+
+
+```jsx
+Inicio
+
+Real valorEmprestimo;
+Real valorTaxa;
+Inteiro prazo;
+Real valorSalario;
+Real valorParcela;
+Real valorTotal;
+
+Escreva("Qual o valor do empréstimo a ser feito, informe:");
+Leia(valorEmprestimo);
+
+Escreva("Qual a taxa de juros do banco, informe:");
+Leia(valorTaxa);
+
+Escreva("Qual a quantidade de parcelas deste empréstimo, informe:");
+Leia(prazo);
+
+Escreva("Qual o salário atual, informe:");
+Leia(valorSalario);
+
+valorTotal = valorEmprestimo + (valorEmprestimo * (valorTaxa/100));
+valorParcela = valorTotal / prazo;
+
+se(valorParcela <= (salario / 2) {
+Escreva("Recomendado");
+}
+se nao {
+Escreva("Não recomendado");
+}
+
+Fim
 ```
 
 ---

@@ -21,14 +21,15 @@ public class Qt3 {
         System.out.println("Informe a confirmacao de sua senha: (deve ser idêntica a senha:)");
         confirmacao = leitor.next();
     
-        while(countSenha <= 3 && confirmacao != senha){
+        while(countSenha <= 3){
             System.out.println("Informe a confirmação de sua senha: (deve ser idêntica a senha:)");
             confirmacao = leitor.next();
             countSenha++;
         }
-        if(confirmacao != senha)
-            System.out.println("Senha bloqueada!");
-        else 
-        System.out.println("Senha confirmada com sucesso");
+        if(confirmacao.equals(senha)) {
+            System.out.println("Senha confirmada com sucesso");
+        }else {
+            System.out.println("Bloqueado!");
+        }
     }
 }

@@ -6,6 +6,8 @@ o algoritmo deve calcular e apresentar a média final do aluno (média ponderada
 */
 
 import java.util.Scanner;
+
+package 1Período.Algoritmos.exercicios.Lista1;
 public class Qt1 {
 
     public static void Qt1(String[] args) {

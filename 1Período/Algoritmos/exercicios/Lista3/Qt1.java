@@ -6,7 +6,6 @@ Para escolher a operação o usuário deve usar os caracteres:
 */
 
 import java.util.Scanner;
-
 public class Qt1 {
     public static void main(String[] args){
         Scanner leitor = new Scanner(System.in);

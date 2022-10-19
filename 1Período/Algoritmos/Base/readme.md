@@ -17,8 +17,6 @@ Os algoritmos são capazes de realizar tarefas como:
 3. Tomar decisões com base nos resultados das expressões avaliadas;
 4. Repetir um conjunto de ações de acordo com uma condição;
 
----
-
 ## ENTRADA – PROCESSAMENTO - SAÍDA
 
 ### **Entrada:** 
@@ -30,8 +28,6 @@ Os algoritmos são capazes de realizar tarefas como:
 
 ### **Saída:** 
 **Obtenção de dados, ou retorno de dados, como resultado de alguma operação de algum programa, consequentemente resultado de alguma entrada.**
-
----
 
 ## Como funciona?
 - 1° Entender o problema

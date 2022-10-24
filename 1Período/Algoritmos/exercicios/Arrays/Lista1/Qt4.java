@@ -1,5 +1,5 @@
 /*
-01 - Escreva um programa que preencha um array de 100 posições
+04 - Escreva um programa que preencha um array de 100 posições
 com números aletaórios entre 0 e 199. O usuário 
 terá 10 chances de chutar valores que estejam no array. 
 A cada chute que ele digitar um valor contido no array a 
@@ -10,7 +10,7 @@ deve apresentar a pontuação final.
 import java.util.Scanner;
 import java.util.Random;
 
-public class Qt1
+public class Qt4
 {
     public static void main(String[] args)
     {

@@ -11,3 +11,5 @@
 03 - Escreva um programa que permita ao usuário informar uma senha e confirmar a senha. Caso a senha e a confirmação sejam diferentes o programa deve solicitar ao usuário que digite a confirmação novamente. Deve ser possível confirmar a senha corretamente por 3 tentativas. Caso o usuário tenha sucesso o programa deve imprimir a mensagem "Senha confirmada com sucesso", caso contrário, apresentar a mensagem "Senha bloqueada".
 
 ---
+
+4 - Escreva um programa que solicite do usuário dois valores inteiros positivos. O programa deve informar a quantidade de valores múltiplos de 3 contidos no intervalo (incluindo os limites). Caso os valores digitados não se enquadrem no critério informado (inteiros positivos), uma mensagem deve ser enviada ao usuário informando o fato. 

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles/reset.css">
+    <link rel="stylesheet" href="./styles/style.css">
+
+    <title>Contato</title>
+</head>
+
+<body>
+    <header>
+        <h1 class="title">Página de Contato:</h1>
+        <div class="links">
+            <a href="#">Contato</a>
+            <a href="../sobre/index.html">Inicial</a>
+            <a href="../tabelas/index.html">tabelas</a>
+        </div>
+    </header>
+    <main>
+        <form id="subscribe" action="">
+            <fieldset>
+                <h1 class="title">Contato:</h1>
+                <label for="name">Insira seu nome completo</label>
+                <input class="text" id="name" type="text" placeholder="Digite aqui seu nome completo" data-tipo="nome"
+                    required>
+
+                <label for="email">Insira seu email</label>
+                <input class="text" id="email" type="email" placeholder="Digite aqui seu email:" data-tipo="email"
+                    required>
+
+                <label for="password">Insira sua senha</label>
+                <input class="text" id="password" type="password" placeholder="Digite aqui sua senha:" data-tipo="senha"
+                    pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?!.*[ !@#$%^&*_=+-]).{6,12}$"
+                    title="A senha deve conter entre 6 a 12 caracteres, deve conter pelo menos uma letra maiúscula, um número e não deve conter símbolos."
+                    required>
+
+                <label for="password">Confirme sua senha</label>
+                <input class="text" id="password" type="password" placeholder="Confirme sua senha:" data-tipo="senha"
+                    pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?!.*[ !@#$%^&*_=+-]).{6,12}$"
+                    title="A senha deve conter entre 6 a 12 caracteres, deve conter pelo menos uma letra maiúscula, um número e não deve conter símbolos."
+                    required>
+
+                <input id="enter" type="submit" value="Inscrever-se">
+            </fieldset>
+        </form>
+    </main>
+    <footer>
+        <h1 class="title">Alunos</h1>
+        <div class="alunos">
+            <h2>João Victor Póvoa</h2>
+            <h2>Haniel</h2>
+            <h2>Vitoria</h2>
+            <h2>Diego</h2>
+            <h2>Gabriel</h2>
+            <h2>Jonatas</h2>
+            <h2>Lucas Castro</h2>
+            <h2>Pedro Paulo</h2>
+            <h2>André</h2>
+            <h2>Zairo</h2>
+        </div>
+        
+        <a href="https://www.unitins.br/nPortal/">Contato</a>
+    </footer>
+</body>
+
+</html>

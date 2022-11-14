@@ -1,0 +1,43 @@
+body {
+    width: 100vw;
+    height: 300vh;
+    font-family: 'Inter', sans-serif;
+    color: #fff;
+    overflow-y: hidden;
+}
+
+header{
+    background-image: url(../assets/gado.jpg);
+    background-size: 100vw;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 70vh;
+}
+
+nav {
+    width: 100vw;
+    height: 10%;
+    display: flex;
+    justify-content: space-evenly;
+    text-align: center;
+    align-items: center;
+    padding: 20px 0;
+    background-color: rgba(255, 255, 255, .4);
+}
+
+a{
+    text-decoration: none;
+    color: #fff;
+}
+
+a:hover{
+    text-decoration: underline;
+}
+
+#title {
+    font-size: 2.2rem;
+    font-weight: bolder;
+    font-family: 'Poppins', sans-serif;
+    color: rgb(255, 129, 38);
+    text-shadow: 3px 3px 3px #000;
+}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../reset.css">
+    <link rel="stylesheet" href="./style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+
+    <title>Cadastro</title>
+</head>
+<body>
+    <form action="">
+
+            <label for="name" id="name-label">Nome Completo:</label>
+            <input type="text" id="name" placeholder="Insira seu nome completo:" required>
+
+            <label for="email" id="email-label">Email:</label>
+            <input type="email" id="email" placeholder="Insira email: example@email.com" required>
+
+            <div class="radio">
+
+                <label for="Blog">Blog</label>
+                <input type="radio" name="selected" id="blog">
+                <label for="Email">Email</label>
+                <input type="radio" name="selected" id="email">
+                <label for="Telefone">Telefone</label>
+                <input type="radio" name="selected" id="telefone">
+
+            </div>
+
+            <textarea name="" id="mensagem" cols="30" rows="10" placeholder="Insira a sua mensagem:" required style="resize:none"></textarea>
+
+            <input type="submit" value="Enviar">
+        </fieldset>
+    </form>
+</body>
+
+</html>

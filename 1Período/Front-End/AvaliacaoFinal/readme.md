@@ -4,4 +4,6 @@
 
 - Alunos: João Victor Póvoa França, Haniel
 
+<img src="./assets/printAv2.png">
+
 ---

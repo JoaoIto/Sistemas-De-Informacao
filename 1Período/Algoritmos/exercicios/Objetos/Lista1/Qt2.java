@@ -8,7 +8,6 @@ import java.util.Random;
 
 class endereco {
     int campo1, campo2, campo3, campo4;
-    int ipv4;
 }
 
 public class Qt2
@@ -34,5 +33,10 @@ public class Qt2
 
         System.out.println("Informe o quarto módulo: ");
         ipv4.campo4 = leitor.nextInt();
+
+        if (ipv4.campo1>(-1)&&ipv4.campo1<256 && ipv4.campo2>(-1)&&ipv4.campo2<256 && ipv4.campo3>(-1)&&ipv4.campo3<256 && ipv4.campo4>(-1)&&ipv4.campo4<256)
+        System.out.println("IP válido!");
+        else
+            System.out.println("IP inválido!");
     }
 }

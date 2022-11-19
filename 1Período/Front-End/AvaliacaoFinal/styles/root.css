@@ -1,0 +1,11 @@
+:root{
+    --blue-600: rgb(0, 167, 218);
+    --blue-300: rgb(162, 229, 250);
+    --green-600: rgb(23, 112, 1);
+    --green-300: rgb(8, 153, 3);
+    --shadow-grey: rgb(170, 170, 170);
+    --shadow-green: rgb(209, 255, 188);
+    --border-grey: #6f6f72;
+    --title-container: #121214;
+    --desc-container: #3e3e3f;
+}

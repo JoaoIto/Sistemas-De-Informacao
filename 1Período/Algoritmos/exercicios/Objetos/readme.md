@@ -16,4 +16,4 @@ joao = new Pessoa();
 
 Também conhecidos como estruturas de dados heterogêneas podem ser 
 definidos informalmente como “uma coleção de variáveis de tipos 
-possivelmente diferentes inseridas no contexto de uma mesma estrutura
+possivelmente diferentes inseridas no contexto de uma mesma estrutura. Começaremos a trabalhar a partir de classes que podem atuar dentro da sua classe principal, onde podemos conhecê-las melhor como métodos, sendo assim trabalhando para a sua linguagem principal, um novo paradigma para se escrever código! ;)

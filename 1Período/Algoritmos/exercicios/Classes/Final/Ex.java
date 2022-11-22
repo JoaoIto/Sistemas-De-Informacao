@@ -23,7 +23,7 @@ class Registro{
     double altura, peso;
 }
 
-public class Main {
+public class Ex {
 
     public static String Cadastro(Registro pessoa){
 

@@ -26,7 +26,7 @@ class Registro{
 public class Ex {
 
     public static String Cadastro(Registro pessoa){
-
+        
     }
     public static void main(String[]args){
         Scanner Leitor = new Scanner(System.in);

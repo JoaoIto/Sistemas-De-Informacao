@@ -24,6 +24,7 @@ public class Qt2{
 
         System.out.println("Primeiramente vamos definir a área!");
         
+
         System.out.println("Defina a base do triângulo:");
         base = leitor.nextDouble();
 
@@ -32,6 +33,7 @@ public class Qt2{
 
         System.out.println("O area do triãngulo é: " + area(base, altura));
 
+        
         System.out.println("Vamos definir o perímetro!");
 
         System.out.println("Defina o lado 1 do triângulo: ");

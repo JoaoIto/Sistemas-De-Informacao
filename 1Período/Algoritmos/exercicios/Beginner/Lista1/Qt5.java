@@ -10,7 +10,7 @@ import java.util.Scanner;
 
 public class Qt5 {
     public static void main(String[] args) {
-        /*
+        /* teste
         Scanner leitor = new Scanner(System.in);
         ArrayList<Double> alturas = new ArrayList<>();
         System.out.println("Informe a altura incial em cm: ");

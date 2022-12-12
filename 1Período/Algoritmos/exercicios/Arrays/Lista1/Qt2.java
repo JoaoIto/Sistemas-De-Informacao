@@ -9,7 +9,7 @@ import java.util.Scanner;
 import java.util.Random;
 
 public class Qt2 {
-    public static void main (String args[]){
+    public static void main (String[] args){
         Scanner leitor = new Scanner(System.in);
 
         int[] arr;

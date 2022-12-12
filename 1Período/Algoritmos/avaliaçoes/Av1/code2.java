@@ -34,10 +34,10 @@ public class code2 {
                 pessoaVelha = idade;
             }else {
                 pessoaNova = idade;
-            };
-        };
+            }
+        }
         System.out.println("A pessoa mais velha é: " + pessoaVelha);
         System.out.println("A pessoa mais nova é: " + pessoaNova);
         System.out.println("A diferença de idade é: " + (pessoaVelha - pessoaNova));
-    };
-};
+    }
+}

@@ -15,12 +15,12 @@ import java.util.*;
 public class Main {
 
     static void item1(int[] numbers){
-        int rest = 0;
-        for (int number : numbers) {
-            rest += number;
+        int resultado = 0;
+        for (int numero : numbers) {
+            resultado += numero;
         }
 
-        System.out.print("\nSoma dos arrays: "+rest);
+        System.out.print("\nSoma dos arrays: "+resultado);
 
     }
 

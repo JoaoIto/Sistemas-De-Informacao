@@ -6,7 +6,7 @@ ou se houve empate */
 
 import java.util.Scanner;
 public class code1 {
-    public static void code1(String args[]) {
+    public static void code1(String[] args) {
         Scanner leitor = new Scanner(System.in);
 
         String time1, time2;
@@ -30,6 +30,6 @@ public class code1 {
             System.out.println("Time 2 vencedor!");
         }else {
             System.out.println("Empate entre os times!");
-        };
-    };
-};
+        }
+    }
+}

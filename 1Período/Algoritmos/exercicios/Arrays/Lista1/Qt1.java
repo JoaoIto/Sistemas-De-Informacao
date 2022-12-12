@@ -5,7 +5,7 @@ o dobro de cada valor contido no array*
 
 import java.util.Scanner;
 public class Qt1 {
-    public static void main (String args[]){
+    public static void main (String[] args){
         Scanner leitor = new Scanner(System.in);
         int[] arr;
         arr = new int[10];

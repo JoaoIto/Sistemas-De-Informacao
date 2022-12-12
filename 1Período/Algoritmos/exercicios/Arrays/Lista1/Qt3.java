@@ -6,7 +6,7 @@ dos vetores preenchidos pelo usuário*
 
 import java.util.Scanner;
 public class Qt3 {
-    public static void main(String args[]){
+    public static void main(String[] args){
         Scanner leitor = new Scanner(System.in);
 
         int[] arr1, arr2, arr3;

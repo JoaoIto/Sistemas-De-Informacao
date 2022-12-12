@@ -2,12 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/1Período/Algoritmos/java/Algoritmos.iml" filepath="$PROJECT_DIR$/1Período/Algoritmos/java/Algoritmos.iml" />
-      <module fileurl="file://$PROJECT_DIR$/1Período/Algoritmos/exercicios/Arrays/Arrays.iml" filepath="$PROJECT_DIR$/1Período/Algoritmos/exercicios/Arrays/Arrays.iml" />
-      <module fileurl="file://$PROJECT_DIR$/1Período/Algoritmos/exercicios/Beginner/Beginner.iml" filepath="$PROJECT_DIR$/1Período/Algoritmos/exercicios/Beginner/Beginner.iml" />
-      <module fileurl="file://$PROJECT_DIR$/1Período/Algoritmos/exercicios/Classes/Classes.iml" filepath="$PROJECT_DIR$/1Período/Algoritmos/exercicios/Classes/Classes.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/Sistemas-De-Informacao.iml" filepath="$PROJECT_DIR$/.idea/Sistemas-De-Informacao.iml" />
-      <module fileurl="file://$PROJECT_DIR$/1Período/Algoritmos/avaliaçoes/avaliaçoes.iml" filepath="$PROJECT_DIR$/1Período/Algoritmos/avaliaçoes/avaliaçoes.iml" />
+      <module fileurl="file://$PROJECT_DIR$/1Período/Algoritmos/java/Algoritmos1.iml" filepath="$PROJECT_DIR$/1Período/Algoritmos/java/Algoritmos1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/1Período/Algoritmos/exercicios/Arrays/Arrays1.iml" filepath="$PROJECT_DIR$/1Período/Algoritmos/exercicios/Arrays/Arrays1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/1Período/Algoritmos/exercicios/Beginner/Beginner1.iml" filepath="$PROJECT_DIR$/1Período/Algoritmos/exercicios/Beginner/Beginner1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/1Período/Algoritmos/exercicios/Classes/Classes1.iml" filepath="$PROJECT_DIR$/1Período/Algoritmos/exercicios/Classes/Classes1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/1Período/Algoritmos/avaliaçoes/avaliaçoes1.iml" filepath="$PROJECT_DIR$/1Período/Algoritmos/avaliaçoes/avaliaçoes1.iml" />
     </modules>
   </component>
 </project>

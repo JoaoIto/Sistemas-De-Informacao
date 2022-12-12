@@ -1,4 +1,4 @@
-#  Ojetos
+#  Objetos
 
 **Basicamente, objetos representam um componente que armazena propriedade, e assim variáveis que podem ser de diversos tipo para construir a estrutura de um objeto!**
 

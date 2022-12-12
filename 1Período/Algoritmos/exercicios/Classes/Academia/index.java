@@ -13,6 +13,7 @@ entre 4 e 6 meses: intermediário,
 entre 7 meses e 1 ano: marombeiro junior,
 entre 1 e 2 anos: marombeiro sênior,
 acima de 2 anos: Arnold Schwarzenegger.
+
 */
 
 import java.util.Scanner;
@@ -175,7 +176,7 @@ public class index {
             if (escolha == 4) {
                 System.out.println(IMC(aluno));
             }
-            
+
         } while (pessoa < 100);
     }
 }

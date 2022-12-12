@@ -11,17 +11,52 @@ import java.util.*;
 
 public class Qt6 {
 
-    public static double(double peso1, double peso2, double nota1, double nota2){
-        String situacao;
+    public static Double media(double A1, int P1, double A2, int P2) {
+        double ponderada;
+        ponderada = ((A1 * P1) + (A2 * P2)) / (P1 + P2);
+        return ponderada;
+    }
 
-        if(nota1 >= peso1){
-            
+    public static String status(double result, double pass) {
+        String status;
+
+        if (result >= pass) {
+            status = "Com parâmetro " + pass + " e nota " + result + ", aluno foi aprovado.";
+        } else {
+            status = "Com parâmetro " + pass + " e nota " + result + ", aluno foi reprovado.";
         }
-        return situacao;
-        }
+        return status;
+    }
+
     public static void main(String[] args) {
-        Scanner leitor = new Scanner(System.in);
+        double resultado, n1, n2;
+        int p1, p2, passar, escolha;
+        String passou;
 
-        double media, peso1, peso2, nota1, nota2;
+        Scanner leia = new Scanner(System.in);
+
+        do {
+            System.out.print("Escreva a nota da A1 e respectivo peso.\nAperte ENTER após digitar o primeiro.\n");
+            n1 = leia.nextDouble();
+            p1 = leia.nextInt();
+
+            System.out.print("Escreva a nota da A2 e respectivo peso.\nAperte ENTER após digitar o primeiro.\n");
+            n2 = leia.nextDouble();
+            p2 = leia.nextInt();
+
+            System.out.print("Escreva a média necessária para passar.\n");
+            passar = leia.nextInt();
+
+            resultado = media(n1, p1, n2, p2);
+            passou = status(resultado, passar);
+
+            System.out.print(passou + "\n");
+
+            System.out.print("Deseja continuar a execução? Digite '1' para sim e qualquer outro para não.\n");
+            escolha = leia.nextInt();
+
+        } while (escolha == 1);
+        System.out.print("Programa encerrado.");
+        leia.close();
     }
 }

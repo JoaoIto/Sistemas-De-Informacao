@@ -22,8 +22,8 @@ public class listaBase {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
 
-        Telefone telefone = new Telefone();
         Aluno aluno = new Aluno();
+        aluno.telefone = new Telefone();
 
         System.out.println("Informe o nome do aluno: ");
         aluno.nome = scan.next();

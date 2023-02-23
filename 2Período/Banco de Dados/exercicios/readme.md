@@ -1,0 +1,5 @@
+# Exercício:
+
+**- 1 Considere uma gravadora/produtora musical. O diretor necessita usar um sistema para gerenciar os dados das canções, compositores, intérpretes e as gravações. O gerenciamento é baseado na ideia que uma canção é composta por um compositor que lhe dá um título e a registra em uma determinada data. Essa canção deve ter um gênero musical e pode ser gravada várias vezes. Cada gravação é feita em uma determinada data, tem uma duração e indica uma porcentagem que deve ser dada ao compositor cada vez que a gravação for vendida. Cada gravação é feita somente por um intérprete. Uma gravação também tem um gênero musical que pode ser diferente da canção original. Os compositores e intérpretes devem ter seus dados pessoais armazenados, além do estilo musical que praticam.**
+
+Para simplificar o trabalho, não considere composições em parceria e caso queira incluir uma banda, considerar a banda como um intperprete.

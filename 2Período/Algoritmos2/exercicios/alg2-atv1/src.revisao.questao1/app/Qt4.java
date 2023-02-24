@@ -1,7 +1,7 @@
 package app;
 import Cadastros1aula1.Aluno;
 import java.util.Scanner;
-
+import java.util.Scanner;
 public class Qt4 {
 	
 	static Scanner leitor = new Scanner(System.in);

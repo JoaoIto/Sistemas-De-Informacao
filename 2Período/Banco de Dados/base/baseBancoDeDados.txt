@@ -1,0 +1,7 @@
+Considere um lava-jato que precisa de um sistema para gerência do estabelecimento. Para tanto deve-se cadastrar os clientes, os carros e os funcionários. Um carro deve ter somente um dono.
+
+É importante para o lava-jato saber quem foi o funcionário que realizou cada lavagem, para calcular a comissão posteriormente. Para os clientes e funcionários deve-se armazenar os dados pessoais, além de telefone e e-mail. Para os funcionários, armazenar ainda o salário, a comissão do mês e o número de matrícula. 
+
+Faça a modelagem de um banco de dados relacional para o sistema desse lava-jato, identificando as entidade, seus atributos e chaves, além dos relacionamentos.
+
+Implemente esse banco de dados no SGBD MySQL Server e apresente também o diagrama entidade relacionamento incluindo as cardinalidades do relacionamento. 	

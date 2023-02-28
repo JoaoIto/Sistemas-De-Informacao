@@ -17,7 +17,9 @@ public class Qt2 {
     		
     		System.out.println("Digite o nome do aluno: ");
     		alunos[i].nome = leitor.next();
+    		
     		// System.out.println("nome;\ncodigo de area;\nnumero;");
+    		
     		System.out.println("Digite o código de área do aluno: ");
             alunos[i].telefone = new Telefone();
             alunos[i].telefone.codigoArea = leitor.nextInt();

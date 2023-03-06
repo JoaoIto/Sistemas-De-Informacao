@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>alg2-atv1</name>
+	<name>corrida</name>
 	<comment></comment>
 	<projects>
 	</projects>
@@ -16,11 +16,7 @@
 	</natures>
 	<filteredResources>
 		<filter>
-<<<<<<< HEAD
-			<id>1677593519835</id>
-=======
-			<id>1676374141468</id>
->>>>>>> 7789296d83492301b58b2a77514f1e23196ce858
+			<id>1677593519850</id>
 			<name></name>
 			<type>30</type>
 			<matcher>

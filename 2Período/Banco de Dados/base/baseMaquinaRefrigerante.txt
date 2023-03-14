@@ -1,0 +1,24 @@
+// O código foi documentado em todas as pastas do projeto em: https://github.com/JoaoIto/Sistemas-De-Informacao/tree/main/2Per%C3%ADodo/Algoritmos2/exercicios/alg2-atv4
+
++ class MaquinaRefrigerante {
+	- nomeProduto: String
+	- codProduto : int
+	- preco: double
+	- dinheiro: double
+
+	+ ...getters and setters class
+
+	+ selecionarRefrigerante: void(List<MaquinaRefrigerante> lista, int codProduto, double dinheiro){
+		for(MaquinaRefrigerante refrigerante : lista){
+			selecionar(getNome(), getCodigo(), getDinheiro())
+		}
+
+		contaCompra(){
+			se(dinheiro < getPreco()){
+				"Preco insuficiente"
+			}então{
+				"Compra realizada"
+			}
+		}
+	}
+}

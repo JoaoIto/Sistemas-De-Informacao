@@ -13,6 +13,10 @@ public class Functionario {
         this.salario = salario;
     }
 
+    public double getBonificacao(){
+        return this.salario + 0.05;
+    }
+
     public String getNome() {
         return nome;
     }
@@ -27,5 +31,13 @@ public class Functionario {
 
     public void setCpf(String cpf) {
         this.cpf = cpf;
+    }
+
+    public String getInformacoes(){
+         String info = "Meu nome é: " + getNome() +
+                 " Meu CPF é: " + getCpf() +
+                 " Meu salário atual é: " + getSalario();
+
+         return info;
     }
 }

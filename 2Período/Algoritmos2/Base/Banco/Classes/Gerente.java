@@ -1,7 +1,6 @@
 package Classes;
 public class Gerente extends Functionario{
     private int senha = 0;
-
     public int getSenha() {
         return senha;
     }
@@ -15,5 +14,9 @@ public class Gerente extends Functionario{
         }else{
             return false;
         }
+    }
+
+    public double getBonificacao() {
+        return super.getBonificacao() + super.getSalario();
     }
 }

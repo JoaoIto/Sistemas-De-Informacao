@@ -27,11 +27,10 @@ public class Funcionario {
 
     public void imprimir(){
         System.out.println("Nome funcionario: " + getNome());
-        if(getChefeImediato() == null){
+
+        if(getChefeImediato() == null)
             System.out.println("Chefe máximo!");
-        }else
-        System.out.println("Chefe Imediato: " + getChefeImediato().getNome());
-
-
+        else
+            System.out.println("Chefe Imediato: " + getChefeImediato().getNome());
     }
 }

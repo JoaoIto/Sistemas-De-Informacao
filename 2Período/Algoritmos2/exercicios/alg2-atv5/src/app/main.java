@@ -7,8 +7,6 @@ public class main{
         Scanner sc = new Scanner(System.in);
 
         System.out.println("Bem vindo ao sistema da concessionária de cadastro de carros");
-        System.out.println("Qual o seu nome? ");
-        String nome = sc.next();
 
         System.out.println("Deseja fazer o cadastro de carros agora?  Se SIM digite 1, se NAO 2");
         int escolha = sc.nextInt();

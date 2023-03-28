@@ -14,7 +14,7 @@ public class Quadrado extends Retangulo{
     }
 
     public void imprimir(){
-        System.out.println("A altura do quadrado é de: " + getAltura());
-        System.out.println("A largura do quadrado é de: " + getLargura());
+        System.out.println("As medidas do quadrado são: ");
+        super.imprimir();
     }
 }

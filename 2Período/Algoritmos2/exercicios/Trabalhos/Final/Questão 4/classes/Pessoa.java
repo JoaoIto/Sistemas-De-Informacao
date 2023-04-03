@@ -11,6 +11,10 @@ public class Pessoa {
         this.email = email;
     }
 
+    public Pessoa() {
+
+    }
+
     public String getEmail() {
         return email;
     }
@@ -35,16 +39,23 @@ public class Pessoa {
         this.nome = nome;
     }
 
-    public static void imprimir(Pessoa pessoa){
-        if(pessoa instanceof PessoaFisica){
-            System.out.println("Pessoa física: ");
-        }else if(pessoa instanceof PessoaJuridica){
-            System.out.println("Pessoa jurídica: ");
+    public static void imprimir(Pessoa pessoa) {
+        System.out.println("O id da pessoa é: " + pessoa.getId());
+        System.out.println("O nome da pessoa é: " + pessoa.getNome());
+        System.out.println("O email da pessoa é: " + pessoa.getEmail());
+
+        if (pessoa instanceof PessoaFisica) {
+            PessoaFisica pessoaFisica = (PessoaFisica) pessoa;
+            System.out.println("O cpf da Pessoa física é: " + ((PessoaFisica)pessoa).getCpf());
+            System.out.println("O celular da pessoa é: " + ((PessoaFisica)pessoa).getCelular());
+        } else if (pessoa instanceof PessoaJuridica) {
+            PessoaJuridica pessoaJuridica = (PessoaJuridica) pessoa;
+            System.out.println("O cnpj de pessoa jurídica é: " + ((PessoaJuridica)pessoa).getCnpj());
+            System.out.println("A inscrição estadual dessa pessoa jurídica é: " + ((PessoaJuridica)pessoa).getInscricaoEstadual());
+            System.out.println("O telefone fixo dessa pessoa jurídica é: " + ((PessoaJuridica)pessoa).getTelefoneFixo());
         }
 
-        System.out.println("O id da pessoa é: " + pessoa.id);
-        System.out.println("O nome da pessoa é: " + pessoa.nome);
-        System.out.println("O email da pessoa é: " + pessoa.email);
         System.out.println("\n");
     }
+
 }

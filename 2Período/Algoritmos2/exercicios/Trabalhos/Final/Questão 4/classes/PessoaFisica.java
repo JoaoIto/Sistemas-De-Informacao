@@ -1,7 +1,6 @@
 package classes;
 
-public class PessoaFisica extends Pessoa{
-    static Pessoa pessoa;
+public class PessoaFisica extends Pessoa {
     private String cpf;
     private String celular;
 
@@ -9,6 +8,10 @@ public class PessoaFisica extends Pessoa{
         super(pessoa.getId(), pessoa.getNome(), pessoa.getEmail());
         this.celular = celular;
         this.cpf = cpf;
+    }
+
+    public PessoaFisica() {
+        super();
     }
 
     public String getCelular() {
@@ -25,12 +28,5 @@ public class PessoaFisica extends Pessoa{
 
     public void setCpf(String cpf) {
         this.cpf = cpf;
-    }
-
-    public void imprimir(PessoaFisica pessoaFisica){
-        super.imprimir(pessoa);
-        System.out.println("O cpf da Pessoa física é: " + pessoaFisica.getCpf());
-        System.out.println("O celular da pessoa é: " + pessoaFisica.getCelular());
-        System.out.println("\n");
     }
 }

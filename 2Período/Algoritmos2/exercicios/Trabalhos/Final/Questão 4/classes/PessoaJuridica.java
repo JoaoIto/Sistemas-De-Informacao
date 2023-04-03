@@ -12,7 +12,9 @@ public class PessoaJuridica extends Pessoa{
         this.inscricaoEstadual =  inscricaoEstadual;
         this.telefoneFixo = telefoneFixo;
     }
-
+    public PessoaJuridica() {
+        super();
+    }
     public String getCnpj() {
         return cnpj;
     }
@@ -35,13 +37,5 @@ public class PessoaJuridica extends Pessoa{
 
     public void setTelefoneFixo(String telefoneFixo) {
         this.telefoneFixo = telefoneFixo;
-    }
-
-    public void imprimir(PessoaJuridica pessoaJuridica){
-        super.imprimir(pessoa);
-        System.out.println("O cnpj de pessoa jurídica é: " + pessoaJuridica.getCnpj());
-        System.out.println("A inscrição estadual dessa pessoa jurídica é: " + pessoaJuridica.getInscricaoEstadual());
-        System.out.println("O telefone fixo dessa pessoa jurídica é: " + pessoaJuridica.getTelefoneFixo());
-        System.out.println("\n");
     }
 }

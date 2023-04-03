@@ -35,10 +35,10 @@ public class Pessoa {
         this.nome = nome;
     }
 
-    public void imprimir(){
-        System.out.println("O id da pessoa é: " + this.id);
-        System.out.println("O nome da pessoa é: " + this.nome);
-        System.out.println("O email da pessoa é: " + this.email);
+    public static void imprimir(Pessoa pessoa){
+        System.out.println("O id da pessoa é: " + pessoa.id);
+        System.out.println("O nome da pessoa é: " + pessoa.nome);
+        System.out.println("O email da pessoa é: " + pessoa.email);
         System.out.println("\n");
     }
 }

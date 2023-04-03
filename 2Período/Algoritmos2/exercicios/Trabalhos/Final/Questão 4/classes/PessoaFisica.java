@@ -11,9 +11,23 @@ public class PessoaFisica extends Pessoa{
         this.cpf = cpf;
     }
 
-    @Override public void imprimir(){
-        super.imprimir();
+    public String getCelular() {
+        return celular;
+    }
 
+    public void setCelular(String celular) {
+        this.celular = celular;
+    }
+
+    public String getCpf() {
+        return cpf;
+    }
+
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
+    }
+
+    @Override public void imprimir(){
         System.out.println("O cpf da Pessoa física é: " + this.cpf);
         System.out.println("O celular da pessoa é: " + this.celular);
         System.out.println("\n");

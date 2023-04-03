@@ -11,14 +11,11 @@ public class main {
         // Criando pessoa e testando método imprimir principal;
         Pessoa pessoa = new Pessoa(1, "Joao", "joaovictorpfr@gmail.com");
         System.out.println("Imprimindo pessoa:\n ");
-        pessoa.imprimir();
 
         Pessoa pessoaFisica = new PessoaFisica(pessoa, "984207313", "02347982349");
         System.out.println("Imprimindo pessoa física:\n ");
-        pessoaFisica.imprimir();
 
         Pessoa pessoaJuridica = new PessoaJuridica(pessoa, "282394629347", "13-TO", "3692478236");
         System.out.println("Imprimindo pessoa jurídica:\n ");
-        pessoaJuridica.imprimir();
     }
 }

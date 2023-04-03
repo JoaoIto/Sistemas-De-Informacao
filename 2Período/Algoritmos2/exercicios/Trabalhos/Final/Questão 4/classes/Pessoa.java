@@ -36,6 +36,12 @@ public class Pessoa {
     }
 
     public static void imprimir(Pessoa pessoa){
+        if(pessoa instanceof PessoaFisica){
+            System.out.println("Pessoa física: ");
+        }else if(pessoa instanceof PessoaJuridica){
+            System.out.println("Pessoa jurídica: ");
+        }
+
         System.out.println("O id da pessoa é: " + pessoa.id);
         System.out.println("O nome da pessoa é: " + pessoa.nome);
         System.out.println("O email da pessoa é: " + pessoa.email);

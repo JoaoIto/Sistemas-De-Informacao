@@ -1,6 +1,8 @@
 package app;
 
 import classes.matematica;
+import classes.multiplicaCast;
+
 public class main {
     public static void main(String[] args) {
         System.out.println("Hello World!");
@@ -23,5 +25,22 @@ public class main {
         System.out.printf("Resultado da subtração: %.2f\n", resultadoSubtrai);
         System.out.printf("Resultado da multiplicação: %.2f\n", resultadoMultiplica);
         System.out.printf("Resultado da divisão: %.2f\n", resultadoDivide);
+
+        matematica m = new matematica();
+        multiplicaCast mc = new multiplicaCast(m);
+
+        // Testando os métodos sobrecarregados com diferentes tipos de parâmetros
+        // Testando que todos os métodos devem dar 6 na multiplicação;
+        System.out.println(mc.multiplica(2, 3));  // int, int
+        System.out.println(mc.multiplica((int) 2.5f, (int) 3.2f));  // float, float
+        System.out.println(mc.multiplica((int) 2.5f, (int) 3.2));  // float, double
+        System.out.println(mc.multiplica((int) 2.5, (int) 3.2f));  // double, float
+        System.out.println(mc.multiplica(2L, 3));  // long, int
+        System.out.println(mc.multiplica(2, 3L));  // int, long
+        float f1 = Float.valueOf(2.5f);
+        double d1 = Double.valueOf(3.14);
+        System.out.println(mc.multiplica(2, f1));  // int, Float
+        System.out.println(mc.multiplica((int) 2.5f, d1));  // float, Double
+
     }
 }

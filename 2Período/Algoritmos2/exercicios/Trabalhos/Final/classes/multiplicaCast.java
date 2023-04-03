@@ -5,6 +5,9 @@ public class multiplicaCast {
 
     private matematica m = new matematica();
 
+    public multiplicaCast(matematica m) {
+    }
+
     public int multiplica(int n1, int n2) {
         return (int) m.multiplica(n1, n2);
     }

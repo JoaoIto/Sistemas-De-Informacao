@@ -11,9 +11,7 @@ public class Pessoa {
         this.email = email;
     }
 
-    public Pessoa() {
-
-    }
+    public Pessoa() {}
 
     public String getEmail() {
         return email;
@@ -39,23 +37,22 @@ public class Pessoa {
         this.nome = nome;
     }
 
-    public static void imprimir(Pessoa pessoa) {
-        System.out.println("O id da pessoa é: " + pessoa.getId());
-        System.out.println("O nome da pessoa é: " + pessoa.getNome());
-        System.out.println("O email da pessoa é: " + pessoa.getEmail());
-
-        if (pessoa instanceof PessoaFisica) {
-            PessoaFisica pessoaFisica = (PessoaFisica) pessoa;
-            System.out.println("O cpf da Pessoa física é: " + ((PessoaFisica)pessoa).getCpf());
-            System.out.println("O celular da pessoa é: " + ((PessoaFisica)pessoa).getCelular());
-        } else if (pessoa instanceof PessoaJuridica) {
-            PessoaJuridica pessoaJuridica = (PessoaJuridica) pessoa;
-            System.out.println("O cnpj de pessoa jurídica é: " + ((PessoaJuridica)pessoa).getCnpj());
-            System.out.println("A inscrição estadual dessa pessoa jurídica é: " + ((PessoaJuridica)pessoa).getInscricaoEstadual());
-            System.out.println("O telefone fixo dessa pessoa jurídica é: " + ((PessoaJuridica)pessoa).getTelefoneFixo());
-        }
-
-        System.out.println("\n");
+    @Override
+    public String toString() {
+        return "Pessoa{" +
+                "id=" + id +
+                ", nome='" + nome + '\'' +
+                ", email='" + email + '\'' +
+                '}';
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Pessoa)) return false;
+        Pessoa pessoa = (Pessoa) o;
+        return getId().equals(pessoa.getId()) &&
+                getNome().equals(pessoa.getNome()) &&
+                getEmail().equals(pessoa.getEmail());
+    }
 }

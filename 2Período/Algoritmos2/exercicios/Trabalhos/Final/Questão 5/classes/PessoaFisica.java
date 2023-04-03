@@ -10,9 +10,7 @@ public class PessoaFisica extends Pessoa {
         this.cpf = cpf;
     }
 
-    public PessoaFisica() {
-        super();
-    }
+    public PessoaFisica() {}
 
     public String getCelular() {
         return celular;
@@ -28,5 +26,23 @@ public class PessoaFisica extends Pessoa {
 
     public void setCpf(String cpf) {
         this.cpf = cpf;
+    }
+
+    @Override
+    public String toString() {
+        return "PessoaFisica{" +
+                "cpf='" + cpf + '\'' +
+                ", celular='" + celular + '\'' +
+                "} " + super.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof PessoaFisica)) return false;
+        if (!super.equals(o)) return false;
+        PessoaFisica that = (PessoaFisica) o;
+        return getCpf().equals(that.getCpf()) &&
+                getCelular().equals(that.getCelular());
     }
 }

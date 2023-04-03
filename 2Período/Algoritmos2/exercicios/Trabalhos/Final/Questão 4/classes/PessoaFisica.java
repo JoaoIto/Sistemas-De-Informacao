@@ -1,7 +1,7 @@
 package classes;
 
 public class PessoaFisica extends Pessoa{
-    Pessoa pessoa;
+    static Pessoa pessoa;
     private String cpf;
     private String celular;
 
@@ -27,9 +27,10 @@ public class PessoaFisica extends Pessoa{
         this.cpf = cpf;
     }
 
-    @Override public void imprimir(){
-        System.out.println("O cpf da Pessoa física é: " + this.cpf);
-        System.out.println("O celular da pessoa é: " + this.celular);
+    public void imprimir(PessoaFisica pessoaFisica){
+        super.imprimir(pessoa);
+        System.out.println("O cpf da Pessoa física é: " + pessoaFisica.getCpf());
+        System.out.println("O celular da pessoa é: " + pessoaFisica.getCelular());
         System.out.println("\n");
     }
 }

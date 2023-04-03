@@ -10,9 +10,10 @@ public class main {
 
         // Criando pessoa e testando método imprimir principal;
         Pessoa pessoa = new Pessoa(1, "Joao", "joaovictorpfr@gmail.com");
-
+        pessoa.imprimir(pessoa);
         Pessoa pessoaFisica = new PessoaFisica(pessoa, "984207313", "02347982349");
-
+        pessoaFisica.imprimir(pessoaFisica);
         Pessoa pessoaJuridica = new PessoaJuridica(pessoa, "282394629347", "13-TO", "3692478236");
+        pessoaJuridica.imprimir(pessoaJuridica);
     }
 }

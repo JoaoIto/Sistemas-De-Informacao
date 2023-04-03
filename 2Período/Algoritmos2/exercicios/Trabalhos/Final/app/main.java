@@ -29,8 +29,8 @@ public class main {
         matematica m = new matematica();
         multiplicaCast mc = new multiplicaCast(m);
 
-        // Testando os métodos sobrecarregados com diferentes tipos de parâmetros
-        // Testando que todos os métodos devem dar 6 na multiplicação;
+        // Testando os métodos sobrecarregados com diferentes tipos de parâmetro;
+
         System.out.println(mc.multiplica(2, 3));  // int, int
         System.out.println(mc.multiplica((int) 2.5f, (int) 3.2f));  // float, float
         System.out.println(mc.multiplica((int) 2.5f, (int) 3.2));  // float, double

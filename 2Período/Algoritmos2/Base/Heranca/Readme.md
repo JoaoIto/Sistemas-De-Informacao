@@ -6,7 +6,7 @@ um quadrado, que herda retângulo usando a sintaxe de `extends`**
 
 ## Polimorfismo
 
-***Polimorfismo* é a maneira de programar que usar as *superclasses* entendendo sua relação
+***Polimorfismo* é a maneira de programar que usar as *superclasses* entendendo a sua relação
 entre mais genérica ou mais específica.**
 
 Utilizamos isto no programa a partir do método de `imprimir()`, onde usamos a superclasse de 

@@ -2,10 +2,6 @@ package classes;
 
 public class matematica {
 
-    private double n1;
-    private double n2;
-    private int result;
-
     public double soma(double n1, double n2){
         return n1 + n2;
     }

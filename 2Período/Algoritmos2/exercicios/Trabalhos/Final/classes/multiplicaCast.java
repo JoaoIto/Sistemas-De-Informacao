@@ -37,4 +37,19 @@ public class multiplicaCast {
         int result = n1 * (int)n2;
         return result;
     }
+
+    public int multiplica(long n1, long n2){
+        int result = (int)(n1 * n2);
+        return result;
+    }
+
+    public int multiplica(long n1, int n2){
+        int result = (int)n1 * n2;
+        return result;
+    }
+
+    public int multiplica(int n1, long n2){
+        int result = n1 * (int)n2;
+        return result;
+    }
 }

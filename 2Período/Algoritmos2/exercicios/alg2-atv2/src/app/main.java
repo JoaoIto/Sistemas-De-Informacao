@@ -17,12 +17,7 @@ public class main {
         Carro unoEscada = new Carro(veiculo2);
         Carro ferrari = new Carro(veiculo3);
 
-        gol.imprimir();
-        System.out.println("");
-        unoEscada.imprimir();
-        System.out.println("");
-        ferrari.imprimir();
-        System.out.println("");
+        Veiculo[] veiculos = new Veiculo[5];
 
         for(int i = 1; i < 20; i++) {
             System.out.println("TACA-LE PAU NESSE CARINHO!");

@@ -20,16 +20,23 @@ public class main {
         System.out.print("Digite o valor de P (V ou F): ");
         String p = scanner.nextLine();
 
+        System.out.print("P está negado? (S ou N): ");
+        String negP = scanner.nextLine();
+        boolean negacaoP = negP.equalsIgnoreCase("S");
+        boolean pv = p.equalsIgnoreCase("V") ^ negacaoP;
+
         System.out.print("Digite o valor de Q (V ou F): ");
         String q = scanner.nextLine();
 
-        boolean pv = p.equalsIgnoreCase("V");
-        boolean qv = q.equalsIgnoreCase("V");
+        System.out.print("Q está negado? (S ou N): ");
+        String negQ = scanner.nextLine();
+        boolean negacaoQ = negQ.equalsIgnoreCase("S");
+        boolean qv = q.equalsIgnoreCase("V") ^ negacaoQ;
 
         System.out.println("P\tQ\tAND\tOR\tXOR");
         System.out.println("--------------------------------");
 
-        System.out.print(p + "\t" + q + "\t");
+        System.out.print(p + (negacaoP ? "'" : "") + "\t" + q + (negacaoQ ? "'" : "") + "\t");
         System.out.print((pv && qv) + "\t" + (pv || qv) + "\t");
         System.out.println((pv ^ qv));
 

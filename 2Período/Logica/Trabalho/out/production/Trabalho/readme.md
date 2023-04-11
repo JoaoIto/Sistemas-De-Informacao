@@ -7,8 +7,4 @@ entre V ou F, e assim trabalhando os conectivos das operações, sendo ainda
 no final que deve ser informada a saída dos valores e conectivos dados
 na entrada.
 
-## Console test: 
-
-<img src=".github/tabelaVerdade-Java.png">
-
 ---

@@ -33,12 +33,14 @@ public class main {
         boolean negacaoQ = negQ.equalsIgnoreCase("S");
         boolean qv = q.equalsIgnoreCase("V") ^ negacaoQ;
 
-        System.out.println("P\tQ\tAND\tOR\tXOR");
-        System.out.println("--------------------------------");
+        System.out.println("P\tQ\tAND\tOR\tXOR\tSE-SOMENTE-SE\tCONDICIONAL");
+        System.out.println("--------------------------------------------------------------");
 
         System.out.print(p + (negacaoP ? "'" : "") + "\t" + q + (negacaoQ ? "'" : "") + "\t");
         System.out.print((pv && qv) + "\t" + (pv || qv) + "\t");
-        System.out.println((pv ^ qv));
+        System.out.print((pv ^ qv) + "\t" + (pv == qv) + "\t");
+        System.out.print((!pv || qv));
+        System.out.println();
 
         System.out.println("--------------------------------");
 

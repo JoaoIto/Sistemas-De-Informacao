@@ -9,6 +9,6 @@ na entrada.
 
 ## Console test: 
 
-<img src=".github/tabelaVerdade-Java.png">
+<img src="./.github/tabelaVerdade-Java.png"/>
 
 ---

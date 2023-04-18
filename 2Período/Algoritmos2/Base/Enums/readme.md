@@ -75,3 +75,36 @@ public enum Cor {
 - ``ordinal()``: Número da enum;
 
 ---
+### - ``@Overrride valueOF()``: 
+Nesta aplicação queremos que receba
+um valor do usuário, e devolva o objeto referente a este id dentro da enum
+```java
+public static Cor valueOf(Integer id){
+        if(id == null){
+            return null;
+        }
+        for (Cor cor: Cor.values()) {
+            if(cor.getId() == id){
+                return cor;
+            }
+        }
+        return null;
+    }
+```
+
+Este método é utilizado como comparação ao valor de cada index
+do nosso enum, em que ele consegue receber este inteiro, e devolve
+o referente do objeto, na qual usamos o reescrito do método toString;
+
+```java
+@Override
+    public String toString() {
+        return "Cor{" +
+                "id=" + id +
+                ", label='" + label + '\'' +
+                ", hexa='" + hexa + '\'' +
+                '}';
+    }
+```
+
+---

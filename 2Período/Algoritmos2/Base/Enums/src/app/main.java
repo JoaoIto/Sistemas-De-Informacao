@@ -12,7 +12,7 @@ public class main {
         iphone.setColors(Cor.AZUL);
 
         for (Cor cor: Cor.values()) {
-            System.out.println(cor.ordinal() + " - " + cor.name());
+            System.out.println(cor.toString());
         }
     }
 }

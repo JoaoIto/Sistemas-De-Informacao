@@ -14,6 +14,7 @@ public enum Cor {
     private Cor(int id, String label, String hexa){
         this.id = id;
         this.label = label;
+        this.hexa = hexa;
     }
 
     public int getId() {

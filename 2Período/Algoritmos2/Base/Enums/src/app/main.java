@@ -3,6 +3,8 @@ package src.app;
 import src.classes.Telefone;
 import src.enums.Cor;
 
+import java.util.Scanner;
+
 public class main {
     public static void main(String[] args) {
         System.out.println("Hello World!");
@@ -13,6 +15,23 @@ public class main {
 
         for (Cor cor: Cor.values()) {
             System.out.println(cor.toString());
+        }
+
+        Scanner scan = new Scanner(System.in);
+
+        System.out.println("Selecione as cores: ");
+        for (Cor cor: Cor.values()) {
+            System.out.println(cor.toString());
+        }
+
+        int idColor = scan.nextInt();
+
+        Cor corSelecionada = null;
+
+        for (Cor cor: Cor.values()) {
+            if(cor.getId() == corSelecionada){
+
+            }
         }
     }
 }

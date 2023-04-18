@@ -49,4 +49,16 @@ public enum Cor {
                 ", hexa='" + hexa + '\'' +
                 '}';
     }
+
+    public static Cor valueOf(Integer id){
+        if(id == null){
+            return null;
+        }
+        for (Cor cor: Cor.values()) {
+            if(cor.getId() == id){
+                return cor;
+            }
+        }
+        return null;
+    }
 }

@@ -25,13 +25,5 @@ public class main {
         }
 
         int idColor = scan.nextInt();
-
-        Cor corSelecionada = null;
-
-        for (Cor cor: Cor.values()) {
-            if(cor.getId() == corSelecionada){
-
-            }
-        }
     }
 }

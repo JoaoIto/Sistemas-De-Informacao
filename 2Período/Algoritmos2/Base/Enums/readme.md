@@ -7,3 +7,10 @@ no Java...) em que você pode criar atributos enumerados com
 valores sequenciais ou pré-definidos.
 
 ---
+
+## Métodos em Enums:
+
+- ``name()``: Nome o algarismo enum;
+- ``ordinal()``: Número da enum;
+
+---

@@ -15,4 +15,37 @@ public enum Cor {
         this.id = id;
         this.label = label;
     }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getLabel() {
+        return label;
+    }
+
+    public void setLabel(String label) {
+        this.label = label;
+    }
+
+    public String getHexa() {
+        return hexa;
+    }
+
+    public void setHexa(String hexa) {
+        this.hexa = hexa;
+    }
+
+    @Override
+    public String toString() {
+        return "Cor{" +
+                "id=" + id +
+                ", label='" + label + '\'' +
+                ", hexa='" + hexa + '\'' +
+                '}';
+    }
 }

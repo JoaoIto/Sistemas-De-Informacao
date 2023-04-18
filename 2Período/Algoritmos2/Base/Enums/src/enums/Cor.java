@@ -1,6 +1,6 @@
 package src.enums;
 
-public enum Colors {
+public enum Cor {
     BRANCA,
     PRETA,
     AZUL,

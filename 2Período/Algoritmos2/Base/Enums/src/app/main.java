@@ -24,6 +24,6 @@ public class main {
             System.out.println(cor.toString());
         }
 
-        int idColor = scan.nextInt();
+        System.out.println(Cor.valueOf(scan.nextInt()));
     }
 }

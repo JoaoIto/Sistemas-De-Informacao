@@ -8,6 +8,5 @@ public class main {
 
         Colors cor = Colors.AZUL;
         System.out.println(cor);
-
     }
 }

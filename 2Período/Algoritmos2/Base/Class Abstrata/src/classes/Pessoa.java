@@ -3,6 +3,8 @@ package src.classes;
 public abstract class Pessoa {
     private String nome;
 
+    public abstract void imprimir();
+
     public String getNome() {
         return nome;
     }

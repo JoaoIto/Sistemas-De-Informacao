@@ -10,6 +10,6 @@ public class main {
         PessoaFisica pf = new PessoaFisica();
         pf.setNome("Joao");
 
-        System.out.println(pf.getNome());
+        System.out.println(pf.imprimir());
     }
 }

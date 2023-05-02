@@ -20,9 +20,9 @@ public class main {
         switch (escolha) {
 
             case 1:
+                System.out.println("Cadastrando!");
                Pessoa pessoa = new Pessoa();
                pessoa.Cadastrar();
-            }
             case 2:
                 System.out.println("Encerrado!");
         }

@@ -34,5 +34,10 @@ public class main {
 
         listPessoa.sort((p1, p2) -> p1.getCpf().compareTo(p2.getCpf()));
         listPessoa.forEach(pessoa -> System.out.println(pessoa));
+        listPessoa.stream()
+                .filter(pessoa -> pessoa.getAge() <= 18)
+                .sorted((p1, p2) -> p1.getName().compareTo(p2.getName()))
+                .forEach(pessoa -> System.out.println(pessoa));
+        ;
     }
 }

@@ -32,18 +32,7 @@ public class main {
             System.out.println(value);
         }
 
-        listPessoa.sort(new Comparator<Pessoa>() {
-            @Override
-            public int compare(Pessoa p1, Pessoa p2) {
-                return p1.getName().compareTo(p2.getName());
-            }
-        });
-        for(String value: list){
-            System.out.println(value);
-        }
-
-        for (Pessoa value: listPessoa) {
-            System.out.println(value);
-        }
+        listPessoa.sort((p1, p2) -> p1.getCpf().compareTo(p2.getCpf()));
+        listPessoa.forEach(pessoa -> System.out.println(pessoa));
     }
 }

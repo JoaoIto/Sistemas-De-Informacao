@@ -10,7 +10,7 @@ public class main {
     public static void main(String[] args) {
         List<Pessoa> listaPessoas = new ArrayList<>();
 
-        for (int i = 0; i < 2; i++) {
+        for (int i = 0; i < 5; i++) {
             Pessoa pessoa = lerDados();
             listaPessoas.add(pessoa);
         }

@@ -45,6 +45,9 @@ public class Pessoa implements Impressao {
     public void setSexo(Sexo sexo) {
         this.sexo = sexo;
     }
+
+
+
     @Override
     public String toString() {
         return "Pessoa{" +

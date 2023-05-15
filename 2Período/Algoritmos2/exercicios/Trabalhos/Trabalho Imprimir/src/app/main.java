@@ -3,9 +3,8 @@ package src.app;
 import src.classes.Pessoa;
 import src.classes.Sexo;
 import src.classes.Telefone;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+
+import java.util.*;
 
 public class main {
     public static void main(String[] args) {
@@ -16,7 +15,9 @@ public class main {
             listaPessoas.add(pessoa);
         }
 
-        imprimirLista(listaPessoas);
+        imprimirListaOrdenadaPorNome(listaPessoas);
+        imprimirListaOrdenadaPorIdade(listaPessoas);
+        imprimirListaOrdenadaPorSexo(listaPessoas);
     }
 
     public static Pessoa lerDados() {
@@ -46,6 +47,60 @@ public class main {
         return new Pessoa(nome, idade, telefone, sexo);
     }
 
+    public static void imprimirListaOrdenadaPorNome(List<Pessoa> lista) {
+        /*
+        // Expressão comum
+        Collections.sort(lista, new Comparator<Pessoa>() {
+            @Override
+            public int compare(Pessoa pessoa1, Pessoa pessoa2) {
+                return pessoa1.getNome().compareToIgnoreCase(pessoa2.getNome());
+            }
+        });
+        */
+
+        Collections.sort(lista, (pessoa1, pessoa2) -> pessoa1.getNome().compareToIgnoreCase(pessoa2.getNome()));
+
+        System.out.println("Lista de Pessoas Ordenada por Nome:");
+        imprimirLista(lista);
+        System.out.println("----------------------------------");
+    }
+
+    public static void imprimirListaOrdenadaPorIdade(List<Pessoa> lista) {
+       /*
+       // Expressão comum
+       Collections.sort(lista, new Comparator<Pessoa>() {
+            @Override
+            public int compare(Pessoa pessoa1, Pessoa pessoa2) {
+                return Integer.compare(pessoa1.getIdade(), pessoa2.getIdade());
+            }
+        });
+       */
+
+        Collections.sort(lista, Comparator.comparingInt(Pessoa::getIdade));
+
+        System.out.println("Lista de Pessoas Ordenada por Idade:");
+        imprimirLista(lista);
+        System.out.println("----------------------------------");
+    }
+
+    public static void imprimirListaOrdenadaPorSexo(List<Pessoa> lista) {
+        /*
+        Expressão comum
+        Collections.sort(lista, new Comparator<Pessoa>() {
+            @Override
+            public int compare(Pessoa pessoa1, Pessoa pessoa2) {
+                return pessoa1.getSexo().compareTo(pessoa2.getSexo());
+            }
+        });
+        */
+
+        Collections.sort(lista, Comparator.comparing(Pessoa::getSexo));
+
+        System.out.println("Lista de Pessoas Ordenada por Sexo:");
+        imprimirLista(lista);
+        System.out.println("----------------------------------");
+    }
+
     public static void imprimirLista(List<Pessoa> lista) {
         for (Pessoa pessoa : lista) {
             System.out.println("Nome: " + pessoa.getNome());
@@ -56,4 +111,3 @@ public class main {
         }
     }
 }
-

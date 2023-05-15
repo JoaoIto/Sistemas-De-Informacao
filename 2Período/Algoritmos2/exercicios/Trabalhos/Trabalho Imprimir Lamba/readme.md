@@ -1,5 +1,49 @@
 # Trabalho arrow functions
 
+A aplicação de cadastrar, imprimir e filtrar pessoas basicamente usando em expressões Lambda:
+
+```java
+// Cadastrando: 
+
+Digite o nome da pessoa:
+Joao
+Digite a idade da pessoa:
+17
+Digite o código de área do telefone:
+63
+Digite o número do telefone:
+984207313
+Digite o sexo da pessoa (MASCULINO ou FEMININO):
+MASCULINO
+Digite o nome da pessoa:
+Emily
+Digite a idade da pessoa:
+18
+Digite o código de área do telefone:
+63
+Digite o número do telefone:
+91003555
+Digite o sexo da pessoa (MASCULINO ou FEMININO):
+FEMININO
+
+// ------------------------------------------------------------------
+        
+// Imprimindo:
+        
+        
+Nome: Joao
+Idade: 17
+Telefone: +63 984207313
+Sexo: MASCULINO
+----------------------------------
+Nome: Emily
+Idade: 18
+Telefone: +63 91003555
+Sexo: FEMININO
+----------------------------------
+```
+
+---
 ## Questão 01
 
 ■ Implemente em Java o

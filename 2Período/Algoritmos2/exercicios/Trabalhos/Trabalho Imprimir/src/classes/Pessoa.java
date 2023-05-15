@@ -1,5 +1,5 @@
 package src.classes;
-public class Pessoa {
+public class Pessoa implements Impressao {
     private String nome;
     private int idade;
     private Telefone telefone;
@@ -53,6 +53,14 @@ public class Pessoa {
                 ", telefone=" + telefone +
                 ", sexo=" + sexo +
                 '}';
+    }
+
+    @Override
+    public void imprimir() {
+        System.out.println("Nome: " + nome);
+        System.out.println("Idade: " + idade);
+        System.out.println("Telefone: +" + telefone.getCodigoArea() + " " + telefone.getNumero());
+        System.out.println("Sexo: " + sexo);
     }
 
 }

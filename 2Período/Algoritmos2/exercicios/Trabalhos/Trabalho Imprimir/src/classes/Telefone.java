@@ -1,6 +1,6 @@
 package src.classes;
 
-public class Telefone {
+public class Telefone implements Impressao {
     private String codigoArea;
     private String numero;
 
@@ -33,5 +33,11 @@ public class Telefone {
                 "codigoArea='" + codigoArea + '\'' +
                 ", numero='" + numero + '\'' +
                 '}';
+    }
+
+    @Override
+    public void imprimir() {
+        System.out.println("Código de Área: " + codigoArea);
+        System.out.println("Número: " + numero);
     }
 }

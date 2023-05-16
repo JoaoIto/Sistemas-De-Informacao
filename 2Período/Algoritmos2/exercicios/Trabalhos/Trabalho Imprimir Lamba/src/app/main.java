@@ -1,9 +1,6 @@
 package src.app;
 
 import src.classes.Pessoa;
-import src.classes.Sexo;
-import src.classes.Telefone;
-
 import java.util.*;
 
 public class main {

@@ -1,5 +1,7 @@
 package src.classes;
 
+import java.util.Scanner;
+
 public class Telefone implements Impressao {
     private String codigoArea;
     private String numero;
@@ -33,6 +35,18 @@ public class Telefone implements Impressao {
                 "codigoArea='" + codigoArea + '\'' +
                 ", numero='" + numero + '\'' +
                 '}';
+    }
+
+    public static Telefone lerDados() {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Digite o código de área do telefone:");
+        String codigoArea = scanner.nextLine();
+
+        System.out.println("Digite o número do telefone:");
+        String numero = scanner.nextLine();
+
+        return new Telefone(codigoArea, numero);
     }
 
     @Override

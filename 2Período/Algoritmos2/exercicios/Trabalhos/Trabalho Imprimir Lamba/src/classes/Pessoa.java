@@ -1,20 +1,21 @@
 package src.classes;
 
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class Pessoa implements Impressao {
     private String nome;
     private int idade;
-    private Telefone telefone;
+    private List<Telefone> telefones;
     private Sexo sexo;
 
-    public Pessoa(String nome, int idade, Telefone telefone, Sexo sexo) {
+    public Pessoa() {
+
+    }
+
+    public Pessoa(String nome, int idade, List<Telefone> telefones, Sexo sexo) {
         this.nome = nome;
         this.idade = idade;
-        this.telefone = telefone;
+        this.telefones = telefones;
         this.sexo = sexo;
     }
 
@@ -36,12 +37,12 @@ public class Pessoa implements Impressao {
         this.idade = idade;
     }
 
-    public Telefone getTelefone() {
-        return telefone;
+    public List<Telefone> getTelefones() {
+        return telefones;
     }
 
-    public void setTelefone(Telefone telefone) {
-        this.telefone = telefone;
+    public void setTelefones(List<Telefone> telefones) {
+        this.telefones = telefones;
     }
 
     public Sexo getSexo() {
@@ -52,14 +53,12 @@ public class Pessoa implements Impressao {
         this.sexo = sexo;
     }
 
-
-
     @Override
     public String toString() {
         return "Pessoa{" +
                 "nome='" + nome + '\'' +
                 ", idade=" + idade +
-                ", telefone=" + telefone +
+                ", telefones=" + telefones +
                 ", sexo=" + sexo +
                 '}';
     }
@@ -68,13 +67,16 @@ public class Pessoa implements Impressao {
     public void imprimir() {
         System.out.println("Nome: " + nome);
         System.out.println("Idade: " + idade);
-        System.out.println("Telefone: +" + telefone.getCodigoArea() + " " + telefone.getNumero());
+        for (Telefone telefone : telefones) {
+            System.out.println("Telefone: +" + telefone.getCodigoArea() + " " + telefone.getNumero());
+        }
         System.out.println("Sexo: " + sexo);
     }
 
 
     public static Pessoa lerDados() {
         Scanner scanner = new Scanner(System.in);
+        Pessoa pessoa = new Pessoa();
 
         System.out.println("Digite o nome da pessoa:");
         String nome = scanner.nextLine();
@@ -84,21 +86,32 @@ public class Pessoa implements Impressao {
 
         scanner.nextLine(); // Consumir a quebra de linha após a leitura do int
 
-        System.out.println("Digite o código de área do telefone:");
-        String codigoArea = scanner.nextLine();
-
-        System.out.println("Digite o número do telefone:");
-        String numero = scanner.nextLine();
-
         System.out.println("Digite o sexo da pessoa (MASCULINO ou FEMININO):");
         String sexoStr = scanner.nextLine();
 
         Sexo sexo = Sexo.valueOf(sexoStr.toUpperCase());
 
-        Telefone telefone = new Telefone(codigoArea, numero);
+        List<Telefone> telefones = new ArrayList<>();
 
-        return new Pessoa(nome, idade, telefone, sexo);
+        System.out.println("Digite a quantidade de telefones da pessoa:");
+        int quantidadeTelefones = scanner.nextInt();
+
+        scanner.nextLine(); // Consumir a quebra de linha após a leitura do int
+
+        for (int i = 0; i < quantidadeTelefones; i++) {
+            System.out.println("Telefone " + (i + 1) + ":");
+            Telefone telefone = Telefone.lerDados();
+            telefones.add(telefone);
+        }
+
+        pessoa.setNome(nome);
+        pessoa.setIdade(idade);
+        pessoa.setTelefones(telefones);
+        pessoa.setSexo(sexo);
+
+        return pessoa;
     }
+
 
     public static void imprimirListaOrdenadaPorNome(List<Pessoa> lista) {
         /*
@@ -156,10 +169,7 @@ public class Pessoa implements Impressao {
 
     public static void imprimirLista(List<Pessoa> lista) {
         for (Pessoa pessoa : lista) {
-            System.out.println("Nome: " + pessoa.getNome());
-            System.out.println("Idade: " + pessoa.getIdade());
-            System.out.println("Telefone: +" + pessoa.getTelefone().getCodigoArea() + " " + pessoa.getTelefone().getNumero());
-            System.out.println("Sexo: " + pessoa.getSexo());
+            pessoa.imprimir();
             System.out.println("----------------------------------");
         }
     }

@@ -12,9 +12,15 @@ public class main {
             listaPessoas.add(pessoa);
         }
 
-        Pessoa.imprimirListaOrdenadaPorNome(listaPessoas);
-        Pessoa.imprimirListaOrdenadaPorIdade(listaPessoas);
-        Pessoa.imprimirListaOrdenadaPorSexo(listaPessoas);
+        int quantPessoas = listaPessoas.size();
+        System.out.println("A quantidade de pessoas são: " + quantPessoas);
+        if(quantPessoas == 1) {
+            Pessoa.imprimirLista(listaPessoas);
+        }if (quantPessoas != 1) {
+            Pessoa.imprimirListaOrdenadaPorNome(listaPessoas);
+            Pessoa.imprimirListaOrdenadaPorIdade(listaPessoas);
+            Pessoa.imprimirListaOrdenadaPorSexo(listaPessoas);
+        }
     }
 
 }

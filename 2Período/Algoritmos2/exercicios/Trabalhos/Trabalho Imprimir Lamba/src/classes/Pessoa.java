@@ -70,7 +70,7 @@ public class Pessoa implements Impressao {
         for (Telefone telefone : telefones) {
             System.out.println("Telefone: +" + telefone.getCodigoArea() + " " + telefone.getNumero());
         }
-        System.out.println("Sexo: " + sexo);
+        System.out.println("Sexo: " + sexo.getLabel());
     }
 
 
@@ -86,10 +86,17 @@ public class Pessoa implements Impressao {
 
         scanner.nextLine(); // Consumir a quebra de linha após a leitura do int
 
-        System.out.println("Digite o sexo da pessoa (MASCULINO ou FEMININO):");
-        String sexoStr = scanner.nextLine();
-
-        Sexo sexo = Sexo.valueOf(sexoStr.toUpperCase());
+        System.out.println("Digite o sexo da pessoa (1 - MASCULINO, 2 - FEMININO):");
+        int sexoId = scanner.nextInt();
+        Sexo sexo;
+        if (sexoId == 1) {
+            sexo = Sexo.MASCULINO;
+        } else if (sexoId == 2) {
+            sexo = Sexo.FEMININO;
+        } else {
+            System.out.println("Opção de sexo inválida. Definindo como masculino por padrão.");
+            sexo = Sexo.MASCULINO;
+        }
 
         List<Telefone> telefones = new ArrayList<>();
 

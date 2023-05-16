@@ -72,6 +72,7 @@ public class Pessoa implements Impressao {
         System.out.println("Sexo: " + sexo);
     }
 
+
     public static Pessoa lerDados() {
         Scanner scanner = new Scanner(System.in);
 

@@ -5,6 +5,7 @@ import java.util.Scanner;
 
 public class main {
     public static void main(String[] args) {
+
         Scanner scan = new Scanner(System.in);
 
         Integer age;
@@ -19,8 +20,9 @@ public class main {
                 tentativa = false;
             } catch (InputMismatchException error) {
                 System.out.println("Deu a exceção de erro: " + error + "\nInforme um valor numérico!");
-                if(scan.hasNext())
-                    scan.next();
+                    scan.nextLine();
+            } catch (Exception error){
+                System.out.println("Null pointer exption" + error);
             }
         }
     }

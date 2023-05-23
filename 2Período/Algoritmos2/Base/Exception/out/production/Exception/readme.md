@@ -42,5 +42,29 @@ Scanner scan = new Scanner(System.in);
         }
 ````
 
+Ainda sim podemos entender de ele continuar rodando, para que capture o erro e faça o usuário
+digitar o valor correto, sem finalizar o programa.
+
+````java
+Scanner scan = new Scanner(System.in);
+
+        Integer age;
+
+        boolean tentativa = true;
+
+        while (tentativa) {
+            System.out.println("Informe a sua idade: ");
+            try {
+                age = scan.nextInt();
+                System.out.println("A idade é de: " + age);
+                tentativa = false;
+            } catch (InputMismatchException error) {
+                System.out.println("Deu a exceção de erro: " + error + "\nInforme um valor numérico!");
+                if(scan.hasNext())
+                    scan.next();
+            }
+        }
+````
+
 ---
 

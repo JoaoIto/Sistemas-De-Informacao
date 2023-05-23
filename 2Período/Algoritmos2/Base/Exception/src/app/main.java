@@ -23,6 +23,8 @@ public class main {
                     scan.nextLine();
             } catch (Exception error){
                 System.out.println("Null pointer exption" + error);
+            }finally {
+                System.out.println("Executando!");
             }
         }
     }

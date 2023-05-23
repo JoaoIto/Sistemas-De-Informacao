@@ -28,4 +28,13 @@ public class main {
             }
         }
     }
+
+
+
+    public static void inExeption() throws Exception{
+        // Retorno automático quando houver exceção:
+
+        Integer i = null;
+        i.toString(); // newPointerException;
+    }
 }

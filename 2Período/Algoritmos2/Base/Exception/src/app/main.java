@@ -2,43 +2,26 @@ package src.app;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
-
+import src.classes.Carro;
 public class main {
     public static void main(String[] args) {
 
-        Scanner scan = new Scanner(System.in);
+        Carro carro1 = new Carro();
+        Carro carro2 = new Carro();
+        Carro carro3 = new Carro();
+        Carro carro4 = new Carro();
+        Carro carro5 = new Carro();
+        Carro.lerDados(5);
 
-        Integer age;
+        Carro[] listCarros = new Carro[4];
 
-        boolean tentativa = true;
+        listCarros[0] = carro1;
+        listCarros[1] = carro2;
+        listCarros[2] = carro3;
+        listCarros[3] = carro4;
+        listCarros[4] = carro5;
 
-        while (tentativa) {
-            System.out.println("Informe a sua idade: ");
-            try {
-                age = scan.nextInt();
-                System.out.println("A idade é de: " + age);
-                tentativa = false;
-            } catch (InputMismatchException error) {
-                System.out.println("Deu a exceção de erro: " + error + "\nInforme um valor numérico!");
-                    scan.nextLine();
-            } catch (Exception error){
-                System.out.println("Null pointer exption" + error);
-            }finally {
-                System.out.println("Executando!");
-            }
-        }
-    }
-
-
-
-    public static void inExeption() throws Exception{
-        // Retorno automático quando houver exceção:
-
-        try {
-            Integer i = null;
-            i.toString(); // newPointerException;
-        }catch (Exception error){
-            new Exception("New error exception");
-        }
+        Carro carros = new Carro();
+        carros.imprimir(listCarros);
     }
 }

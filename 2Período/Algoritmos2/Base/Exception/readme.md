@@ -98,3 +98,9 @@ Scanner scan = new Scanner(System.in);
 
 ---
 
+
+## Exercício
+
+Gerar exceptions de erro para a questão 4 da avaliação 1, e assim melhor gerar o código: 
+
+- Questão 4:

@@ -9,12 +9,19 @@ public class main {
 
         Integer age;
 
-        System.out.println("Informe a sua idade: ");
-        try {
-            age = scan.nextInt();
-            System.out.println("A idade é de: " + age);
-        }catch (InputMismatchException error){
-            System.out.println("Deu a exceção de erro: " + error + "\nInforme um valor numérico!");
+        boolean tentativa = true;
+
+        while (tentativa) {
+            System.out.println("Informe a sua idade: ");
+            try {
+                age = scan.nextInt();
+                System.out.println("A idade é de: " + age);
+                tentativa = false;
+            } catch (InputMismatchException error) {
+                System.out.println("Deu a exceção de erro: " + error + "\nInforme um valor numérico!");
+                if(scan.hasNext())
+                    scan.next();
+            }
         }
     }
 }

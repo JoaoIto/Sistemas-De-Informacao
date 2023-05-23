@@ -25,7 +25,22 @@ public class main {
 A linha de código basicamnete captura o valor da variável de idade, e assim a imprime no console. Mas digamos que temos
 o erro de que o usuário digitou um valor em string... Dará erro! Para isso usamos a Exception!
 
-````java
+A partir da função ``try()`` ``catch()`` usada dentro do java, podemos entender o valor que foi
+errado.
 
+````java
+Scanner scan = new Scanner(System.in);
+
+        Integer age;
+
+        System.out.println("Informe a sua idade: ");
+        try {
+            age = scan.nextInt();
+            System.out.println("A idade é de: " + age);
+        }catch (InputMismatchException error){
+            System.out.println("Deu a exceção de erro: " + error + "\nInforme um valor numérico!");
+        }
 ````
+
+---
 

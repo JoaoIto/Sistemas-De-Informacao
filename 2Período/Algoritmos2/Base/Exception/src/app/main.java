@@ -34,7 +34,11 @@ public class main {
     public static void inExeption() throws Exception{
         // Retorno automático quando houver exceção:
 
-        Integer i = null;
-        i.toString(); // newPointerException;
+        try {
+            Integer i = null;
+            i.toString(); // newPointerException;
+        }catch (Exception error){
+            new Exception("New error exception");
+        }
     }
 }

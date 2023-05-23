@@ -68,3 +68,33 @@ Scanner scan = new Scanner(System.in);
 
 ---
 
+## Expeption catch de tipos:
+
+Podemos gerar tipos de erros diferentes dentro deste programa, para isso usaremos o try catch, para entender
+que tipo de erros pegamos, usando do tipo padrão de exeption, tanto quanto para o tipo de input recebido
+que era oque estávamos tratando.
+
+````java
+Scanner scan = new Scanner(System.in);
+
+        Integer age;
+
+        boolean tentativa = true;
+
+        while (tentativa) {
+            System.out.println("Informe a sua idade: ");
+            try {
+                age = scan.nextInt();
+                System.out.println("A idade é de: " + age);
+                tentativa = false;
+            } catch (InputMismatchException error) {
+                System.out.println("Deu a exceção de erro: " + error + "\nInforme um valor numérico!");
+                    scan.nextLine();
+            } catch (Exception error){
+                System.out.println("Null pointer exption" + error);
+            }
+        }
+````
+
+---
+

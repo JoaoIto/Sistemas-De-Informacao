@@ -5,13 +5,6 @@ import java.util.List;
 import java.util.Optional;
 
 public class UserService {
-
-    public static void main(String[] args) {
-        UserService service = new UserService();
-        service.login(null, null);
-        User user = service.login("joao@email.com", "2308");
-        System.out.println(user);
-    }
     public User login(String email, String senha){
         List<User> userList = new ArrayList<User>();
 

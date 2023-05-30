@@ -11,9 +11,10 @@ public class main {
 
         String data = (dia + " " + mes + " " + ano);
 
-        System.out.println("Informe a sua idade:");
-        Integer idade = scan.nextInt();
         scan.nextLine();
+
+        System.out.println("Informe a sua idade:");
+        Integer idade = Integer.parseInt(scan.nextLine());
 
         System.out.println("Informe seu nome completo:");
         String nome = scan.nextLine();

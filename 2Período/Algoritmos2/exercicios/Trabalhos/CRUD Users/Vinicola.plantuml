@@ -1,0 +1,63 @@
+@startuml
+
+class Usuario{
+  -nome: string
+  -email: string
+  -telefone: Telefone
+  -senha: string
+  -tipoUsuario: tipoUsuario
+  +Usuario()
+  +read()
+  +update()
+  +delete()
+}
+
+class Telefone {
+  -numero
+  -codigoArea
+
+  +Telefone()
+}
+
+enum tipoUsuario {
+  +ALUNO: int
+  +PROFESSOR: int
+  +ADMIN: int
+}
+
+class Tarefa {
+  -nome: string
+  -descricao: string
+  -etiqueta: Etiqueta
+  -professor: string
+  -dataPostagem: LocalDate
+  +Tarefa()
+  +create()
+  +read()
+  +update()
+  +delete()
+}
+
+class Etiqueta{
+  -tipo: int
+  -descricao: string
+  -numero: string
+  +Etiqueta()
+  +create()
+  +read()
+  +update()
+  +delete()
+}
+
+enum prioridade {
+  +COMUM: int
+  +IMPORTANTE: int
+  +PRIORITARIA
+}
+
+Usuario "*" -> "1" tipoUsuario
+Usuario "1" *-down-> "*" Telefone
+
+Tarefa "*" -> "1" Etiqueta
+Tarefa "*" o-down-> "1" prioridade
+@enduml

@@ -39,5 +39,7 @@ public class main {
                 .sorted((p1, p2) -> p1.getName().compareTo(p2.getName()))
                 .forEach(pessoa -> System.out.println(pessoa));
         ;
+    
+        System.out.println("Teste");
     }
 }

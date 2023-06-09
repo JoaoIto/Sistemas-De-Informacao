@@ -1,5 +1,7 @@
 package src.classes;
 
+import src.enums.Prioridade;
+
 import java.time.LocalDate;
 
 class Tarefa {

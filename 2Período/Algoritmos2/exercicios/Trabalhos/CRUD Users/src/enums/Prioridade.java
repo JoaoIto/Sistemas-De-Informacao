@@ -1,6 +1,6 @@
-package src.classes;
+package src.enums;
 
-enum Prioridade {
+public enum Prioridade {
     COMUM,
     IMPORTANTE,
     PRIORITARIA

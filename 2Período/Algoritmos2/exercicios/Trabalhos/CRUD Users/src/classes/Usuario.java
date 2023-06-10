@@ -1,7 +1,11 @@
 package src.classes;
 
+import src.classes.Tarefa;
+import src.classes.Etiqueta;
+import src.enums.Prioridade;
 import src.enums.TipoUsuario;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.List;
@@ -73,55 +77,90 @@ public class Usuario {
                 + ", telefoneLista=" + telefoneLista + ", tipoUsuario=" + tipoUsuario + "]";
     }
 
-    public static Usuario autenticar(String nomeUsuario, String senhaUsuario, List<Usuario> usuarios) {
-        for (Usuario usuario : usuarios) {
-            if (usuario.nome.equals(nomeUsuario) && usuario.senha.equals(senhaUsuario)) {
-                return usuario;
+    public static void autenticar(List<Usuario> usuarios) {
+        Scanner scanner = new Scanner(System.in);
+
+        boolean autenticado = false;
+
+        while (!autenticado) {
+            System.out.println("Faça o login.");
+            System.out.print("Usuário: ");
+            String usuario = scanner.nextLine();
+
+            System.out.print("Senha: ");
+            String senha = scanner.nextLine();
+
+            for (Usuario usuarioAtual : usuarios) {
+                if (usuarioAtual.getNome().equals(usuario) && usuarioAtual.getSenha().equals(senha)) {
+                    System.out.println("Login efetuado com sucesso!");
+
+                    if (usuarioAtual.getTipoUsuario() == TipoUsuario.ALUNO) {
+                        exibirMenuAluno();
+                    } else if (usuarioAtual.getTipoUsuario() == TipoUsuario.PROFESSOR) {
+                        exibirMenuProfessor();
+                    } else if (usuarioAtual.getTipoUsuario() == TipoUsuario.ADMIN) {
+                        exibirMenuAdmin();
+                    }
+
+                    autenticado = true;
+                    break;
+                }
+            }
+
+            if (!autenticado) {
+                System.out.println("Usuário ou senha inválidos. Tente novamente.");
             }
         }
-        return null;
     }
 
-    public static void exibirMenu(TipoUsuario tipoUsuario) {
-        // Exibe o menu de acordo com o tipo de usuário
-        if (tipoUsuario == TipoUsuario.ADMIN) {
-            System.out.println("Menu do Administrador");
-            System.out.println("1. Listar todas as tarefas");
-            System.out.println("2. Criar tarefa pra aluno");
-            System.out.println("3. Deletar tarefa");
-            // Adicione aqui as opções do menu para o usuário administrador
-        } else if (tipoUsuario == TipoUsuario.PROFESSOR) {
-            System.out.println("Menu do Professor");
-            System.out.println("1. Listar todas as tarefas");
-            System.out.println("2. Criar tarefa pra aluno");
-            System.out.println("3. Deletar tarefa");
-            // Adicione aqui as opções do menu para o usuário administrador
-        } else if (tipoUsuario == TipoUsuario.ALUNO) {
-            System.out.println("Menu do Usuário Comum");
-            System.out.println("1. Listar tarefas: ");
+
+    public static void exibirMenuAluno() {
+        Scanner scanner = new Scanner(System.in);
+        int opcao = 0;
+
+        while (opcao != 0) {
+            System.out.println("Menu do Aluno");
+            System.out.println("1. Listar tarefas");
             System.out.println("2. Criar tarefa");
             System.out.println("3. Deletar tarefa");
-            // Adicione aqui as opções do menu para o usuário comum
+            System.out.println("0. Sair");
+            System.out.print("Opção: ");
+
+            try {
+                opcao = Integer.parseInt(scanner.nextLine());
+
+                switch (opcao) {
+                    case 1:
+                        // Chame o método correspondente para listar as tarefas
+                        break;
+                    case 2:
+                        // Chame o método correspondente para criar uma nova tarefa
+                        break;
+                    case 3:
+                        // Chame o método correspondente para deletar uma tarefa
+                        break;
+                    case 0:
+                        System.out.println("Saindo do Menu do Aluno...");
+                        break;
+                    default:
+                        System.out.println("Opção inválida. Digite uma opção válida.");
+                        break;
+                }
+            } catch (NumberFormatException e) {
+                System.out.println("Opção inválida. Digite um número correspondente à opção desejada.");
+            }
         }
-
-        // Aqui você pode implementar a lógica para tratar a escolha do usuário no menu.
-        // Pode ser feito usando estruturas de controle, como if-else ou switch-case.
     }
 
-    public static void incluir() {
-        Scanner scan = new Scanner(System.in);
-        Usuario usuario = new Usuario();
+
+    private static void exibirMenuProfessor() {
+        System.out.println("Menu do Professor");
+        // Implemente as opções do menu do Professor aqui
     }
 
-    public void alterar() {
-        // Implementação da operação update()
-    }
-
-    public void excluir() {
-        // Implementação da operação delete()
-    }
-
-    public void imprimir(){
-
+    private static void exibirMenuAdmin() {
+        System.out.println("Menu do Admin");
+        // Implemente as opções do menu do Admin aqui
     }
 }
+

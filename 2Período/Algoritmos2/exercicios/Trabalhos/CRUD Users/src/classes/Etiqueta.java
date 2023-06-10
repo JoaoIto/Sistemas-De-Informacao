@@ -1,26 +1,26 @@
 package src.classes;
 
-class Etiqueta {
-    private int tipo;
+import src.enums.Prioridade;
+
+public class Etiqueta {
+    private String tipo;
     private String descricao;
-    private String numero;
 
-    public Etiqueta() {
+    public Etiqueta(String tipo, String descricao) {
+        this.tipo = tipo;
+        this.descricao = descricao;
     }
 
-    public void create() {
-        // Implementação da operação create()
+    public String getTipo() {
+        return tipo;
     }
 
-    public void read() {
-        // Implementação da operação read()
+    public String getDescricao() {
+        return descricao;
     }
 
-    public void update() {
-        // Implementação da operação update()
-    }
-
-    public void delete() {
-        // Implementação da operação delete()
+    @Override
+    public String toString() {
+        return "Tipo: " + tipo + ", Descrição: " + descricao;
     }
 }

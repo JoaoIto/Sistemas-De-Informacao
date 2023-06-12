@@ -16,13 +16,23 @@ public class main {
         usuarios.add(new Usuario("Admin", "admin@email.com", "0000", TipoUsuario.ADMIN));
 
         // Criando duas etiquetas
-        Etiqueta etiqueta1 = new Etiqueta("Code", "Etiqueta para código");
-        Etiqueta etiqueta2 = new Etiqueta("Book", "Etiqueta para livros");
+        List<Etiqueta> etiquetas = new ArrayList<>();
+        Etiqueta code = new Etiqueta("Code", "Etiqueta para código");
+        Etiqueta book = new Etiqueta("Book", "Etiqueta para livros");
+        Etiqueta personal = new Etiqueta("Personal", "Etiqueta para tarefas pessoais");
+
+        etiquetas.add(code);
+        etiquetas.add(book);
+        etiquetas.add(personal);
 
         // Criando duas tarefas utilizando as etiquetas e prioridades definidas
-        Tarefa tarefa1 = new Tarefa("Tarefa 1", "Descrição da Tarefa 1", etiqueta1, "Professor 1", LocalDate.now(), Prioridade.COMUM);
-        Tarefa tarefa2 = new Tarefa("Tarefa 2", "Descrição da Tarefa 2", etiqueta2, "Professor 2", LocalDate.now(), Prioridade.IMPORTANTE);
+        List<Tarefa> tarefas = new ArrayList<>();
+        Tarefa tarefa1 = new Tarefa("Tarefa 1", "Descrição da Tarefa 1", code, "Professor 1", LocalDate.now(), Prioridade.COMUM);
+        Tarefa tarefa2 = new Tarefa("Tarefa 2", "Descrição da Tarefa 2", book, "Professor 2", LocalDate.now(), Prioridade.IMPORTANTE);
 
-        Usuario.autenticar(usuarios);
+        tarefas.add(tarefa1);
+        tarefas.add(tarefa2);
+
+        Usuario.autenticar(usuarios, etiquetas);
     }
 }

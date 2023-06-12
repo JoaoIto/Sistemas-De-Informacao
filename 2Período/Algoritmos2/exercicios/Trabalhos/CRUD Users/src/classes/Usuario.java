@@ -77,7 +77,7 @@ public class Usuario {
                 + ", telefoneLista=" + telefoneLista + ", tipoUsuario=" + tipoUsuario + "]";
     }
 
-    public static void autenticar(List<Usuario> usuarios) {
+    public static void autenticar(List<Usuario> usuarios, List<Etiqueta> etiquetas) {
         Scanner scanner = new Scanner(System.in);
 
         boolean autenticado = false;
@@ -95,7 +95,7 @@ public class Usuario {
                     System.out.println("Login efetuado com sucesso!");
 
                     if (usuarioAtual.getTipoUsuario() == TipoUsuario.ALUNO) {
-                        exibirMenuAluno();
+                        exibirMenuAluno(etiquetas); // Passa a lista de etiquetas como argumento
                     } else if (usuarioAtual.getTipoUsuario() == TipoUsuario.PROFESSOR) {
                         exibirMenuProfessor();
                     } else if (usuarioAtual.getTipoUsuario() == TipoUsuario.ADMIN) {
@@ -103,7 +103,13 @@ public class Usuario {
                     }
 
                     autenticado = true;
-                    break;
+                    if (usuarioAtual.getTipoUsuario() == TipoUsuario.ALUNO)
+                        exibirMenuAluno(etiquetas); // Passa a lista de etiquetas como argumento
+                    else if (usuarioAtual.getTipoUsuario() == TipoUsuario.PROFESSOR)
+                        exibirMenuProfessor();
+                    else if (usuarioAtual.getTipoUsuario() == TipoUsuario.ADMIN) {
+                        exibirMenuAdmin();
+                    }
                 }
             }
 
@@ -114,9 +120,10 @@ public class Usuario {
     }
 
 
-    public static void exibirMenuAluno() {
+
+    public static void exibirMenuAluno(List<Etiqueta> etiquetas) {
         Scanner scanner = new Scanner(System.in);
-        int opcao = 0;
+        int opcao = -1;
 
         while (opcao != 0) {
             System.out.println("Menu do Aluno");
@@ -131,13 +138,13 @@ public class Usuario {
 
                 switch (opcao) {
                     case 1:
-                        // Chame o método correspondente para listar as tarefas
+                        Tarefa.tipoImprimir();
                         break;
                     case 2:
-                        // Chame o método correspondente para criar uma nova tarefa
+                        Tarefa.incluir(etiquetas);
                         break;
                     case 3:
-                        // Chame o método correspondente para deletar uma tarefa
+                        Tarefa.excluir();
                         break;
                     case 0:
                         System.out.println("Saindo do Menu do Aluno...");

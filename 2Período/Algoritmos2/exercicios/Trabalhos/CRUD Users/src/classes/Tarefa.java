@@ -3,10 +3,7 @@ package src.classes;
 import src.enums.Prioridade;
 
 import java.time.LocalDate;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class Tarefa {
     private String nome;
@@ -77,32 +74,33 @@ public class Tarefa {
         this.prioridade = prioridade;
     }
 
-    public static void incluir(List<Tarefa> tarefas, Tarefa tarefa) {
-        tarefas.add(tarefa);
-        System.out.println("Tarefa incluída com sucesso!");
+    public static void incluir(List<Etiqueta> etiquetas) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Digite o nome da tarefa:");
+        String nome = scanner.nextLine();
+
+        System.out.println("Digite a descrição da tarefa:");
+        String descricao = scanner.nextLine();
+
+        System.out.println("Selecione uma etiqueta para a tarefa:");
+        Etiqueta.exibirEtiquetas(etiquetas);
+
+        // Restante do código para criar a tarefa com a etiqueta selecionada
     }
 
-    public static void alterar(List<Tarefa> tarefas, int indice, Tarefa novaTarefa) {
-        if (indice >= 0 && indice < tarefas.size()) {
-            tarefas.set(indice, novaTarefa);
+
+    public static void alterar() {
             System.out.println("Tarefa alterada com sucesso!");
-        } else {
-            System.out.println("Índice de tarefa inválido.");
-        }
     }
 
-    public static void excluir(List<Tarefa> tarefas, int indice) {
-        if (indice >= 0 && indice < tarefas.size()) {
-            tarefas.remove(indice);
+    public static void excluir() {
             System.out.println("Tarefa excluída com sucesso!");
-        } else {
-            System.out.println("Índice de tarefa inválido.");
-        }
     }
 
     public static void tipoImprimir() {
         Scanner scanner = new Scanner(System.in);
-        int opcao = 0;
+        int opcao = -1;
 
         while (opcao != 0) {
             System.out.println("Que tipo de impressão você deseja?");
@@ -146,16 +144,18 @@ public class Tarefa {
     }
 
     public static void imprimir() {
+        int opcao = -1;
         System.out.println("Imprimindo todas as tarefas!");
     }
 
     public static void imprimirOrdenadoData() {
+        int opcao = -1;
         System.out.println("Tarefas (Ordenado por data)");
     }
 
     public static void imprimirOrdenadoPrioridade() {
+        int opcao = -1;
         System.out.println("Tarefas (Filtradas por Prioridade)!");
-
     }
 
 }

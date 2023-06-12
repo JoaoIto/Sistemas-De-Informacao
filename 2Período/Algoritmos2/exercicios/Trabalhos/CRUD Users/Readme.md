@@ -9,7 +9,7 @@ uma etiqueta base para dizer qual o tipo da tarefa, com uma mini descrição... 
 
 ## Base de UML:
 
-<img src="./github/UML_Trello.jpeg"/>
+<img src="https://github.com/JoaoIto/Sistemas-De-Informacao/blob/main/2Período/Algoritmos2/exercicios/Trabalhos/CRUD%20Users/github/UML_Trello.jpeg"/>
 
 ## Porque um CRUD?
 

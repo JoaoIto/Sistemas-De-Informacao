@@ -21,6 +21,14 @@ public class Etiqueta {
         return descricao;
     }
 
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
+    }
+
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
+    }
+
     @Override
     public String toString() {
         return "Tipo: " + tipo + ", Descrição: " + descricao;
@@ -100,9 +108,51 @@ public class Etiqueta {
         System.out.println("Nova etiqueta criada com sucesso!\n");
     }
 
+    public static void alterar(List<Etiqueta> etiquetas) {
+        Scanner scanner = new Scanner(System.in);
 
-    public static void alterar(List<Etiqueta> etiquetas){
-        System.out.println("Alterando etiquetas\n");
+        if (etiquetas.isEmpty()) {
+            System.out.println("Não há etiquetas para alterar.");
+            return;
+        }
+
+        System.out.println("Etiquetas disponíveis:");
+        tipoImprimir(etiquetas); // Implemente o método para imprimir as etiquetas na tela
+
+        boolean indiceValido = false;
+        int indice = -1;
+
+        while (!indiceValido) {
+            try {
+                System.out.print("Digite o índice da etiqueta que deseja alterar: ");
+                indice = Integer.parseInt(scanner.nextLine());
+
+                if (indice >= 0 && indice < etiquetas.size()) {
+                    indiceValido = true;
+                } else {
+                    System.out.println("Índice inválido. Digite novamente.");
+                }
+            } catch (NumberFormatException e) {
+                System.out.println("Índice inválido. Digite novamente.");
+            }
+        }
+
+        Etiqueta etiquetaSelecionada = etiquetas.get(indice);
+
+        System.out.println("\nDados atuais da etiqueta:");
+        System.out.println(etiquetaSelecionada);
+
+        System.out.println("\nDigite os novos dados da etiqueta:");
+
+        System.out.print("Nome tipo etiqueta: ");
+        String novoNome = scanner.nextLine();
+        etiquetaSelecionada.setTipo(novoNome);
+
+        System.out.print("Descrição: ");
+        String novaDescricao = scanner.nextLine();
+        etiquetaSelecionada.setDescricao(novaDescricao);
+
+        System.out.println("Etiqueta alterada com sucesso: " + etiquetaSelecionada);
     }
 
     public static void excluir(List<Etiqueta> etiquetas) {

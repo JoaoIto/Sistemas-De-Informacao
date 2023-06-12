@@ -300,7 +300,7 @@ public class Usuario {
                     break;
                 }
 
-                switch (opcao) {
+                switch(opcao){
                     case 1:
                         Tarefa.tipoImprimir(tarefas);
                         break;

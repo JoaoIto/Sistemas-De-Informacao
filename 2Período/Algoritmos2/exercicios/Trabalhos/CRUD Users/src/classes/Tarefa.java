@@ -3,6 +3,8 @@ package src.classes;
 import src.enums.Prioridade;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
 import java.util.*;
 
 public class Tarefa {
@@ -86,7 +88,6 @@ public class Tarefa {
                 '}';
     }
 
-
     public static void incluir(List<Etiqueta> etiquetas, List<Tarefa> tarefas) {
         Scanner scanner = new Scanner(System.in);
 
@@ -114,21 +115,80 @@ public class Tarefa {
         System.out.println("Digite o nome do professor:");
         String professor = scanner.nextLine();
 
-        System.out.println("Digite a data de postagem (AAAA-MM-DD):");
-        String dataPostagemString = scanner.nextLine();
-        LocalDate dataPostagem = LocalDate.parse(dataPostagemString);
+        LocalDate dataCriacao = null;
+        LocalDate dataPostagem = null;
+
+        boolean formatoValido = false;
+
+        while (!formatoValido) {
+            System.out.print("Digite a data de criação da tarefa (dd/mm/yyyy): ");
+            String dataDigitada = scanner.nextLine();
+
+            try {
+                DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+                dataPostagem = LocalDate.parse(dataDigitada, formatter);
+                formatoValido = true;
+            } catch (DateTimeParseException e) {
+                System.out.println("Formato de data inválido. Digite novamente no formato dd/mm/yyyy.");
+            }
+        }
 
         Tarefa novaTarefa = new Tarefa(nome, descricao, etiquetaSelecionada, professor, dataPostagem, prioridadeSelecionada);
         tarefas.add(novaTarefa);
-        // Adiciona a tarefa à lista de tarefas existente
 
         System.out.println("Tarefa adicionada com sucesso!");
     }
 
-    public static void alterar(List<Tarefa> tarefas){
+    public static void alterar(List<Tarefa> tarefas) {
         Scanner scanner = new Scanner(System.in);
 
+        if (tarefas.isEmpty()) {
+            System.out.println("Não há tarefas para alterar.");
+            return;
+        }
 
+        System.out.println("Tarefas disponíveis:");
+        tipoImprimir(tarefas);
+
+        boolean indiceValido = false;
+        int indice = -1;
+
+        while (!indiceValido) {
+            try {
+                System.out.print("Digite o índice da tarefa que deseja alterar: \n");
+                indice = Integer.parseInt(scanner.nextLine());
+
+                if (indice >= 0 && indice < tarefas.size()) {
+                    indiceValido = true;
+                } else {
+                    System.out.println("Índice inválido. Digite novamente.\n");
+                }
+            } catch (NumberFormatException e) {
+                System.out.println("Índice inválido. Digite novamente.\n");
+            }
+        }
+
+        Tarefa tarefaSelecionada = tarefas.get(indice);
+        System.out.println("Tarefa selecionada: " + tarefaSelecionada);
+
+        // Alterar os atributos da tarefa
+        System.out.println("Digite o novo nome da tarefa: ");
+        String novoNome = scanner.nextLine();
+        tarefaSelecionada.setNome(novoNome);
+        System.out.print("Digite a nova descrição da tarefa: ");
+        String novaDescricao = scanner.nextLine();
+        tarefaSelecionada.setDescricao(novaDescricao);
+
+        System.out.print("Digite a nova data de criação da tarefa (dd/mm/aaaa): ");
+        String novaDataCriacao = scanner.nextLine();
+        try {
+            LocalDate dataCriacao = LocalDate.parse(novaDataCriacao, DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+            tarefaSelecionada.setDataPostagem(dataCriacao);
+        } catch (DateTimeParseException e) {
+            System.out.println("Formato de data inválido. A data não foi alterada.");
+        }
+
+        System.out.println("Tarefa alterada com sucesso: \n" + tarefaSelecionada + "\n");
     }
 
     public static void excluir(List<Tarefa> tarefas) {

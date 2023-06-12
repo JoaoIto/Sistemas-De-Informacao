@@ -7,6 +7,10 @@ Ou seja, você, ou o professor, pode adicionar as tarefas dentro do perfil, e as
 colocadas em uma lista, e assim podemos simplesmente dizer a ordem de prioridade a elas serem feitas, 
 uma etiqueta base para dizer qual o tipo da tarefa, com uma mini descrição... enfim!
 
+## Base de UML:
+
+<img src="./github/UML_Trello.jpeg"/>
+
 ## Porque um CRUD?
 
 O CRUD de aprendizado neste trabalho serviu para que entendemos essa prática de código padrões em sistemas

@@ -33,6 +33,6 @@ public class main {
         tarefas.add(tarefa1);
         tarefas.add(tarefa2);
 
-        Usuario.autenticar(usuarios, etiquetas);
+        Usuario.autenticar(usuarios, etiquetas, tarefas);
     }
 }

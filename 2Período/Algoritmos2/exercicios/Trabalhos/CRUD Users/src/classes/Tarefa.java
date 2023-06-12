@@ -74,7 +74,19 @@ public class Tarefa {
         this.prioridade = prioridade;
     }
 
-    public static void incluir(List<Etiqueta> etiquetas) {
+    @Override
+    public String toString() {
+        return "Tarefa{" +
+                "nome='" + nome + '\'' +
+                ", descricao='" + descricao + '\'' +
+                ", etiqueta=" + etiqueta +
+                ", professor='" + professor + '\'' +
+                ", dataPostagem=" + dataPostagem +
+                ", prioridade=" + prioridade +
+                '}';
+    }
+
+    public static void incluir(List<Etiqueta> etiquetas, List<Tarefa> tarefas) {
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Digite o nome da tarefa:");
@@ -84,10 +96,34 @@ public class Tarefa {
         String descricao = scanner.nextLine();
 
         System.out.println("Selecione uma etiqueta para a tarefa:");
-        Etiqueta.exibirEtiquetas(etiquetas);
+        for (int i = 0; i < etiquetas.size(); i++) {
+            System.out.println((i + 1) + ". " + etiquetas.get(i));
+        }
+        int opcaoEtiqueta = Integer.parseInt(scanner.nextLine());
+        Etiqueta etiquetaSelecionada = etiquetas.get(opcaoEtiqueta - 1);
+        System.out.println("Etiqueta selecionada: " + etiquetaSelecionada);
 
-        // Restante do código para criar a tarefa com a etiqueta selecionada
+        System.out.println("Selecione a prioridade da tarefa:");
+        for (Prioridade prioridade : Prioridade.values()) {
+            System.out.println(prioridade.getId() + ". " + prioridade.getLabel());
+        }
+        int opcaoPrioridade = Integer.parseInt(scanner.nextLine());
+        Prioridade prioridadeSelecionada = Prioridade.values()[opcaoPrioridade - 1];
+
+        System.out.println("Digite o nome do professor:");
+        String professor = scanner.nextLine();
+
+        System.out.println("Digite a data de postagem (AAAA-MM-DD):");
+        String dataPostagemString = scanner.nextLine();
+        LocalDate dataPostagem = LocalDate.parse(dataPostagemString);
+
+        Tarefa novaTarefa = new Tarefa(nome, descricao, etiquetaSelecionada, professor, dataPostagem, prioridadeSelecionada);
+        tarefas.add(novaTarefa);
+        // Adiciona a tarefa à lista de tarefas existente
+
+        System.out.println("Tarefa adicionada com sucesso!");
     }
+
 
 
     public static void alterar() {
@@ -98,7 +134,7 @@ public class Tarefa {
             System.out.println("Tarefa excluída com sucesso!");
     }
 
-    public static void tipoImprimir() {
+    public static void tipoImprimir(List<Tarefa> tarefas) {
         Scanner scanner = new Scanner(System.in);
         int opcao = -1;
 
@@ -118,17 +154,17 @@ public class Tarefa {
                     case 1:
                         // Chame o método correspondente para imprimir todas as tarefas sem ordem
 
-                        Tarefa.imprimir();
+                        Tarefa.imprimir(tarefas);
                         break;
                     case 2:
                         // Chame o método correspondente para imprimir todas as tarefas ordenadas por data
 
-                        Tarefa.imprimirOrdenadoData();
+                        Tarefa.imprimirOrdenadoData(tarefas);
                         break;
                     case 3:
                         // Chame o método correspondente para imprimir todas as tarefas ordenadas por prioridade
 
-                        Tarefa.imprimirOrdenadoPrioridade();
+                        Tarefa.imprimirOrdenadoPrioridade(tarefas);
                         break;
                     case 0:
                         System.out.println("Voltando...");
@@ -143,17 +179,24 @@ public class Tarefa {
         }
     }
 
-    public static void imprimir() {
+    public static void imprimir(List<Tarefa> tarefas) {
         int opcao = -1;
-        System.out.println("Imprimindo todas as tarefas!");
+        if (tarefas.isEmpty()) {
+            System.out.println("Não há tarefas cadastradas.");
+        } else {
+            System.out.println("Lista de todas as tarefas (sem ordem):");
+            for (Tarefa tarefa : tarefas) {
+                System.out.println(tarefa.toString());
+            }
+        }
     }
 
-    public static void imprimirOrdenadoData() {
+    public static void imprimirOrdenadoData(List<Tarefa> tarefas) {
         int opcao = -1;
         System.out.println("Tarefas (Ordenado por data)");
     }
 
-    public static void imprimirOrdenadoPrioridade() {
+    public static void imprimirOrdenadoPrioridade(List<Tarefa> tarefas) {
         int opcao = -1;
         System.out.println("Tarefas (Filtradas por Prioridade)!");
     }

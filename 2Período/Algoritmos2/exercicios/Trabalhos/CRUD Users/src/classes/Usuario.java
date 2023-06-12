@@ -77,7 +77,7 @@ public class Usuario {
                 + ", telefoneLista=" + telefoneLista + ", tipoUsuario=" + tipoUsuario + "]";
     }
 
-    public static void autenticar(List<Usuario> usuarios, List<Etiqueta> etiquetas) {
+    public static void autenticar(List<Usuario> usuarios, List<Etiqueta> etiquetas, List<Tarefa> tarefas) {
         Scanner scanner = new Scanner(System.in);
 
         boolean autenticado = false;
@@ -92,23 +92,23 @@ public class Usuario {
 
             for (Usuario usuarioAtual : usuarios) {
                 if (usuarioAtual.getNome().equals(usuario) && usuarioAtual.getSenha().equals(senha)) {
-                    System.out.println("Login efetuado com sucesso!");
+                    System.out.println("Login efetuado com sucesso! \n");
 
                     if (usuarioAtual.getTipoUsuario() == TipoUsuario.ALUNO) {
-                        exibirMenuAluno(etiquetas); // Passa a lista de etiquetas como argumento
+                        exibirMenuAluno(usuarios, etiquetas, tarefas); // Passa a lista de etiquetas como argumento
                     } else if (usuarioAtual.getTipoUsuario() == TipoUsuario.PROFESSOR) {
-                        exibirMenuProfessor();
+                        exibirMenuProfessor(usuarios, etiquetas, tarefas);
                     } else if (usuarioAtual.getTipoUsuario() == TipoUsuario.ADMIN) {
-                        exibirMenuAdmin();
+                        exibirMenuAdmin(usuarios, etiquetas, tarefas);
                     }
 
                     autenticado = true;
                     if (usuarioAtual.getTipoUsuario() == TipoUsuario.ALUNO)
-                        exibirMenuAluno(etiquetas); // Passa a lista de etiquetas como argumento
+                        exibirMenuAluno(usuarios, etiquetas, tarefas); // Passa a lista de etiquetas como argumento
                     else if (usuarioAtual.getTipoUsuario() == TipoUsuario.PROFESSOR)
-                        exibirMenuProfessor();
+                        exibirMenuProfessor(usuarios, etiquetas, tarefas);
                     else if (usuarioAtual.getTipoUsuario() == TipoUsuario.ADMIN) {
-                        exibirMenuAdmin();
+                        exibirMenuAdmin(usuarios, etiquetas, tarefas);
                     }
                 }
             }
@@ -119,55 +119,106 @@ public class Usuario {
         }
     }
 
-
-
-    public static void exibirMenuAluno(List<Etiqueta> etiquetas) {
+    public static void exibirMenuAluno(List<Usuario> usuarios, List<Etiqueta> etiquetas, List<Tarefa> tarefas) {
         Scanner scanner = new Scanner(System.in);
-        int opcao = -1;
+        int opcao;
 
-        while (opcao != 0) {
-            System.out.println("Menu do Aluno");
+        do {
+            System.out.println("Menu do Aluno\n");
             System.out.println("1. Listar tarefas");
             System.out.println("2. Criar tarefa");
             System.out.println("3. Deletar tarefa");
             System.out.println("0. Sair");
             System.out.print("Opção: ");
+            opcao = Integer.parseInt(scanner.nextLine());
 
-            try {
-                opcao = Integer.parseInt(scanner.nextLine());
-
-                switch (opcao) {
-                    case 1:
-                        Tarefa.tipoImprimir();
-                        break;
-                    case 2:
-                        Tarefa.incluir(etiquetas);
-                        break;
-                    case 3:
-                        Tarefa.excluir();
-                        break;
-                    case 0:
-                        System.out.println("Saindo do Menu do Aluno...");
-                        break;
-                    default:
-                        System.out.println("Opção inválida. Digite uma opção válida.");
-                        break;
-                }
-            } catch (NumberFormatException e) {
-                System.out.println("Opção inválida. Digite um número correspondente à opção desejada.");
+            switch (opcao) {
+                case 1:
+                    Tarefa.tipoImprimir(tarefas);
+                    break;
+                case 2:
+                    Tarefa.incluir(etiquetas, tarefas);
+                    break;
+                case 3:
+                    Tarefa.excluir();
+                    break;
+                case 0:
+                    System.out.println("Saindo do Menu do Aluno... \n");
+                    autenticar(usuarios, etiquetas, tarefas);
+                default:
+                    System.out.println("Opção inválida. Digite uma opção válida.");
+                    break;
             }
-        }
+        } while (opcao != 0);
     }
 
 
-    private static void exibirMenuProfessor() {
-        System.out.println("Menu do Professor");
-        // Implemente as opções do menu do Professor aqui
+
+
+    private static void exibirMenuProfessor(List<Usuario> usuarios, List<Etiqueta> etiquetas, List<Tarefa> tarefas) {
+        Scanner scanner = new Scanner(System.in);
+        int opcao = 0;
+
+        do {
+            System.out.println("Menu do Professor\n");
+            System.out.println("1. Listar tarefas");
+            System.out.println("2. Criar tarefa");
+            System.out.println("3. Deletar tarefa");
+            System.out.println("0. Sair");
+            System.out.print("Opção: ");
+            opcao = Integer.parseInt(scanner.nextLine());
+
+            switch (opcao) {
+                case 1:
+                    Tarefa.tipoImprimir(tarefas);
+                    break;
+                case 2:
+                    Tarefa.incluir(etiquetas, tarefas);
+                    break;
+                case 3:
+                    Tarefa.excluir();
+                    break;
+                case 0:
+                    System.out.println("Saindo do Menu do Professor...\n");
+                    autenticar(usuarios, etiquetas, tarefas);
+                default:
+                    System.out.println("Opção inválida. Digite uma opção válida.");
+                    break;
+            }
+        } while (opcao != 0);
     }
 
-    private static void exibirMenuAdmin() {
-        System.out.println("Menu do Admin");
-        // Implemente as opções do menu do Admin aqui
+    private static void exibirMenuAdmin(List<Usuario> usuarios, List<Etiqueta> etiquetas, List<Tarefa> tarefas) {
+        Scanner scanner = new Scanner(System.in);
+        int opcao = 0;
+
+        do {
+            System.out.println("Menu do Admin\n");
+            System.out.println("1. Listar tarefas");
+            System.out.println("2. Criar tarefa");
+            System.out.println("3. Deletar tarefa");
+            System.out.println("0. Sair");
+            System.out.print("Opção: ");
+            opcao = Integer.parseInt(scanner.nextLine());
+
+            switch (opcao) {
+                case 1:
+                    Tarefa.tipoImprimir(tarefas);
+                    break;
+                case 2:
+                    Tarefa.incluir(etiquetas, tarefas);
+                    break;
+                case 3:
+                    Tarefa.excluir();
+                    break;
+                case 0:
+                    System.out.println("Saindo do Menu do Admin...\n");
+                    autenticar(usuarios, etiquetas, tarefas);
+                default:
+                    System.out.println("Opção inválida. Digite uma opção válida.");
+                    break;
+            }
+        } while (opcao != 0);
     }
 }
 

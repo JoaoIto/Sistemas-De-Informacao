@@ -86,6 +86,7 @@ public class Tarefa {
                 '}';
     }
 
+
     public static void incluir(List<Etiqueta> etiquetas, List<Tarefa> tarefas) {
         Scanner scanner = new Scanner(System.in);
 
@@ -124,57 +125,75 @@ public class Tarefa {
         System.out.println("Tarefa adicionada com sucesso!");
     }
 
+    public static void excluir(List<Tarefa> tarefas) {
+        Scanner scanner = new Scanner(System.in);
 
+        if (tarefas.isEmpty()) {
+            System.out.println("Não há tarefas para deletar.");
+            return;
+        }
 
-    public static void alterar() {
-            System.out.println("Tarefa alterada com sucesso!");
-    }
+        System.out.println("Tarefas disponíveis:");
+        tipoImprimir(tarefas); // Implemente o método para imprimir as tarefas na tela
 
-    public static void excluir() {
-            System.out.println("Tarefa excluída com sucesso!");
+        boolean indiceValido = false;
+        int indice = -1;
+
+        while (!indiceValido) {
+            try {
+                System.out.print("Digite o índice da tarefa que deseja deletar: ");
+                indice = Integer.parseInt(scanner.nextLine());
+
+                if (indice >= 0 && indice < tarefas.size()) {
+                    indiceValido = true;
+                } else {
+                    System.out.println("Índice inválido. Digite novamente.");
+                }
+            } catch (NumberFormatException e) {
+                System.out.println("Índice inválido. Digite novamente.");
+            }
+        }
+
+        Tarefa tarefaRemovida = tarefas.remove(indice);
+        System.out.println("Tarefa removida com sucesso: " + tarefaRemovida);
     }
 
     public static void tipoImprimir(List<Tarefa> tarefas) {
         Scanner scanner = new Scanner(System.in);
+
         int opcao = -1;
 
         while (opcao != 0) {
-            System.out.println("Que tipo de impressão você deseja?");
+            System.out.println("Que tipo de impressão você deseja?\n");
             System.out.println("Menu de Impressões:");
             System.out.println("1. Imprimir todas as tarefas (sem ordem)");
             System.out.println("2. Imprimir todas as tarefas ordenadas por data");
             System.out.println("3. Imprimir todas as tarefas ordenadas por prioridade");
-            System.out.println("0. Voltar");
-
+            System.out.println("0. Voltar\n");
             System.out.print("Opção: ");
+
             try {
                 opcao = Integer.parseInt(scanner.nextLine());
 
                 switch (opcao) {
                     case 1:
-                        // Chame o método correspondente para imprimir todas as tarefas sem ordem
-
-                        Tarefa.imprimir(tarefas);
+                        imprimir(tarefas);
                         break;
                     case 2:
-                        // Chame o método correspondente para imprimir todas as tarefas ordenadas por data
-
-                        Tarefa.imprimirOrdenadoData(tarefas);
+                       imprimirOrdenadoData(tarefas);
                         break;
                     case 3:
-                        // Chame o método correspondente para imprimir todas as tarefas ordenadas por prioridade
-
-                        Tarefa.imprimirOrdenadoPrioridade(tarefas);
+                       imprimirOrdenadoPrioridade(tarefas);
                         break;
                     case 0:
-                        System.out.println("Voltando...");
-                        break;
+                        System.out.println("Voltando ao menu principal...\n");
+                        return;  // Retorna ao método chamador (exibirMenu)
                     default:
-                        System.out.println("Opção inválida. Digite uma opção válida.");
+                        System.out.println("Opção inválida. Digite uma opção válida.\n");
                         break;
                 }
             } catch (NumberFormatException e) {
-                System.out.println("Opção inválida. Digite um número correspondente à opção desejada.");
+                System.out.println("Opção inválida. Digite um número correspondente à opção desejada.\n");
             }
         }
     }
@@ -182,9 +201,9 @@ public class Tarefa {
     public static void imprimir(List<Tarefa> tarefas) {
         int opcao = -1;
         if (tarefas.isEmpty()) {
-            System.out.println("Não há tarefas cadastradas.");
+            System.out.println("Não há tarefas cadastradas!\n");
         } else {
-            System.out.println("Lista de todas as tarefas (sem ordem):");
+            System.out.println("Lista de todas as tarefas (sem ordem):\n");
             for (Tarefa tarefa : tarefas) {
                 System.out.println(tarefa.toString());
             }
@@ -192,13 +211,26 @@ public class Tarefa {
     }
 
     public static void imprimirOrdenadoData(List<Tarefa> tarefas) {
-        int opcao = -1;
-        System.out.println("Tarefas (Ordenado por data)");
+        List<Tarefa> tarefasOrdenadas = new ArrayList<>(tarefas);
+        Collections.sort(tarefasOrdenadas, Comparator.comparing(Tarefa::getDataPostagem));
+
+        System.out.println("\nTarefas ordenadas por data de criação:\n");
+        for (int i = 0; i < tarefasOrdenadas.size(); i++) {
+            Tarefa tarefa = tarefasOrdenadas.get(i);
+            System.out.println((i + 1) + ". " + tarefa);
+        }
     }
 
     public static void imprimirOrdenadoPrioridade(List<Tarefa> tarefas) {
-        int opcao = -1;
-        System.out.println("Tarefas (Filtradas por Prioridade)!");
+        List<Tarefa> tarefasOrdenadas = new ArrayList<>(tarefas);
+        Collections.sort(tarefasOrdenadas, Comparator.comparing(Tarefa::getPrioridade));
+
+        System.out.println("\nTarefas ordenadas por prioridade:\n");
+        for (int i = 0; i < tarefasOrdenadas.size(); i++) {
+            Tarefa tarefa = tarefasOrdenadas.get(i);
+            System.out.println((i + 1) + ". " + tarefa);
+        }
     }
+
 
 }

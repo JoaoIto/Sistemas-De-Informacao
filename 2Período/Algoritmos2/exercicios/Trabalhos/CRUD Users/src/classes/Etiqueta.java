@@ -2,8 +2,7 @@ package src.classes;
 
 import src.enums.Prioridade;
 
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class Etiqueta {
     private String tipo;
@@ -27,34 +26,86 @@ public class Etiqueta {
         return "Tipo: " + tipo + ", Descrição: " + descricao;
     }
 
-    public static void exibirEtiquetas(List<Etiqueta> etiquetas) {
+    public static void tipoImprimir(List<Etiqueta> etiquetas) {
+        Scanner scanner = new Scanner(System.in);
+        int opcao;
+
+        do {
+            System.out.println("\nQue tipo de impressão você deseja?");
+            System.out.println("1. Imprimir etiquetas por tipo");
+            System.out.println("2. Imprimir etiquetas por descrição");
+            System.out.println("3. Imprimir etiquetas em ordem inversa");
+            System.out.println("0. Voltar");
+
+            System.out.print("Opção: ");
+            opcao = scanner.nextInt();
+            scanner.nextLine(); // Limpar o buffer de leitura
+
+            switch (opcao) {
+                case 1:
+                    imprimirPorTipo(etiquetas);
+                    break;
+                case 2:
+                    imprimirPorDescricao(etiquetas);
+                    break;
+                case 3:
+                    imprimirPorOrdemInversa(etiquetas);
+                    break;
+                case 0:
+                    System.out.println("Voltando ao menu de etiquetas...");
+                    break;
+                default:
+                    System.out.println("Opção inválida. Digite uma opção válida.");
+                    break;
+            }
+        } while (opcao != 0);
+    }
+
+    private static void imprimirPorTipo(List<Etiqueta> etiquetas) {
+        System.out.println("\nImprimindo etiquetas por tipo:");
+        for (Etiqueta etiqueta : etiquetas) {
+            System.out.println("Tipo: " + etiqueta.getTipo() + ", Descrição: " + etiqueta.getDescricao());
+        }
+    }
+
+    private static void imprimirPorDescricao(List<Etiqueta> etiquetas) {
+        System.out.println("Imprimindo etiquetas por descrição:");
+        List<Etiqueta> etiquetasOrdenadas = new ArrayList<>(etiquetas);
+        Collections.sort(etiquetasOrdenadas, Comparator.comparing(Etiqueta::getDescricao));
+        for (Etiqueta etiqueta : etiquetasOrdenadas) {
+            System.out.println("Tipo: " + etiqueta.getTipo() + ", Descrição: " + etiqueta.getDescricao());
+        }
+    }
+
+    private static void imprimirPorOrdemInversa(List<Etiqueta> etiquetas) {
+        System.out.println("\nImprimindo etiquetas em ordem inversa:");
+        List<Etiqueta> etiquetasInversas = new ArrayList<>(etiquetas);
+        Collections.reverse(etiquetasInversas);
+        for (Etiqueta etiqueta : etiquetasInversas) {
+            System.out.println("Tipo: " + etiqueta.getTipo() + ", Descrição: " + etiqueta.getDescricao());
+        }
+    }
+
+    public static void incluir(List<Etiqueta> etiquetas) {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Etiquetas disponíveis:");
-        for (int i = 0; i < etiquetas.size(); i++) {
-            System.out.println((i + 1) + ". " + etiquetas.get(i));
-        }
-        System.out.println("0. Criar nova etiqueta");
-        System.out.print("Opção: ");
-        int opcao = scanner.nextInt();
-        scanner.nextLine(); // Limpa o buffer de leitura
+        System.out.print("\nDigite o tipo da nova etiqueta: ");
+        String tipoEtiqueta = scanner.nextLine();
 
-        if (opcao == 0) {
-            System.out.print("Digite o tipo da nova etiqueta: ");
-            String tipoEtiqueta = scanner.nextLine();
+        System.out.print("Digite a descrição da nova etiqueta: ");
+        String descricaoEtiqueta = scanner.nextLine();
 
-            System.out.print("Digite a descrição da nova etiqueta: ");
-            String descricaoEtiqueta = scanner.nextLine();
+        etiquetas.add(new Etiqueta(tipoEtiqueta, descricaoEtiqueta));
 
-            etiquetas.add(new Etiqueta(tipoEtiqueta, descricaoEtiqueta));
+        System.out.println("Nova etiqueta criada com sucesso!\n");
+    }
 
-            System.out.println("Nova etiqueta criada com sucesso!");
-        } else if (opcao >= 1 && opcao <= etiquetas.size()) {
-            Etiqueta etiquetaSelecionada = etiquetas.get(opcao - 1);
-            System.out.println("Etiqueta selecionada: " + etiquetaSelecionada);
-            // Faça o que desejar com a etiqueta selecionada
-        } else {
-            System.out.println("Opção inválida. Digite uma opção válida.");
-        }
+
+    public static void alterar(List<Etiqueta> etiquetas){
+        System.out.println("Alterando etiquetas\n");
+    }
+
+    public static void excluir(List<Etiqueta> etiquetas){
+        System.out.println("Excluindo etiquetas\n");
     }
 }

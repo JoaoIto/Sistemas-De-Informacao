@@ -1,4 +1,5 @@
 package src.app;
+import src.Exceptions.LoginException;
 import src.classes.*;
 import src.enums.Prioridade;
 import src.enums.TipoUsuario;
@@ -9,7 +10,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws LoginException {
         List<Usuario> usuarios = new ArrayList<>();
         usuarios.add(new Usuario("Joao", "joao@email.com", "2308", TipoUsuario.ALUNO));
         usuarios.add(new Usuario("Janio", "janio@email.com", "1234", TipoUsuario.PROFESSOR));

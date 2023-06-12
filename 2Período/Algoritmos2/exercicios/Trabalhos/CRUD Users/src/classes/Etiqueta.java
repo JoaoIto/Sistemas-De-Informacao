@@ -117,7 +117,7 @@ public class Etiqueta {
         }
 
         System.out.println("Etiquetas disponíveis:");
-        tipoImprimir(etiquetas); // Implemente o método para imprimir as etiquetas na tela
+        tipoImprimir(etiquetas);
 
         boolean indiceValido = false;
         int indice = -1;
@@ -164,7 +164,7 @@ public class Etiqueta {
         }
 
         System.out.println("Etiquetas disponíveis:");
-        tipoImprimir(etiquetas); // Implemente o método para imprimir as etiquetas na tela
+        tipoImprimir(etiquetas);
 
         boolean indiceValido = false;
         int indice = -1;
@@ -187,5 +187,4 @@ public class Etiqueta {
         Etiqueta etiquetaRemovida = etiquetas.remove(indice);
         System.out.println("Etiqueta removida com sucesso: " + etiquetaRemovida);
     }
-
 }

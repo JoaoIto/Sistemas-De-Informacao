@@ -105,7 +105,37 @@ public class Etiqueta {
         System.out.println("Alterando etiquetas\n");
     }
 
-    public static void excluir(List<Etiqueta> etiquetas){
-        System.out.println("Excluindo etiquetas\n");
+    public static void excluir(List<Etiqueta> etiquetas) {
+        Scanner scanner = new Scanner(System.in);
+
+        if (etiquetas.isEmpty()) {
+            System.out.println("Não há etiquetas para deletar.");
+            return;
+        }
+
+        System.out.println("Etiquetas disponíveis:");
+        tipoImprimir(etiquetas); // Implemente o método para imprimir as etiquetas na tela
+
+        boolean indiceValido = false;
+        int indice = -1;
+
+        while (!indiceValido) {
+            try {
+                System.out.print("Digite o índice da etiqueta que deseja deletar: ");
+                indice = Integer.parseInt(scanner.nextLine());
+
+                if (indice >= 0 && indice < etiquetas.size()) {
+                    indiceValido = true;
+                } else {
+                    System.out.println("Índice inválido. Digite novamente.");
+                }
+            } catch (NumberFormatException e) {
+                System.out.println("Índice inválido. Digite novamente.");
+            }
+        }
+
+        Etiqueta etiquetaRemovida = etiquetas.remove(indice);
+        System.out.println("Etiqueta removida com sucesso: " + etiquetaRemovida);
     }
+
 }

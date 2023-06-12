@@ -125,6 +125,12 @@ public class Tarefa {
         System.out.println("Tarefa adicionada com sucesso!");
     }
 
+    public static void alterar(List<Tarefa> tarefas){
+        Scanner scanner = new Scanner(System.in);
+
+
+    }
+
     public static void excluir(List<Tarefa> tarefas) {
         Scanner scanner = new Scanner(System.in);
 

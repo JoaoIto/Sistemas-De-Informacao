@@ -193,8 +193,8 @@ public class Usuario {
             System.out.println("1. Listar tarefas");
             System.out.println("2. Criar tarefa");
             System.out.println("3. Deletar tarefa");
-            System.out.println("4. Menu de Etiquetas");
-            System.out.println("5. Alterar informações do usuário");
+            System.out.println("4. Alterar tarefa");
+            System.out.println("5. Menu de Etiquetas");
             System.out.println("0. Sair");
             System.out.print("Opção: ");
 
@@ -202,7 +202,8 @@ public class Usuario {
                 opcao = Integer.parseInt(scanner.nextLine());
 
                 if (opcao == 0) {
-                    System.out.println("Saindo do Menu do Aluno...");
+                    System.out.println("Saindo do Menu do Aluno...\n");
+                    Usuario.autenticar(usuarios, etiquetas, tarefas);
                     break;
                 }
 
@@ -217,28 +218,16 @@ public class Usuario {
                         Tarefa.excluir(tarefas);
                         break;
                     case 4:
-                        exibirMenuEtiquetas(etiquetas);
+                        Tarefa.alterar(tarefas);
                         break;
                     case 5:
-                        imprimirUsuarios(usuarios);
-                        System.out.print("Digite o número do usuário que deseja alterar: ");
-                        int opcaoUsuario = scanner.nextInt();
-                        scanner.nextLine(); // Limpa o buffer de leitura
-
-                        if (opcaoUsuario >= 1 && opcaoUsuario <= usuarios.size()) {
-                            Usuario usuarioSelecionado = usuarios.get(opcaoUsuario - 1);
-                            confirmacaoSenha(usuarioSelecionado);
-                        } else {
-                            System.out.println("Opção inválida. Digite uma opção válida.");
-                        }
-
+                        exibirMenuEtiquetas(etiquetas);
                         break;
-
                     default:
                         System.out.println("Opção inválida. Digite uma opção válida.");
                         break;
                 }
-            } catch (NumberFormatException e) {
+            } catch (NumberFormatException | LoginException e) {
                 System.out.println("Opção inválida. Digite um número correspondente à opção desejada.");
             }
         }
@@ -249,10 +238,11 @@ public class Usuario {
         int opcao = -1;
 
         while (true) {
-            System.out.println("\nMenu de Etiquetas");
+            System.out.println("\nMenu de Etiquetas\n");
             System.out.println("1. Listar etiquetas");
             System.out.println("2. Criar etiqueta");
             System.out.println("3. Deletar etiqueta");
+            System.out.println("4. Alterar etiqueta");
             System.out.println("0. Voltar");
             System.out.print("Opção: ");
 
@@ -260,7 +250,7 @@ public class Usuario {
                 opcao = Integer.parseInt(scanner.nextLine());
 
                 if (opcao == 0) {
-                    System.out.println("Voltando ao Menu do Aluno...");
+                    System.out.println("Voltando ao menu anterior...\n");
                     break;
                 }
 
@@ -274,6 +264,9 @@ public class Usuario {
                     case 3:
                         Etiqueta.excluir(etiquetas);
                         break;
+                    case 4:
+                        Etiqueta.alterar(etiquetas);
+                        break;
                     default:
                         System.out.println("Opção inválida. Digite uma opção válida.");
                         break;
@@ -284,90 +277,106 @@ public class Usuario {
         }
     }
 
-
-
-
-
-    private static void exibirMenuProfessor(List<Usuario> usuarios, List<Etiqueta> etiquetas, List<Tarefa> tarefas) throws LoginException {
+    public static void exibirMenuProfessor(List<Usuario> usuarios, List<Etiqueta> etiquetas, List<Tarefa> tarefas) {
         Scanner scanner = new Scanner(System.in);
-        int opcao = 0;
+        int opcao = -1;
 
-        do {
-            System.out.println("\nMenu do Professor\n");
+        while (true) {
+            System.out.println("\nMenu do Professor: \n");
             System.out.println("1. Listar tarefas");
             System.out.println("2. Criar tarefa");
             System.out.println("3. Deletar tarefa");
-            System.out.println("4. Menu Etiquetas");
-            System.out.println("5. Alterar informações do usuário");
+            System.out.println("4. Alterar tarefa");
+            System.out.println("5. Menu de Etiquetas");
             System.out.println("0. Sair");
             System.out.print("Opção: ");
-            opcao = Integer.parseInt(scanner.nextLine());
 
-            switch (opcao) {
-                case 1:
-                    Tarefa.tipoImprimir(tarefas);
-                    break;
-                case 2:
-                    Tarefa.incluir(etiquetas, tarefas);
-                    break;
-                case 3:
-                    Tarefa.excluir(tarefas);
-                    break;
-                case 4:
-                    exibirMenuEtiquetas(etiquetas);
-                    break;
-                case 5:
-                    imprimirUsuarios(usuarios);
-                    break;
-                case 0:
+            try {
+                opcao = Integer.parseInt(scanner.nextLine());
+
+                if (opcao == 0) {
                     System.out.println("Saindo do Menu do Professor...\n");
-                    autenticar(usuarios, etiquetas, tarefas);
-                default:
-                    System.out.println("Opção inválida. Digite uma opção válida.");
+                    Usuario.autenticar(usuarios, etiquetas, tarefas);
                     break;
+                }
+
+                switch (opcao) {
+                    case 1:
+                        Tarefa.tipoImprimir(tarefas);
+                        break;
+                    case 2:
+                        Tarefa.incluir(etiquetas, tarefas);
+                        break;
+                    case 3:
+                        Tarefa.excluir(tarefas);
+                        break;
+                    case 4:
+                        Tarefa.alterar(tarefas);
+                        break;
+                    case 5:
+                        exibirMenuEtiquetas(etiquetas);
+                        break;
+                    default:
+                        System.out.println("Opção inválida. Digite uma opção válida.");
+                        break;
+                }
+            } catch (NumberFormatException e) {
+                System.out.println("Opção inválida. Digite um número correspondente à opção desejada.");
+            } catch (LoginException e) {
+                throw new RuntimeException(e);
             }
-        } while (opcao != 0);
+        }
     }
 
-    private static void exibirMenuAdmin(List<Usuario> usuarios, List<Etiqueta> etiquetas, List<Tarefa> tarefas) throws LoginException {
+    public static void exibirMenuAdmin(List<Usuario> usuarios, List<Etiqueta> etiquetas, List<Tarefa> tarefas) {
         Scanner scanner = new Scanner(System.in);
-        int opcao = 0;
+        int opcao = -1;
 
-        do {
+        while (true) {
             System.out.println("\nMenu do Admin\n");
             System.out.println("1. Listar tarefas");
             System.out.println("2. Criar tarefa");
             System.out.println("3. Deletar tarefa");
-            System.out.println("4. Menu Etiquetas");
-            System.out.println("5. Alterar informações do usuário");
+            System.out.println("4. Alterar tarefa");
+            System.out.println("5. Menu de Etiquetas");
             System.out.println("0. Sair");
             System.out.print("Opção: ");
-            opcao = Integer.parseInt(scanner.nextLine());
 
-            switch (opcao) {
-                case 1:
-                    Tarefa.tipoImprimir(tarefas);
-                    break;
-                case 2:
-                    Tarefa.incluir(etiquetas, tarefas);
-                    break;
-                case 3:
-                    Tarefa.excluir(tarefas);
-                    break;
-                case 4:
-                    exibirMenuEtiquetas(etiquetas);
-                    break;
-                case 5:
-                    imprimirUsuarios(usuarios);
-                    break;
-                case 0:
+            try {
+                opcao = Integer.parseInt(scanner.nextLine());
+
+                if (opcao == 0) {
                     System.out.println("Saindo do Menu do Admin...\n");
-                    autenticar(usuarios, etiquetas, tarefas);
-                default:
-                    System.out.println("Opção inválida. Digite uma opção válida.");
+                    Usuario.autenticar(usuarios, etiquetas, tarefas);
                     break;
+                }
+
+                switch (opcao) {
+                    case 1:
+                        Tarefa.tipoImprimir(tarefas);
+                        break;
+                    case 2:
+                        Tarefa.incluir(etiquetas, tarefas);
+                        break;
+                    case 3:
+                        Tarefa.excluir(tarefas);
+                        break;
+                    case 4:
+                        Tarefa.alterar(tarefas);
+                        break;
+                    case 5:
+                        exibirMenuEtiquetas(etiquetas);
+                        break;
+                    default:
+                        System.out.println("Opção inválida. Digite uma opção válida.");
+                        break;
+                }
+            } catch (NumberFormatException e) {
+                System.out.println("Opção inválida. Digite um número correspondente à opção desejada.");
+            } catch (LoginException e) {
+                throw new RuntimeException(e);
             }
-        } while (opcao != 0);
+        }
     }
 }
 

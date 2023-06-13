@@ -6,6 +6,7 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 import java.util.*;
+import java.util.stream.IntStream;
 
 public class Tarefa {
     private String nome;
@@ -281,10 +282,12 @@ public class Tarefa {
         Collections.sort(tarefasOrdenadas, Comparator.comparing(Tarefa::getDataPostagem));
 
         System.out.println("\nTarefas ordenadas por data de criação:\n");
-        for (int i = 0; i < tarefasOrdenadas.size(); i++) {
-            Tarefa tarefa = tarefasOrdenadas.get(i);
-            System.out.println((i + 1) + ". " + tarefa);
-        }
+        IntStream.range(0, tarefasOrdenadas.size())
+                .forEach(i -> {
+                    Tarefa tarefa = tarefasOrdenadas.get(i);
+                    System.out.println((i + 1) + ". " + tarefa);
+                });
+
     }
 
     public static void imprimirOrdenadoPrioridade(List<Tarefa> tarefas) {
@@ -292,10 +295,9 @@ public class Tarefa {
         Collections.sort(tarefasOrdenadas, Comparator.comparing(Tarefa::getPrioridade));
 
         System.out.println("\nTarefas ordenadas por prioridade:\n");
-        for (int i = 0; i < tarefasOrdenadas.size(); i++) {
-            Tarefa tarefa = tarefasOrdenadas.get(i);
-            System.out.println((i + 1) + ". " + tarefa);
-        }
+        IntStream.range(0, tarefasOrdenadas.size())
+                .forEach(i -> System.out.println((i + 1) + ". " + tarefasOrdenadas.get(i)));
+
     }
 
 

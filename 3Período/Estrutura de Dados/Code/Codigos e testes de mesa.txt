@@ -1,0 +1,110 @@
+# Códigos: https://github.com/JoaoIto/Sistemas-De-Informacao
+
+1. Método recursivo para calcular a soma de números de 1 até N:
+
+```java
+public class SomaRecursiva {
+
+    public static int somaAteN(int N) {
+        if (N == 1) {
+            return 1;
+        } else {
+            return N + somaAteN(N - 1);
+        }
+    }
+
+    public static void main(String[] args) {
+        int N = 5;
+        int resultado = somaAteN(N);
+        System.out.println("Soma de 1 até " + N + " = " + resultado);  // Saída: Soma de 1 até 5 = 15
+    }
+}
+```
+
+2. Método recursivo para calcular o valor de Fibonacci para um determinado valor de N:
+
+```java
+public class FibonacciRecursivo {
+
+    public static int fibonacci(int N) {
+        if (N <= 0) {
+            return 0;
+        } else if (N == 1) {
+            return 1;
+        } else {
+            return fibonacci(N - 1) + fibonacci(N - 2);
+        }
+    }
+
+    public static void main(String[] args) {
+        int N = 6;
+        int resultado = fibonacci(N);
+        System.out.println("Fibonacci de " + N + " = " + resultado);  // Saída: Fibonacci de 6 = 8
+    }
+}
+```
+
+## Documentação testes de mesa: 
+
+### Método Recursivo para Soma de Números de 1 até N:
+
+Vamos considerar o exemplo do método `somaAteN(5)`.
+
+- Chamada inicial: `somaAteN(5)`
+  - `N` não é igual a 1, então vamos para o `else`.
+  - Retornamos `5 + somaAteN(4)`.
+
+- Chamada `somaAteN(4)`
+  - `N` não é igual a 1, então vamos para o `else`.
+  - Retornamos `4 + somaAteN(3)`.
+
+- Chamada `somaAteN(3)`
+  - `N` não é igual a 1, então vamos para o `else`.
+  - Retornamos `3 + somaAteN(2)`.
+
+- Chamada `somaAteN(2)`
+  - `N` não é igual a 1, então vamos para o `else`.
+  - Retornamos `2 + somaAteN(1)`.
+
+- Chamada `somaAteN(1)`
+  - `N` é igual a 1, então retornamos 1.
+
+Agora, substituímos os valores de retorno em cascata:
+
+`5 + (4 + (3 + (2 + 1))) = 15`
+
+O resultado corretamente é 15.
+
+### Método Recursivo para Cálculo do Valor de Fibonacci:
+
+Vamos considerar o exemplo do método `fibonacci(6)`.
+
+- Chamada inicial: `fibonacci(6)`
+  - `N` não é menor ou igual a 0 e também não é igual a 1, então vamos para o `else`.
+  - Calculamos `fibonacci(5) + fibonacci(4)`.
+
+- Chamada `fibonacci(5)`
+  - `N` não é menor ou igual a 0 e também não é igual a 1, então vamos para o `else`.
+  - Calculamos `fibonacci(4) + fibonacci(3)`.
+
+- Chamada `fibonacci(4)`
+  - Continuamos seguindo o padrão, e teremos chamadas para `fibonacci(3) + fibonacci(2)`.
+  
+- Chamada `fibonacci(3)`
+  - Neste ponto, teremos uma chamada para `fibonacci(2) + fibonacci(1)`.
+
+- Chamada `fibonacci(2)`
+  - Nesta chamada, `N` é igual a 2, então retornamos 1.
+
+- Chamada `fibonacci(1)`
+  - Nesta chamada, `N` é igual a 1, então retornamos 1.
+
+Agora começamos a substituir os valores de retorno em cascata:
+
+`fibonacci(2) + fibonacci(1) = 1 + 1 = 2`
+`fibonacci(3) + fibonacci(2) = 2 + 1 = 3`
+`fibonacci(4) + fibonacci(3) = 3 + 2 = 5`
+`fibonacci(5) + fibonacci(4) = 5 + 3 = 8`
+`fibonacci(6) = fibonacci(5) + fibonacci(4) = 8`
+
+O resultado corretamente é 8.

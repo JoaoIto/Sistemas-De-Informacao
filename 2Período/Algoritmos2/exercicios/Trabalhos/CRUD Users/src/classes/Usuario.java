@@ -223,6 +223,9 @@ public class Usuario {
                     case 5:
                         exibirMenuEtiquetas(etiquetas);
                         break;
+                    case 6:
+                        imprimirUsuarios(usuarios);
+                        break;
                     default:
                         System.out.println("Opção inválida. Digite uma opção válida.");
                         break;
@@ -288,6 +291,7 @@ public class Usuario {
             System.out.println("3. Deletar tarefa");
             System.out.println("4. Alterar tarefa");
             System.out.println("5. Menu de Etiquetas");
+            System.out.println("6. Alterar informações do usuário:");
             System.out.println("0. Sair");
             System.out.print("Opção: ");
 
@@ -316,6 +320,9 @@ public class Usuario {
                     case 5:
                         exibirMenuEtiquetas(etiquetas);
                         break;
+                    case 6:
+                        imprimirUsuarios(usuarios);
+                        break;
                     default:
                         System.out.println("Opção inválida. Digite uma opção válida.");
                         break;
@@ -339,6 +346,7 @@ public class Usuario {
             System.out.println("3. Deletar tarefa");
             System.out.println("4. Alterar tarefa");
             System.out.println("5. Menu de Etiquetas");
+            System.out.println("6. Alterar informações do usuário:");
             System.out.println("0. Sair");
             System.out.print("Opção: ");
 
@@ -366,6 +374,9 @@ public class Usuario {
                         break;
                     case 5:
                         exibirMenuEtiquetas(etiquetas);
+                        break;
+                    case 6:
+                        imprimirUsuarios(usuarios);
                         break;
                     default:
                         System.out.println("Opção inválida. Digite uma opção válida.");

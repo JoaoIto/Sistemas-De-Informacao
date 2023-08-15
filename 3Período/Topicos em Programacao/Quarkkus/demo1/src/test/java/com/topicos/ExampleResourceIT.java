@@ -1,4 +1,4 @@
-package com.example;
+package com.topicos;
 
 import io.quarkus.test.junit.QuarkusIntegrationTest;
 

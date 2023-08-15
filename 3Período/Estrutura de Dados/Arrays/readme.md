@@ -1,4 +1,6 @@
-# Manipulador de Array em Java
+# Manipulador de Array em Java 
+
+- Aluno: João Victor Póvoa França
 
 Essa classe Java é um exemplo simples de como manipular um array utilizando métodos para inserção, alteração e listagem de informações.
 

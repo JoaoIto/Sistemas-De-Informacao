@@ -10,34 +10,48 @@ public class Pilha {
     }
 
     public void push(int valor) {
-        if (tamanho < array.length) {
-            array[tamanho] = valor;
-            tamanho++;
-        } else {
-            System.out.println("A pilha está cheia! Não é possível adicionar mais elementos.");
-        }
+        verificaCheia();
+        array[tamanho] = valor;
+        tamanho++;
     }
 
     public void pop() {
-        if (!isEmpty()) {
-            array[tamanho - 1] = 0;
-            tamanho--;
-        } else {
-            System.out.println("A pilha está vazia! Não é possível remover elementos.");
-        }
+        verificaVazio();
+        tamanho--;
+        System.out.println("Valor deletado é: " + array[tamanho]);
+        array[tamanho] = 0;
+    }
+
+    public void tamanho(){
+        System.out.println("Tamanho da pilha: " + tamanho);
     }
 
     public void imprime() {
-        if (!isEmpty()) {
-            System.out.print("[Topo] ");
-            for (int i = tamanho - 1; i >= 0; i--) {
-                System.out.print(array[i] + " ");
-            }
-            System.out.println("[Base]");
+        verificaVazio();
+        System.out.println("Pilha: ");
+        for (int i = tamanho - 1; i >= 0; i--) {
+            System.out.print("" + array[i] + " ");
         }
+        System.out.println("\n");
     }
 
     public boolean isEmpty() {
         return tamanho == 0;
+    }
+
+    public boolean isFull() {
+        return tamanho == array.length;
+    }
+
+    private void verificaVazio() {
+        if (isEmpty()) {
+            System.out.println("A pilha está vazia! Insira valores nela!");
+        }
+    }
+
+    private void verificaCheia() {
+        if (isFull()) {
+            System.out.println("A pilha está cheia! Não é possível adicionar mais elementos.");
+        }
     }
 }

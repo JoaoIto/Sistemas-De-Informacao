@@ -10,8 +10,10 @@ public class Main {
         pilha.push(20);
         pilha.push(30);
         pilha.imprime();
+        pilha.tamanho();
 
         pilha.pop();
         pilha.imprime();
+        pilha.tamanho();
     }
 }

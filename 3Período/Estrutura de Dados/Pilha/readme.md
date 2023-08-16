@@ -19,7 +19,11 @@ O construtor cria uma instância de uma pilha com a capacidade especificada.
 ### Push
 
 ```java
-void push(int valor)
+public void push(int valor) {
+        verificaCheia();
+        array[tamanho] = valor;
+        tamanho++;
+        }
 ```
 
 Adiciona um elemento no topo da pilha.
@@ -27,7 +31,12 @@ Adiciona um elemento no topo da pilha.
 ### Pop
 
 ```java
-void pop()
+public void pop() {
+        verificaVazio();
+        tamanho--;
+        System.out.println("Valor deletado é: " + array[tamanho]);
+        array[tamanho] = 0;
+        }
 ```
 
 Remove o elemento do topo da pilha.
@@ -35,7 +44,14 @@ Remove o elemento do topo da pilha.
 ### Imprime
 
 ```java
-void imprime()
+public void imprime() {
+        verificaVazio();
+        System.out.println("Pilha: ");
+        for (int i = tamanho - 1; i >= 0; i--) {
+        System.out.print("" + array[i] + " ");
+        }
+        System.out.println("\n");
+        }
 ```
 
 Exibe os elementos da pilha, do topo para a base.
@@ -43,7 +59,9 @@ Exibe os elementos da pilha, do topo para a base.
 ### Tamanho
 
 ```java
-int tamanho()
+public void tamanho(){
+        System.out.println("Tamanho da pilha: " + tamanho);
+        }
 ```
 
 Retorna o número de elementos preenchidos na pilha.

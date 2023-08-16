@@ -1,4 +1,6 @@
-# Pilha (Stack) em Java
+# Pilha (Stack) em Java 
+
+- Aluno: João Victor Póvoa França
 
 Uma **pilha** é uma estrutura de dados linear que segue o princípio LIFO (*Last In, First Out*), o que significa que o último elemento inserido é o primeiro a ser removido. Isso se assemelha à maneira como objetos são empilhados e retirados de uma pilha do mundo real, como pratos em uma pilha ou livros em uma mesa.
 

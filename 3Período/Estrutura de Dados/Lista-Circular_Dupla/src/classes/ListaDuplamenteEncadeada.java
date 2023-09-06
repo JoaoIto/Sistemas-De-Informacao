@@ -1,29 +1,27 @@
 package src.classes;
 
 public class ListaDuplamenteEncadeada {
-    private No primeiroNo;
-    private No ultimoNo;
+    private NoDuplo primeiroNo;
+    private NoDuplo ultimoNo;
     private int tamanho;
 
-    public ListaDuplamenteEncadeada(){
-        this.primeiroNo = null;
-        this.ultimoNo = null;
+    public ListaDuplamenteEncadeada() {
+        // Cria um nó "null" inicial, mas ele não contém dados.
+        primeiroNo = new NoDuplo(-1); // Valor arbitrário, pode ser qualquer valor não utilizado.
+        ultimoNo = primeiroNo;
+        tamanho = 0;
     }
 
     public void inserirNoFim(int dado) {
-        No novoNo = new No(dado);
-        if (estaVazia()) {
-            primeiroNo = novoNo;
-            ultimoNo = novoNo;
-        } else {
-            novoNo.anterior = ultimoNo;
-            ultimoNo.proximo = novoNo;
-            ultimoNo = novoNo;
-        }
+        NoDuplo novoNo = new NoDuplo(dado);
+        novoNo.anterior = ultimoNo;
+        ultimoNo.proximo = novoNo;
+        ultimoNo = novoNo;
+        tamanho++;
     }
 
     public void mostrar() {
-        No atual = primeiroNo;
+        NoDuplo atual = primeiroNo.proximo; // Começa a partir do primeiro nó real.
         while (atual != null) {
             System.out.print(atual.dado + " <-> ");
             atual = atual.proximo;
@@ -32,40 +30,56 @@ public class ListaDuplamenteEncadeada {
     }
 
     public boolean estaVazia() {
-        return primeiroNo == null;
+        return tamanho == 0;
     }
 
     public void inserirNoInicio(int dado) {
-        No novoNo = new No(dado);
-        if (estaVazia()) {
-            primeiroNo = novoNo;
-            ultimoNo = novoNo;
-        } else {
-            novoNo.proximo = primeiroNo;
-            primeiroNo.anterior = novoNo;
-            primeiroNo = novoNo;
+        NoDuplo novoNo = new NoDuplo(dado);
+        novoNo.proximo = primeiroNo.proximo;
+        if (primeiroNo.proximo != null) {
+            primeiroNo.proximo.anterior = novoNo;
         }
+        primeiroNo.proximo = novoNo;
+        novoNo.anterior = primeiroNo;
+        if (ultimoNo == primeiroNo) {
+            ultimoNo = novoNo;
+        }
+        tamanho++;
     }
 
     public void removerDoInicio() {
-        if (!estaVazia()) {
-            primeiroNo = primeiroNo.proximo;
-            if (primeiroNo != null) {
-                primeiroNo.anterior = null;
-            } else {
-                primeiroNo = null;
-            }
+        if (tamanho == 0) {
+            return;
         }
+        NoDuplo noRemovido = primeiroNo.proximo;
+        primeiroNo.proximo = noRemovido.proximo;
+        if (noRemovido.proximo != null) {
+            noRemovido.proximo.anterior = primeiroNo;
+        }
+        if (ultimoNo == noRemovido) {
+            ultimoNo = primeiroNo;
+        }
+        tamanho--;
     }
 
     public void removerDoFim() {
-        if (!estaVazia()) {
-            ultimoNo = ultimoNo.anterior;
-            if (ultimoNo != null) {
-                ultimoNo.proximo = null;
-            } else {
-                ultimoNo = null;
-            }
+        if (tamanho <= 1) {
+            limpar();
+        } else {
+            NoDuplo noRemovido = ultimoNo;
+            ultimoNo = noRemovido.anterior;
+            ultimoNo.proximo = null;
+            tamanho--;
         }
+    }
+
+    public void limpar() {
+        primeiroNo.proximo = null;
+        ultimoNo = primeiroNo;
+        tamanho = 0;
+    }
+
+    public int getTamanho() {
+        return tamanho;
     }
 }

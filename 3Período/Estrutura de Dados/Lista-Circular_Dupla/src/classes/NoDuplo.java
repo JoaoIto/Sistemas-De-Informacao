@@ -1,11 +1,11 @@
 package src.classes;
 
-public class No {
+public class NoDuplo {
     int dado;
-    No proximo;
-    No anterior;
+    NoDuplo proximo;
+    NoDuplo anterior;
 
-    public No(int dado) {
+    public NoDuplo(int dado) {
         this.dado = dado;
         this.proximo = null;
         this.anterior = null;

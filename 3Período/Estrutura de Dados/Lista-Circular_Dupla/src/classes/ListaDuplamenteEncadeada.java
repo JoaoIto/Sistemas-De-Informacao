@@ -1,6 +1,6 @@
 package src.classes;
 
-class ListaDuplamenteEncadeada {
+public class ListaDuplamenteEncadeada {
     private No cabeca;
     private No cauda;
 

@@ -1,28 +1,29 @@
 package src.classes;
 
 public class ListaDuplamenteEncadeada {
-    private No cabeca;
-    private No cauda;
+    private No primeiroNo;
+    private No ultimoNo;
+    private int tamanho;
 
-    public ListaDuplamenteEncadeada() {
-        this.cabeca = null;
-        this.cauda = null;
+    public ListaDuplamenteEncadeada(){
+        this.primeiroNo = null;
+        this.ultimoNo = null;
     }
 
     public void inserirNoFim(int dado) {
         No novoNo = new No(dado);
         if (estaVazia()) {
-            cabeca = novoNo;
-            cauda = novoNo;
+            primeiroNo = novoNo;
+            ultimoNo = novoNo;
         } else {
-            novoNo.anterior = cauda;
-            cauda.proximo = novoNo;
-            cauda = novoNo;
+            novoNo.anterior = ultimoNo;
+            ultimoNo.proximo = novoNo;
+            ultimoNo = novoNo;
         }
     }
 
     public void mostrar() {
-        No atual = cabeca;
+        No atual = primeiroNo;
         while (atual != null) {
             System.out.print(atual.dado + " <-> ");
             atual = atual.proximo;
@@ -31,39 +32,39 @@ public class ListaDuplamenteEncadeada {
     }
 
     public boolean estaVazia() {
-        return cabeca == null;
+        return primeiroNo == null;
     }
 
     public void inserirNoInicio(int dado) {
         No novoNo = new No(dado);
         if (estaVazia()) {
-            cabeca = novoNo;
-            cauda = novoNo;
+            primeiroNo = novoNo;
+            ultimoNo = novoNo;
         } else {
-            novoNo.proximo = cabeca;
-            cabeca.anterior = novoNo;
-            cabeca = novoNo;
+            novoNo.proximo = primeiroNo;
+            primeiroNo.anterior = novoNo;
+            primeiroNo = novoNo;
         }
     }
 
     public void removerDoInicio() {
         if (!estaVazia()) {
-            cabeca = cabeca.proximo;
-            if (cabeca != null) {
-                cabeca.anterior = null;
+            primeiroNo = primeiroNo.proximo;
+            if (primeiroNo != null) {
+                primeiroNo.anterior = null;
             } else {
-                cauda = null;
+                primeiroNo = null;
             }
         }
     }
 
     public void removerDoFim() {
         if (!estaVazia()) {
-            cauda = cauda.anterior;
-            if (cauda != null) {
-                cauda.proximo = null;
+            ultimoNo = ultimoNo.anterior;
+            if (ultimoNo != null) {
+                ultimoNo.proximo = null;
             } else {
-                cabeca = null;
+                ultimoNo = null;
             }
         }
     }

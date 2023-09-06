@@ -7,22 +7,24 @@ public class ListaDuplamenteEncadeada {
 
     public ListaDuplamenteEncadeada() {
         // Cria um nó "null" inicial, mas ele não contém dados.
-        primeiroNo = new NoDuplo(-1); // Valor arbitrário, pode ser qualquer valor não utilizado.
+        primeiroNo = new NoDuplo(-1);
         ultimoNo = primeiroNo;
         tamanho = 0;
     }
 
     public void inserirNoFim(int dado) {
         NoDuplo novoNo = new NoDuplo(dado);
-        novoNo.anterior = ultimoNo;
-        ultimoNo.proximo = novoNo;
-        ultimoNo = novoNo;
+        NoDuplo ultimo = primeiroNo.anterior; // Obtém o último nó real da lista.
+        novoNo.anterior = ultimo;
+        novoNo.proximo = primeiroNo; // Faz o novo nó apontar para o primeiro nó.
+        ultimo.proximo = novoNo;
+        primeiroNo.anterior = novoNo;
         tamanho++;
     }
 
     public void mostrar() {
         NoDuplo atual = primeiroNo.proximo; // Começa a partir do primeiro nó real.
-        while (atual != null) {
+        while (atual != primeiroNo) { // Condição de parada quando retornar ao primeiro nó.
             System.out.print(atual.dado + " <-> ");
             atual = atual.proximo;
         }

@@ -16,6 +16,8 @@ public class Main {
             System.out.println("3. Remover do início");
             System.out.println("4. Remover do fim");
             System.out.println("5. Mostrar lista");
+            System.out.println("6. Mostrar ordem crescente");
+            System.out.println("7. Mostrar ordem descrescente");
             System.out.println("0. Sair");
             System.out.print("Escolha uma opção: ");
 
@@ -41,6 +43,12 @@ public class Main {
                     break;
                 case 5:
                     minhaLista.mostrar();
+                    break;
+                case 6:
+                    minhaLista.imprimirCrescente();
+                    break;
+                case 7:
+                    minhaLista.imprimirDecrescente();
                     break;
                 case 0:
                     System.out.println("Saindo...");

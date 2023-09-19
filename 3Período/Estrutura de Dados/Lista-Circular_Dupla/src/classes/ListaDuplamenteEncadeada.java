@@ -91,4 +91,26 @@ public class ListaDuplamenteEncadeada {
     public int getTamanho() {
         return tamanho;
     }
+
+    public void imprimirCrescente() {
+        NoDuplo atual = primeiroNo;
+        System.out.print("null <-> ");
+        while (atual != null) {
+            System.out.print(atual.dado + " <-> ");
+            atual = atual.proximo;
+        }
+        System.out.println("null");
+    }
+
+    public void imprimirDecrescente() {
+        NoDuplo atual = ultimoNo;
+        System.out.print("null <-> ");
+        while (atual != null) {
+            System.out.print(atual.dado + " <-> ");
+            atual = atual.anterior;
+        }
+        System.out.println("null");
+    }
+
+
 }

@@ -59,3 +59,38 @@ public void removerDoFim() {
 ````
 
 ---
+
+### ***``imprimirDecrescente()``***
+
+Um dos outros métodos, mais importantes, temos o de impressão dos nós, o que pode afetar diretamente a parte de posicionamento de índices para os 
+valores da lista de nós. Entendendo seus valores inteiros e assim os gerenciando dependendo de cada valor.
+
+````java
+public void imprimirDecrescente() {
+        NoDuplo atual = ultimoNo;
+        System.out.print("null <-> ");
+        while (atual != null) {
+            System.out.print(atual.dado + " <-> ");
+            atual = atual.anterior;
+        }
+        System.out.println("null");
+    }
+````
+
+### ***``imprimirCrescente()``***
+
+Da mesma forma, temos o método crescente, que vai se mostrar a posição também desses índices, de forma a mostrar eles dependendo também de seus valores inteiros, sendo diferenciados de menor para maior, como o próprio nome diz.
+
+````java
+public void imprimirCrescente() {
+        NoDuplo atual = primeiroNo;
+        System.out.print("null <-> ");
+        while (atual != null) {
+        System.out.print(atual.dado + " <-> ");
+        atual = atual.proximo;
+        }
+        System.out.println("null");
+        }
+````
+
+---

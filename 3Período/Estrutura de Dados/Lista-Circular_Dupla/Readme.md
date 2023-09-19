@@ -12,3 +12,50 @@ se conectar entre eles.
 
 ---
 
+## Documentação:
+
+O método padrão de inserção, é sempre no fim, considerando que existem outros elementosque já existem na lista de nós.
+Para a criação do método ***``inserirNoFim()``***
+
+### ***``inserirNoFim()``***
+````java
+public void inserirNoFim(int dado) {
+        NoDuplo novoNo = new NoDuplo(dado);
+        if (tamanho == 0) {
+            // Se a lista estiver vazia, define o primeiro nó como o novo nó.
+            primeiroNo = novoNo;
+        } else {
+            NoDuplo ultimo = primeiroNo;
+            while (ultimo.proximo != null) {
+                ultimo = ultimo.proximo;
+            }
+            novoNo.anterior = ultimo;
+            ultimo.proximo = novoNo;
+        }
+        tamanho++;
+    }
+````
+
+- Cria-se um novo nó, e depois isso, verificando sempre se já existem outros elementos, não existindo, a inserção é comum.
+Porém já não existindo, a inserção é feita, basicamente considerando o ultimo elemento, que é um atributo comum da classe, e assim
+- E assim, só precisamos considerar o novoNo como o ultimo, e assim o ultimo como próximo nó, que será executado posteriormente.
+
+### ***``removerNoFim()``***
+
+Do mesmo modo, é considerado o método de ***``inserirNoFim()``***, que só precisamos desconsiderar por índice, e como é comum, os atributos
+da classe de ultimoNo, primeiroNo, etc... Basicamente refatoramos os valores em cada um deles.
+
+````java
+public void removerDoFim() {
+        if (tamanho <= 1) {
+            limpar();
+        } else {
+            NoDuplo noRemovido = ultimoNo;
+            ultimoNo = noRemovido.anterior;
+            ultimoNo.proximo = null;
+            tamanho--;
+        }
+    }
+````
+
+---

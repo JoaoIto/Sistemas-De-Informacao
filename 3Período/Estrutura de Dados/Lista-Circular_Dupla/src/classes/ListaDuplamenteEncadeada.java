@@ -12,6 +12,20 @@ public class ListaDuplamenteEncadeada {
         tamanho = 0;
     }
 
+    public void imprimirRecursivo() {
+        imprimirRecursivoAux(primeiroNo);
+    }
+
+    private void imprimirRecursivoAux(NoDuplo noAuxiliar) {
+        if (noAuxiliar == null) {
+            System.out.println("null");
+            return;
+        }
+
+        System.out.print(noAuxiliar.dado + " <-> ");
+        imprimirRecursivoAux(noAuxiliar.proximo);
+    }
+
     public void inserirNoFim(int dado) {
         NoDuplo novoNo = new NoDuplo(dado);
         if (tamanho == 0) {

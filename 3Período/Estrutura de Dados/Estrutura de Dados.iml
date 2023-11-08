@@ -4,7 +4,13 @@
     <exclude-output />
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/Arrays" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Fatorial" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Fila" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Lista-Circular_Dupla" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Nó" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pilha" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/dec-to-bi" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/strReverse" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

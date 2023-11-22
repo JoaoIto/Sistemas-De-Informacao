@@ -99,4 +99,19 @@ public class ArvoreBinaria {
         return minimo;
     }
 
+    public int alturaArvore(No noArvore){
+        if(noArvore == null){
+            return -1;
+        }
+        else{
+            int ae = alturaArvore(noArvore.esquerda);
+            int ad = alturaArvore(noArvore.direita);
+
+            if(ae < ad){
+                return ad + 1;
+            }else{
+                return ae + 1;
+            }
+        }
+    }
 }

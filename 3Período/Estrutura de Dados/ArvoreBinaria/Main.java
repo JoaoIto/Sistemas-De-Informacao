@@ -24,5 +24,9 @@ public class Main {
 
         System.out.println("\nEm-Ordem");
         arvoreBinaria.emOrdem(arvoreBinaria.noRaiz);
+
+        System.out.println("\nAltura da árvore binária: ");
+        int altura = arvoreBinaria.alturaArvore(arvoreBinaria.noRaiz);
+        System.out.println(altura);
     }
 }

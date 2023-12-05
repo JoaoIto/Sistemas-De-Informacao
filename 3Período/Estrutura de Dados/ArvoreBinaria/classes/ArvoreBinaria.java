@@ -114,4 +114,10 @@ public class ArvoreBinaria {
             }
         }
     }
+    public int fatorBalanceamento(No noArvore) {
+        if (noArvore == null) {
+            return 0;
+        }
+        return alturaArvore(noArvore.esquerda) - alturaArvore(noArvore.direita);
+    }
 }

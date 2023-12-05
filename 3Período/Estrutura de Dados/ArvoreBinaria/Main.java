@@ -28,5 +28,8 @@ public class Main {
         System.out.println("\nAltura da árvore binária: ");
         int altura = arvoreBinaria.alturaArvore(arvoreBinaria.noRaiz);
         System.out.println(altura);
+
+        int fatorBalanceamento = arvoreBinaria.fatorBalanceamento(arvoreBinaria.noRaiz);
+        System.out.println("Fator de Balanceamento da Raiz: " + fatorBalanceamento);
     }
 }

@@ -91,7 +91,26 @@ aceitável quando seu resultado é entre (-1, 0, 1), a árvore está balanceada.
 ### Em code:
 
 ````java
+public int fatorBalanceamento(No noArvore) {
+        if (noArvore == null) {
+            return 0;
+        }
+        int fatorBalanceamento = alturaArvore(noArvore.esquerda) - alturaArvore(noArvore.direita);
 
+        if (fatorBalanceamento == 1 || fatorBalanceamento == 0 || fatorBalanceamento == -1) {
+            System.out.println("Árvore balanceada.");
+            return fatorBalanceamento;
+        } else {
+            System.out.println("Árvore desbalanceada.");
+            return fatorBalanceamento;
+        }
+    }
 ````
 
+O fator de balanceamento é calculado da mesma forma no código, onde na função de alturaArvore
+que é dado o fator da subtração, entendemos e ainda fizemos a verificação de acordo com os valores
+que são aceitáveis.
+
 ---
+
+

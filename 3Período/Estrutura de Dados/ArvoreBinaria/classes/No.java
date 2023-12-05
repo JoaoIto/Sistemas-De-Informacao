@@ -13,6 +13,14 @@ public class No {
         this.altura = 1;
     }
 
+    public int alturaNo(No no) {
+        return (no == null) ? 0 : no.altura;
+    }
+
+    public void atualizarAltura() {
+        this.altura = 1 + Math.max(alturaNo(this.esquerda), alturaNo(this.direita));
+    }
+
     public int getElemento() {
         return elemento;
     }

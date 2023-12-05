@@ -73,3 +73,25 @@ se a árvore é nula, logo ela não existe, pois então, retornaria um valor que
 
 
 ---
+
+## Balanceamento da árvore binária:
+
+Em uma árvore binária, muito utilizada para o cálculo de estabilidade de elementos, onde
+é calculado a partir de seu fator de balanceamento, que seria:
+
+```
+Fator de balanceamento = altura esquerda - altura direita => (-1, 0, 1)
+```
+
+Para que uma árvore binária esteja balanceada, seu resultado do fator de balanceamento seria
+aceitável quando seu resultado é entre (-1, 0, 1), a árvore está balanceada.
+
+
+
+### Em code:
+
+````java
+
+````
+
+---

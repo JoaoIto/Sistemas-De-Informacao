@@ -118,6 +118,14 @@ public class ArvoreBinaria {
         if (noArvore == null) {
             return 0;
         }
-        return alturaArvore(noArvore.esquerda) - alturaArvore(noArvore.direita);
+        int fatorBalanceamento = alturaArvore(noArvore.esquerda) - alturaArvore(noArvore.direita);
+
+        if (fatorBalanceamento == 1 || fatorBalanceamento == 0 || fatorBalanceamento == -1) {
+            System.out.println("Árvore balanceada.");
+            return fatorBalanceamento;
+        } else {
+            System.out.println("Árvore desbalanceada.");
+            return fatorBalanceamento;
+        }
     }
 }

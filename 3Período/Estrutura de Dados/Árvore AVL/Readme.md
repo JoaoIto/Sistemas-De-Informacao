@@ -65,4 +65,57 @@ private No rotacaoDireita(No x) {
 - y: O novo nó raiz após a rotação.
 - direitaDoAtual: A subárvore que precisa ser movida da direita de y para a esquerda de x.
 
+### Balanceando:
+
+E assim usando as rotações de direita e esquerda e assim a partir do fator de balanceamento, ele retorna
+o que consegue balancear corretamente.
+
+````java
+public No balancear(No no) {
+        if (no == null) {
+            return null;
+        }
+
+        // Calcular o fator de balanceamento do nó
+        int fatorBalanceamento = alturaNo(no.esquerda) - alturaNo(no.direita);
+
+        // Caso do fator de balanceamento positivo (desbalanceamento à esquerda)
+        if (fatorBalanceamento > 1) {
+            // Caso LL: Rotação à direita
+            if (alturaNo(no.esquerda.esquerda) >= alturaNo(no.esquerda.direita)) {
+                return rotacaoDireita(no);
+            } else { // Caso LR: Rotação à esquerda e depois à direita
+                no.esquerda = rotacaoEsquerda(no.esquerda);
+                return rotacaoDireita(no);
+            }
+        }
+        // Caso do fator de balanceamento negativo (desbalanceamento à direita)
+        else if (fatorBalanceamento < -1) {
+            // Caso RR: Rotação à esquerda
+            if (alturaNo(no.direita.direita) >= alturaNo(no.direita.esquerda)) {
+                return rotacaoEsquerda(no);
+            } else { // Caso RL: Rotação à direita e depois à esquerda
+                no.direita = rotacaoDireita(no.direita);
+                return rotacaoEsquerda(no);
+            }
+        }
+        return no;
+    }
+````
+
+- **Cálculo do Fator de Balanceamento:**
+
+int fatorBalanceamento = alturaNo(no.esquerda) - alturaNo(no.direita);: Calcula o fator de balanceamento do nó atual subtraindo a altura da subárvore à esquerda pela altura da subárvore à direita.
+
+- **Verificações e Rotações:**
+
+Se fatorBalanceamento for maior que 1, há desbalanceamento à esquerda. São feitas verificações para determinar se é um caso de rotação simples à direita (LL) ou uma combinação de rotações à esquerda e à direita (LR). As rotações são realizadas pelos métodos rotacaoDireita e rotacaoEsquerda.
+
+Se fatorBalanceamento for menor que -1, há desbalanceamento à direita. Novamente, são feitas verificações para determinar se é um caso de rotação simples à esquerda (RR) ou uma combinação de rotações à direita e à esquerda (RL). As rotações são realizadas pelos métodos rotacaoEsquerda e rotacaoDireita.
+
+- **Retorno do Nó Balanceado:**
+
+Se o nó não estiver desbalanceado ou após as rotações, retorna o nó atual. Isso é necessário para garantir que a árvore seja atualizada corretamente após as operações de balanceamento.
+
+
 ---

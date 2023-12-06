@@ -21,27 +21,48 @@ A rotação à esquerda é aplicada quando há um desbalanceamento à esquerda e
 
 ````java
 private No rotacaoEsquerda(No y) {
-    No x = y.direita;
-    No T2 = x.esquerda;
+        No x = y.direita;
+        No esquerdaDoAtual = x.esquerda;
 
-    // Realizar a rotação
-    x.esquerda = y;
-    y.direita = T2;
+        x.esquerda = y;
+        y.direita = esquerdaDoAtual;
 
-    // Atualizar alturas
-    atualizarAltura(y);
-    atualizarAltura(x);
+        atualizarAltura(y);
+        atualizarAltura(x);
 
-    // Retorna a nova raiz
-    return x;
-}
+        return x;
+        }
 
 ````
 
 - y: O nó desbalanceado que precisa ser rotacionado.
 - x: O novo nó raiz após a rotação.
-- T2: A subárvore que precisa ser movida da esquerda de x para a direita de y.
+- esquerdaDoAtual: A subárvore que precisa ser movida da esquerda de x para a direita de y.
 
 
 Essa rotação reorganiza os nós de forma a preservar a propriedade de árvore de busca binária e atualiza as alturas dos nós afetados.
 
+#### Rotação a direita:
+
+A rotação à direita é aplicada quando há um desbalanceamento à direita em um nó, ou seja, o filho direito tem uma altura maior que a altura do filho esquerdo. Isso geralmente ocorre quando uma nova chave é inserida no subárvore à esquerda do filho direito.
+
+````java
+private No rotacaoDireita(No x) {
+        No y = x.esquerda;
+        No direitaDoAtual = y.direita;
+
+        y.direita = x;
+        x.esquerda = direitaDoAtual;
+
+        atualizarAltura(x);
+        atualizarAltura(y);
+
+        return y;
+    }
+````
+
+- x: O nó desbalanceado que precisa ser rotacionado.
+- y: O novo nó raiz após a rotação.
+- direitaDoAtual: A subárvore que precisa ser movida da direita de y para a esquerda de x.
+
+---

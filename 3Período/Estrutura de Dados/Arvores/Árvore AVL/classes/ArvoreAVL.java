@@ -34,7 +34,7 @@ public class ArvoreAVL {
 
         // Caso do fator de balanceamento positivo (desbalanceamento à esquerda)
         if (fatorBalanceamento > 1) {
-            // Caso SD: Rotação à direita
+            // Caso LL: Rotação à direita
             if (alturaNo(no.esquerda.esquerda) >= alturaNo(no.esquerda.direita)) {
                 return rotacaoDireita(no);
             } else { // Caso LR: Rotação à esquerda e depois à direita

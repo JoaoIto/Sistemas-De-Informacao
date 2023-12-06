@@ -7,16 +7,11 @@ public class Main {
         ArvoreAVL arvoreAVL = new ArvoreAVL();
 
         // Inserir elementos na árvore
-//        arvoreAVL.raiz = arvoreAVL.inserir(arvoreAVL.raiz, 20);
-//        arvoreAVL.raiz = arvoreAVL.inserir(arvoreAVL.raiz, 10);
-//        arvoreAVL.raiz = arvoreAVL.inserir(arvoreAVL.raiz, 30);
-//        arvoreAVL.raiz = arvoreAVL.inserir(arvoreAVL.raiz, 25);
-//        arvoreAVL.raiz = arvoreAVL.inserir(arvoreAVL.raiz, 35);
-        arvoreAVL.raiz = arvoreAVL.inserir(arvoreAVL.raiz, 1);
-        arvoreAVL.raiz = arvoreAVL.inserir(arvoreAVL.raiz, 2);
-        arvoreAVL.raiz = arvoreAVL.inserir(arvoreAVL.raiz, 3);
-        arvoreAVL.raiz = arvoreAVL.inserir(arvoreAVL.raiz, 4);
-        arvoreAVL.raiz = arvoreAVL.inserir(arvoreAVL.raiz, 5);
+        arvoreAVL.raiz = arvoreAVL.inserir(arvoreAVL.raiz, 20);
+        arvoreAVL.raiz = arvoreAVL.inserir(arvoreAVL.raiz, 10);
+        arvoreAVL.raiz = arvoreAVL.inserir(arvoreAVL.raiz, 30);
+        arvoreAVL.raiz = arvoreAVL.inserir(arvoreAVL.raiz, 25);
+        arvoreAVL.raiz = arvoreAVL.inserir(arvoreAVL.raiz, 35);
 
         // Exibir a altura da árvore antes do balanceamento
         System.out.println("Altura da árvore antes do balanceamento: " + arvoreAVL.alturaArvore(arvoreAVL.raiz));

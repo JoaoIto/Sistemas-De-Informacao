@@ -1,4 +1,5 @@
 import classes.ArvoreAVL;
+import classes.No;
 
 public class Main {
     public static void main(String[] args) {
@@ -24,5 +25,14 @@ public class Main {
         // Exibir fator de balanceamento após o balanceamento
         int fatorDepois = arvoreAVL.fatorBalanceamento(arvoreAVL.raiz);
         System.out.println("Fator de balanceamento após o balanceamento: " + fatorDepois);
+
+        int elementoBuscado = 20;
+        No resultadoBusca = arvoreAVL.buscar(elementoBuscado);
+
+        if (resultadoBusca != null) {
+            System.out.println("Elemento " + elementoBuscado + " encontrado na árvore.");
+        } else {
+            System.out.println("Elemento " + elementoBuscado + " não encontrado na árvore.");
+        }
     }
 }

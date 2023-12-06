@@ -15,10 +15,6 @@ public class Main {
         // Exibir a altura da árvore antes do balanceamento
         System.out.println("Altura da árvore antes do balanceamento: " + arvoreAVL.alturaArvore(arvoreAVL.raiz));
 
-        // Exibir fator de balanceamento antes do balanceamento
-        int fatorAntes = arvoreAVL.fatorBalanceamento(arvoreAVL.raiz);
-        System.out.println("Fator de balanceamento antes do balanceamento: " + fatorAntes);
-
         // Realizar balanceamento
         arvoreAVL.raiz = arvoreAVL.balancear(arvoreAVL.raiz);
 

@@ -7,11 +7,7 @@ public class ArvoreAVL {
         this.raiz = null;
     }
 
-    public void inserir(int elemento) {
-        this.raiz = inserir(this.raiz, elemento);
-    }
-
-    private No inserir(No no, int elemento) {
+    public No inserir(No no, int elemento) {
         if (no == null) {
             return new No(elemento);
         }
@@ -21,16 +17,14 @@ public class ArvoreAVL {
         } else if (elemento > no.elemento) {
             no.direita = inserir(no.direita, elemento);
         } else {
-            // Elemento já existe
             return no;
         }
 
         atualizarAltura(no);
-
         return balancear(no);
     }
 
-    public No balancear(No no) {
+        public No balancear(No no) {
         if (no == null) {
             return null;
         }

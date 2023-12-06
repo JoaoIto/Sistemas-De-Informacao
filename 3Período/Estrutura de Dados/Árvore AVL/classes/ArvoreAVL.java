@@ -61,6 +61,22 @@ public class ArvoreAVL {
         return no;
     }
 
+    public No buscar(int elemento) {
+        return buscar(raiz, elemento);
+    }
+
+    private No buscar(No no, int elemento) {
+        if (no == null || no.elemento == elemento) {
+            return no;
+        }
+
+        if (elemento < no.elemento) {
+            return buscar(no.esquerda, elemento);
+        } else {
+            return buscar(no.direita, elemento);
+        }
+    }
+
     private No rotacaoEsquerda(No y) {
         No x = y.direita;
         No esquerdaDoAtual = x.esquerda;

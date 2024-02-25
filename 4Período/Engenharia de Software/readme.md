@@ -7,4 +7,6 @@ Com a necessidade dos anos 60 de correção dos problemas que haviam, que custav
 
 Dentro dessa visão, a primeira coisa ser instituída, foram etapas do desenvolvimento de software, em que se dividiam dessa forma:
 
+<img src="./assets/modeloGenericoEngSoftware.png"/>
+
 ---

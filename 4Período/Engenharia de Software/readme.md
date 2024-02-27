@@ -10,3 +10,15 @@ Dentro dessa visão, a primeira coisa ser instituída, foram etapas do desenvolv
 <img src="./assets/modeloGenericoEngSoftware.png"/>
 
 ---
+
+## Modelos de organização
+
+Existem alguns modelos de planejamento de software que temos, que podem também ser adicionadas a tipos que construção em um software. Entendendo que tudo, desde o primórdio modelo existiu foi uma evolucão ao ultimo que surgiu, que melhora o processo e as etapas do ultimo modelo.
+
+---
+
+A implementação do software e entrega de versões passa por dois tipos principais que são distinguidas diferentemente passados pelas versões.
+
+Podendo ser incremental ou iterativo.
+
+---

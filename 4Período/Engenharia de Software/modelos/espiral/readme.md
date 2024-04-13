@@ -1,13 +1,16 @@
-### Modelo em Espiral
+### Modelo em Espiral:
 
-O modelo em espiral foi proposto para lidar com as limitações do modelo em cascata, especialmente quando há incerteza significativa nos requisitos do sistema ou riscos técnicos. Ele é baseado em ciclos de desenvolvimento repetidos, cada um passando por quatro principais atividades
+- **Resumo:** O modelo em Espiral é um modelo iterativo que combina aspectos do modelo em Cascata com a capacidade de iteração do modelo em Prototipação.
 
-1. **Planejamento:** Determinação de objetivos, identificação de restrições e análise de riscos.
+- **Especificações:**
+  - **Fases:**
+    - **Planejamento:** Estabelece os objetivos do projeto, alternativas e restrições.
+    - **Análise de Risco:** Identifica, avalia e gerencia os riscos do projeto.
+    - **Desenvolvimento:** Desenvolve e verifica o software.
+    - **Avaliação do Cliente:** Obtém feedback do cliente para o produto desenvolvido e planeja a próxima iteração.
 
-2. **Análise de Riscos:** Avaliação de riscos, identificação de alternativas e resolução de problemas.
+- **Benefícios:** 
+  - Flexibilidade para se adaptar a mudanças nos requisitos.
+  - Foco na mitigação de riscos desde as fases iniciais do projeto.
 
-3. **Engenharia:** Desenvolvimento, teste, integração e instalação do produto.
-
-4. **Avaliação:** Revisão do progresso, identificação de riscos restantes e planejamento do próximo ciclo.
-
-5. ---
+---

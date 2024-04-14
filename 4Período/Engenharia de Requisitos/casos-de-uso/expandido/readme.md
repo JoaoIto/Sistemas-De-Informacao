@@ -1,7 +1,12 @@
-### Casos de Uso Expandido
+## Casos de Uso Expandido
 
-#### Resumo:
+### Resumo:
 Os casos de uso expandidos detalham os passos específicos envolvidos em um caso de uso, incluindo interações entre atores e o sistema. Eles oferecem uma compreensão mais detalhada das ações e comportamentos esperados do sistema em resposta às entradas do usuário.
+
+### Como fazer? 
+
+![image](https://github.com/JoaoIto/Sistemas-De-Informacao/assets/78181193/cac3ce1f-27a4-4a47-92fd-c6fc8e562a91)
+
 
 #### Exemplo em Tabela:
 

@@ -4,7 +4,13 @@
 
 É bastante relevante dentro da construção de um sistema de qualidade, mostrando aspectos dinâmicos do sistema, como ele pode ser utilizado de diversas formas, proporciona uma representação contextual do sistema, e indicam a forma como o sistema interage com as entidades externas.
 
-Um exemplo:
+## - Definição: 
+
+![image](https://github.com/JoaoIto/Sistemas-De-Informacao/assets/78181193/c0c6723e-ef12-4944-bbbe-8f2011cf3066)
+
+
+## - Um exemplo:
+
 ![image](https://github.com/JoaoIto/Sistemas-De-Informacao/assets/78181193/38f3e908-a25d-4f48-a999-d359bf83dc38)
 
 ---

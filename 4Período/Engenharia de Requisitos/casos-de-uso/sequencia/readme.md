@@ -1,7 +1,10 @@
-### Casos de Uso de Sequência
+## Casos de Uso de Sequência
 
-#### Resumo:
+### Resumo:
 Os casos de uso de sequência descrevem a interação entre atores e o sistema em termos de sequência temporal. Eles detalham como o sistema responde às ações dos atores ao longo do tempo, mostrando a ordem das mensagens trocadas entre os atores e o sistema.
+
+![image](https://github.com/JoaoIto/Sistemas-De-Informacao/assets/78181193/b6bfaf7d-5b5f-4f28-8a0a-fed6091673f6)
+
 
 #### Exemplo em Tabela:
 

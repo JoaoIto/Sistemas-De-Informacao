@@ -11,10 +11,33 @@
 Aqui está um exemplo simples para ilustrar como calcular o tempo médio de execução e o tempo médio de espera para um conjunto de processos:
 
 Suponha que temos três processos com os seguintes atributos:
-- Processo 1: Chegada em 0ms, Tempo de Execução de 6ms
-- Processo 2: Chegada em 2ms, Tempo de Execução de 4ms
-- Processo 3: Chegada em 4ms, Tempo de Execução de 8ms
 
+| Processo | Chegada | Tempo de Execução | Tempo de Espera | Tempo de Turnaround |
+|----------|---------|-------------------|------------------|---------------------|
+|    P1    |    0    |         6         |        0         |          6          |
+|    P2    |    2    |         4         |        0         |          6          |
+|    P3    |    4    |         8         |        2         |          10         |
+
+Aqui estão os cálculos detalhados:
+
+- Para o Processo 1:
+  - Tempo de Espera: 0ms (chegou primeiro)
+  - Tempo de Turnaround: 0ms (tempo de chegada) + 6ms (tempo de execução) = 6ms
+
+- Para o Processo 2:
+  - Tempo de Espera: 2ms (tempo de espera na fila de prontos) + 0ms (tempo de espera para executar) = 2ms
+  - Tempo de Turnaround: 2ms (tempo de chegada) + 4ms (tempo de execução) = 6ms
+
+- Para o Processo 3:
+  - Tempo de Espera: 4ms (tempo de espera na fila de prontos) + 2ms (tempo de espera para executar) = 6ms
+  - Tempo de Turnaround: 4ms (tempo de chegada) + 8ms (tempo de execução) = 12ms
+
+Isso nos dá os seguintes resultados:
+
+- Tempo Médio de Execução: (6ms + 6ms + 12ms) / 3 = 8ms
+- Tempo Médio de Espera: (0ms + 2ms + 6ms) / 3 = 2ms
+
+Essa tabela visualiza de forma clara a ordem dos processos, seus tempos de chegada, execução e espera, facilitando a compreensão dos cálculos de tempo médio.
 1. Calculando o Tempo Médio de Execução:
    - Tempo de Execução do Processo 1: 6ms
    - Tempo de Execução do Processo 2: 6ms (2ms de espera + 4ms de execução)

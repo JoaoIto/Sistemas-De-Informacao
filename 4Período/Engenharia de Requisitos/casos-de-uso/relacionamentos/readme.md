@@ -21,3 +21,34 @@ Fazendo casos de uso, precisamos entender quais os tipos de relacionamento que t
    ```
 
 Esses são exemplos simplificados para ilustrar como cada tipo de seta é usado em um diagrama de caso de uso.
+
+## Representações de relacionamentos
+
+As representações das setas nos relacionamentos, que tem, temos que entender qual a diferenças dessas setas de relacionamentos.
+
+Claro, vou fornecer um exemplo de cada tipo de seta com as setas apropriadas:
+
+1. **Seta Tracejada (Relação Opcional):**
+   - Exemplo: No sistema de uma loja online, há o caso de uso "Realizar Pagamento". Esse caso de uso pode opcionalmente incluir o caso de uso "Utilizar Cupom de Desconto". Nem todos os clientes usam cupons de desconto, então essa relação é opcional.
+   
+   ```
+   Realizar Pagamento -----► Utilizar Cupom de Desconto
+   ```
+
+2. **Seta Contínua (Relação Obrigatória):**
+   - Exemplo: No mesmo sistema da loja online, após o cliente realizar o pagamento, é necessário gerar um comprovante de compra. Portanto, o caso de uso "Gerar Comprovante de Compra" é uma parte essencial do fluxo de "Realizar Pagamento".
+   
+   ```
+   Realizar Pagamento -----► Gerar Comprovante de Compra
+   ```
+
+3. **Seta do Lado Esquerdo ou Direito (Direção do Fluxo):**
+   - Exemplo: No contexto da loja online, o ator "Cliente" inicia o processo de realizar um pedido, então a seta estará no lado esquerdo do caso de uso "Realizar Pedido", indicando que o cliente é quem inicia esse caso de uso.
+   
+   ```
+   Cliente ----- Realizar Pedido
+   ```
+
+Espero que esses exemplos ilustrem claramente o uso de cada tipo de seta em um diagrama de caso de uso.
+
+---

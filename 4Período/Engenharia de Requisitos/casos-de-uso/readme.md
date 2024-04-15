@@ -13,4 +13,11 @@
 
 ![image](https://github.com/JoaoIto/Sistemas-De-Informacao/assets/78181193/38f3e908-a25d-4f48-a999-d359bf83dc38)
 
+
+### Exemplo em quadro
+
+Um exemplo de relacionamentos nos casos de uso de sistema representado em quadro:
+
+![image](https://github.com/JoaoIto/Sistemas-De-Informacao/assets/78181193/9b935825-b590-4a4c-a964-cbd5f543d53d)
+
 ---

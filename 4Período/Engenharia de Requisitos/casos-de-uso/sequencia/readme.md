@@ -17,4 +17,9 @@ Os casos de uso de sequência descrevem a interação entre atores e o sistema e
 
 Essas tabelas fornecem exemplos de casos de uso expandido e casos de uso de sequência, destacando os passos específicos envolvidos em cada caso e as interações entre os atores e o sistema.
 
+
+#### Exemplos de tabela com exemplo de Casos de uso
+
+![image](https://github.com/JoaoIto/Sistemas-De-Informacao/assets/78181193/94685443-082d-45e9-b886-fb708aa23f94)
+
 ---

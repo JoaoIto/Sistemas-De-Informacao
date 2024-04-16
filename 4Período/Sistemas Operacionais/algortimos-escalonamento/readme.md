@@ -15,7 +15,7 @@
      - Calculamos o tempo médio de execução:
        - Tempo Médio de Execução = (6ms + 6ms + 12ms) / 3 = 8ms
 
- - ***Tempo Médio de Espera} = Tempo de Espera de cada processo/Número total de processos***
+ - ***Tempo Médio de Espera = Tempo de Espera de cada processo/Número total de processos***
    - Exemplo de Cálculo:
      - Suponha os mesmos processos do exemplo anterior.
      - Calculamos o tempo de espera para cada processo (tempo de espera na fila de prontos):

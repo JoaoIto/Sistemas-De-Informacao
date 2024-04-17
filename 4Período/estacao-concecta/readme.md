@@ -1,20 +1,14 @@
-# Estacao Conecta
+# [Estacao Conecta](https://projetoestacaoconecta.github.io/)
 
 ## Evento de Cursos, Workshops e Oficinas
 
 ## Descrição
-Este repositório contém informações e materiais relacionados ao evento de Cursos, Workshops e Oficinas, que ocorrerá de 24/04 a 05/06.
-
-## Conteúdo
-- [Informações Gerais](#informações-gerais)
-- [Cursos/Oficinas](#cursosoficinas)
-- [Como Participar](#como-participar)
-- [Contato](#contato)
+Este repositório contém informações e materiais relacionados ao cronograma de postagens no perfil do instagram do evento de Cursos, Workshops e Oficinas, que ocorrerá de 24/04 a 05/06.
 
 ## Informações Gerais
-Neste evento, serão oferecidos diversos cursos, workshops e oficinas sobre temas variados, como [listar alguns temas aqui].
+Neste evento, serão oferecidos diversos cursos, workshops e oficinas sobre temas variados, como [estacaoconecta](https://projetoestacaoconecta.github.io/).
 
-As inscrições estarão abertas a partir do dia 10/04 e podem ser feitas pelo nosso site [link para o site].
+As inscrições estarão abertas a partir do dia 24/04 e podem ser feitas pelo nosso site [estacaoconecta](https://projetoestacaoconecta.github.io/).
 
 ## Cursos/Oficinas
 
@@ -50,8 +44,6 @@ As inscrições estarão abertas a partir do dia 10/04 e podem ser feitas pelo n
 - Postagem do evento 
 
 
-## Como Participar
-Para participar, basta se inscrever em cada curso, workshop ou oficina de interesse através do nosso site [link para o site]. As vagas são limitadas, então garanta a sua o quanto antes!
-
 ## Contato
-Se tiver alguma dúvida ou precisar de mais informações, entre em contato conosco pelo email [email de contato].
+Se tiver alguma dúvida ou precisar de mais informações, entre em contato conosco pelo email estacaoconecta2024@gmail.com.
+[estacaoconecta](https://projetoestacaoconecta.github.io/)

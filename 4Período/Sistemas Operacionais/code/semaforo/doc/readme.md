@@ -76,4 +76,29 @@ class Carro extends Thread {
 }
 ````
 
+
+## Rodando o código e saída no terminal
+
+Vamos analisar cada linha de saída:
+
+1. `Carro 4 entrou no estacionamento.`: O carro 4 entrou no estacionamento com sucesso.
+2. `Carro 1 entrou no estacionamento.`: O carro 1 entrou no estacionamento com sucesso.
+3. `Carro 3 entrou no estacionamento.`: O carro 3 entrou no estacionamento com sucesso.
+4. `Vagas disponíveis: 0`: Após a entrada dos carros 4, 1 e 3, não há mais vagas disponíveis no estacionamento.
+5. `Vagas disponíveis: 2`: Após a saída do carro 3, há duas vagas disponíveis no estacionamento.
+6. `Vagas disponíveis: 1`: Após a saída do carro 4, há uma vaga disponível no estacionamento.
+7. `Carro 5 entrou no estacionamento.`: O carro 5 entrou no estacionamento com sucesso.
+8. `Carro 2 entrou no estacionamento.`: O carro 2 entrou no estacionamento com sucesso.
+9. `Vagas disponíveis: 1`: Após a entrada dos carros 5 e 2, há uma vaga disponível no estacionamento.
+10. `Carro 3 saiu do estacionamento.`: O carro 3 saiu do estacionamento.
+11. `Carro 4 saiu do estacionamento.`: O carro 4 saiu do estacionamento.
+12. `Carro 1 saiu do estacionamento.`: O carro 1 saiu do estacionamento.
+13. `Vagas disponíveis: 1`: Após a saída dos carros 3, 4 e 1, há uma vaga disponível no estacionamento.
+14. `Vagas disponíveis: 2`: Após a entrada do carro 5, há duas vagas disponíveis no estacionamento.
+15. `Vagas disponíveis: 1`: Após a saída do carro 2, há uma vaga disponível no estacionamento.
+16. `Vagas disponíveis: 1`: Após a saída do carro 5, há uma vaga disponível no estacionamento.
+
+Essas mensagens são produzidas pelo programa para indicar as ações dos carros (entrar e sair do estacionamento) e as alterações na quantidade de vagas disponíveis.
+
+
 ---

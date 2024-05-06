@@ -15,6 +15,15 @@
 
 Os filósofos estão representados por threads em execução simultânea. Eles pensam por um tempo aleatório, ficam com fome, tentam pegar os hashis, comem e depois voltam a pensar. O código garante que nenhum deadlock ou starvation ocorra, permitindo que todos os filósofos possam comer.
 
+
+### Como garantir que não haja ***deadlock***?
+
+O código evita deadlock ao garantir que os filósofos adquiram os hashis em ordem e liberem os recursos na mesma sequência. 
+
+Semáforos controlam o acesso aos hashis, permitindo que apenas um filósofo de cada vez possa comer. Inicializados com permissão 1, os semáforos garantem a exclusividade no acesso aos recursos compartilhados. 
+
+Essa abordagem impede que dois filósofos fiquem bloqueados indefinidamente por falta de recursos, garantindo que todos possam comer eventualmente.
+
 ## Código comentado
 
 - Filósofo

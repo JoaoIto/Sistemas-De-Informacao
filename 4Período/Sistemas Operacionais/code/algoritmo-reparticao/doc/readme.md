@@ -211,3 +211,110 @@ public class Main {
 - Executa o algoritmo `Worst-Fit` e imprime o estado das partições após a alocação.
 
 ---
+
+### Execução:
+
+Vamos analisar como os algoritmos First-Fit, Best-Fit e Worst-Fit funcionaram, de acordo com os resultados fornecidos:
+
+### First-Fit
+
+#### Execução
+
+1. **Processo 4 (Tamanho 231)**:
+    - Primeira partição suficiente: Partição 1 (275), alocação realizada.
+    - Fragmentação: 275 - 231 = 44.
+
+2. **Processo 2 (Tamanho 277)**:
+    - Primeira partição suficiente: Partição 4 (320), alocação realizada.
+    - Fragmentação: 320 - 277 = 43.
+
+3. **Processo 0 (Tamanho 356)**:
+    - Primeira partição suficiente: Partição 5 (466), alocação realizada.
+    - Fragmentação: 466 - 356 = 110.
+
+4. **Processo 1 (Tamanho 409)**:
+    - Primeira partição suficiente: Partição 6 (417), alocação realizada.
+    - Fragmentação: 417 - 409 = 8.
+
+5. **Processo 3 (Tamanho 316)**:
+    - Primeira partição suficiente: Partição 7 (441), alocação realizada.
+    - Fragmentação: 441 - 316 = 125.
+
+6. **Processo 5 (Tamanho 277)**:
+    - Nenhuma partição restante pode acomodar este processo.
+
+#### Resultado
+
+Partições alocadas em ordem de aparecimento até encontrar a primeira partição livre suficiente.
+
+### Best-Fit
+
+#### Execução
+
+1. **Processo 4 (Tamanho 231)**:
+    - Melhor partição: Partição 1 (275), alocação realizada.
+    - Fragmentação: 275 - 231 = 44.
+
+2. **Processo 2 (Tamanho 277)**:
+    - Melhor partição: Partição 4 (320), alocação realizada.
+    - Fragmentação: 320 - 277 = 43.
+
+3. **Processo 0 (Tamanho 356)**:
+    - Melhor partição: Partição 5 (466), alocação realizada.
+    - Fragmentação: 466 - 356 = 110.
+
+4. **Processo 1 (Tamanho 409)**:
+    - Melhor partição: Partição 6 (417), alocação realizada.
+    - Fragmentação: 417 - 409 = 8.
+
+5. **Processo 3 (Tamanho 316)**:
+    - Melhor partição: Partição 7 (441), alocação realizada.
+    - Fragmentação: 441 - 316 = 125.
+
+6. **Processo 5 (Tamanho 277)**:
+    - Melhor partição: Partição 9 (307), alocação realizada.
+    - Fragmentação: 307 - 277 = 30.
+
+#### Resultado
+
+Partições alocadas de forma a minimizar a fragmentação interna escolhendo a menor partição livre que possa acomodar o processo.
+
+### Worst-Fit
+
+#### Execução
+
+1. **Processo 4 (Tamanho 231)**:
+    - Pior partição: Partição 1 (275), alocação realizada.
+    - Fragmentação: 275 - 231 = 44.
+
+2. **Processo 2 (Tamanho 277)**:
+    - Pior partição: Partição 4 (320), alocação realizada.
+    - Fragmentação: 320 - 277 = 43.
+
+3. **Processo 0 (Tamanho 356)**:
+    - Pior partição: Partição 5 (466), alocação realizada.
+    - Fragmentação: 466 - 356 = 110.
+
+4. **Processo 1 (Tamanho 409)**:
+    - Pior partição: Partição 6 (417), alocação realizada.
+    - Fragmentação: 417 - 409 = 8.
+
+5. **Processo 3 (Tamanho 316)**:
+    - Pior partição: Partição 7 (441), alocação realizada.
+    - Fragmentação: 441 - 316 = 125.
+
+6. **Processo 5 (Tamanho 277)**:
+    - Pior partição: Partição 9 (307), alocação realizada.
+    - Fragmentação: 307 - 277 = 30.
+
+#### Resultado
+
+Partições alocadas de forma a maximizar a fragmentação interna escolhendo a maior partição livre que possa acomodar o processo.
+
+### Comparação
+
+- **First-Fit**: Aloca rapidamente ao encontrar a primeira partição suficiente, potencialmente criando fragmentação externa.
+- **Best-Fit**: Aloca de forma a minimizar a fragmentação interna, escolhendo a menor partição adequada, o que pode resultar em maiores fragmentos livres não utilizados.
+- **Worst-Fit**: Aloca de forma a maximizar a fragmentação interna, escolhendo a maior partição adequada, o que pode deixar grandes espaços livres para futuros processos.
+
+---

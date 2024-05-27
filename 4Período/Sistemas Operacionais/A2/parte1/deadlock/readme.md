@@ -5,6 +5,6 @@ Acontece quando existem 2 recursos que são bloqueados ou suspensos devido a pre
 
 - Exemplo:
 
-<img src="https://github.com/JoaoIto/Sistemas-De-Informacao/blob/main/4Per%C3%ADodo/Sistemas%20Operacionais/deadlock/SmartSelect_20240506_084548_Samsung%20Notes.jpg"/>
+<img src="https://github.com/JoaoIto/Sistemas-De-Informacao/blob/main/4Per%C3%ADodo/Sistemas%20Operacionais/A2/parte1/deadlock/SmartSelect_20240506_084548_Samsung%20Notes.jpg"/>
 
 ---

@@ -1,5 +1,7 @@
 # Comunicação entre processos
 
+Aqui falaremos do processo de comunicação entre processos em um processador, e como eles se dão
+e quais são as suas formas de se comunicar.
 
 ### Comunicação entre Processos (IPC)
 

@@ -8,6 +8,9 @@ entre duas partes, para que o conteúdo seja dividida entre elas.
 2. Deadlock
 3. Gerenciamento de memória
 
+- Parte 2:
 
+1. ESTRATÉGIAS DE ALOCAÇÃO
+2. TRASHING
 
 ---

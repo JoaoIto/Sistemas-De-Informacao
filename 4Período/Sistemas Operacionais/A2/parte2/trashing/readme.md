@@ -1,3 +1,5 @@
+# Trashing
+
 **Causas do Thrashing:**
 
 * **Memória Insuficiente:** Mesas demais para um restaurante pequeno.

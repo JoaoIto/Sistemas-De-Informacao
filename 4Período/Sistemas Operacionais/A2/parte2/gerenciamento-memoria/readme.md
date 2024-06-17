@@ -84,3 +84,33 @@ Este resumo apresenta os tópicos essenciais de gerenciamento de memória em sis
 * **Combinação:** Resolve problemas de fragmentação externa da segmentação e interna da paginação.
 * **Endereçamento:** Segmentos são divididos em páginas, com endereços formados pelo número do segmento, número da página e deslocamento.
 * **Utilização Histórica:** Implementado em sistemas como Multics, antigos Unix, IBM OS/
+
+## Perguntas
+
+## Gerenciamento de Memória: Perguntas para Dominar Cada Tópico na Prova (Com Respostas)
+
+**Conceitos Básicos:**
+
+**1. Pergunta Base:** Qual a diferença entre tempo de acesso e taxa de transferência de memória?
+
+**2. Pergunta Específica Técnica:** Em um sistema com barramento de endereçamento de 32 vias, qual a quantidade máxima de memória RAM que pode ser endereçada?
+
+
+**Memória Virtual:**
+
+**3. Pergunta Base:** Qual a principal função da MMU (Unidade de Gerência de Memória) no contexto da memória virtual?
+
+**4. Pergunta Específica Técnica:** Explique como a MMU lida com um Page Fault, situação em que a página de memória necessária para um processo não está presente na memória principal.
+
+
+**Gerenciamento de Memória:**
+
+**5. Pergunta Base:** Quais as principais funções do gerenciamento de memória em um sistema operacional multiprogramação?
+
+**6. Pergunta Específica Técnica:** Compare e contraste as classes de MMU em termos de flexibilidade e fragmentação da memória.
+
+**Monoprogramação e Multiprogramação:**
+
+**7. Pergunta Base:** Quais as principais diferenças entre os sistemas operacionais monoprogramáveis e multiprogramáveis?
+
+---

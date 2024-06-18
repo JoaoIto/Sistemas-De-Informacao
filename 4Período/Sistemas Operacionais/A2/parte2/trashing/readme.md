@@ -15,6 +15,19 @@
 
 **Pergunta Técnica:**
 
-**Em um sistema com 4 GB de RAM e algoritmo First Fit, qual a fragmentação interna após alocar três processos de 1 GB, 512 MB e 768 MB?**
+1 – Os sistemas operacionais modernos estão sempre buscando novas técnicas para melhorar o gerenciamento da memória, melhorando o os tempos de acesso e resposta, além da busca por minimizar o máximo possível a ocorrência de fragmentação. Considerando esse contexto, explique como cada uma das seguintes técnicas funciona:
+
+
+a)
+Memória virtual com paginação por demanda
+
+b)
+Memória persistente (NVM)
+
+c)
+Desduplicação de memória
+
+d)
+Memória transacional
 
 ---

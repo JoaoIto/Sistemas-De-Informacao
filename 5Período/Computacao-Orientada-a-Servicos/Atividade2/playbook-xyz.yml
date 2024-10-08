@@ -1,0 +1,10 @@
+---
+- name: Instalar o nginx
+  hosts: servidores
+  become: true  # Para garantir privilégios de administrador
+  tasks:
+    - name: Instalar nginx
+      apt:  # Como as instâncias são baseadas em Ubuntu (Debian)
+        name: nginx
+        state: present
+      when: ansible_facts['os_family'] == "Debian"  # Verificação de que é Debian

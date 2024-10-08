@@ -81,5 +81,3 @@ Por fim, foi verificado se o serviço do Nginx estava rodando corretamente nos s
 Este foi o resumo das atividades realizadas para a configuração de automação de tarefas usando o Ansible.
 
 --- 
-
-Esse relatório contém as imagens em seus respectivos caminhos. Certifique-se de verificar se todos os links estão corretos no repositório.

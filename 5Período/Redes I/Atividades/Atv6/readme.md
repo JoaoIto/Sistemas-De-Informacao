@@ -1,7 +1,3 @@
-Aqui está um exemplo de um README que pode ser utilizado para descrever essa atividade de roteamento em redes utilizando a ferramenta IMUNES em uma VM no VirtualBox:
-
----
-
 # Atividade de Roteamento em Redes - IMUNES
 
 ## Descrição da Atividade

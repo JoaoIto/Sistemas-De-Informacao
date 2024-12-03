@@ -5,6 +5,8 @@
 #### **Descrição do Projeto**
 Esta atividade consiste em configurar, instalar, versionar e manipular containers Docker em máquinas virtuais (VMs) hospedadas na AWS. O objetivo era criar, gerenciar e excluir containers de maneira automatizada utilizando o Ansible, com arquivos playbook para executar todas as operações. Foi utilizada a infraestrutura da AWS para provisionar as VMs necessárias.
 
+Para mais detalhes técnicos, veja o documento PDF anexado, contendo a documentação completa, incluindo os prints de todos os comandos executados na VM.
+
 ---
 
 ### **Passos Realizados**

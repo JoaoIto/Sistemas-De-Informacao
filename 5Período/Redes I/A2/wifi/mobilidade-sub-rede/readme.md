@@ -30,6 +30,16 @@ A mobilidade na mesma sub-rede é possível porque os dispositivos permanecem de
 
 ---
 
+| **Conceito**            | **Descrição**                                                                                      | **Função e Impacto**                                                                          |
+|-------------------------|--------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------|
+| **Problema dos Terminais Ocultos** | Dispositivos que não detectam a transmissão de outros devido à distância ou obstáculos físicos.   | Interferem no canal de comunicação sem saber que o canal já está ocupado, resultando em colisões. |
+| **RTS/CTS (Request to Send / Clear to Send)** | Protocolo que usa quadros RTS e CTS para reservar o canal antes da transmissão.                    | Evita colisões ao alertar os dispositivos próximos para aguardarem a transmissão em andamento.   |
+| **Envio do RTS**         | O dispositivo remetente envia um quadro RTS ao AP informando o tempo necessário para a transmissão. | O AP responde com um CTS, autorizando a transmissão e alertando os terminais ocultos para não transmitirem. |
+| **Resposta com CTS**     | O AP envia um CTS para todos os dispositivos no alcance, indicando que o canal está reservado.    | Terminais ocultos recebem o CTS e evitam a transmissão, evitando colisões.                     |
+| **Transmissão de Dados** | O remetente transmite os dados após o RTS/CTS bem-sucedidos, com o AP confirmando com ACK.       | Evita colisões e melhora a eficiência da transmissão em redes Wi-Fi.                          |
+
+---
+
 #### **4. Benefícios da Mobilidade na Mesma Sub-rede**
 
 1. **Transparência para o Usuário**:

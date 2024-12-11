@@ -1,91 +1,118 @@
 ### **Erro de Bits, Taxa de Transmissão, SNR e CDMA**
 
-#### **Base**
-As redes sem fio apresentam desafios únicos devido à natureza de seu meio de transmissão: o ar. Diferentemente de redes cabeadas, onde o sinal viaja por um meio físico controlado, nas redes sem fio o sinal pode ser enfraquecido, interferido ou dispersado antes de chegar ao destino. Isso gera fenômenos como erro de bits e demanda técnicas avançadas para gerenciar a comunicação, como o CDMA.
-
-Erro de bits, taxa de transmissão e SNR (Signal-to-Noise Ratio) são conceitos inter-relacionados que determinam a qualidade da transmissão. A taxa de transmissão define a velocidade dos dados no canal, a SNR mede a relação entre o sinal útil e o ruído, enquanto o erro de bits avalia a confiabilidade da transmissão. O CDMA, por sua vez, é uma técnica utilizada para permitir que vários dispositivos compartilhem o mesmo canal simultaneamente sem interferir uns nos outros, desempenhando um papel crucial em redes móveis e sem fio.
+#### **Texto Resumo**
+As redes sem fio apresentam desafios únicos devido à ausência de um meio físico controlado, como cabos. A comunicação é suscetível a erros e interferências, tornando conceitos como **Taxa de Erro de Bits (BER)**, **Taxa de Transmissão** e **Relação Sinal-Ruído (SNR)** cruciais para avaliar a qualidade e confiabilidade da transmissão. Além disso, técnicas como o **CDMA (Code Division Multiple Access)** são empregadas para permitir que vários dispositivos compartilhem o mesmo canal simultaneamente, garantindo eficiência e minimizando interferências.
 
 ---
 
 ### **1. Erro de Bits, Taxa de Transmissão e SNR**
 
-#### **Definições**
-1. **Taxa de Erro de Bits (BER - Bit Error Rate)**:
-    - A BER mede a probabilidade de que um bit transmitido seja recebido incorretamente.
-    - É influenciada por fatores como interferências, atenuação do sinal e relação sinal-ruído (SNR).
-    - Quanto menor a BER, mais confiável é o canal.
-
-2. **Taxa de Transmissão**:
-    - Representa a quantidade de bits transmitidos por segundo (bps).
-    - Depende da largura de banda disponível e do esquema de modulação utilizado.
-    - Taxas mais altas podem aumentar a probabilidade de erros, especialmente em condições de SNR baixa.
-
-3. **SNR (Signal-to-Noise Ratio)**:
-    - Mede a potência do sinal útil em relação ao ruído no canal.
-    - Expressa em decibéis (dB) pela fórmula:
-      \[
-      SNR(dB) = 10 \cdot \log_{10}\left(\frac{P_{\text{sinal}}}{P_{\text{ruído}}}\right)
-      \]
-    - Um SNR alto significa um canal mais limpo e confiável.
+#### **Texto Resumo**
+A comunicação em redes sem fio depende da integridade dos dados transmitidos, o que é medido pela **Taxa de Erro de Bits (BER)**. Essa métrica está diretamente relacionada à **Taxa de Transmissão**, que define a velocidade do canal, e à **Relação Sinal-Ruído (SNR)**, que mede a qualidade do sinal. Uma SNR mais alta reduz os erros e aumenta a confiabilidade, enquanto taxas de transmissão elevadas podem aumentar a BER em condições de canal desafiadoras.
 
 ---
 
-#### **Exemplo Numérico**
-1. Suponha um canal com \(P_{\text{sinal}} = 100\) mW e \(P_{\text{ruído}} = 10\) mW:
-   \[
-   SNR = 10 \cdot \log_{10}(10) = 10 \, \text{dB}.
-   \]
-2. Com modulação BPSK (1 Mbps), a BER para um SNR de 10 dB é \(10^{-7}\).
-3. Em contraste, com QAM16 (4 Mbps), a BER para o mesmo SNR pode ser \(10^{-1}\), tornando o canal inutilizável para dados confiáveis.
+#### **Definições**
 
-#### **Impacto Prático**
-- Um canal com BER de \(10^{-5}\) transmitindo 1 GB (\(8 \times 10^9\) bits) teria \(80.000\) bits com erro, exigindo correções ou retransmissões.
+| Conceito                 | Descrição                                                                                              | Fórmula/Detalhes                                                                                      |
+|--------------------------|------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------|
+| **Taxa de Erro de Bits (BER)** | Probabilidade de um bit ser recebido incorretamente.                                                | Quanto menor a BER, mais confiável é o canal.                                                       |
+| **Taxa de Transmissão**       | Velocidade dos dados transmitidos, medida em bits por segundo (bps).                                 | Altas taxas exigem maior largura de banda e qualidade do canal.                                      |
+| **Relação Sinal-Ruído (SNR)** | Medida da qualidade do sinal em relação ao ruído presente no canal.                                 | \( SNR(dB) = 10 \cdot \log_{10}\left(\frac{P_{\text{sinal}}}{P_{\text{ruído}}}\right) \)              |
+
+---
+
+#### **Exemplo Prático: Cálculo de SNR**
+
+**Cenário**:  
+- Potência do sinal (\( P_{\text{sinal}} \)) = 100 mW  
+- Potência do ruído (\( P_{\text{ruído}} \)) = 10 mW  
+
+**Cálculo**:  
+\[
+SNR = 10 \cdot \log_{10}\left(\frac{100}{10}\right) = 10 \cdot \log_{10}(10) = 10 \, \text{dB}.
+\]
+
+**Impacto**:  
+- Com modulação **BPSK (1 Mbps)** e SNR = 10 dB, a BER é \( 10^{-7} \) (canal confiável).  
+- Com modulação **QAM16 (4 Mbps)** e SNR = 10 dB, a BER é \( 10^{-1} \) (muitos erros tornam o canal inutilizável).  
+
+---
+
+#### **Visualização: Impacto da BER**
+Se um canal com BER de \( 10^{-5} \) transmite **1 GB** (\( 8 \times 10^9 \) bits):
+- **Bits com erro**:  
+\[
+8 \times 10^9 \times 10^{-5} = 80.000 \, \text{bits}.
+\]
 
 ---
 
 ### **2. CDMA (Code Division Multiple Access)**
 
-#### **Definição**
-CDMA é uma técnica que permite que múltiplos dispositivos compartilhem o mesmo canal de comunicação simultaneamente. Cada dispositivo utiliza um código único para transmitir e receber dados, separando as comunicações mesmo no mesmo espectro de frequência.
-
-#### **Funcionamento**
-1. **Codificação**:
-    - Cada bit de dados é multiplicado por um código exclusivo, chamado "chip".
-    - O código muda em uma frequência maior do que a dos dados transmitidos.
-
-2. **Decodificação**:
-    - O receptor aplica o mesmo código para recuperar os dados do sinal recebido.
-
-#### **Cálculo e Exemplo Prático**
-1. **Codificação**:
-    - Dado \(d_1 = 1\) (representado por \(+1\)) e o código \(C = [+1, +1, -1, +1]\):  
-      \[
-      Z = d_1 \cdot C = [+1, +1, -1, +1].
-      \]
-
-2. **Decodificação**:
-    - O receptor multiplica o sinal recebido pelo código e soma os resultados:
-      \[
-      d_1 = \frac{1}{M} \sum_{i=1}^M (Z_i \cdot C_i).
-      \]
-    - Para \(M = 4\):  
-      \[
-      d_1 = \frac{1}{4} \cdot [(+1 \cdot +1) + (+1 \cdot +1) + (-1 \cdot -1) + (+1 \cdot +1)] = +1.
-      \]
-
-#### **Vantagens**
-- Alta eficiência em canais compartilhados.
-- Resistente a interferências e ruídos.
-
-#### **Desafios**
-- Seleção cuidadosa de códigos para evitar interferências entre usuários.
-- Depende da uniformidade na potência dos sinais transmitidos.
+#### **Texto Resumo**
+O CDMA é uma técnica que permite que vários dispositivos compartilhem o mesmo canal simultaneamente, utilizando códigos únicos para cada transmissão. Essa abordagem aumenta a eficiência e reduz as interferências em redes móveis e sem fio.
 
 ---
 
-### **Resumo Final**
-- **Erro de bits** reflete a confiabilidade do canal, influenciada pela **taxa de transmissão** e **SNR**.
-- **CDMA** resolve problemas de compartilhamento de canal em redes móveis, utilizando códigos únicos para comunicação simultânea.
-- Conceitos como BER, SNR e CDMA são fundamentais para entender como dados são transmitidos de forma eficiente e confiável em redes modernas.
+#### **Funcionamento**
+
+| Etapa          | Descrição                                                                                 |
+|-----------------|-----------------------------------------------------------------------------------------|
+| **Codificação** | Cada bit de dados é multiplicado por um código exclusivo, gerando "chips".             |
+| **Decodificação** | O receptor usa o mesmo código para separar os dados do sinal recebido.                 |
+
+#### **Cálculo de CDMA: Exemplo**
+
+- **Dado**: \( d_1 = +1 \)  
+- **Código**: \( C = [+1, +1, -1, +1] \)  
+
+**Codificação**:  
+\[
+Z = d_1 \cdot C = [+1, +1, -1, +1].
+\]
+
+**Decodificação**:  
+Receptor multiplica o sinal pelo código e soma os resultados:  
+\[
+d_1 = \frac{1}{M} \sum_{i=1}^M \left(Z_i \cdot C_i\right),
+\]
+onde \( M = 4 \).  
+\[
+d_1 = \frac{1}{4} \cdot [(+1 \cdot +1) + (+1 \cdot +1) + (-1 \cdot -1) + (+1 \cdot +1)] = +1.
+\]
+
+---
+
+#### **Vantagens e Desafios**
+
+| **Vantagens**                                                                 | **Desafios**                                                                    |
+|------------------------------------------------------------------------------|--------------------------------------------------------------------------------|
+| Permite múltiplos usuários compartilharem o mesmo canal sem interferências. | Requer seleção cuidadosa de códigos para evitar sobreposição entre usuários.   |
+| Resistente a ruídos e interferências externas.                               | Depende da uniformidade na potência dos sinais transmitidos.                   |
+
+---
+
+### **3. Resumo Visual**
+
+#### **Tabela Comparativa: Erro de Bits, Taxa de Transmissão e SNR**
+
+| Conceito             | Relação com a Comunicação                                                                    |
+|----------------------|---------------------------------------------------------------------------------------------|
+| **BER**              | Quanto menor, mais confiável o canal.                                                       |
+| **Taxa de Transmissão** | Altas taxas podem aumentar erros se o SNR for insuficiente.                                 |
+| **SNR**              | Canais com alto SNR oferecem menor BER e maior eficiência.                                   |
+
+#### **Gráfico: Relação Entre SNR e BER**
+- Eixo X: \( SNR (dB) \)  
+- Eixo Y: \( BER \)  
+- Curva decrescente: à medida que o SNR aumenta, a BER diminui.
+
+---
+
+### **4. Resumo Final**
+- **Erro de Bits (BER)** avalia a confiabilidade do canal, enquanto a **Taxa de Transmissão** e a **SNR** determinam a velocidade e qualidade da comunicação.
+- **CDMA** permite o compartilhamento eficiente de canais em redes móveis, utilizando códigos únicos para separar transmissões.
+- Conceitos como BER, SNR e CDMA são fundamentais para projetar e entender redes sem fio modernas, garantindo eficiência e confiabilidade.
 
 ---

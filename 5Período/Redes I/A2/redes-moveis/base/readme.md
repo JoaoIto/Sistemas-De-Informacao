@@ -63,8 +63,6 @@ A arquitetura de rede de celular é composta por vários elementos que trabalham
 | **Gateway de Controle (SGSN)** | Rastreia a localização do dispositivo móvel, gerencia autenticação e encaminha dados para o GGSN. | Cuida da autenticação e encaminhamento de dados, mantendo a conectividade.                               | **Exemplo**: O SGSN autentica o usuário e roteia dados para a internet, mesmo quando o dispositivo se move. |
 | **Internet (IP)**           | Conecta a rede celular à internet através de servidores e infraestrutura de comutação.            | Permite a comunicação entre a rede de celular e servidores na internet, como websites e serviços online.   | **Exemplo**: O IP facilita a navegação e o acesso a recursos na internet através da rede celular.       |
 
-
-
 ---
 
 #### **4. Funcionamento do Acesso Celular à Internet**

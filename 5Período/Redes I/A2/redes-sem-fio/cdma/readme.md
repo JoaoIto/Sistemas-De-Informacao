@@ -93,15 +93,26 @@ d_1 = \frac{1}{4} \cdot [(+1 \cdot +1) + (+1 \cdot +1) + (-1 \cdot -1) + (+1 \cd
 
 ---
 
-### **3. Resumo Visual**
+### **3. Resumo**
+
+A comunicação em redes sem fio depende de vários fatores que determinam a qualidade e a eficiência do canal. Três conceitos fundamentais estão interligados para avaliar e otimizar essa comunicação: Taxa de Erro de Bits (BER), Taxa de Transmissão e Relação Sinal-Ruído (SNR).
+
+A BER mede a probabilidade de que bits transmitidos sejam recebidos com erro, indicando a confiabilidade do canal. Quanto menor a BER, mais confiável é a transmissão. No entanto, a BER é influenciada por fatores como interferências, atenuação do sinal e a qualidade geral do canal.
+
+A Taxa de Transmissão refere-se à velocidade com que os dados são transmitidos, geralmente medida em bits por segundo (bps). Embora taxas mais altas sejam desejáveis para um desempenho melhor, elas exigem maior largura de banda e podem aumentar a probabilidade de erros, especialmente quando a qualidade do canal (SNR) não é suficiente para suportar essas taxas.
+
+A Relação Sinal-Ruído (SNR) mede a qualidade do sinal em comparação ao ruído presente no canal e é geralmente expressa em decibéis (dB). Um SNR elevado significa que o sinal é mais forte e menos suscetível a interferências, resultando em uma BER menor e, consequentemente, em uma comunicação mais eficiente.
+
+Esses conceitos são interdependentes. Por exemplo, aumentar a taxa de transmissão em um canal com baixo SNR pode levar a um aumento na BER, comprometendo a confiabilidade da comunicação. A seguir, a tabela apresenta um resumo desses conceitos e como eles impactam diretamente a comunicação em redes sem fio:
 
 #### **Tabela Comparativa: Erro de Bits, Taxa de Transmissão e SNR**
 
-| Conceito             | Relação com a Comunicação                                                                    |
-|----------------------|---------------------------------------------------------------------------------------------|
-| **BER**              | Quanto menor, mais confiável o canal.                                                       |
-| **Taxa de Transmissão** | Altas taxas podem aumentar erros se o SNR for insuficiente.                                 |
-| **SNR**              | Canais com alto SNR oferecem menor BER e maior eficiência.                                   |
+| **Conceito**             | **Conceito Base**                                                      | **Descrição Leve**                                          | **Relação com a Comunicação**                                                                 |
+|--------------------------|----------------------------------------------------------------------|-----------------------------------------------------------|---------------------------------------------------------------------------------------------|
+| **BER (Taxa de Erro de Bits)** | Probabilidade de bits transmitidos serem recebidos com erro.         | Mede a confiabilidade do canal.                           | Quanto menor, mais confiável é o canal.                                                    |
+| **Taxa de Transmissão**       | Velocidade de envio de dados, medida em bits por segundo (bps).      | Define o desempenho do canal.                             | Altas taxas podem aumentar erros se o SNR for insuficiente.                                |
+| **SNR (Relação Sinal-Ruído)** | Medida da qualidade do sinal em relação ao ruído no canal.            | Indica quão "limpo" é o canal para transmissão.            | Canais com alto SNR oferecem menor BER e maior eficiência na transmissão de dados.         |
+
 
 #### **Gráfico: Relação Entre SNR e BER**
 - Eixo X: \( SNR (dB) \)  

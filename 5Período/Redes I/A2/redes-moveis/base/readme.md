@@ -53,6 +53,18 @@ A arquitetura de rede de celular é composta por vários elementos que trabalham
 7. **Internet (IP)**:
     - **Função**: A rede celular é conectada à internet através de servidores de dados e infraestrutura de comutação. O IP permite que dados sejam enviados entre a rede de celular e os servidores de conteúdo na internet, como websites, servidores de vídeo e outros recursos.
 
+| **Componentes**           | **Descrição**                                                                                      | **Função e Exemplo**                                                                                       |
+|--------------------------|--------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------|
+| **Dispositivos Móveis**    | Dispositivos finais que acessam a rede celular, como smartphones, tablets, modems USB.             | Conectam-se à rede por torres celulares, acessando serviços como voz, mensagens e dados.                   | **Exemplo**: Usuário em um carro conectado à torre celular mais próxima para acessar a internet.     |
+| **Estações Base (BS)**     | Torres de celular que permitem comunicação entre dispositivos móveis e a rede de celular.           | Fornecem cobertura em áreas específicas, conectando os dispositivos móveis à rede.                        | **Exemplo**: Um usuário em um carro se conecta a uma estação base próxima, que comunica com a rede.    |
+| **Controlador de Estação Base (BSC)** | Gerencia múltiplas estações base, controlando tráfego e mobilidade entre células (handoff).           | Garante que o usuário móvel mantenha a conexão ao se mover entre diferentes torres celulares.               | **Exemplo**: O BSC permite que um usuário que se move entre diferentes torres continue conectado.        |
+| **Centro de Comutação de Mobilidade (MSC)** | Gerencia a comutação de chamadas e dados na rede móvel.                                           | Roteia dados entre diferentes estações base e servidores, permitindo a conexão à internet.                  | **Exemplo**: Quando um usuário faz uma chamada, o MSC comuta a conexão para a torre adequada.           |
+| **Gateway de Dados (GGSN)** | Conecta a rede de telefonia móvel à internet, roteando o tráfego de dados.                        | Permite que dispositivos móveis acessem a internet, como navegação em websites e transmissão de vídeo.    | **Exemplo**: O GGSN conecta o dispositivo móvel à internet para navegação ou streaming.                 |
+| **Gateway de Controle (SGSN)** | Rastreia a localização do dispositivo móvel, gerencia autenticação e encaminha dados para o GGSN. | Cuida da autenticação e encaminhamento de dados, mantendo a conectividade.                               | **Exemplo**: O SGSN autentica o usuário e roteia dados para a internet, mesmo quando o dispositivo se move. |
+| **Internet (IP)**           | Conecta a rede celular à internet através de servidores e infraestrutura de comutação.            | Permite a comunicação entre a rede de celular e servidores na internet, como websites e serviços online.   | **Exemplo**: O IP facilita a navegação e o acesso a recursos na internet através da rede celular.       |
+
+
+
 ---
 
 #### **4. Funcionamento do Acesso Celular à Internet**

@@ -118,6 +118,29 @@ As redes Wi-Fi residenciais exemplificam como todos esses conceitos se integram 
 3. O AP atribui um endereço IP ao dispositivo (via DHCP).
 4. Os dados são transmitidos entre o dispositivo e a internet através do roteador.
 
+| **Conceito/Sigla**        | **Descrição**                                                                                      |
+|---------------------------|--------------------------------------------------------------------------------------------------|
+| **Wi-Fi (802.11)**        | Tecnologia de rede sem fio que permite a conexão de dispositivos via ondas de rádio.              |
+| **802.11b**               | Padrão inicial com taxa de até 11 Mbps em 2,4 GHz.                                               |
+| **802.11a**               | Padrão mais rápido, até 54 Mbps, mas opera em 5 GHz.                                             |
+| **802.11g**               | Combina os padrões anteriores, até 54 Mbps em 2,4 GHz.                                           |
+| **802.11n**               | Introduziu MIMO (múltiplas antenas), alcançando centenas de Mbps.                                |
+|---------------------------|--------------------------------------------------------------------------------------------------|
+| **BSS (Basic Service Set)**| Estrutura básica de uma rede Wi-Fi, composta por dispositivos e, opcionalmente, um ponto de acesso. |
+| **AP (Access Point)**     | Ponto de acesso que conecta dispositivos sem fio à rede maior.                                    |
+|---------------------------|--------------------------------------------------------------------------------------------------|
+| **MAC (Media Access Control)** | Endereço único de 6 bytes usado para identificação e roteamento de pacotes na rede.                  |
+| **CSMA/CA**               | Protocolo que evita colisões em Wi-Fi ao verificar se o canal está livre antes de transmitir.      |
+| **RTS/CTS**               | Mecanismo usado para resolver problemas de terminais ocultos em redes sem fio.                    |
+| **CRC (Cyclic Redundancy Check)** | Método de verificação de erros para quadros transmitidos.                                              |
+|---------------------------|--------------------------------------------------------------------------------------------------|
+| **ACK (Acknowledgment)**  | Reconhecimento enviado pelo receptor para confirmar a entrega de dados sem erros.                 |
+| **WPA2**                  | Protocolo de segurança usado para criptografar dados transmitidos na rede.                        |
+| **SNR (Signal-to-Noise Ratio)** | Mede a qualidade do sinal em comparação ao ruído no canal.                                      |
+| **BER (Bit Error Rate)**  | Taxa de erro de bits, indicando a confiabilidade do canal.                                        |
+
+---
+
 ---
 
 ### **Resumo Final**

@@ -86,17 +86,43 @@ A estrutura do quadro IEEE 802.11 é composta por várias seções que desempenh
 
 ---
 
-#### **4. Exemplos Práticos**
+### **Quadro IEEE 802.11: Estrutura e Campos**
 
-##### **Exemplo 1: Controle de Quadros**
-- Um AP envia um quadro de controle CTS para um dispositivo, reservando o canal para a transmissão de um quadro de dados longo. Outros dispositivos recebem o CTS e evitam transmissões durante o período especificado.
+#### **Texto Resumo**  
+O quadro IEEE 802.11 é o elemento central da comunicação em redes Wi-Fi. Ele organiza e transporta dados e informações de controle, essenciais para a troca eficiente e confiável de informações. Composto por vários campos que desempenham funções específicas, o quadro 802.11 garante a entrega dos dados e a gestão de erros, permitindo a comunicação entre dispositivos em redes Wi-Fi.
 
-##### **Exemplo 2: Uso de Número de Sequência**
-- Um dispositivo fragmenta um arquivo grande em três quadros. Cada quadro recebe um número de sequência único (1, 2, 3). O receptor usa esses números para reorganizar o arquivo.
+Cada campo tem um propósito distinto, como o controle de transmissão, a identificação de dispositivos e a verificação de erros. Entender essa estrutura é fundamental para o funcionamento eficaz de redes Wi-Fi.
 
-##### **Exemplo 3: Verificação com CRC**
-- Um quadro com dados é enviado do dispositivo A para o AP.
-- O AP recalcula o CRC e percebe que os valores não coincidem devido a um erro na transmissão. O AP descarta o quadro e não envia o ACK, forçando o dispositivo A a retransmitir.
+---
+
+### **Tabela de Campos do Quadro IEEE 802.11**
+
+| **Campo**            | **Descrição**                                                                                      | **Função e Relação com a Comunicação**                                                                 |
+|---------------------|--------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------|
+| **Controle do Quadro** | Define o tipo de quadro (dados, ACK, RTS/CTS).                                                    | Gerencia o acesso ao canal, evitando colisões e organizando a transmissão.                   |
+| **Número de Sequência** | Identifica quadros únicos para reordenamento e detecção de retransmissões.                       | Essencial para reconstituir dados fragmentados e evitar duplicação.                          |
+| **Duração**           | Indica o tempo necessário para a transmissão e a resposta associada (como ACK).                   | Reserva o canal para a transmissão e controle da comunicação.                              |
+| **Campos de Endereço** | Contêm até quatro endereços MAC (destino, origem, AP, próximo salto).                            | Identificam os dispositivos envolvidos na transmissão, facilitando o roteamento.               |
+| **Carga Útil**        | Transporta dados úteis (ex.: pacotes de aplicação).                                              | A maior parte do quadro, contendo os dados necessários para a aplicação.                      |
+| **CRC (Cyclic Redundancy Check)** | Verifica a integridade dos dados transmitidos.                                                    | Detecta erros, garantindo a confiabilidade da transmissão.                                    |
+
+---
+
+### **Exemplos Práticos**
+
+#### **Exemplo 1: Controle de Quadros RTS/CTS**  
+Quando um dispositivo deseja enviar dados longos, ele pode usar um quadro RTS para reservar o canal. O AP responde com um CTS, alertando outros dispositivos para que não transmitam durante o período reservado.
+
+#### **Exemplo 2: Número de Sequência e Reordenação**  
+Dispositivos que fragmentam dados em partes enviam com números de sequência únicos (ex.: 1, 2, 3). O receptor usa esses números para reorganizar as partes em ordem correta.
+
+#### **Exemplo 3: Verificação com CRC**  
+Se um dispositivo envia dados e o receptor detecta um erro no CRC, ele descarta o quadro e solicita a retransmissão, garantindo que dados corruptos não sejam processados.
+
+---
+
+### **Resumo Final**  
+O quadro IEEE 802.11 é essencial para a comunicação em redes Wi-Fi, organizando dados e controle. Campos como controle, número de sequência, duração, endereços e CRC garantem eficiência, confiabilidade e gestão de erros na transmissão, garantindo uma comunicação estável em redes Wi-Fi.
 
 ---
 

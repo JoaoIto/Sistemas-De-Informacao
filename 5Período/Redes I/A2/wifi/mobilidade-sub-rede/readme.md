@@ -30,13 +30,15 @@ A mobilidade na mesma sub-rede é possível porque os dispositivos permanecem de
 
 ---
 
-| **Conceito**            | **Descrição**                                                                                      | **Função e Impacto**                                                                          |
-|-------------------------|--------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------|
-| **Problema dos Terminais Ocultos** | Dispositivos que não detectam a transmissão de outros devido à distância ou obstáculos físicos.   | Interferem no canal de comunicação sem saber que o canal já está ocupado, resultando em colisões. |
-| **RTS/CTS (Request to Send / Clear to Send)** | Protocolo que usa quadros RTS e CTS para reservar o canal antes da transmissão.                    | Evita colisões ao alertar os dispositivos próximos para aguardarem a transmissão em andamento.   |
-| **Envio do RTS**         | O dispositivo remetente envia um quadro RTS ao AP informando o tempo necessário para a transmissão. | O AP responde com um CTS, autorizando a transmissão e alertando os terminais ocultos para não transmitirem. |
-| **Resposta com CTS**     | O AP envia um CTS para todos os dispositivos no alcance, indicando que o canal está reservado.    | Terminais ocultos recebem o CTS e evitam a transmissão, evitando colisões.                     |
-| **Transmissão de Dados** | O remetente transmite os dados após o RTS/CTS bem-sucedidos, com o AP confirmando com ACK.       | Evita colisões e melhora a eficiência da transmissão em redes Wi-Fi.                          |
+| **Conceito**                 | **Descrição**                                                                                      | **Função e Impacto**                                                                          |
+|------------------------------|--------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------|
+| **Mobilidade na Mesma Sub-rede** | Dispositivos permanecem na mesma sub-rede IP enquanto se movem, mantendo o mesmo endereço IP.    | Permite a continuidade da comunicação, pois o roteamento dentro da sub-rede continua sem mudanças. |
+| **Hand-off**                  | Processo de transferência automática de um AP para outro sem perda de conexão.                   | Garante que o dispositivo móvel troque de AP sem interrupção, mantendo a conectividade.      |
+| **Roaming**                   | Movimento contínuo entre diferentes APs na mesma rede.                                        | Permite a conectividade contínua ao mudar entre APs, mesmo com deslocamento físico.           |
+| **Detecção de AP**            | O dispositivo móvel detecta APs próximos com sinais mais fortes à medida que se move.            | Permite que o dispositivo se conecte ao AP mais forte ou mais próximo.                        |
+| **Autenticação e Associações** | O dispositivo se conecta automaticamente a um novo AP e é autenticado sem mudanças no IP.      | O endereço IP permanece o mesmo, evitando interrupções na comunicação.                        |
+| **Gerenciamento de Tráfego**  | O roteador redireciona automaticamente o tráfego para o novo AP sem necessidade de novas associações DHCP. | Mantém a comunicação contínua mesmo após a mudança de AP.                                 |
+| **Redirecionamento de Dados** | Os dados são encaminhados para o novo AP sem necessidade de alterar o endereço IP.               | Permite continuidade da conexão sem interrupção.                                          |
 
 ---
 

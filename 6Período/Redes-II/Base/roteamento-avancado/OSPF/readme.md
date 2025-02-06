@@ -8,6 +8,12 @@ OSPF é um protocolo **interior gateway protocol (IGP)**, o que significa que é
 
 ---
 
+## **Pequeno Texto Aplicando OSPF**  
+
+Em uma empresa de médio porte, os administradores decidiram substituir o protocolo RIP pelo OSPF para melhorar a eficiência da rede. Após a configuração, os roteadores passaram a trocar informações apenas quando necessário, e a rede convergiu rapidamente. Além disso, com a divisão em múltiplas áreas, o tráfego de atualização foi reduzido, melhorando a escalabilidade. Agora, a equipe pode adicionar novos roteadores sem impactar a estabilidade geral da rede.  
+
+---
+
 ## **Principais Características do OSPF**  
 
 1. **Protocolo baseado em estado de enlace (Link-State)**  
@@ -104,11 +110,5 @@ Imagine que você é um **GPS em uma cidade**.
 5. Com todas as informações coletadas, ele **calcula o caminho mais curto** para o destino (Algoritmo de Dijkstra).  
 
 Dessa forma, o OSPF age como um GPS para a rede, escolhendo o melhor caminho para cada pacote de dados.  
-
----
-
-## **Pequeno Texto Aplicando OSPF**  
-
-Em uma empresa de médio porte, os administradores decidiram substituir o protocolo RIP pelo OSPF para melhorar a eficiência da rede. Após a configuração, os roteadores passaram a trocar informações apenas quando necessário, e a rede convergiu rapidamente. Além disso, com a divisão em múltiplas áreas, o tráfego de atualização foi reduzido, melhorando a escalabilidade. Agora, a equipe pode adicionar novos roteadores sem impactar a estabilidade geral da rede.  
 
 ---

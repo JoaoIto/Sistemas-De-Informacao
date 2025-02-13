@@ -2,6 +2,10 @@
 
 O roteamento é o processo pelo qual os pacotes de dados são encaminhados de uma origem até um destino dentro de uma rede. Esse processo pode ser realizado de duas maneiras principais: **roteamento estático** e **roteamento dinâmico**. Ambos os métodos têm aplicações específicas e são escolhidos com base nas necessidades e na escala da rede.  
 
+A escolha do tipo de roteamento que quero utilizar, depende de **métricas** para a escolha, como a qualidade de experiência, QOE -> nivel de opinião, e qualidade de serviço, QOS -> latencia, delay, perca de pacote, throwput.
+
+Oque podem gerar esse atraso, podem ser diversos dentro do roteador -> atraso de transmissão, atraso de recebimento, atraso de processamento, atraso de propagação...
+
 ---
 
 ### **Roteamento Estático**  

@@ -1,6 +1,6 @@
-Estudo de Caso: Aplicação do Diagrama de Pareto na Qualidade de Produção
+# Estudo de Caso: Aplicação do Diagrama de Pareto na Qualidade de Produção
 
-Contexto
+## Contexto
 
 Uma fábrica de componentes eletrônicos identificou que a taxa de defeitos nos produtos tem aumentado, resultando em reclamações de clientes e custos adicionais. Para entender as principais causas dos defeitos, a equipe de qualidade coletou dados de um mês de produção e registrou a quantidade de ocorrências para diferentes tipos de defeitos.
 
@@ -69,6 +69,46 @@ Mude essa série para um gráfico de linhas.
 4. Adicione um eixo secundário para a linha (% acumulado).
 
 
+Passo 1: Coletar e Organizar os Dados
 
-Se quiser, posso gerar o gráfico automaticamente usando Python!
+Os dados foram coletados e organizados em ordem decrescente de ocorrência.
+
+
+---
+
+Passo 2: Cálculo do Percentual Individual
+
+Cada percentual individual é calculado com a fórmula:
+
+\text{Percentual Individual} = \left( \frac{\text{Ocorrências}}{\text{Total de Ocorrências}} \right) \times 100
+
+Aplicando os cálculos:
+
+
+---
+
+Passo 3: Cálculo do Percentual Acumulado
+
+O percentual acumulado é a soma dos percentuais individuais sucessivos.
+
+\text{Percentual Acumulado} = \text{Percentual Anterior} + \text{Percentual Individual Atual}
+
+Cálculo do Percentual Acumulado:
+
+
+---
+
+Passo 4: Análise da Tabela e Conclusão
+
+A análise do percentual acumulado confirma o Princípio de Pareto (80/20):
+
+Os três primeiros defeitos somam 73,47% dos problemas!
+
+Isso significa que se resolvermos apenas essas três falhas principais (Falha na Soldagem, Componente com Defeito e Erro de Montagem), eliminamos a maioria dos defeitos da fábrica.
+
+
+O próximo passo seria construir o Gráfico de Pareto, com as colunas representando a frequência dos defeitos e uma linha indicando o percentual acumulado.
+
+--- 
+
 

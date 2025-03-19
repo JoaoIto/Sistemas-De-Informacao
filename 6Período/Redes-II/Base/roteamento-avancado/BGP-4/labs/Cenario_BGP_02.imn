@@ -1,0 +1,557 @@
+node n0 {
+    type router
+    model quagga
+    network-config {
+	hostname router1
+	!
+	interface eth1
+	 mac address 42:00:aa:00:00:01
+	 ip address 172.16.20.1/24
+	!
+	interface eth0
+	 mac address 42:00:aa:00:00:00
+	 ip address 172.16.10.1/24
+	!
+	interface lo0
+	 type lo
+	 ip address 127.0.0.1/8
+	 ipv6 address ::1/128
+	!
+	router ospf
+	 redistribute static
+	 redistribute connected
+	 redistribute rip
+	 network 0.0.0.0/0 area 0.0.0.0
+	!
+    }
+    canvas c0
+    iconcoords {72 288}
+    labelcoords {72 313}
+    interface-peer {eth0 n6}
+    interface-peer {eth1 n1}
+    custom-configs {
+        custom-config-id conf1 {
+            custom-command /usr/local/bin/quaggaboot.sh
+            config {
+                interface eth1
+                   ip address 172.16.20.1/24
+                !
+                interface eth0
+                   ip address 172.16.10.1/24
+                !
+                interface lo0
+                   type lo
+                   ip address 127.0.0.1/8
+                   ipv6 address ::1/128
+                !
+                router ospf
+                    no redistribute static
+                    no redistribute connected
+                    no redistribute rip
+                    no network 0.0.0.0/0 area 0.0.0.0
+                !
+                router bgp 6500
+                    no bgp router-id 172.16.30.1
+                    no network 172.16.30.0/24
+                    no neighbor 172.16.101.2 remote-as 65004
+                    no neighbor 172.16.102.1 remote-as 65002
+                    no neighbor 172.16.101.2 weight 200
+                    no neighbor 172.16.102.1 weight 100
+                !
+            }
+        }
+    }
+    custom-enabled true
+    custom-selected conf1
+}
+
+node n1 {
+    type router
+    model quagga
+    network-config {
+	hostname router2
+	!
+	interface eth1
+	 mac address 42:00:aa:00:00:03
+	 ip address 172.16.30.1/24
+	!
+	interface eth0
+	 mac address 42:00:aa:00:00:02
+	 ip address 172.16.20.2/24
+	!
+	interface lo0
+	 type lo
+	 ip address 127.0.0.1/8
+	 ipv6 address ::1/128
+	!
+	router ospf
+	 redistribute static
+	 redistribute connected
+	 redistribute rip
+	 network 0.0.0.0/0 area 0.0.0.0
+	!
+    }
+    canvas c0
+    iconcoords {72 24}
+    labelcoords {72 49}
+    interface-peer {eth0 n0}
+    interface-peer {eth1 n2}
+    custom-configs {
+        custom-config-id conf1 {
+            custom-command /usr/local/bin/quaggaboot.sh
+            config {
+                interface eth1
+                   ip address 172.16.30.1/24
+                !
+                interface eth0
+                   ip address 172.16.20.2/24
+                !
+                interface lo0
+                   type lo
+                   ip address 127.0.0.1/8
+                   ipv6 address ::1/128
+                !
+                router ospf
+                    no redistribute static
+                    no redistribute connected
+                    no redistribute rip
+                    no network 0.0.0.0/0 area 0.0.0.0
+                !
+                router bgp 6500
+                    no bgp router-id 172.16.30.1
+                    no network 172.16.30.0/24
+                    no neighbor 172.16.101.2 remote-as 65004
+                    no neighbor 172.16.102.1 remote-as 65002
+                    no neighbor 172.16.101.2 weight 200
+                    no neighbor 172.16.102.1 weight 100
+                !
+            }
+        }
+    }
+    custom-selected conf1
+    custom-enabled true
+}
+
+node n2 {
+    type router
+    model quagga
+    network-config {
+	hostname router3
+	!
+	interface eth1
+	 mac address 42:00:aa:00:00:05
+	 ip address 172.31.10.1/24
+	!
+	interface eth0
+	 mac address 42:00:aa:00:00:04
+	 ip address 172.16.30.2/24
+	!
+	interface lo0
+	 type lo
+	 ip address 127.0.0.1/8
+	 ipv6 address ::1/128
+	!
+	router ospf
+	 redistribute static
+	 redistribute connected
+	 redistribute rip
+	 network 0.0.0.0/0 area 0.0.0.0
+	!
+    }
+    canvas c0
+    iconcoords {312 216}
+    labelcoords {312 241}
+    interface-peer {eth0 n1}
+    interface-peer {eth1 n3}
+    custom-configs {
+        custom-config-id conf1 {
+            custom-command /usr/local/bin/quaggaboot.sh
+            config {
+                interface eth1
+                   ip address 172.31.10.1/24
+                !
+                interface eth0
+                   ip address 172.16.30.2/24
+                !
+                interface lo0
+                   type lo
+                   ip address 127.0.0.1/8
+                   ipv6 address ::1/128
+                !
+                router ospf
+                    no redistribute static
+                    no redistribute connected
+                    no redistribute rip
+                    no network 0.0.0.0/0 area 0.0.0.0
+                !
+                router bgp 6500
+                    no bgp router-id 172.16.30.2
+                    no network 172.16.30.0/24
+                    no neighbor 172.16.101.2 remote-as 65004
+                    no neighbor 172.16.102.1 remote-as 65002
+                    no neighbor 172.16.101.2 weight 200
+                    no neighbor 172.16.102.1 weight 100
+                !
+            }
+        }
+    }
+    custom-enabled true
+    custom-selected conf1
+}
+
+node n3 {
+    type router
+    model quagga
+    network-config {
+	hostname router4
+	!
+	interface eth1
+	 mac address 42:00:aa:00:00:07
+	 ip address 192.168.30.1/24
+	!
+	interface eth0
+	 mac address 42:00:aa:00:00:06
+	 ip address 172.31.10.2/24
+	!
+	interface lo0
+	 type lo
+	 ip address 127.0.0.1/8
+	 ipv6 address ::1/128
+	!
+	router ospf
+	 redistribute static
+	 redistribute connected
+	 redistribute rip
+	 network 0.0.0.0/0 area 0.0.0.0
+	!
+    }
+    canvas c0
+    iconcoords {600 216}
+    labelcoords {600 241}
+    interface-peer {eth0 n2}
+    interface-peer {eth1 n4}
+    custom-configs {
+        custom-config-id conf1 {
+            custom-command /usr/local/bin/quaggaboot.sh
+            config {
+                interface eth1
+                   ip address 192.168.30.1/24
+                !
+                interface eth0
+                   ip address 172.31.10.2/24
+                !
+                interface lo0
+                   type lo
+                   ip address 127.0.0.1/8
+                   ipv6 address ::1/128
+                !
+                router ospf
+                    no redistribute static
+                    no redistribute connected
+                    no redistribute rip
+                    no network 0.0.0.0/0 area 0.0.0.0
+                !
+                router bgp 1900
+                    no bgp router-id 192.168.30.1
+                    no network 172.16.30.0/24
+                    no neighbor 172.16.101.2 remote-as 65004
+                    no neighbor 172.16.102.1 remote-as 65002
+                    no neighbor 172.16.101.2 weight 200
+                    no neighbor 172.16.102.1 weight 100
+                !
+            }
+        }
+    }
+    custom-enabled true
+    custom-selected conf1
+}
+
+node n4 {
+    type router
+    model quagga
+    network-config {
+	hostname router5
+	!
+	interface eth1
+	 mac address 42:00:aa:00:00:09
+	 ip address 192.168.20.2/24
+	!
+	interface eth0
+	 mac address 42:00:aa:00:00:08
+	 ip address 192.168.30.2/24
+	!
+	interface lo0
+	 type lo
+	 ip address 127.0.0.1/8
+	 ipv6 address ::1/128
+	!
+	router ospf
+	 redistribute static
+	 redistribute connected
+	 redistribute rip
+	 network 0.0.0.0/0 area 0.0.0.0
+	!
+    }
+    canvas c0
+    iconcoords {840 24}
+    labelcoords {840 49}
+    interface-peer {eth0 n3}
+    interface-peer {eth1 n5}
+    custom-configs {
+        custom-config-id conf1 {
+            custom-command /usr/local/bin/quaggaboot.sh
+            config {
+                interface eth1
+                   ip address 192.168.20.2/24
+                !
+                interface eth0
+                   ip address 192.168.30.2/24
+                !
+                interface lo0
+                   type lo
+                   ip address 127.0.0.1/8
+                   ipv6 address ::1/128
+                !
+                router ospf
+                    no redistribute static
+                    no redistribute connected
+                    no redistribute rip
+                    no network 0.0.0.0/0 area 0.0.0.0
+                !
+                router bgp 1900
+                    no bgp router-id 192.168.30.2
+                    no network 172.16.30.0/24
+                    no neighbor 172.16.101.2 remote-as 65004
+                    no neighbor 172.16.102.1 remote-as 65002
+                    no neighbor 172.16.101.2 weight 200
+                    no neighbor 172.16.102.1 weight 100
+                !
+            }
+        }
+    }
+    custom-selected conf1
+    custom-enabled true
+}
+
+node n5 {
+    type router
+    model quagga
+    network-config {
+	hostname router6
+	!
+	interface eth0
+	 mac address 42:00:aa:00:00:0a
+	 ip address 192.168.20.1/24
+	!
+	interface eth1
+	 mac address 42:00:aa:00:00:0b
+	 ip address 192.168.10.1/24
+	!
+	interface lo0
+	 type lo
+	 ip address 127.0.0.1/8
+	 ipv6 address ::1/128
+	!
+	router ospf
+	 redistribute static
+	 redistribute connected
+	 redistribute rip
+	 network 0.0.0.0/0 area 0.0.0.0
+	!
+    }
+    canvas c0
+    iconcoords {840 288}
+    labelcoords {840 313}
+    interface-peer {eth0 n4}
+    interface-peer {eth1 n8}
+    custom-configs {
+        custom-config-id conf1 {
+            custom-command /usr/local/bin/quaggaboot.sh
+            config {
+                interface eth1
+                   ip address 192.168.10.1/24
+                !
+                interface eth0
+                   ip address 192.168.20.1/24
+                !
+                interface lo0
+                   type lo
+                   ip address 127.0.0.1/8
+                   ipv6 address ::1/128
+                !
+                router ospf
+                    no redistribute static
+                    no redistribute connected
+                    no redistribute rip
+                    no network 0.0.0.0/0 area 0.0.0.0
+                !
+                router bgp 1900
+                    no bgp router-id 192.168.20.1
+                    no network 172.16.30.0/24
+                    no neighbor 172.16.101.2 remote-as 65004
+                    no neighbor 172.16.102.1 remote-as 65002
+                    no neighbor 172.16.101.2 weight 200
+                    no neighbor 172.16.102.1 weight 100
+                !
+            }
+        }
+    }
+    custom-enabled true
+    custom-selected conf1
+}
+
+node n6 {
+    type lanswitch
+    network-config {
+	hostname switch1
+	!
+    }
+    canvas c0
+    iconcoords {72 432}
+    labelcoords {72 455}
+    interface-peer {e0 n0}
+    interface-peer {e1 n7}
+}
+
+node n7 {
+    type pc
+    network-config {
+	hostname pc1
+	!
+	interface eth0
+	 mac address 42:00:aa:00:00:0d
+	 ip address 172.16.10.10/24
+	!
+	interface lo0
+	 type lo
+	 ip address 127.0.0.1/8
+	 ipv6 address ::1/128
+	!
+	ip route 0.0.0.0/0 172.16.10.1
+	!
+	!
+    }
+    canvas c0
+    iconcoords {72 552}
+    labelcoords {72 583}
+    interface-peer {eth0 n6}
+}
+
+node n8 {
+    type lanswitch
+    network-config {
+	hostname switch2
+	!
+    }
+    canvas c0
+    iconcoords {792 408}
+    labelcoords {792 431}
+    interface-peer {e0 n5}
+    interface-peer {e1 n9}
+}
+
+node n9 {
+    type pc
+    network-config {
+	hostname pc2
+	!
+	interface eth0
+	 mac address 42:00:aa:00:00:0c
+	 ip address 192.168.10.20/24
+	!
+	interface lo0
+	 type lo
+	 ip address 127.0.0.1/8
+	 ipv6 address ::1/128
+	!
+	ip route 0.0.0.0/0 192.168.10.1
+	!
+	!
+    }
+    canvas c0
+    iconcoords {792 552}
+    labelcoords {792 583}
+    interface-peer {eth0 n8}
+}
+
+link l0 {
+    nodes {n0 n6}
+    bandwidth 0
+}
+
+link l1 {
+    nodes {n0 n1}
+    bandwidth 0
+}
+
+link l2 {
+    nodes {n1 n2}
+    bandwidth 0
+}
+
+link l3 {
+    nodes {n2 n3}
+    bandwidth 0
+}
+
+link l4 {
+    nodes {n3 n4}
+    bandwidth 0
+}
+
+link l5 {
+    nodes {n4 n5}
+    bandwidth 0
+}
+
+link l6 {
+    nodes {n5 n8}
+    bandwidth 0
+}
+
+link l7 {
+    nodes {n9 n8}
+    bandwidth 0
+}
+
+link l8 {
+    nodes {n6 n7}
+    bandwidth 0
+}
+
+annotation a0 {
+    type text
+    iconcoords {218 60}
+    label {AS-6500}
+    labelcolor #0000ff
+    font {-family {DejaVu Sans} -size 16 -weight normal -slant roman -underline 0 -overstrike 0}
+    canvas c0
+}
+
+annotation a1 {
+    type text
+    iconcoords {627 62}
+    label {AS-1900}
+    labelcolor #0000ff
+    font {-family {DejaVu Sans} -size 16 -weight normal -slant roman -underline 0 -overstrike 0}
+    canvas c0
+}
+
+canvas c0 {
+    name {Canvas0}
+}
+
+option show {
+    interface_names yes
+    ip_addresses yes
+    ipv6_addresses yes
+    node_labels yes
+    link_labels yes
+    background_images no
+    annotations yes
+    hostsAutoAssign no
+    grid yes
+    iconSize normal
+    zoom 1.0
+}
+

@@ -147,3 +147,109 @@ Compare as principais diferenças entre OSPF e BGP, considerando os seguintes cr
   - BGP: Mais lenta, pois depende de decisões baseadas em política.  
 
 ---
+
+## Troca de mensagens no (OSPF e BGP)
+Aqui estão mais cinco questões (de 11 a 16) focadas em troca de mensagens no OSPF e BGP, abordando conexões, falhas e exemplos práticos:  
+
+---
+
+### **11. Tipos de mensagens no OSPF e seu papel na comunicação**  
+
+O OSPF utiliza mensagens para manter a topologia da rede sincronizada entre os roteadores.  
+
+**Pergunta:**  
+Quais são os principais tipos de mensagens trocadas entre roteadores no OSPF? Explique o papel de cada uma delas no processo de descoberta e atualização de rotas.  
+
+**Resposta:**  
+1. **Hello** – Descobre e mantém vizinhos OSPF ativos.  
+2. **DBD (Database Description)** – Resume as informações de roteamento conhecidas.  
+3. **LSR (Link State Request)** – Solicita informações sobre rotas desconhecidas.  
+4. **LSU (Link State Update)** – Envia informações sobre alterações na rede.  
+5. **LSAck (Link State Acknowledgment)** – Confirma o recebimento de mensagens LSU.  
+
+Essas mensagens garantem que todos os roteadores tenham uma visão atualizada da rede.  
+
+---
+
+### **12. Queda de conexão no OSPF e tempo de convergência**  
+
+Falhas em links podem impactar a estabilidade da rede OSPF.  
+
+**Pergunta:**  
+Quando ocorre uma queda de conexão entre roteadores OSPF, como a detecção da falha acontece e qual mensagem é usada para iniciar a reconvergência?  
+
+**Resposta:**  
+- A falha é detectada pela ausência de **mensagens Hello** dentro do tempo de **Dead Interval** (geralmente 40 segundos).  
+- Se um roteador não recebe mensagens Hello de um vizinho dentro desse tempo, ele considera o vizinho inativo.  
+- O roteador então envia uma **LSU (Link State Update)** para informar a todos os outros roteadores da rede sobre a alteração na topologia.  
+
+Isso permite que os roteadores recalculam suas rotas rapidamente.  
+
+---
+
+### **13. Troca de mensagens no BGP durante o estabelecimento de sessão**  
+
+O BGP é um protocolo baseado em conexões TCP (porta 179).  
+
+**Pergunta:**  
+Durante o estabelecimento de uma sessão BGP, quais mensagens são trocadas entre os roteadores para formar a conexão? Explique a função de cada uma.  
+
+**Resposta:**  
+1. **Open** – Inicia a sessão BGP e troca informações básicas (ASN, número da versão, tempo de Keepalive).  
+2. **Keepalive** – Mantém a sessão ativa, garantindo que os roteadores estejam funcionando corretamente.  
+3. **Update** – Envia ou remove informações de roteamento.  
+4. **Notification** – Indica erros na comunicação, podendo encerrar a conexão.  
+
+Essas mensagens garantem que a sessão seja iniciada corretamente e permaneça ativa.  
+
+---
+
+### **14. Detecção de falhas no BGP e impacto na rede**  
+
+Diferente do OSPF, o BGP pode levar mais tempo para detectar falhas e convergir.  
+
+**Pergunta:**  
+Quando um roteador BGP perde conexão com seu vizinho, qual mensagem ele envia para encerrar a sessão? Qual o impacto da convergência lenta do BGP na Internet?  
+
+**Resposta:**  
+- O roteador envia uma **mensagem Notification** informando o erro e encerrando a sessão.  
+- Se a conexão for perdida sem um aviso, o tempo de detecção depende dos **Keepalives** e do **Hold Timer** (normalmente 180 segundos).  
+- A convergência lenta pode causar **interrupções no tráfego** e **perda de pacotes** enquanto novas rotas são propagadas.  
+
+Para mitigar esse problema, algumas redes utilizam **BFD (Bidirectional Forwarding Detection)** para detectar falhas mais rapidamente.  
+
+---
+
+### **15. Troca de mensagens BGP após uma falha de rota**  
+
+O BGP precisa atualizar a tabela de roteamento quando um caminho se torna indisponível.  
+
+**Pergunta:**  
+Quando um roteador BGP detecta que uma rota não está mais disponível, qual mensagem ele envia para informar os vizinhos? Como os roteadores vizinhos reagem a essa mensagem?  
+
+**Resposta:**  
+- O roteador envia uma **mensagem Update** informando que a rota específica deve ser removida da tabela de roteamento.  
+- Os vizinhos, ao receber essa atualização, também removem a rota de suas tabelas e **propagam a informação** para outros roteadores BGP.  
+- Esse processo continua até que a mudança tenha sido disseminada por toda a Internet.  
+
+Isso evita que pacotes sejam enviados para caminhos inválidos.  
+
+---
+
+### **16. Exemplo prático de troca de mensagens OSPF e BGP**  
+
+Para entender a troca de mensagens, vamos considerar um cenário real.  
+
+**Pergunta:**  
+Considere uma empresa conectada a dois provedores de Internet diferentes usando BGP. Internamente, ela usa OSPF para roteamento. Se um dos links com um provedor cair, como o OSPF e o BGP reagiriam?  
+
+**Resposta:**  
+1. O OSPF detecta a falha pela ausência de **mensagens Hello** e inicia uma atualização via **LSU** para recalcular as rotas internas.  
+2. O BGP detecta a falha através da falta de **Keepalive** ou de uma **mensagem Notification** do provedor.  
+3. O roteador envia uma **mensagem Update** para retirar a rota perdida da tabela de roteamento global.  
+4. O tráfego é então redirecionado para o segundo provedor.  
+
+Esse processo garante que a rede continue funcionando mesmo com a falha de um dos provedores.  
+
+---
+

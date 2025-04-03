@@ -78,7 +78,6 @@ Se uma filial precisa acessar um provedor local (ex.: VPN ou conexão com outro 
 ### **Conclusão**  
 A divisão em áreas no OSPF **melhora a escalabilidade da rede**, reduz o processamento dos roteadores e evita sobrecarga desnecessária de informações. Dependendo do cenário, escolher o tipo correto de área pode otimizar o desempenho e a estabilidade da rede.  
 
-Se precisar de mais exemplos ou quiser um cenário mais prático, me avise! 😊
 ---
 
 ## **3. Troca de mensagens no OSPF**  

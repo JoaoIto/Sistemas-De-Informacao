@@ -28,6 +28,57 @@ Explique a importância da divisão em áreas no OSPF e descreva as funções da
 - **Área NSSA:** Permite entrada de rotas externas, mas evita rotas externas completas.  
 - **Importância:** Reduz o consumo de processamento dos roteadores e melhora a convergência.  
 
+O OSPF (Open Shortest Path First) é um protocolo de roteamento baseado em estado de enlace que organiza a rede em **áreas** para otimizar a eficiência da comunicação e reduzir o consumo de recursos nos roteadores.  
+
+### **Por que OSPF usa áreas?**  
+Se uma rede tiver muitos roteadores OSPF compartilhando informações indiscriminadamente, o volume de dados trocados pode sobrecarregar os dispositivos. Para evitar isso, o OSPF divide a rede em áreas menores, limitando a propagação de atualizações de roteamento e tornando o processamento mais eficiente.  
+
+### **Estrutura das áreas do OSPF**  
+O OSPF tem diferentes tipos de áreas, cada uma com regras específicas para a propagação de rotas. Vamos entender cada uma delas:  
+
+#### **1. Área Backbone (Área 0) — A espinha dorsal do OSPF**  
+- A **Área 0** é o núcleo da rede OSPF.  
+- **Todas as outras áreas devem se conectar a ela** para garantir a comunicação.  
+- É responsável por distribuir informações de roteamento entre as demais áreas.  
+
+🔹 **Exemplo:**  
+Se sua empresa tem três escritórios conectados por OSPF (Área 1, Área 2 e Área 3), **todos devem estar ligados à Área 0** para garantir que o tráfego flua corretamente entre eles.  
+
+#### **2. Área Stub — Bloqueando rotas externas**  
+- Uma área **Stub** não aceita **rotas externas**, ou seja, rotas aprendidas via BGP ou RIP.  
+- Em vez disso, ela usa **uma única rota padrão (default route)** apontando para a Área 0.  
+
+🔹 **Quando usar?**  
+Se você tem uma filial que só precisa alcançar a matriz, mas não precisa conhecer todos os detalhes da rede externa, pode configurar a filial como **Área Stub** para reduzir o processamento.  
+
+#### **3. Área Totally Stubby — A mais restritiva**  
+- **Não aceita nem rotas externas nem interáreas.**  
+- O único caminho que recebe é **uma rota padrão** vinda da Área 0.  
+
+🔹 **Quando usar?**  
+Ideal para filiais que só precisam de acesso à Internet ou a um datacenter principal, sem precisar conhecer os detalhes de outras áreas.  
+
+#### **4. Área NSSA (Not-so-Stubby Area) — A exceção à regra**  
+- Similar a uma **Stub**, mas permite **algumas rotas externas específicas** serem injetadas.  
+- Permite importar rotas de protocolos como RIP ou BGP, mas sem receber rotas externas completas da Área 0.  
+
+🔹 **Quando usar?**  
+Se uma filial precisa acessar um provedor local (ex.: VPN ou conexão com outro parceiro), mas ainda quer evitar muitas atualizações de roteamento, a Área NSSA é útil.  
+
+### **Resumo visual**  
+| Tipo de Área | Aceita rotas externas? | Aceita rotas de outras áreas? | Recebe rota padrão? |  
+|-------------|------------------|------------------|------------------|  
+| **Backbone (Área 0)** | Sim | Sim | Não necessariamente |  
+| **Stub** | ❌ Não | ✅ Sim | ✅ Sim |  
+| **Totally Stubby** | ❌ Não | ❌ Não | ✅ Sim |  
+| **NSSA** | ✅ Sim (limitado) | ✅ Sim | ✅ Sim (opcional) |  
+
+---
+
+### **Conclusão**  
+A divisão em áreas no OSPF **melhora a escalabilidade da rede**, reduz o processamento dos roteadores e evita sobrecarga desnecessária de informações. Dependendo do cenário, escolher o tipo correto de área pode otimizar o desempenho e a estabilidade da rede.  
+
+Se precisar de mais exemplos ou quiser um cenário mais prático, me avise! 😊
 ---
 
 ## **3. Troca de mensagens no OSPF**  

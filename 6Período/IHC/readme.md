@@ -1,89 +1,107 @@
-# IHC - Interface Humano Computadod 
+# 📘 IHC
 
-Construção e revisão de interface baseada na acessibilidade, boas práticas e conexão interface humano computador.
+A disciplina de Interação Humano-Computador (IHC) busca entender como criar sistemas computacionais que sejam fáceis e agradáveis de usar. Para isso, são considerados fatores técnicos, cognitivos, emocionais e contextuais do usuário. O campo é multidisciplinar, envolvendo áreas como design, psicologia, ergonomia e ciência da computação.
 
-1. Introdução
+Os principais tópicos abordados incluem: **conceituação de interface e histórico da IHC**, **teoria das cores**, **fatores humanos e ergonomia**, **construção de personas**, **Design Centrado no Usuário (DCU)**, **usabilidade**, **experiência do usuário (UX)**, **heurísticas e regras de ouro** e **affordances**. A seguir, veremos cada um desses tópicos com mais profundidade.
 
-Interface Humano-Computador (IHC) é o campo de estudo que analisa e projeta a interação entre pessoas e sistemas computacionais, garantindo usabilidade, acessibilidade e experiência do usuário eficazes.
+---
 
-2. Conceitos Fundamentais
+## 1. 📌 Teoria e Conceituação de Interface
 
-Usabilidade: Medida da eficiência, eficácia e satisfação ao usar um sistema.
+### Subtópicos:
+- **Histórico da IHC**
+- **Definição de interface**
+- **Evolução tecnológica**
+- **Objetivos da IHC**
 
-Experiência do Usuário (UX): Sensações e percepções do usuário ao interagir com um sistema.
+A **IHC** surgiu a partir da necessidade de melhorar a interação entre humanos e computadores, especialmente a partir da década de 1980. A **interface** é a ponte entre o usuário e o sistema. Com a evolução tecnológica, passamos de **interfaces em linha de comando** para **interfaces gráficas** e, atualmente, para **interfaces naturais** e baseadas em **voz e gestos**.
 
-Acessibilidade: Design inclusivo para pessoas com deficiências.
+A principal meta da IHC é projetar **interfaces utilizáveis, acessíveis e agradáveis**. O foco é entender as necessidades, capacidades e limitações humanas para que o sistema seja intuitivo e eficiente.
 
-Interação: Processo de comunicação entre o usuário e o sistema.
+📖 **Fonte:** *Aula 02 - Histórico e Conceituação*.
 
-Feedback: Resposta do sistema a uma ação do usuário.
+---
 
+## 2. 🎨 Teoria das Cores
 
-3. Boas Práticas em IHC
+### Subtópicos:
+- **Círculo cromático**
+- **Cores primárias, secundárias e terciárias**
+- **Combinações harmônicas**
+- **Psicologia das cores**
+- **Acessibilidade e contraste**
 
-Design Simples e Intuitivo: Interfaces devem ser fáceis de entender e utilizar.
+O uso correto das cores é essencial para **comunicação visual**, **atenção** e **acessibilidade**. Cores influenciam o comportamento e a emoção dos usuários, como o **vermelho** para alertas ou o **verde** para segurança. É essencial manter o **contraste** para garantir legibilidade, especialmente para pessoas com **daltonismo**.
 
-Consistência: Manter padrões visuais e funcionais em toda a aplicação.
+Combinações harmônicas (como **análogas**, **complementares** ou **monocromáticas**) ajudam na criação de interfaces equilibradas visualmente.
 
-Feedback Visível: O sistema deve indicar quando ações foram executadas.
+📖 **Fonte:** *Aula 08 - Teoria das Cores*.
 
-Prevenção de Erros: Minimizar possibilidades de erro e fornecer soluções.
+---
 
-Acessibilidade: Garantir que pessoas com deficiência possam usar o sistema.
+## 3. 👤 Construção de Personas
 
+### Subtópicos:
+- **O que é uma persona**
+- **Dados demográficos e psicográficos**
+- **Importância no design**
+- **Cenários de uso**
 
-4. Estudo de Personas
+Personas são **representações fictícias** baseadas em dados reais de usuários. Elas ajudam os designers a criar sistemas mais empáticos e direcionados. Cada persona inclui **nome, idade, profissão, objetivos, frustrações e motivações**.
 
-Personas são representações fictícias de usuários típicos do sistema. Criar personas ajuda a entender melhor as necessidades e expectativas dos usuários.
+Exemplo de uso: ao desenvolver um aplicativo de saúde, criar personas como "Maria, 68 anos, hipertensa" ajuda a considerar limitações e necessidades desse perfil.
 
-Exemplo de Persona:
+📖 **Fonte:** *Aula 05 - Construindo Personas*.
 
-Nome: Ana Souza
+---
 
-Idade: 28 anos
+## 4. 🧠 Fatores Humanos e Ergonomia
 
-Profissão: Designer gráfico
+### Subtópicos:
+- **Limitações cognitivas e físicas**
+- **Ergonomia física, cognitiva e organizacional**
+- **Carga mental**
+- **Prevenção de erros**
 
-Objetivo: Criar artes rapidamente sem precisar de um software complexo
+A ergonomia e os fatores humanos avaliam como os aspectos físicos e mentais do ser humano influenciam sua interação com o sistema. É preciso respeitar **limites de memória**, **atenção**, **visão**, e até fatores emocionais.
 
-Desafios: Pouco conhecimento técnico em ferramentas avançadas
+A **ergonomia cognitiva** lida com a forma como a informação é processada. Um exemplo é evitar **sobrecarga de memória de curto prazo**, como exigir que o usuário lembre muitos dados para concluir uma tarefa.
 
+📖 **Fonte:** *Aula 04 - Fatores Humanos e Ergonomia* e *Artigo - Integrando Fatores Humanos ao IHC*.
 
-5. Exemplo de Prática
+---
 
-Caso: Melhorando a Experiência de um E-commerce
+## 5. 🧭 DCU, Usabilidade e UX
 
-Problema: Usuários abandonam o carrinho antes da finalização da compra.
+### Subtópicos:
+- **Design Centrado no Usuário**
+- **Usabilidade segundo a ISO e Nielsen**
+- **Princípios de UX (Norman)**
+- **Heurísticas de Nielsen**
+- **Regras de ouro de Shneiderman**
 
-Solução:
+O **Design Centrado no Usuário (DCU)** foca em compreender as **necessidades, expectativas e limitações do usuário** durante todas as fases do projeto. Já a **usabilidade** mede a **eficácia, eficiência e satisfação** com que os usuários atingem seus objetivos.
 
-Simplificação do formulário de pagamento
+Jakob **Nielsen** define 5 aspectos principais de usabilidade: **aprendibilidade**, **eficiência**, **memorabilidade**, **erros** e **satisfação**. Ele também propôs as **10 heurísticas de usabilidade**, que são diretrizes como **consistência**, **feedback**, **prevenção de erros** e **design minimalista**.
 
-Adição de um botão "Comprar com 1 clique"
+As **regras de ouro de Shneiderman** incluem: manter **consistência**, permitir **reversão de ações**, dar **feedback imediato**, e reduzir a **carga de memória do usuário**.
 
-Indicação clara dos custos antes da finalização
+📖 **Fonte:** *DCU, Usabilidade e UX.pdf*
 
+---
 
+## 6. 🧩 Affordances
 
-Resultado: Redução de 30% na taxa de abandono de carrinho.
+### Subtópicos:
+- **O que é affordance**
+- **Affordance perceptível e oculta**
+- **Significância no design**
+- **Exemplos práticos**
 
-6. Estudo de Caso
+Affordances são **pistas visuais que indicam como algo pode ser usado**. O termo foi popularizado por Donald Norman. Um botão que parece "clicável" está usando uma **affordance perceptível**. Já uma função escondida sem indicação clara é uma **affordance falsa ou oculta**.
 
-Aplicação: Redesign de um Sistema de Agendamento Médico
+Projetar boas affordances ajuda o usuário a interagir intuitivamente com a interface, sem necessidade de instruções.
 
-Problema: Usuários tinham dificuldade em marcar consultas online.
-
-Abordagem:
-
-Criação de um fluxo simplificado de agendamento
-
-Uso de cores e ícones para guiar os usuários
-
-Inclusão de feedbacks visuais após a confirmação da consulta
-
-
-Resultado: A taxa de agendamentos bem-sucedidos aumentou em 45%.
-
-
+📖 **Fonte:** *Base conceitual e Norman (The Design of Everyday Things)* – Referido no material de UX.
 
 ---

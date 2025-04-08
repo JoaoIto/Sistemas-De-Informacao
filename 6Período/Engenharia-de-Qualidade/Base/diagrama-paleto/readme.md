@@ -1,114 +1,76 @@
-# Estudo de Caso: Aplicação do Diagrama de Pareto na Qualidade de Produção
+# 📊 Diagrama de Pareto – Resumo Completo
 
-## Contexto
+## 🧠 Visão Geral
 
-Uma fábrica de componentes eletrônicos identificou que a taxa de defeitos nos produtos tem aumentado, resultando em reclamações de clientes e custos adicionais. Para entender as principais causas dos defeitos, a equipe de qualidade coletou dados de um mês de produção e registrou a quantidade de ocorrências para diferentes tipos de defeitos.
+O **Diagrama de Pareto** é uma ferramenta de gestão da qualidade utilizada para identificar e priorizar problemas, causas ou defeitos, com base no princípio de que **poucos fatores (geralmente 20%) são responsáveis pela maior parte (80%) dos efeitos**. Esse conceito é conhecido como **Princípio de Pareto** ou **Regra 80/20**, formulado por Vilfredo Pareto no século XIX e adaptado à gestão por Joseph Juran.
 
-
----
-
-Passo 1: Coleta de Dados e Construção da Tabela
-
-A equipe identificou seis principais tipos de defeitos e registrou o número de ocorrências de cada um:
-
+Ele é representado por um gráfico de colunas, onde os itens são dispostos em ordem decrescente de frequência ou impacto, e uma linha acumulativa é sobreposta, permitindo observar visualmente onde concentrar os esforços de melhoria.
 
 ---
 
-Passo 2: Construção da Tabela para o Diagrama de Pareto
+## 🔍 Subtópicos e Explicações
 
-Agora organizamos os dados de forma decrescente, calculamos o percentual individual e o percentual acumulado.
+### 1. **Conceito do Princípio de Pareto**
+- Baseado na observação de que **80% das consequências vêm de 20% das causas**.
+- Por exemplo: 80% das reclamações dos clientes podem ser causadas por apenas 20% dos tipos de falhas no processo.
 
-Tabela de Análise
+### 2. **Objetivos do Diagrama de Pareto**
+- Priorizar os problemas mais relevantes.
+- Focar na causa raiz dos principais problemas.
+- Otimizar recursos de resolução.
+- Apoiar a tomada de decisão em melhorias contínuas.
 
+### 3. **Construção do Diagrama de Pareto**
+Os passos clássicos são:
 
----
+1. **Coleta de dados:** sobre ocorrências, defeitos ou falhas.
+2. **Classificação dos problemas:** por tipo ou categoria.
+3. **Cálculo das frequências absolutas e relativas.**
+4. **Organização em ordem decrescente.**
+5. **Cálculo do percentual acumulado.**
+6. **Construção do gráfico de colunas com linha acumulada.**
 
-Passo 3: Construção do Gráfico de Pareto
+### 4. **Leitura e Interpretação**
+- Os itens mais à esquerda do gráfico são os que têm maior impacto ou frequência.
+- A linha acumulativa mostra em que ponto atingimos, por exemplo, **80% dos efeitos** (ideal para identificar o "ponto de corte").
+- Isso permite separar **“os poucos vitais” dos “muitos triviais”**.
 
-O gráfico de Pareto é um gráfico de colunas onde:
+### 5. **Vantagens do Diagrama**
+- Fácil visualização de prioridades.
+- Rápido para tomar decisões estratégicas.
+- Baseado em dados objetivos.
+- Reforça a cultura de melhoria contínua.
 
-O eixo X representa os tipos de defeitos (organizados do maior para o menor).
-
-O eixo Y esquerdo representa a quantidade de ocorrências.
-
-O eixo Y direito representa o percentual acumulado.
-
-As barras mostram as quantidades de defeitos.
-
-A linha mostra o percentual acumulado.
-
-
-Passo 4: Interpretação dos Resultados
-
-O Princípio de Pareto (80/20) indica que 80% dos problemas vêm de 20% das causas. Pela análise:
-
-Os três primeiros defeitos (Falha na Soldagem, Componente com Defeito e Erro de Montagem) somam 73,47% das falhas.
-
-Isso significa que se a empresa focar em corrigir essas três principais falhas, pode eliminar grande parte dos defeitos e melhorar a qualidade geral do produto.
-
-
-
----
-
-Como Construir o Gráfico no Excel
-
-1. Crie a tabela acima no Excel.
-
-
-2. Selecione as colunas "Tipo de Defeito" e "Ocorrências" e insira um gráfico de colunas.
-
-
-3. Adicione uma linha representando o percentual acumulado:
-
-Clique no gráfico, selecione "Adicionar Série de Dados" e escolha os valores de "% Acumulado".
-
-Mude essa série para um gráfico de linhas.
-
-
-
-4. Adicione um eixo secundário para a linha (% acumulado).
-
-
-Passo 1: Coletar e Organizar os Dados
-
-Os dados foram coletados e organizados em ordem decrescente de ocorrência.
-
+### 6. **Limitações**
+- Só funciona bem com dados confiáveis.
+- Pode mascarar causas secundárias importantes.
+- Não identifica causas, apenas aponta onde estão os maiores problemas.
 
 ---
 
-Passo 2: Cálculo do Percentual Individual
+## 🧪 Exemplo Prático / Estudo de Caso
 
-Cada percentual individual é calculado com a fórmula:
+**Cenário:** Uma empresa de manufatura quer reduzir os defeitos em seus produtos.
 
-\text{Percentual Individual} = \left( \frac{\text{Ocorrências}}{\text{Total de Ocorrências}} \right) \times 100
+**Dados Coletados de Defeitos em 1000 peças:**
+| Tipo de Defeito     | Quantidade |
+|---------------------|------------|
+| Rachaduras          | 400        |
+| Arranhões           | 200        |
+| Peças soltas        | 150        |
+| Cor incorreta       | 100        |
+| Falta de pintura    | 80         |
+| Outros              | 70         |
 
-Aplicando os cálculos:
-
+**Aplicando o Diagrama de Pareto:**
+- Rachaduras e Arranhões somam 600 defeitos (60% do total).
+- A linha acumulada mostra que **apenas dois tipos de defeitos** são responsáveis por mais da metade dos problemas.
+- Com isso, a empresa pode direcionar ações corretivas primeiro para esses dois problemas, otimizando recursos e tempo.
 
 ---
 
-Passo 3: Cálculo do Percentual Acumulado
+## 📌 Conclusão
 
-O percentual acumulado é a soma dos percentuais individuais sucessivos.
-
-\text{Percentual Acumulado} = \text{Percentual Anterior} + \text{Percentual Individual Atual}
-
-Cálculo do Percentual Acumulado:
-
+O Diagrama de Pareto é uma ferramenta simples, visual e poderosa para priorização de problemas. Ele ajuda equipes a **focar no que realmente importa**, seguindo o lema de que **“resolver os maiores problemas trará os maiores resultados”**. Sua aplicação vai desde a gestão da qualidade até processos administrativos, atendimento ao cliente, e até mesmo planejamento estratégico.
 
 ---
-
-Passo 4: Análise da Tabela e Conclusão
-
-A análise do percentual acumulado confirma o Princípio de Pareto (80/20):
-
-Os três primeiros defeitos somam 73,47% dos problemas!
-
-Isso significa que se resolvermos apenas essas três falhas principais (Falha na Soldagem, Componente com Defeito e Erro de Montagem), eliminamos a maioria dos defeitos da fábrica.
-
-
-O próximo passo seria construir o Gráfico de Pareto, com as colunas representando a frequência dos defeitos e uma linha indicando o percentual acumulado.
-
---- 
-
-

@@ -290,6 +290,14 @@ Entrada: [1 1], Saída Prevista: [0.]
 
 ## Teste 4
 
+A rede neural com uma camada oculta de 15 neurônios e um learning rate de 0.2 parece estar aprendendo de forma eficaz, com o erro diminuindo consideravelmente ao longo das épocas. O valor do erro diminui de forma gradual, chegando a números bem pequenos (da ordem de 10^-4) após 100.000 épocas.
+
+- **Erro:**O erro diminui de forma consistente e a rede parece ter convergido para um valor bem baixo.
+
+- **Saídas:**As previsões de saída para as entradas [0,0], [0,1], [1,0], e [1,1] estão corretas, como esperado em uma rede neural treinada para aprender o comportamento de uma porta XOR.
+
+Isso sugere que a arquitetura da rede está funcionando bem com 15 neurônios na camada oculta, e o modelo conseguiu aprender a tarefa.
+
 ```py
 # Cria a rede neural com uma camada oculta de 2 neurônios
     nn = NeuralNetwork(input_size=2, hidden_sizes=[15], output_size=1, learning_rate=0.2, epochs=100000)
@@ -409,6 +417,12 @@ Entrada: [1 1], Saída Prevista: [0.]
 ```
 
 ## Teste 5:
+
+A rede neural com uma camada oculta de 3 neurônios e um learning rate de 0.9 está apresentando um erro que parece se estabilizar em torno de 0.0627, sem muita redução ao longo das épocas.
+
+- **Erros:** O erro não está diminuindo muito, o que pode ser um sinal de que o modelo está tendo dificuldades para aprender devido ao high learning rate.
+
+-  **Saídas:** A rede parece ter "congelado" em um erro local mínimo (em torno de 0.0627), sem apresentar uma redução significativa ao longo das épocas, o que indica que o parâmetro de taxa de aprendizado (learning_rate=0.9) pode estar muito alto. Quando a taxa de aprendizado é muito alta, a rede pode não estar ajustando os pesos adequadamente, pulando as mínimas de erro e não conseguindo convergir corretamente.
 
 ```py
  # Cria a rede neural com uma camada oculta de 2 neurônios

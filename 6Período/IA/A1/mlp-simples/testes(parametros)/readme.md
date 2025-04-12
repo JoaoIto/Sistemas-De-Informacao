@@ -1,6 +1,48 @@
 # Testes de parâmetros
 
-Aqui vamos começar a testar as entradas de diferentes parâmetros, e identificar as saídas que temos baseados no código do MLP Simples.
+### Tabela Comparativa dos Testes
+
+| Teste | Neurônios na Camada Oculta | Taxa de Aprendizado | Erro Final (aproximado) | Desempenho                  | Saídas Aproximadas `[0,0] [0,1] [1,0] [1,1]` |
+|-------|-----------------------------|----------------------|--------------------------|-----------------------------|------------------------------------------------|
+| 1     | 3                           | 0.2                  | Baixo (convergente)      | Aprendeu corretamente       | 0.01, 0.98, 0.98, 0.01                         |
+| 2     | 3                           | 0.6                  | Baixo (convergente)      | Aprendeu corretamente       | 0.01, 0.98, 0.98, 0.01                         |
+| 3     | 3                           | 0.9                  | Alto (instável)          | Não convergiu bem           | 0.05, 0.96, 0.96, 0.05                         |
+| 4     | 15                          | 0.2                  | Muito baixo (~10⁻⁴)       | Excelente aprendizagem       | 0.01, 0.99, 0.99, 0.01                         |
+| 5     | 3                           | 0.9                  | Alto (estagnado ~0.06)   | Não aprendeu corretamente   | 0.03, 0.96, 0.96, 0.03                         |
+
+---
+
+### Observações e Análise Comparativa
+
+#### 1. **Influência da Taxa de Aprendizado**
+- **0.2 e 0.6**: Apresentaram boa performance, com erro decrescendo de forma suave e resultados finais corretos.
+- **0.9**: Causou **instabilidade**. O erro não reduziu de forma satisfatória, e a rede não convergiu totalmente. Isso aconteceu nos testes 3 e 5.
+
+#### 2. **Influência da Quantidade de Neurônios**
+- Teste 4 (15 neurônios) teve o **melhor desempenho geral**, com erro muito pequeno, rápida convergência e saídas praticamente perfeitas.
+- Testes com apenas 3 neurônios também funcionaram bem com taxa de aprendizado adequada (como em 1 e 2), mas apresentaram limitações com taxa alta.
+
+#### 3. **Erros Encontrados**
+- **Oscilação e não-convergência** em taxas altas (0.9), mesmo que as saídas numéricas pareçam próximas, o **erro global não diminui**, o que indica **falsa impressão de acerto**.
+- **Teste 5** teve comportamento quase idêntico ao 3, indicando que a rede **não aprende de forma estável com taxa 0.9**, mesmo repetindo os dados.
+
+#### 4. **Melhorias de um teste para outro**
+- Ao **manter os 3 neurônios e ajustar apenas a taxa de aprendizado de 0.2 para 0.6 (teste 1 → teste 2)**, o desempenho se manteve estável e houve uma **convergência mais rápida**.
+- **Aumentar a quantidade de neurônios (teste 4)** com taxa baixa resultou em uma **rede mais precisa e com menor erro residual**, mostrando **melhor capacidade de generalização**.
+- Retornar à taxa alta (teste 5), mesmo após bons testes anteriores, **repetiu os mesmos erros do teste 3**, reforçando a **fragilidade da rede com learning rate alto**.
+
+---
+
+### Comparações Diretas
+
+| Comparação         | Observação Principal                                                                             |
+|--------------------|--------------------------------------------------------------------------------------------------|
+| Teste 1 vs Teste 2 | Resultados semelhantes; taxa 0.6 teve convergência ligeiramente mais rápida.                    |
+| Teste 1/2 vs Teste 3/5 | Taxa de aprendizado alta (0.9) prejudica o aprendizado, mesmo com mesma arquitetura.       |
+| Teste 4 vs Todos   | Melhor desempenho geral; mais neurônios + taxa moderada = menor erro e maior estabilidade.       |
+| Teste 3 vs Teste 5 | Repetição do problema com taxa alta; confirma que o erro não é aleatório, mas previsível.        |
+
+---
 
 ## Teste 1(Original):
 

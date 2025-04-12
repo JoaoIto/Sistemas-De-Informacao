@@ -1,5 +1,44 @@
 # Testes de parâmetros
 
+## Grráfico Comparativo:
+
+### Treinando 2 neurônios - LR 0.1...
+Predições finais:
+Entrada: [0 0] -> Saída Prevista: 0
+Entrada: [0 1] -> Saída Prevista: 1
+Entrada: [1 0] -> Saída Prevista: 1
+Entrada: [1 1] -> Saída Prevista: 1
+
+### Treinando 5 neurônios - LR 0.2...
+Predições finais:
+Entrada: [0 0] -> Saída Prevista: 0
+Entrada: [0 1] -> Saída Prevista: 1
+Entrada: [1 0] -> Saída Prevista: 1
+Entrada: [1 1] -> Saída Prevista: 0
+
+### Treinando 9 neurônios - LR 0.01...
+Predições finais:
+Entrada: [0 0] -> Saída Prevista: 0
+Entrada: [0 1] -> Saída Prevista: 1
+Entrada: [1 0] -> Saída Prevista: 1
+Entrada: [1 1] -> Saída Prevista: 0
+
+### Treinando 15 neurônios - LR 0.2...
+Predições finais:
+Entrada: [0 0] -> Saída Prevista: 0
+Entrada: [0 1] -> Saída Prevista: 1
+Entrada: [1 0] -> Saída Prevista: 1
+Entrada: [1 1] -> Saída Prevista: 0
+
+### Treinando 3 neurônios - LR 0.9...
+Predições finais:
+Entrada: [0 0] -> Saída Prevista: 0
+Entrada: [0 1] -> Saída Prevista: 1
+Entrada: [1 0] -> Saída Prevista: 1
+Entrada: [1 1] -> Saída Prevista: 0
+
+![image](https://github.com/user-attachments/assets/bfce2514-eb49-40ed-85dc-5a995a232c78)
+
 ### Tabela Comparativa dos Testes
 
 | Teste | Neurônios na Camada Oculta | Taxa de Aprendizado | Erro Final (aproximado) | Desempenho                  | Saídas Aproximadas `[0,0] [0,1] [1,0] [1,1]` |

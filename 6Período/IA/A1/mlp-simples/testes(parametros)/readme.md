@@ -57,6 +57,20 @@ Aqui temos a entrada original do código que está descrito, a partir de:
 
 ## Saída 1:
 
+- **Erros:** O erro diminui gradualmente, estabilizando em torno de 0.1253 após muitas épocas.
+
+- **Saídas:** O modelo consegue aprender a relação entre as entradas e as saídas esperadas, como indicado pelas previsões corretas:
+
+Entrada: [0 0] → Saída Prevista: [0.]
+
+Entrada: [0 1] → Saída Prevista: [1.]
+
+Entrada: [1 0] → Saída Prevista: [0.]
+
+Entrada: [1 1] → Saída Prevista: [1.]
+
+O comportamento do erro indica que o modelo está conseguindo minimizar o erro, mas de forma muito lenta, talvez devido à pequena camada oculta e uma taxa de aprendizado que poderia ser otimizada.
+
 ```cmd
 $ python algorithms/neural_networks/mlp/mlp_simples.py
 Época 0, Erro: 0.26573371715215466
@@ -179,6 +193,10 @@ Entrada: [1 1], Saída Prevista: [1.]
 
 ## Saída 2:
 
+- **Erros:** O modelo convergiu mais rapidamente, com o erro caindo muito rapidamente (do erro inicial de 0.27 para cerca de 0.001) em poucas épocas.
+
+- **Saídas:** Embora o modelo tenha aprendido rapidamente, ele não está acertando as previsões, especialmente para as entradas [1 0] e [1 1]. Isso pode ser devido a um aprendizado excessivamente rápido (graças à taxa de aprendizado alta), o que pode ter causado o modelo a "pular" a convergência adequada para algumas entradas.
+
 ```cmd
 Época 0, Erro: 0.27279057933662865
 Época 1000, Erro: 0.22407227904087623
@@ -219,6 +237,9 @@ Entrada: [1 1], Saída Prevista: [0.]
 
 ## Saída 3:
 
+- **Erros:** O erro diminui lentamente e o modelo tem mais tempo para aprender de forma estável. O comportamento observado é mais controlado, e o modelo pode eventualmente convergir melhor devido à taxa de aprendizado mais baixa e ao maior número de épocas.
+
+- **Saídas:**  Resultado de previsões pode ser mais preciso, com o modelo se ajustando melhor às diferentes entradas.
 ```cmd
 $ python algorithms/neural_networks/mlp/mlp_simples.py
 Época 0, Erro: 0.28476486748589225

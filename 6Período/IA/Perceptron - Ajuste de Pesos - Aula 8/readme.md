@@ -64,7 +64,7 @@ Para reforçar a compreensão, foi apresentada uma tabela de correspondência en
 | Atualização de pesos                     | Laço `for` com `self.weights += ...`  |
 
 A imagem abaixo mostra a ligação entre o **diagrama visual**, a **tabela de correspondência** e o **código Python**:
-![image](https://github.com/user-attachments/assets/ec2bfb94-a958-410f-a7a7-79d2d3795ab9)
+![image](https://github.com/user-attachments/assets/2363e5c3-e8d2-497a-a4b1-9ab1c0042596)
 
 ![Imagem: Diagrama vs Código Perceptron](attachment:/mnt/data/f8cc312b-c784-4ea1-8a69-146bbb950b25.png)
 

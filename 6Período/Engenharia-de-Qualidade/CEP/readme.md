@@ -1,4 +1,5 @@
-#🔹 Resumo
+# Resumo
+
 O Controle Estatístico do Processo (CEP) é um conjunto de ferramentas estatísticas utilizadas para estabilizar processos e melhorar sua capacidade por meio da redução da variabilidade. Ele surgiu como evolução das práticas de inspeção, impulsionado por mudanças industriais desde a Revolução Industrial até a Segunda Guerra Mundial, sendo aperfeiçoado por figuras como Walter A. Shewhart e W. Edwards Deming.
 
 O CEP analisa a variabilidade dos processos, distinguindo causas comuns (inerentes, naturais) de causas especiais (eventos fora do padrão, que devem ser eliminados). A ferramenta mais usada são os gráficos de controle, que monitoram se um processo está sob controle estatístico ou se precisa de intervenção. Elementos como linha central, limites superior e inferior de controle ajudam a identificar desvios.

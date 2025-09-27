@@ -9,5 +9,5 @@ Este diretório contém materiais e atividades relacionadas à disciplina de Min
 *   **limpeza-dados**: Aborda técnicas para tratar dados ausentes, ruidosos e inconsistentes.
 *   **pre-processamento**: Explora as etapas de preparação dos dados antes da mineração.
 *   **transformacao-dados**: Contém materiais sobre a conversão e engenharia de atributos dos dados.
-
+*   **árvore-de-decisão**: Geração de uma árvore, com galhos, nós, folhas para a tomada de decisão beasedo nos dados de um dataset.
 ---

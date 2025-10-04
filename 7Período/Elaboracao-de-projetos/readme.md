@@ -1,198 +1,284 @@
 # 1) Fundamentos de Gestão de Projetos (visão do livro)
 
-**Resumo base**
-Projeto é um esforço temporário para criar um produto, serviço ou resultado único. A gestão de projetos organiza processos e pessoas ao longo do ciclo de vida (iniciação, planejamento, realização/execução e encerramento), equilibrando restrições como escopo, cronograma, custo e satisfação do cliente, e envolvendo stakeholders. Aspectos culturais e contexto global influenciam decisões e sucesso; entender cultura organizacional e nacional (e.g., assertividade, coletivismo, orientação humana) aprimora práticas e resultados. 
+**Resumo base (texto corrido)**
+Projeto é um esforço temporário para criar um produto, serviço ou resultado único. A gestão de projetos organiza processos e pessoas ao longo do ciclo de vida (iniciação, planejamento, realização/execução e encerramento), equilibrando restrições como escopo, cronograma, custo e satisfação do cliente, e envolvendo stakeholders. Aspectos culturais influenciam decisões e sucesso; entender cultura organizacional e nacional melhora práticas e resultados.   
 
-**Subtópicos**
+**Subtópicos e/ou exemplos**
 
-* Atributos de um projeto; objetivos de projeto; recursos utilizados.
+* Atributos e objetivos de projeto; recursos utilizados.
 * Ciclo de vida: iniciação → planejamento → realização → encerramento.
-* Restrições: escopo, programação (cronograma), custo e satisfação do cliente.
-* Stakeholders: clientes, equipe, patrocinador; integração e comunicações.
-* Cultura e inovação: como traços culturais alteram práticas de gestão e resultados. 
+* Restrições: escopo, cronograma, custo, satisfação do cliente.
+* Stakeholders e integração/comunicações.
+* Cultura e inovação: adaptações conforme contexto.
 
-**Texto base**
-O capítulo introdutório destaca áreas do PMBOK com ênfase em integração e stakeholders e sugere que o gerente de projetos adapte práticas à cultura de inovação. O caso “Drew” mostra decisões diferentes por país, ajustando incentivos e capacitações com base em perfis culturais, reforçando que práticas devem ser compatíveis com o contexto nacional e organizacional para aumentar o potencial de sucesso. Também há uma lista de estudos e exercícios (perguntas) que cobrem atributos, objetivos, fases, restrições, plano de trabalho, gestão de mudanças e identificação de interessados—excelente guia de revisão para a prova. 
+**Tabela – onde estudar cada subtópico**
 
-**Subtópicos**
+| Subtópico/Exemplo                          | Onde está no material                                                 |
+| ------------------------------------------ | --------------------------------------------------------------------- |
+| Atributos, objetivos, recursos             | Exercícios e tópicos do Cap. 1.                                       |
+| Ciclo de vida (4 fases)                    | Lista do Cap. 1 (Iniciação, Planejamento, Realização, Encerramento).  |
+| Restrições (escopo/tempo/custo/satisfação) | Cap. 1 + exercícios.                                                  |
+| Stakeholders e integração                  | Áreas do PMBOK destacadas.                                            |
+| Cultura e sucesso do projeto               | Caso “Drew” e notas sobre cultura.                                    |
 
-* Diferencie **objetivo de projeto** de **entregáveis** e relacione aos critérios de sucesso.
-* Explique **por que** escopo, tempo, custo e satisfação do cliente são restrições.
-* Descreva **cada fase** do ciclo de vida e o papel do cliente em cada uma.
-* Aponte **documento que autoriza o início** (termo de abertura) e por que é necessário.
-* Liste **itens do plano de trabalho** e **como gerir mudanças**. (Use as 11 questões do exercício como checklist de estudo.) 
+**Texto base (explicação ampliada)**
+O capítulo introdutório ancora-se em integração e stakeholders; recomenda adaptar práticas ao contexto cultural e promover inovação. As questões ao final funcionam como checklist de estudo da prova (atributos, objetivos, fases, restrições, termo de abertura, plano de trabalho, mudanças e interessados).  
+
+**Subtópicos e/ou exemplos (revisão prática)**
+
+* Diferencie objetivo x entregáveis e relacione a critérios de sucesso.
+* Nomeie o documento que autoriza o início (termo de abertura).
+* Aponte itens do plano de trabalho e como gerir mudanças.
+
+**Tabela – onde estudar a revisão prática**
+
+| Item de revisão                      | Onde está no material            |
+| ------------------------------------ | -------------------------------- |
+| Critérios de sucesso e restrições    | Cap. 1 (tópicos e exercícios).   |
+| Termo de abertura: o que é e por quê | Exercício 8 do Cap. 1.           |
+| Plano de trabalho: conteúdo mínimo   | Exercício 9 do Cap. 1.           |
+| Gestão de mudanças                   | Exercício 10 do Cap. 1.          |
+| Stakeholders                         | Exercício 11 do Cap. 1.          |
 
 ---
 
 # 2) Project Model Canvas (PM Canvas)
 
-**Resumo base**
-O PM Canvas (de José Finocchio Jr.) é um quadro visual que sintetiza o planejamento em blocos 5W2H por função: Por quê, O quê, Quem, Como, Quando/Quanto. Ele facilita alinhamento precoce com stakeholders e serve como protótipo mental do projeto; não substitui o Plano de Projeto completo, mas prepara a equipe para detalhá-lo com mais confiança. 
+**Resumo base (texto corrido)**
+O PM Canvas sintetiza, de forma visual (5W2H), o planejamento em blocos: Por quê, O quê, Quem, Como, Quando/Quanto. Serve para alinhamento precoce com stakeholders, como protótipo mental do projeto; depois, a equipe detalha o Plano de Projeto completo.   
 
-**Subtópicos**
+**Subtópicos e/ou exemplos**
 
 * Princípios: visual, agrupamentos, simplificações, base com stakeholders, sequência.
-* Blocos:
+* Blocos: Por quê (justificativa, objetivos, benefícios); O quê (requisitos/produto); Quem (stakeholders/equipe); Como (premissas, grupos de entrega, restrições, riscos); Quando/Quanto (linha do tempo e custos).
+* Exemplo ilustrativo (Moby Dick) para ligar cada bloco a decisões concretas.
 
-  * **Por quê?** justificativa, objetivos, benefícios.
-  * **O quê?** requisitos, produto/entregas.
-  * **Quem?** stakeholders externos e equipe.
-  * **Como?** premissas, grupos de entrega, restrições, riscos.
-  * **Quando/Quanto?** linha do tempo e custos.
-* Exemplo ilustrativo (Moby Dick) para ligar cada bloco a decisões concretas. 
+**Tabela – onde estudar cada subtópico**
 
-**Texto base**
-No Canvas, “Por quê” conecta passado (justificativa) e futuro (benefícios) por meio de objetivos SMART. “O quê” transforma necessidades em requisitos e produto. “Quem” lista atores críticos (externos e equipe). “Como” explicita premissas e restrições que balizam grupos de entrega e riscos. “Quando/Quanto” fecha com cronograma macro e custos. O uso do Canvas aumenta clareza sobre prazo, custo e escopo—os critérios clássicos de sucesso—e pavimenta a transição para o plano de projeto formal. 
+| Subtópico/Exemplo                                         | Onde está no material                                      |
+| --------------------------------------------------------- | ---------------------------------------------------------- |
+| Princípios do Canvas                                      | Slide “Princípios”.                                        |
+| Blocos 5W2H do Canvas                                     | Slides “Por quê / O quê / Quem / Como / Quando e Quanto”.  |
+| Mapa visual de elementos (justificativas, OBJ SMART etc.) | Slides de síntese do Canvas.                               |
+| “Canvas não substitui Plano”                              | Considerações finais nos slides.                           |
 
-**Subtópicos**
+**Texto base (explicação ampliada)**
+“Por quê” conecta justificativa, objetivos SMART e benefícios; “O quê” transforma necessidades em requisitos/produto; “Quem” identifica atores críticos; “Como” explicita premissas, grupos de entrega, restrições e riscos; “Quando/Quanto” fecha com tempo e custos. O Canvas aumenta clareza sobre prazo, custo e escopo, e prepara o detalhamento posterior.  
 
-* Preencha um Canvas para sua oficina:
+**Subtópicos e/ou exemplos (revisão prática)**
 
-  * **Por quê**: inclusão digital, habilidades tecnológicas.
-  * **O quê**: oficina + materiais + protótipo guiado.
-  * **Quem**: SEDUC, Unitins, estudantes, equipe.
-  * **Como**: premissas (laboratório), restrições (tempo de aula), riscos (infra/adesão).
-  * **Quando/Quanto**: datas do calendário e custo básico. 
+* Preencha o Canvas da sua oficina (Por quê, O quê, Quem, Como, Quando/Quanto).
+* Extraia objetivos SMART e riscos a partir do Termo de Abertura.
+
+**Tabela – mapeando o Canvas à sua oficina**
+
+| Bloco do Canvas                                | Evidência na sua oficina                                  |
+| ---------------------------------------------- | --------------------------------------------------------- |
+| Por quê (justificativa, objetivos, benefícios) | Termo – descrição/justificativa e objetivos mensuráveis.  |
+| O quê (requisitos/produto)                     | Requisitos: materiais, oficina, protótipos, relatório.    |
+| Quem (stakeholders/equipe)                     | Cliente, gerente, equipe, usuários, fornecedor.           |
+| Como (premissas, grupos, restrições, riscos)   | Riscos e mitigação.                                       |
+| Quando/Quanto (linha do tempo e custos)        | Cronograma e orçamento.                                   |
 
 ---
 
 # 3) Plano de Projeto e Artefatos (Elaboração de Projetos)
 
-**Resumo base**
-Além do Canvas, o plano de projeto agrega artefatos textuais e normativos: escopo e EAP, organização (papéis e responsabilidades), cronograma e orçamento, e planos de gerenciamento (escopo, cronograma, custos, qualidade, comunicações, pessoal, riscos, aquisições), além de controle de mudanças, gestão da configuração e aprovações. Esses elementos formalizam o que o Canvas antecipa visualmente. 
+**Resumo base (texto corrido)**
+O plano de projeto vai além do Canvas, reunindo artefatos: escopo e EAP, organização (papéis), cronograma e orçamento, e planos de gerenciamento (escopo, cronograma, custos, qualidade, comunicações, pessoal, riscos, aquisições), além de controle integrado de mudanças, gestão de configuração e aprovações. 
 
-**Subtópicos**
+**Subtópicos e/ou exemplos**
 
-* Índice, Sumário Executivo, Declaração de Escopo.
-* **EAP** (Estrutura Analítica do Projeto) e Dicionário da EAP.
-* Organização do Projeto (RACI, papéis).
-* Cronograma detalhado (rede/precedências), Orçamento.
+* Sumário executivo, declaração de escopo, EAP/dicionário.
+* Organização do projeto (RACI), cronograma detalhado, orçamento.
 * Planos de gerenciamento (escopo, tempo, custos, qualidade, comunicações, RH, riscos, aquisições).
-* Controle integrado de mudanças, gestão de configuração, aprovações/assinaturas. 
+* Controle integrado de mudanças; gestão da configuração; aprovações.
 
-**Texto base**
-A **Declaração de Escopo** define limites e critérios de aceitação. A **EAP** decompõe entregas em pacotes de trabalho mensuráveis. **Cronograma** e **Orçamento** dimensionam esforço e recursos. Planos subsidiários descrevem processos de controle (ex.: como identificar riscos, como comunicar, como adquirir insumos). O **Controle Integrado de Mudanças** garante rastreabilidade e governança; **aprovações** formalizam o comprometimento das partes. 
+**Tabela – onde estudar cada artefato**
 
-**Subtópicos**
+| Artefato/Plano                   | Onde está no material                   |
+| -------------------------------- | --------------------------------------- |
+| Estrutura dos artefatos de plano | Lista completa nos slides.              |
+| Relação Canvas → Plano           | Considerações: Canvas prepara o plano.  |
+| Controle integrado de mudanças   | Listado entre os artefatos.             |
 
-* Esboce uma EAP da oficina: preparação de materiais, protótipo-exemplo, execução da aula, avaliação/relatório.
-* Rascunhe um fluxo de **gestão de mudanças**: solicitação → análise de impacto → decisão → atualização de baselines.
-* Monte um plano de **comunicações** com quem/como/quando reportar. 
+**Texto base (explicação ampliada)**
+Declaração de escopo define limites e critérios de aceitação; EAP decompõe entregas em pacotes; cronograma e orçamento dimensionam esforço/recursos; planos subsidiários definem processos; controle de mudanças e aprovações garantem governança. 
+
+**Subtópicos e/ou exemplos (revisão prática)**
+
+* Esboce uma EAP para a oficina (preparação, exemplo, execução, avaliação).
+* Redija um fluxo de gestão de mudanças (solicitação → análise → decisão → baseline).
+* Monte um plano de comunicações simples.
+
+**Tabela – ligação com a oficina**
+
+| Item do plano   | Evidência na sua oficina                                            |
+| --------------- | ------------------------------------------------------------------- |
+| Escopo/Entregas | Requisitos detalhados (materiais, oficina, protótipos, relatório).  |
+| Cronograma      | Janelas 01/09–30/11 e marcos.                                       |
+| Orçamento       | Materiais ~ R$100.                                                  |
+| Aprovações      | Assinaturas e cargos.                                               |
 
 ---
 
 # 4) Fatores de Sucesso em Projetos
 
-**Resumo base**
-Sucesso depende de planejamento e comunicação consistentes; objetivos claros (produto, prazo, orçamento) acordados com o cliente; medição contínua do progresso versus plano e ações corretivas oportunas; avaliação pós-projeto para lições aprendidas; e engajamento de stakeholders com sensibilidade a culturas e costumes. 
+**Resumo base (texto corrido)**
+Sucesso depende de planejamento e comunicação; objetivos claros acordados com o cliente; medição contínua do progresso versus plano; ações corretivas oportunas; avaliação pós-projeto; engajamento de stakeholders com sensibilidade cultural.  
 
-**Subtópicos**
+**Subtópicos e/ou exemplos**
 
 * Objetivos claros e medição de desempenho.
 * Satisfação do cliente via comunicação contínua.
-* Ações corretivas ao desvio.
-* Lições aprendidas no encerramento.
-* Cultura/relacionamentos em ambientes globais. 
+* Ações corretivas a desvios; lições aprendidas.
+* Identificação e engajamento de stakeholders; cultura e costumes.
 
-**Texto base**
-A chave do controle eficiente é medir progresso real em tempo hábil. Ao final, avalie o projeto para melhorar processos futuros. Em contextos globais, entender e respeitar culturas constrói confiança e equipes eficazes. Vincule métricas de sucesso a prazos, custos e escopo, sem perder de vista qualidade e satisfação. 
+**Tabela – onde estudar cada fator**
 
-**Subtópicos**
+| Fator de sucesso                 | Onde está no material            |
+| -------------------------------- | -------------------------------- |
+| Planejamento/objetivos claros    | Slides – fatores de sucesso.     |
+| Comunicação contínua com cliente | Slides – satisfação do cliente.  |
+| Controle e ações corretivas      | Slides – controle eficiente.     |
+| Lições aprendidas                | Slides – avaliação pós-projeto.  |
+| Cultura e relações               | Slides – cultura e costumes.     |
 
-* Defina indicadores para sua oficina: presença, conclusão de protótipo, satisfação ≥90%.
-* Planeje checkpoints (antes/durante/depois) para medir e corrigir rumo. 
+**Texto base (explicação ampliada)**
+Defina indicadores mensuráveis e checkpoints; alinhe expectativas do cliente e faça ajustes rápidos; registre lições aprendidas; trate cultura como variável de projeto. 
+
+**Subtópicos e/ou exemplos (revisão prática)**
+
+* KPIs da oficina (presença, conclusão de protótipo, satisfação ≥90%).
+* Checkpoints antes/durante/depois da aula.
+
+**Tabela – KPIs e checkpoints da oficina**
+
+| Indicador/Checkpoint          | Evidência/apoio                |
+| ----------------------------- | ------------------------------ |
+| Conclusão de protótipo (≥80%) | Objetivo mensurável.           |
+| Satisfação ≥90%               | Objetivo mensurável.           |
+| Checkpoints (pre→durante→pós) | Cronograma + relatório final.  |
 
 ---
 
 # 5) Avaliação da Disciplina (A1) e Conteúdos da Prova
 
-**Resumo base**
-A A1 combina participação e produtividade individual, prova escrita (objetivas/discursivas) sobre elaboração e gestão de projetos, plano de aula e PM Canvas, aplicação de metodologias/ferramentas pelo time e avaliação das entregas (argumentação e justificativas). A aplicação da prova escrita está prevista para 06/10 (conforme calendário acadêmico). Recomenda-se estudar pelos livros, não se limitando aos slides. 
+**Resumo base (texto corrido)**
+A A1 combina participação individual, prova escrita (objetivas/discursivas) sobre elaboração e gestão de projetos, plano de aula e PM Canvas, aplicação de metodologias/ferramentas pelo time e avaliação das entregas com argumentação. A aplicação da prova escrita está prevista para 06/10. Estudar pelos livros (não só pelos slides).  
 
-**Subtópicos**
+**Subtópicos e/ou exemplos**
 
-* Composição A1 (10,0):
+* Critérios e pesos da A1.
+* Conteúdos que caem (elaboração/gestão, plano de aula, PM Canvas).
+* Recomendação de estudo e data.
 
-  * 1,0 habilidades individuais; 4,0 prova escrita; 2,0 aplicação de metodologias/ferramentas (grupo); 3,0 avaliação das entregas.
-* Conteúdos da prova: elaboração e gestão de projetos, plano de aula, PM Canvas.
-* Dica: use o capítulo 1 do livro como guia conceitual e as 11 questões de exercício como simulado.  
+**Tabela – composição e conteúdo da A1**
 
-**Texto base**
-Monte seu roteiro de estudo: (1) revisar PM Canvas e artefatos de plano de projeto; (2) responder as 11 questões do capítulo 1 (atributos, objetivos, ciclo, restrições, termo de abertura, plano de trabalho, mudanças, stakeholders); (3) esboçar um plano de aula da oficina mostrando objetivos, conteúdos, método, avaliação e materiais—conectando ao Canvas.  
+| Item                                  | Detalhe                                     | Onde está |
+| ------------------------------------- | ------------------------------------------- | --------- |
+| Habilidades individuais               | 1,0                                         |           |
+| Prova escrita                         | 4,0 (objetivas/discursivas)                 |           |
+| Aplicação de metodologias/ferramentas | 2,0 (nota de grupo)                         |           |
+| Avaliação das entregas                | 3,0 (argumentar/justificar)                 |           |
+| Conteúdos                             | Elaboração/gestão, plano de aula, PM Canvas |           |
+| Data da prova                         | 06/10                                       |           |
 
-**Subtópicos**
+**Texto base (explicação ampliada)**
+Monte um roteiro: revisar PM Canvas; praticar os 11 exercícios do Cap. 1; preparar um plano de aula coerente com seu Termo de Abertura. 
 
-* Escreva respostas curtas para: “Qual documento autoriza o início?” (termo de abertura) e “Por que é necessário?” (autoriza formalmente, alinha partes e define gerente/autoridade).
-* Liste “o que deve conter um plano de trabalho” e “como realizar gestão de mudanças”. 
+**Subtópicos e/ou exemplos (revisão prática)**
+
+* Responder: “Qual documento autoriza o início?” e “como gerir mudanças?”.
+
+**Tabela – questões-chave para treinar**
+
+| Questão                                       | Onde está                |
+| --------------------------------------------- | ------------------------ |
+| Termo que autoriza o início e sua necessidade | Exercício 8 do Cap. 1.   |
+| Gestão de mudanças: definição e execução      | Exercício 10 do Cap. 1.  |
 
 ---
 
-# 6) Estudo de Caso: Oficina de Figma (Termo de Abertura + Documento da Oficina)
+# 6) Estudo de Caso: Oficina de Figma (Termo + Documento da Oficina)
 
-**Resumo base**
-Sua oficina é um projeto piloto para estudantes do ensino médio de Palmas, patrocinado pela Unitins em parceria com a SEDUC-TO, com objetivos mensuráveis (protótipo simples por ≥80% da turma; apresentar conceitos essenciais; satisfação ≥90% com material de apoio). O escopo inclui material didático, execução presencial com exemplo guiado, protótipos dos alunos e relatório final. Há cronograma detalhado e riscos mapeados com mitigação.  
+**Resumo base (texto corrido)**
+Projeto piloto para estudantes do ensino médio, patrocinado pela Unitins em parceria com a SEDUC-TO, com objetivos mensuráveis (≥80% concluem protótipo; apresentar conceitos essenciais; ≥90% satisfação). Escopo inclui material didático, execução presencial com exemplo guiado, protótipos dos alunos e relatório final; há cronograma e orçamento simples, além de riscos com mitigação.   
 
-**Subtópicos**
+**Subtópicos e/ou exemplos**
 
-* Stakeholders e papéis (cliente, patrocinador, gerente de portfólio, gerente do projeto, equipe, usuários finais).
-* Requisitos/entregas: slides, guia rápido, arquivo-modelo, oficina, protótipos, relatório final.
-* Cronograma macro (preparação → construção do protótipo exemplo → revisão/finalização → realização da oficina → relatório).
-* Orçamento: itens essenciais; riscos e mitigação (infra, acesso/contas, adesão).  
+* Stakeholders e papéis (cliente, patrocinador, gerente de portfólio, gerente do projeto, equipe, usuários).
+* Requisitos/entregas (materiais, oficina, protótipos, relatório).
+* Cronograma macro e orçamento.
+* Riscos e mitigação.
 
-**Texto base**
-O **Termo de Abertura** formaliza nome do projeto, patrocinador, gerente, equipe, justificativa, objetivos mensuráveis e critérios de sucesso, stakeholders, requisitos, orçamento e cronograma, além de riscos e aprovações/assinaturas. O **documento da oficina** detalha visão geral, equipe, justificativa, objetivos, stakeholders, requisitos, cronograma, orçamento e gestão de riscos, funcionando como referência operacional para planejar aula, execução e avaliação.  
+**Tabela – mapeamento do estudo de caso**
 
-**Subtópicos**
+| Item                  | Evidência no documento                                        |
+| --------------------- | ------------------------------------------------------------- |
+| Stakeholders e papéis | Cliente, gerente de portfólio, equipe, usuários, fornecedor.  |
+| Objetivos mensuráveis | 80%/protótipo; conceitos essenciais; ≥90% satisfação.         |
+| Requisitos/entregas   | 1–4 (materiais, oficina, protótipos, relatório).              |
+| Cronograma            | 01/09–30/11 com marcos.                                       |
+| Orçamento             | Materiais ~ R$100.                                            |
+| Riscos e mitigação    | Infra; contas; adesão, com contramedidas.                     |
 
-* **Objetivos mensuráveis**: 80% com protótipo (2–4 telas, navegação básica); apresentar frames, componentes, estilos, prototipação interativa; satisfação ≥90% com guia/arquivo-modelo.
-* **Riscos**: infraestrutura (computadores/internet) → checklist/lab alternativo; acesso (contas Figma) → instruções antecipadas/apoio PDF; adesão → divulgação/confirmar lista/lembrete véspera.
-* **Calendário de oficinas (A2 – previsão)** inclui “Prototipação com Figma” e outras (Firebase, AppSheet etc.) em outubro/novembro.   
+**Texto base (explicação ampliada)**
+O Termo formaliza nome, patrocinador, gerente, equipe, justificativa, objetivos, stakeholders, requisitos, orçamento, cronograma, riscos e aprovações. O documento da oficina detalha a execução: visão geral, requisitos, cronograma/orçamento e matriz de riscos.  
+
+**Subtópicos e/ou exemplos (revisão prática)**
+
+* Converter objetivos e riscos do Termo em blocos do Canvas.
+* Preparar checklist de infraestrutura e de contas do Figma.
+
+**Tabela – operação prática**
+
+| Tarefa                         | Onde ancorar                          |
+| ------------------------------ | ------------------------------------- |
+| Objetivos → Canvas (Por quê)   | Termo – objetivos mensuráveis.        |
+| Riscos → Plano de contingência | Termo/oficina – riscos e mitigação.   |
 
 ---
 
 # 7) Plano de Aula (conectando Canvas → Execução)
 
-**Resumo base**
-Para uma avaliação sobre “plano de aula” em contexto de projetos, espere a conexão entre objetivos instrucionais, conteúdos, método/estratégia, recursos, tempo e avaliação. A prova pode solicitar que você derive um plano de aula coerente **a partir do Canvas** e do Termo de Abertura, mostrando alinhamento com objetivos mensuráveis e riscos/recursos previstos. (Use seus próprios artefatos como evidência.)  
+**Resumo base (texto corrido)**
+Um plano de aula sólido alinha objetivos instrucionais, conteúdos, método/estratégia, recursos, tempo e avaliação — derivando esses itens do Canvas e do Termo de Abertura (objetivos SMART, recursos e riscos, cronograma). Esses encadeamentos costumam ser cobrados em questões discursivas.  
 
-**Subtópicos**
+**Subtópicos e/ou exemplos**
 
-* Objetivos de aprendizagem (evidência: protótipo simples por aluno/dupla).
+* Objetivos de aprendizagem (evidência: protótipo simples por dupla).
 * Conteúdos (frames, componentes, estilos, prototipação).
 * Metodologia (exemplo guiado + prática assistida).
 * Recursos (laboratório, contas Figma, arquivo-modelo).
-* Avaliação (checklist do protótipo, satisfação dos alunos).
-* Tempo (cronograma de 2 encontros, conforme previsão).  
+* Avaliação (checklist do protótipo e satisfação).
+* Tempo (sequência didática coerente com cronograma).
 
-**Texto base**
-Ao redigir, transporte elementos do Canvas/Termo para o plano: justificativa vira “contexto”; objetivos SMART viram “objetivos da aula”; riscos e premissas viram “condições de ensino” e “planos de contingência”; cronograma macro vira “sequência didática”; entregas (protótipos, guia) viram “evidências de aprendizagem”. Esse encadeamento costuma ser cobrado em questões discursivas.  
+**Tabela – do Canvas/Termo para o Plano de Aula**
 
-**Subtópicos**
+| Elemento do plano de aula | Fonte no projeto                                          |
+| ------------------------- | --------------------------------------------------------- |
+| Objetivos de aprendizagem | Termo – objetivos mensuráveis.                            |
+| Conteúdos                 | Objetivo 2 (frames, componentes, estilos, prototipação).  |
+| Metodologia               | Oficina com exemplo guiado e prática assistida.           |
+| Recursos                  | Materiais e laboratório/contas.                           |
+| Avaliação                 | Protótipos + satisfação.                                  |
+| Tempo                     | Janelas e marcos do cronograma.                           |
 
-* Escreva 1–2 objetivos SMART de aula: “Ao final do encontro, cada dupla entrega um protótipo com 3 telas e 1 fluxo navegável.”
-* Monte um checklist rápido de avaliação formativa e uma rubrica simples para o protótipo. 
+**Texto base (explicação ampliada)**
+Justificativa do Termo vira “contexto” no plano; objetivos SMART viram “objetivos da aula”; riscos/premissas viram “condições” e “planos de contingência”; cronograma macro vira “sequência didática”; entregas (protótipos, guia) viram “evidências de aprendizagem”.  
 
----
+**Subtópicos e/ou exemplos (revisão prática)**
 
-## Apêndice A — Banco de estudo (perguntas do capítulo 1)
+* Objetivo SMART de aula: “Ao final, cada dupla entrega um protótipo com 3 telas e 1 fluxo navegável.”
+* Rubrica curta para o protótipo (navegação, consistência visual, uso de componentes).
 
-Use as perguntas do material como simulado: atributos do projeto; objetivos; recursos; papel do cliente; defina escopo/cronograma/custo/satisfação; fases do ciclo de vida; oito fatores que restringem o êxito; documento que autoriza o início (termo de abertura) e por que é necessário; plano de trabalho e conteúdo; gestão de mudanças; quem são os interessados. Resolva cada uma com exemplos da sua oficina. 
+**Tabela – rubrica resumida (exemplo)**
 
----
-
-## Apêndice B — Itens de prova e calendário
-
-* **Prova escrita (A1)**: questões objetivas e/ou discursivas; **conteúdo**: elaboração e gestão de projetos, plano de aula, PM Canvas; **aplicação**: 06/10 (conforme calendário acadêmico). Estude pelos livros e não se limite aos slides. 
-* **Previsão de oficinas (A2)**: inclui “Prototipação com Figma” em outubro (manhã, Escola Vila União) e outras temáticas (Firebase, AppSheet, Canvas/CanvasCode, Privacidade e Segurança de Dados). 
-
----
-
-## Apêndice C — Seu estudo de caso (dados essenciais para citar na prova)
-
-* **Patrocinador/Cliente/Portfólio**: Unitins; SEDUC-TO; Gerente de Portfólio: Prof.ª Stéphany; Gerente do Projeto: Ailana; usuários finais: estudantes do ensino médio.  
-* **Objetivos mensuráveis**: ≥80% concluem protótipo simples; apresentar conceitos essenciais; satisfação ≥90% com material.  
-* **Requisitos/entregas**: materiais didáticos; oficina presencial com exemplo guiado; protótipos dos alunos; relatório final. 
-* **Cronograma macro e orçamento**: preparação → protótipo-exemplo → revisão → oficina → relatório; custo básico de materiais/infra.  
-* **Riscos e mitigação**: infraestrutura, acesso/contas, adesão, com ações de checklist, instruções/apoio e comunicação antecipada.  
+| Critério     | Descrição                       | Evidência                            |
+| ------------ | ------------------------------- | ------------------------------------ |
+| Navegação    | Protótipo com 1 fluxo funcional | Entrega do arquivo Figma (por dupla) |
+| Consistência | Uso de estilos/componentes      | Objetivo 2 – conteúdos essenciais.   |
+| Conclusão    | Entrega por ≥80% da turma       | Objetivo 1 – meta de capacitação.    |
 
 ---

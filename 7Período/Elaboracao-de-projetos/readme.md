@@ -162,44 +162,6 @@ Defina indicadores mensuráveis e checkpoints; alinhe expectativas do cliente e 
 
 ---
 
-# 5) Avaliação da Disciplina (A1) e Conteúdos da Prova
-
-**Resumo base (texto corrido)**
-A A1 combina participação individual, prova escrita (objetivas/discursivas) sobre elaboração e gestão de projetos, plano de aula e PM Canvas, aplicação de metodologias/ferramentas pelo time e avaliação das entregas com argumentação. A aplicação da prova escrita está prevista para 06/10. Estudar pelos livros (não só pelos slides).  
-
-**Subtópicos e/ou exemplos**
-
-* Critérios e pesos da A1.
-* Conteúdos que caem (elaboração/gestão, plano de aula, PM Canvas).
-* Recomendação de estudo e data.
-
-**Tabela – composição e conteúdo da A1**
-
-| Item                                  | Detalhe                                     | Onde está |
-| ------------------------------------- | ------------------------------------------- | --------- |
-| Habilidades individuais               | 1,0                                         |           |
-| Prova escrita                         | 4,0 (objetivas/discursivas)                 |           |
-| Aplicação de metodologias/ferramentas | 2,0 (nota de grupo)                         |           |
-| Avaliação das entregas                | 3,0 (argumentar/justificar)                 |           |
-| Conteúdos                             | Elaboração/gestão, plano de aula, PM Canvas |           |
-| Data da prova                         | 06/10                                       |           |
-
-**Texto base (explicação ampliada)**
-Monte um roteiro: revisar PM Canvas; praticar os 11 exercícios do Cap. 1; preparar um plano de aula coerente com seu Termo de Abertura. 
-
-**Subtópicos e/ou exemplos (revisão prática)**
-
-* Responder: “Qual documento autoriza o início?” e “como gerir mudanças?”.
-
-**Tabela – questões-chave para treinar**
-
-| Questão                                       | Onde está                |
-| --------------------------------------------- | ------------------------ |
-| Termo que autoriza o início e sua necessidade | Exercício 8 do Cap. 1.   |
-| Gestão de mudanças: definição e execução      | Exercício 10 do Cap. 1.  |
-
----
-
 # 6) Estudo de Caso: Oficina de Figma (Termo + Documento da Oficina)
 
 **Resumo base (texto corrido)**

@@ -52,7 +52,3 @@ O capítulo explicita que **integração** e **gestão dos stakeholders** são �
 | Interessados do projeto                          | Q11                 |           |
 
 ---
-
-
-Medical References:
-1. None — DOI: file-LPs8rwibDLknuuQEUY2cE4

@@ -2,8 +2,9 @@
 
 Matérias do período:
 
-- Programação MOBILE II
+- Programação Mobile II
 - Sistemas Distribuídos
 - Mineração de Dados
+- Elaboração de Projetos
 
 ---

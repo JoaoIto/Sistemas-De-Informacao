@@ -120,13 +120,6 @@ Para rodar este projeto localmente, siga os passos abaixo:
 
 ---
 
-## **Diagrama de Arquitetura**
-
-Aqui está o diagrama ilustrando a arquitetura do sistema **Node Balancer**:
-
-![Diagrama de Arquitetura](A_digital_architecture_diagram_illustrates_the_Nod.png)
-
----
 
 ## **Conclusão**
 

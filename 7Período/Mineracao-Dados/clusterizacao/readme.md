@@ -1,0 +1,6 @@
+# Clusterizacao com o Pycaret
+
+
+
+
+---

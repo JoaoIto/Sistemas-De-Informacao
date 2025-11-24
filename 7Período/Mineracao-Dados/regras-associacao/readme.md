@@ -1,0 +1,6 @@
+# Regras de Associação
+
+
+
+
+---

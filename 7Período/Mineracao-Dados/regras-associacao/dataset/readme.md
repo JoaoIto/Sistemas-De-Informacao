@@ -66,9 +66,34 @@ rules = association_rules(frequent_itemsets, metric="lift", min_threshold=1.0)
 - **Eixo X (Suporte)**: Quão frequente é a regra.
 - **Eixo Y (Confiança)**: Quão forte é a regra (dado A, qual a chance de B?).
 - **Cor/Tamanho (Lift)**: A qualidade da associação.
-- **Interpretação**:
-    - Pontos no **canto superior direito** são os melhores (frequentes e confiáveis).
-    - Pontos **mais escuros/grandes** indicam associações muito fortes, onde um produto "puxa" a venda do outro.
+
+### 6. Sabedoria do Gráfico: O que ele nos diz?
+
+![alt text](image-1.png)
+
+#### A. A "Nuvem" (Canto Inferior Esquerdo)
+- **O que é**: A grande massa de pontos roxos e pequenos aglomerados no canto esquerdo.
+- **Significado**: São combinações de produtos que acontecem, mas são fracas (Lift baixo) ou muito raras.
+- **Ação**: **Ignorar**. Geralmente são coincidências ou compras de rotina sem padrão claro.
+
+#### B. As "Anomalias Visuais" (O Ouro)
+- **O que é**: Os pontos que **fogem** dessa nuvem. Olhe para os pontos **Verdes/Amarelos** e **Grandes** que estão mais altos no gráfico.
+- **Significado**: Estas são as regras de **Alto Lift**. Elas representam comportamentos de compra muito específicos e fortes.
+    - Exemplo: O ponto amarelo grande no topo representa uma regra onde a compra de A aumenta drasticamente a chance de comprar B.
+- **Sabedoria para o Negócio**:
+    - Esses pontos são **oportunidades de lucro**. Eles mostram desejos ocultos do consumidor.
+    - **Estratégia**: Crie promoções focadas APENAS nesses pontos. Não gaste marketing na "nuvem".
+
+#### C. Quais Anomalias Apresentar?
+Dois tipos de "anomalias" (coisas fora do comum), mas não as confunda:
+
+1.  **Anomalias de Regra (Neste Gráfico)**:
+    - **Apresente**: Os pontos que estão isolados no topo ou com cores claras (Lift > 1.8).
+    - **Por que?**: Eles provam que você achou padrões que a concorrência não vê. Mostre que "Iogurte+Leite -> Salsicha" é um ponto fora da curva estatística.
+
+2.  **Anomalias de Transação (Do PyCaret)**:
+    - **Apresente**: As compras identificadas pelo Isolation Forest (seção PyCaret do notebook).
+    - **Por que?**: Elas mostram erros operacionais ou fraudes. Ex: Uma compra com 50 itens iguais, ou uma cesta com produtos que nunca são vendidos juntos. Isso é segurança e eficiência operacional.
 
 ---
 

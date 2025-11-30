@@ -1,242 +1,307 @@
-# Documentação Mineração de Dados - Prova A2
+# Documentação Mineração de Dados A2 - **Conceitos + Aplicação Prática**
 
 ***
 
-## 1. PROCESSO KDD - FLUXO COMPLETO
+## 1. PROCESSO KDD (Knowledge Discovery in Databases)
 
-| **Etapa** | **Objetivo** | **Técnicas Principais** |
-|-----------|--------------|-------------------------|
-| **Seleção** | Escolher dados relevantes | Filtragem por domínio, amostragem |
-| **Pré-processamento** | Limpar dados brutos | Remover duplicatas, tratar NaN, outliers |
-| **Transformação** | Preparar para algoritmos | Normalização, one-hot encoding, feature engineering |
-| **Mineração** | Extrair padrões | Regressão, Classificação, Clustering, Associação |
-| **Avaliação** | Validar resultados | Métricas, cross-validation, interpretação |
+### **O que é e Para que Serve**
+O **KDD** é o **fluxo completo** de transformar dados brutos em conhecimento acionável. Não é só "rodar algoritmo", mas um processo estruturado que garante resultados confiáveis.
+
+**Aprendizado de Máquina:** Base para **todos** os tipos (supervisionado e não-supervisionado).
+
+**Como é feito nas atividades:** 
+- Datasets reais com NaN, duplicatas, escalas diferentes
+- **Sempre** dividido em: exploração → limpeza → modelagem → validação
+
+| **Etapa** | **O que Faz** | **Nas Atividades (Exemplo)** | **Configuração Típica** |
+|-----------|---------------|-----------------------------|-------------------------|
+| **Seleção** | Escolher dados relevantes | `df = df[['idade', 'renda', 'compra']]` | Domain knowledge |
+| **Pré-processamento** | Limpar sujeira | `df.dropna()`, `df.drop_duplicates()` | 80% do tempo gasto aqui |
+| **Transformação** | Preparar formato ML | `StandardScaler()`, `OneHotEncoder()` | **CRÍTICO** para todos algoritmos |
+| **Mineração** | Extrair padrões | `KMeans()`, `RandomForest()` | Varia por técnica |
+| **Avaliação** | Validar se funciona | `cross_val_score()`, métricas | K-fold=5 ou 10 |
+
+**Como ajuda:** Sem KDD, modelo falha em produção (data leakage, overfitting, métricas erradas).
 
 ***
 
-## 2. REGRESSÃO
+## 2. REGRESSÃO (**SUPERVISIONADO**)
 
-### **Conceito Base**
-Prediz **valores contínuos** (preço, temperatura, quantidade)
+### **O que é e Para que Serve**
+**Regressão** prediz **valores contínuos** (preço, temperatura, quantidade). Usa dados **com rótulo** (target conhecido) para aprender relação X → y.
 
-**Equação Fundamental:**
+**Aprendizado Supervisionado:** 
+1. Treina com pares (features, target)
+2. Minimiza erro entre predito e real
+3. Generaliza para novos dados
+
+**Nas atividades:** Previsão de preços de casas, vendas, notas. Dataset tem target numérico.
+
+### **Como Funciona na Prática**
 ```
-y = β₀ + β₁x₁ + β₂x₂ + ... + ε
+Dataset: casas.csv [tamanho, quartos, idade] → [preco]
+1. Treino: Aprende β₀ + β₁×tamanho + β₂×quartos
+2. Teste: Prediz preco novos imóveis
+3. Avalia: RMSE, R²
 ```
 
-### **Parâmetros e Interpretação**
+| **Parâmetro** | **Serve Para** | **Configuração nas Atividades** | **Exemplo Prático** |
+|---------------|----------------|-------------------------------|---------------------|
+| **β₀ (Intercepto)** | Preço base | Calculado automaticamente | R$50k (casa vazia) |
+| **β₁ (Coef)** | Impacto variável | `LinearRegression().coef_` | +R$150/m² |
+| **R²** | Qualidade modelo | `model.score(X_test, y_test)` | 0.82 = 82% explicado |
+| **RMSE** | Erro previsão | `mean_squared_error(y_test, pred)` | R$25k erro médio |
 
-| **Parâmetro** | **Significado** | **Interpretação** |
-|---------------|-----------------|-------------------|
-| **β₀ (Intercepto)** | Valor base | Preço quando todas X=0 |
-| **β₁ (Coeficiente)** | Impacto da variável | +$150 por m² adicional |
-| **R²** | Variância explicada | 0.85 = 85% explicada |
-| **Adjusted R²** | Penaliza variáveis extras | Prefira sempre ao R² |
-
-### **Métricas de Avaliação**
-
-| **Métrica** | **Fórmula** | **Quando Usar** | **Bom (>)** |
-|-------------|-------------|-----------------|-------------|
-| **RMSE** | √[Σ(y-ŷ)²/n] | Penaliza erros grandes | Depende da escala |
-| **MAE** | Σ\|y-ŷ\|/n | Robusto a outliers | Depende da escala |
-| **R²** | 1-[SS_res/SS_tot] | Proporção explicada | 0.70 |
-
-### **Assunções Críticas (Verificar Sempre!)**
-1. **Linearidade**: Gráfico resíduos vs preditos sem padrão
-2. **Homocedasticidade**: Variância constante dos resíduos
-3. **Normalidade**: Q-Q plot dos resíduos
-4. **Não multicolinearidade**: VIF < 5
-
-***
-
-## 3. CLUSTERIZAÇÃO
-
-### **Conceito Base**
-Agrupa dados **sem rótulos** por similaridade
-
-### **K-Means - Parâmetros Essenciais**
-
-| **Parâmetro** | **Valor Típico** | **Impacto** |
-|---------------|------------------|-------------|
-| `n_clusters (k)` | Cotovelo/Silhueta | ❌ Crítico! |
-| `init` | 'k-means++' | Melhor inicialização |
-| `max_iter` | 300 | Limite iterações |
-| `n_init` | 10 | Rodadas diferentes |
-
-### **Escolha de K - Métodos**
-
-| **Método** | **Como Funciona** | **Critério** |
-|------------|-------------------|--------------|
-| **Cotovelo** | Inércia vs k | Mudança de inclinação |
-| **Silhueta** | Coesão vs separação | Máximo (>0.5 bom) |
-| **BIC/AIC** | Penaliza complexidade | Menor valor |
-
-### **Validação de Clusters**
-
-| **Métrica** | **Intervalo** | **Bom** |
-|-------------|---------------|---------|
-| **Silhueta** | -1 a +1 | > 0.5 |
-| **Davies-Bouldin** | 0 a ∞ | < 1.0 |
-| **Calinski-Harabasz** | 0 a ∞ | Maior |
-
-***
-
-## 4. CLASSIFICAÇÃO
-
-### **Conceito Base**
-Prediz **categorias discretas** (sim/não, spam/ham)
-
-### **Algoritmos - Comparação**
-
-| **Algoritmo** | **Vantagens** | **Desvantagens** | **Parâmetros Chave** |
-|---------------|---------------|------------------|---------------------|
-| **Árvore Decisão** | Interpretável | Overfitting | max_depth, min_samples_split |
-| **Random Forest** | Robusto | Menos interpretável | n_estimators=100, max_features='sqrt' |
-| **SVM** | Alta dimensionalidade | Lento grandes dados | C=1.0, kernel='rbf', gamma='scale' |
-| **Naive Bayes** | Rápido | Assunção naive | - |
-| **k-NN** | Simples | Lento predição | k=5, metric='euclidean' |
-
-### **Random Forest - Configuração Típica**
+**Configuração típica:**
 ```python
-RandomForestClassifier(
-    n_estimators=100,      # Árvores
-    max_depth=10,          # Evita overfitting
-    min_samples_split=20,  # Nó mínimo
-    max_features='sqrt'    # Features por nó
-)
+from sklearn.linear_model import LinearRegression
+model = LinearRegression()
+model.fit(X_train, y_train)  # Aprende coeficientes
+pred = model.predict(X_test) # Prediz novos
+```
+
+**Como ajuda:** Prever demanda, otimizar preços, planejar estoque.
+
+***
+
+## 3. CLUSTERIZAÇÃO (**NÃO SUPERVISIONADO**)
+
+### **O que é e Para que Serve**
+**Clusterização** agrupa dados **sem rótulos** por similaridade natural. Descobre padrões ocultos.
+
+**Aprendizado Não-Supervisionado:**
+1. Sem target definido
+2. Algoritmo encontra grupos automaticamente
+3. Útil para exploração/segmentação
+
+**Nas atividades:** Segmentação clientes, detecção anomalias. Dataset sem coluna target.
+
+### **K-Means - Como Funciona**
+```
+Dataset: clientes.csv [idade, renda, compras]
+1. Escolhe k=3 clusters
+2. Inicializa 3 centróides aleatórios
+3. Cada cliente → cluster mais próximo
+4. Recalcula centróides (média)
+5. Repete até estabilizar
+```
+
+| **Parâmetro** | **Serve Para** | **Configuração Atividades** | **Validação** |
+|---------------|----------------|----------------------------|---------------|
+| `n_clusters=k` | Quantos grupos | Cotovelo (k=3-5) | **CRÍTICO** |
+| `init='k-means++'` | Melhores centróides iniciais | Sempre usar | Evita mínimos locais |
+| `max_iter=300` | Limite iterações | Padrão OK | Se não converge, aumentar |
+| `random_state=42` | Reprodutibilidade | Sempre usar | Resultados consistentes |
+
+**Configuração típica:**
+```python
+from sklearn.cluster import KMeans
+kmeans = KMeans(n_clusters=3, random_state=42)
+clusters = kmeans.fit_predict(df)  # Gera grupos 0,1,2
+```
+
+**Silhueta nas atividades:** `silhouette_score(df, clusters)` > 0.5 = bom agrupamento.
+
+**Como ajuda:** Segmentar clientes (jovem/rica, idoso/pobre), detectar fraudes (outliers).
+
+***
+
+## 4. CLASSIFICAÇÃO (**SUPERVISIONADO**)
+
+### **O que é e Para que Serve**
+**Classificação** prediz **categorias** (sim/não, spam/ham). Usa dados **com rótulos** para aprender regras de decisão.
+
+**Aprendizado Supervisionado:**
+1. Treina com (features, classe)
+2. Aprende fronteiras de decisão
+3. Classifica novos dados
+
+**Nas atividades:** Churn, spam, aprovação crédito. Dataset tem target categórico.
+
+### **Algoritmos Mais Usados**
+
+| **Algoritmo** | **Aprendizado** | **Nas Atividades** | **Configuração Típica** |
+|---------------|-----------------|-------------------|-------------------------|
+| **Random Forest** | Ensemble árvores | **MAIS USADO** | `n_estimators=100, max_depth=10` |
+| **Árvore Decisão** | Regras if-then | Interpretabilidade | `max_depth=5, min_samples_leaf=10` |
+| **SVM** | Hiperplano ótimo | Dados pequenos | `C=1.0, kernel='rbf'` |
+| **k-NN** | Vizinhos próximos | Prototipagem | `n_neighbors=5` |
+
+**Random Forest nas atividades:**
+```python
+from sklearn.ensemble import RandomForestClassifier
+rf = RandomForestClassifier(n_estimators=100, random_state=42)
+rf.fit(X_train, y_train)  # y_train = [0,1,0,1...]
+pred = rf.predict(X_test)
+```
+
+**Feature Importance:** `rf.feature_importances_` mostra quais variáveis importam mais.
+
+**Como ajuda:** Prever quem vai cancelar, detectar spam, aprovar crédito automaticamente.
+
+***
+
+## 5. MÉTRICAS DE AVALIAÇÃO
+
+### **O que é e Para que Serve**
+**Métricas** quantificam se modelo funciona. Diferentes problemas → diferentes métricas.
+
+**Nas atividades:** **Sempre** usa matriz confusão + F1/AUC para classificação, RMSE/R² para regressão.
+
+### **Matriz de Confusão - Classificação Binária**
+```
+Exemplo real das atividades: Prever churn (1=cancela, 0=fica)
+                Predito 1    Predito 0
+Real 1 (Churn)    150(TP)      20(FN)
+Real 0 (Fica)     15(FP)     9815(TN)
+```
+
+| **Métrica** | **Fórmula** | **Nas Atividades** | **Interpretação** |
+|-------------|-------------|-------------------|-------------------|
+| **Precisão** | TP/(TP+FP) | `precision_score(y_test, pred)` | 150/165=91% (confiável quando diz churn) |
+| **Recall** | TP/(TP+FN) | `recall_score(y_test, pred)` | 150/170=88% (pega 88% dos churn reais) |
+| **F1** | 2PR/(P+R) | `f1_score(y_test, pred)` | 0.89 (balanceado) |
+| **AUC** | Área ROC | `roc_auc_score(y_test, prob)` | 0.92 (excelente ranking) |
+
+**Configuração típica:**
+```python
+from sklearn.metrics import classification_report
+print(classification_report(y_test, pred))
+```
+
+**Para Regressão nas atividades:**
+```python
+from sklearn.metrics import mean_squared_error, r2_score
+rmse = np.sqrt(mean_squared_error(y_test, pred))
+r2 = r2_score(y_test, pred)
+```
+
+**Como ajuda:** Escolher melhor modelo, comunicar performance para negócio.
+
+***
+
+## 6. AUTOML (**SUPERVISIONADO/NÃO SUPERVISIONADO**)
+
+### **O que é e Para que Serve**
+**AutoML** automatiza **todo pipeline ML**. Testa algoritmos, hiperparâmetros, features automaticamente.
+
+**Nas atividades:** Usado para **baseline rápido** antes de modelagem manual.
+
+### **Pipeline Automático**
+```
+1. Dá dataset → AutoML faz:
+   - Limpa NaN/outliers
+   - Testa 20+ algoritmos
+   - Otimiza hiperparâmetros
+   - Faz ensemble
+2. Retorna: Melhor modelo + score
+```
+
+| **Ferramenta** | **Nas Atividades** | **Configuração** | **Tempo** |
+|----------------|-------------------|------------------|-----------|
+| **TPOT** | Gera código Python | `tpot = TPOTClassifier(generations=5)` | 30min |
+| **H2O** | Enterprise | `h2o.automl(max_models=20)` | 15min |
+| **AutoGluon** | **Tabular rápido** | `predictor = TabularPredictor().fit(train)` | 5min |
+
+**Exemplo prático:**
+```python
+from autogluon.tabular import TabularPredictor
+predictor = TabularPredictor(label='target').fit(train_data)
+pred = predictor.predict(test_data)
+```
+
+**Como ajuda:** Economiza **dias** de trabalho, encontra modelos que você não conhecia.
+
+***
+
+## 7. REGRAS DE ASSOCIAÇÃO (**NÃO SUPERVISIONADO**)
+
+### **O que é e Para que Serve**
+Descobre **relacionamentos entre itens** em transações. "Se compra X, compra Y".
+
+**Nas atividades:** Análise cestas de compra, recomendações.
+
+### **Market Basket Analysis**
+```
+Dataset: transacoes.csv
+Transação 1: [pao, leite, manteiga]
+Transação 2: [pao, leite]
+→ Regra: {pao,leite} → {manteiga}
+```
+
+| **Métrica** | **Exemplo Real** | **Nas Atividades** | **Decisão** |
+|-------------|------------------|-------------------|-------------|
+| **Suporte=0.05** | 5% transações | `min_support=0.01` | Frequente o suficiente |
+| **Confiança=0.80** | 80% precisão | `min_confidence=0.5` | **Muito confiável** |
+| **Lift=2.5** | 2.5x mais provável | `min_lift=1.2` | **Forte relação** |
+
+**Configuração típica:**
+```python
+from mlxtend.frequent_patterns import apriori, association_rules
+freq_items = apriori(df, min_support=0.01)
+rules = association_rules(freq_items, min_confidence=0.5)
+```
+
+**Como ajuda:** Cross-sell ("comprou pão+leite? Leve manteiga!"), layout loja.
+
+***
+
+## 8. VALIDAÇÃO CRUZADA (**TODOS TIPOS**)
+
+### **O que é e Para que Serve**
+**K-Fold CV** testa modelo em **múltiplas divisões** para performance realista.
+
+**Nas atividades:** **OBRIGATÓRIO** antes de confiar em resultado.
+
+```
+k=5 → Divide em 5 partes
+Treina 4, testa 1 → Repete 5x
+Score final: média ± desvio
+Ex: 0.82 ± 0.03 = confiável
+```
+
+**Configuração:**
+```python
+from sklearn.model_selection import cross_val_score
+scores = cross_val_score(model, X, y, cv=5, scoring='f1')
+print(f"{scores.mean():.3f} ± {scores.std():.3f}")
 ```
 
 ***
 
-## 5. MATRIZ DE CONFUSÃO E MÉTRICAS
+## **CHECKLIST FINAL - PROVA A2**
 
-### **Matriz Binária**
-
-| **Predito ↓ / Real →** | **Positivo** | **Negativo** |
-|-------------------------|--------------|--------------|
-| **Positivo** | **TP** | **FP** |
-| **Negativo** | **FN** | **TN** |
-
-### **Métricas Essenciais**
-
-| **Métrica** | **Fórmula** | **Foco** | **Quando Usar** |
-|-------------|-------------|----------|-----------------|
-| **Acurácia** | (TP+TN)/Total | Geral | Dados balanceados |
-| **Precisão** | TP/(TP+FP) | Falsos Positivos | FP custoso |
-| **Recall** | TP/(TP+FN) | Falsos Negativos | FN custoso |
-| **F1-Score** | 2×(P×R)/(P+R) | Balanceado | Desbalanceados |
-| **AUC-ROC** | Área sob curva | Ranking | Probabilidades |
-
-### **Interpretação Rápida**
+### **Fluxo Completo (Sempre fazer nessa ordem)**
 ```
-Acurácia 95%, mas F1 0.6 → Dados desbalanceados!
-Precisão 90%, Recall 30% → Muitos FN (perde positivos)
+1. EXPLORAR: df.info(), df.describe(), df.isnull().sum()
+2. LIMPAR: df.dropna(), df.fillna(), outliers
+3. PREPARAR: StandardScaler(), OneHotEncoder()
+4. DIVIDIR: train_test_split(test_size=0.3)
+5. MODELAR: KMeans(), RandomForest(), etc.
+6. VALIDAR: cross_val_score(cv=5)
+7. AVALIAR: classification_report(), RMSE, silhouette
+8. INTERPRETAR: feature_importance, regras lift>1.2
 ```
 
-***
+### **Configurações Padrão - Copie e Cole**
+```python
+# Regressão
+LinearRegression().fit(X_train, y_train)
 
-## 6. AUTOML
+# Classificação
+RandomForestClassifier(n_estimators=100, random_state=42)
 
-### **Pipeline Automatizado**
+# Clustering
+KMeans(n_clusters=3, random_state=42)
 
-| **Etapa** | **Automação** | **Ferramentas** |
-|-----------|---------------|-----------------|
-| Pré-processamento | NaN, encoding, scaling | TPOT, H2O |
-| Feature Selection | Remove irrelevantes | Auto-sklearn |
-| Algoritmo | Testa múltiplos | AutoGluon |
-| Hiperparâmetros | Grid/Random/Bayesian | PyCaret |
-| Ensemble | Stacking/Voting | Todas |
-
-### **Ferramentas - Comparação**
-
-| **Ferramenta** | **Destaque** | **Linguagem** | **Tempo** |
-|----------------|--------------|---------------|-----------|
-| **TPOT** | Gera código | Python | Médio |
-| **H2O** | Enterprise | R/Python/Java | Rápido |
-| **AutoGluon** | Tabular | Python | Muito rápido |
-| **PyCaret** | Low-code | Python | Rápido |
-
-***
-
-## 7. REGRAS DE ASSOCIAÇÃO
-
-### **Métricas Fundamentais**
-
-| **Métrica** | **Fórmula** | **Interpretação** | **Bom (>)** |
-|-------------|-------------|-------------------|-------------|
-| **Suporte** | P(X∪Y) | Frequência | 0.01 (1%) |
-| **Confiança** | P(Y\|X) | Precisão | 0.50 (50%) |
-| **Lift** | conf/sup(Y) | Força relação | > 1.0 |
-| **Conviction** | [1-sup(Y)]/[1-conf] | Implicação | > 1.0 |
-
-### **Apriori - Parâmetros**
-
-| **Parâmetro** | **Típico** | **Efeito** |
-|---------------|------------|------------|
-| `min_support` | 0.01 | Filtra raras |
-| `min_confidence` | 0.5 | Filtra fracas |
-| `min_lift` | 1.0 | Só positivas |
-
-**Exemplo Prático:**
-```
-{Chips, Refrigerante} → {Salsa}
-sup=0.04, conf=0.80, lift=2.5
-→ Colocar salsa perto de chips!
+# Validação
+cross_val_score(model, X, y, cv=5, scoring='f1')
 ```
 
-***
-
-## 8. VALIDAÇÃO E DIAGNÓSTICO
-
-### **Cross-Validation K-Fold**
-
-```
-k=5 → 5 divisões
-Score final = média ± desvio padrão
-Exemplo: 0.82 ± 0.03
-```
-
-### **Diagnóstico Modelos**
-
-| **Treino** | **Teste** | **Gap** | **Diagnóstico** | **Solução** |
-|------------|-----------|---------|-----------------|-------------|
-| 95% | 70% | 25% | **Overfitting** | Regularização, ↓complexidade |
-| 75% | 73% | 2% | **Normal** | ✅ OK |
-| 50% | 52% | 2% | **Underfitting** | ↑complexidade, +features |
-
-***
-
-## 9. CHECKLIST PROVA A2
-
-### **Antes de Treinar**
-- [ ] Dados explorados? (shape, NaN, distribuição)
-- [ ] Pré-processamento correto? (sem data leakage)
-- [ ] Treino/teste divididos? (70/30 ou CV)
-
-### **Durante Treinamento**
-- [ ] Métrica apropriada? (F1 se desbalanceado)
-- [ ] Cross-validation usada?
-- [ ] Hiperparâmetros otimizados?
-- [ ] Overfitting verificado?
-
-### **Interpretação Final**
-```
-✅ Acurácia: 82% [web:39]
-✅ F1: 0.78 → Balanceado [web:78]
-✅ Recall: 75% → Não perde muitos positivos [web:81]
-✅ Features importantes: Renda(35%), Idade(22%) [web:51]
-```
-
-**Ação de Negócio:** Contatar clientes de alto risco baseado em renda baixa + idade avançada.
-
-***
-
-**Documentação otimizada para prova: Tabelas rápidas, parâmetros essenciais, interpretação prática e citações diretas das métricas principais.**[1][2][3][4][5][6][7]
+**Boa sorte na prova! Esta é a estrutura **exata** usada nas atividades.**[1][2][3][4][5]
 
 [1](https://revistas.ufpr.br/atoz/article/download/41340/25333)
 [2](https://learn.microsoft.com/pt-br/analysis-services/data-mining/mining-model-content-for-linear-regression-models-analysis-services-data-mining?view=asallproducts-allversions)
 [3](https://www.datacamp.com/pt/tutorial/hierarchical-clustering)
-[4](https://www.ibm.com/br-pt/think/topics/random-forest)
-[5](https://mariofilho.com/precisao-recall-e-f1-score-em-machine-learning/)
-[6](https://developers.google.com/machine-learning/crash-course/classification/accuracy-precision-recall?hl=pt-br)
-[7](https://docs.h2o.ai/h2o/latest-stable/h2o-docs/automl.html)
+[4](https://mariofilho.com/precisao-recall-e-f1-score-em-machine-learning/)
+[5](https://developers.google.com/machine-learning/crash-course/classification/accuracy-precision-recall?hl=pt-br)

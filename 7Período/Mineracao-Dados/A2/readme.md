@@ -45,12 +45,25 @@ Dataset: casas.csv [tamanho, quartos, idade] → [preco]
 3. Avalia: RMSE, R²
 ```
 
-| **Parâmetro** | **Serve Para** | **Configuração nas Atividades** | **Exemplo Prático** |
-|---------------|----------------|-------------------------------|---------------------|
-| **β₀ (Intercepto)** | Preço base | Calculado automaticamente | R$50k (casa vazia) |
-| **β₁ (Coef)** | Impacto variável | `LinearRegression().coef_` | +R$150/m² |
-| **R²** | Qualidade modelo | `model.score(X_test, y_test)` | 0.82 = 82% explicado |
-| **RMSE** | Erro previsão | `mean_squared_error(y_test, pred)` | R$25k erro médio |
+### **TABELA — PARÂMETROS E MÉTRICAS DE REGRESSÃO**
+
+| **Parâmetro / Métrica**              | **Serve Para**                                              | **Configuração nas Atividades (Python/Colab)** | **Exemplo Prático (Fácil de Entender)**                        |
+| ------------------------------------ | ----------------------------------------------------------- | ---------------------------------------------- | -------------------------------------------------------------- |
+| **β₀ (Intercepto)**                  | Valor base quando todas variáveis = 0                       | `model.intercept_`                             | Preço inicial de uma casa sem nenhum atributo = **R$ 50.000**  |
+| **β₁, β₂… (Coeficientes)**           | Quanto cada variável impacta no valor                       | `model.coef_`                                  | Cada m² a mais aumenta **R$ 150** no preço                     |
+| **R² (Coeficiente de Determinação)** | Quanto o modelo explica da variação do target               | `model.score(X_test, y_test)`                  | R² = **0.82** → modelo explica **82%** do preço                |
+| **R² Ajustado**                      | Ajusta o R² pelo número de variáveis (evita falsa melhoria) | Via statsmodels: `results.rsquared_adj`        | Se R² aumenta mas o ajustado cai → variável inútil             |
+| **MSE (Mean Squared Error)**         | Penaliza erros grandes V² → muito sensível a outliers       | `mean_squared_error(y_test, pred)`             | MSE = **625.000.000** (erros grandes puxaram pra cima)         |
+| **RMSE (Root MSE)**                  | Erro médio na *mesma unidade do target*                     | `np.sqrt(MSE)`                                 | RMSE = **R$ 25.000** de erro médio                             |
+| **MAE (Mean Absolute Error)**        | Erro médio real, sem quadrado                               | `mean_absolute_error(y_test, pred)`            | MAE = **R$ 15.000** (erro “normal” do modelo)                  |
+| **MAPE (%)**                         | Erro em porcentagem                                         | `mean_absolute_percentage_error(y_test, pred)` | MAPE = **12%** → modelo erra 12% do valor                      |
+| **RMSLE**                            | Reduz impacto de valores muito altos (log)                  | `mean_squared_log_error()`                     | Ideal para valores com grande variação (ex: preços 200k vs 2M) |
+| **Bias**                             | Tendência do modelo a superestimar/subestimar               | `y_test.mean() - pred.mean()`                  | Se Bias = +10.000 → modelo está **superestimando** preços      |
+| **Resíduos**                         | Diferença ponto a ponto (real − previsto)                   | `residuals = y_test - pred`                    | Residual = +8.000 → modelo errou para baixo                    |
+| **Normalidade dos Resíduos**         | Verifica se o modelo linear é adequado                      | Plot: `sns.histplot(residuals)`                | Se os resíduos formam sino → modelo adequado                   |
+| **Homoscedasticidade**               | Verifica se variância do erro é constante                   | Scatter: pred vs resíduos                      | Se o gráfico “abre” → erro cresce com o valor (ruim)           |
+| **VIF (Variance Inflation Factor)**  | Detecta multicolinearidade                                  | `variance_inflation_factor()`                  | VIF > 5 → variáveis repetem a mesma informação                 |
+| **Durbin-Watson**                    | Detecta autocorrelação dos resíduos                         | statsmodels: `results.durbin_watson`           | DW perto de 2 = sem autocorrelação                             |
 
 **Configuração típica:**
 ```python

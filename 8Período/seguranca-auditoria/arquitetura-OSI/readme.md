@@ -90,6 +90,37 @@ A norma X.800 define cinco categorias principais de serviços que um sistema dev
 5.  **Não-Repúdio (Irretratabilidade):** Impede que o remetente ou o destinatário neguem ter transmitido ou recebido uma mensagem.
     * *Exemplo:* Assinatura Digital prova que Alice enviou a mensagem, logo ela não pode negar o envio.
 
+### 4.1 Detalhamento dos Tipos de Autenticação (X.800)
+
+A arquitetura OSI distingue a autenticação baseada no tipo de comunicação (se há uma conexão contínua ou apenas envio de dados soltos).
+
+#### A. Autenticação de Entidade Pareada (Peer Entity Authentication)
+Este serviço é utilizado em comunicações orientadas a conexão (como uma chamada telefônica ou uma sessão TCP).
+* **Conceito:** Garante a identidade da entidade com a qual se está conectado no momento.
+* **Contexto de Uso:** Ocorre geralmente na fase de estabelecimento da conexão (handshake) e, opcionalmente, durante a transferência de dados.
+* **O que previne:** Garante que nenhuma entidade terceira esteja fingindo ser uma das partes (Mascaramento) e que a conexão anterior não esteja sendo retransmitida (Replay).
+* **Analogia:** Quando você atende o telefone e reconhece a voz da pessoa do outro lado, confirmando que é ela *naquele momento*.
+
+#### B. Autenticação de Origem de Dados (Data Origin Authentication)
+Este serviço é utilizado em comunicações sem conexão (connectionless), como o envio de um e-mail ou pacotes UDP.
+* **Conceito:** Corrobora a fonte de uma unidade de dados específica. Ele prova quem enviou o pacote.
+* **Contexto de Uso:** Validação de mensagens individuais onde não há garantia de ordem ou recebimento prévio.
+* **Limitação Importante:** Este serviço **não protege contra a duplicação ou modificação da ordem** dos pacotes, pois não existe uma "sessão" ativa monitorando a sequência. Ele apenas atesta: "Este pacote veio legitimamente de Alice".
+* **Analogia:** Receber uma carta selada e assinada. Você sabe quem enviou (a origem é autêntica), mas não sabe se essa foi a primeira ou a décima carta que ela escreveu, nem se outra carta foi perdida no caminho.
+
+---
+
+### Tabela Comparativa: Entidade Pareada vs. Origem de Dados
+
+Para facilitar a decisão de qual usar na arquitetura de segurança:
+
+| Característica | Autenticação de Entidade Pareada | Autenticação de Origem de Dados |
+| :--- | :--- | :--- |
+| **Tipo de Conexão** | Orientada a Conexão (ex: TCP, SSH). | Sem Conexão (ex: UDP, IP, E-mail). |
+| **Foco** | A pessoa/sistema "ao vivo". | A mensagem/pacote isolado. |
+| **Proteção contra Replay?** | **Sim**. Verifica se a conexão é nova e ao vivo. | **Não**. Verifica apenas quem assinou o dado. |
+| **Proteção contra Atraso?** | **Sim**. Detecta se a resposta demorou demais. | **Não**. |
+| **Mecanismo Comum** | *Handshake* criptográfico, Tokens de Sessão. | Assinatura Digital no arquivo/pacote. |
 ---
 
 ## 5. Modelo Geral de Segurança de Rede
@@ -101,8 +132,6 @@ Para implementar segurança, utilizamos um modelo operacional padrão:
 3.  **O Oponente:** O hacker ou software malicioso no canal.
 4.  **A Transformação Segura:** A técnica aplicada (como criptografia) que torna a informação ilegível para o oponente.
 5.  **Informação Secreta (Chave):** Um dado compartilhado apenas entre Sender e Receiver, necessário para a transformação.
-
-
 
 ---
 

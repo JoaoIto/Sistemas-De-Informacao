@@ -1,164 +1,149 @@
-# Fundamentos de Segurança da Informação e Arquitetura OSI
+# Fundamentos de Segurança da Rede e Arquitetura OSI
 
-Este documento apresenta uma visão estruturada dos conceitos de segurança de redes, baseada na recomendação ITU-T X.800 (Arquitetura de Segurança OSI) e nas definições fundamentais de William Stallings.
+Este documento consolida os conceitos essenciais de segurança da informação baseados na literatura de **William Stallings** e na recomendação **ITU-T X.800 (Arquitetura de Segurança OSI)**.
 
-O objetivo é fornecer uma base teórica sólida sobre como proteger o fluxo de informações, categorizar ameaças e aplicar serviços de defesa.
+O objetivo é fornecer uma base teórica estruturada sobre ataques, serviços e mecanismos de defesa.
 
 ---
 
-## 1. Conceitos Fundamentais (A Tríade CIA)
+## 1. A Tríade CIA e Conceitos Fundamentais
 
-A segurança da informação baseia-se em três objetivos principais, conhecidos como a Tríade CIA. Adicionalmente, o padrão OSI e Stallings incluem mais dois conceitos essenciais.
+A segurança da informação apoia-se em três pilares principais (CIA), expandidos posteriormente para incluir Autenticidade e Responsabilização.
 
 ### 1.1 Confidencialidade
-Garante que a informação não seja disponibilizada ou divulgada a indivíduos, entidades ou processos não autorizados.
-* **Confidencialidade dos dados:** Proteção do conteúdo da mensagem.
-* **Privacidade:** Controle sobre quais informações pessoais são coletadas e armazenadas.
+Garante que a informação não seja revelada a indivíduos ou processos não autorizados.
+* **Confidencialidade dos dados:** O conteúdo da mensagem é ilegível para terceiros.
+* **Privacidade:** O controle sobre *quais* dados são coletados e *quem* pode acessá-los.
 
 ### 1.2 Integridade
-Garante que os dados não foram alterados ou destruídos de forma não autorizada.
-* **Integridade dos dados:** Garantia de que o conteúdo da mensagem não foi modificado durante a transmissão.
-* **Integridade do sistema:** Garantia de que o sistema executa suas funções de maneira intocada, livre de manipulação externa.
+Garante que os dados mantenham sua precisão e consistência, sem alterações indevidas.
+* **Integridade dos dados:** O conteúdo não foi modificado (inserção, remoção ou alteração) durante o trânsito.
+* **Integridade do sistema:** O sistema opera conforme esperado, sem manipulação externa.
 
 ### 1.3 Disponibilidade
-Garante que os sistemas e dados estejam acessíveis e utilizáveis sob demanda por entidades autorizadas. Um sistema seguro deve estar operacional quando necessário.
+Garante que os recursos do sistema estejam acessíveis e utilizáveis sob demanda por entidades autorizadas. Um sistema seguro que não funciona é inútil.
 
-### 1.4 Conceitos Adicionais
-* **Autenticidade:** A propriedade de ser genuíno e verificável. Garante que a mensagem vem de onde diz vir.
-* **Responsabilização (Accountability):** Capacidade de rastrear ações de segurança até um indivíduo específico (essencial para auditoria e não-repúdio).
+### Tabela Comparativa: A Tríade CIA
+
+| Conceito | Foco Principal | Exemplo de Violação | Mecanismo de Defesa |
+| :--- | :--- | :--- | :--- |
+| **Confidencialidade** | Sigilo / Leitura | Alguém lê seu e-mail privado. | Criptografia (Encipherment). |
+| **Integridade** | Alteração / Escrita | Alguém muda o valor de um boleto. | Hashing / Assinatura Digital. |
+| **Disponibilidade** | Acesso / Tempo | O site cai e ninguém consegue logar. | Redundância / Proteção DDoS. |
 
 ---
 
-## 2. A Arquitetura de Segurança OSI (ITU-T X.800)
+## 2. A Arquitetura de Segurança OSI (X.800)
 
-A arquitetura de segurança OSI (Open Systems Interconnection) fornece uma maneira sistemática de definir requisitos de segurança. Ela não dita *como* implementar, mas *o que* deve ser protegido. Ela é dividida em três conceitos interligados:
+A norma X.800 fornece um esqueleto para a segurança de redes, organizando o tema em três categorias interligadas.
 
 1.  **Ataques de Segurança:** Qualquer ação que comprometa a segurança das informações.
-2.  **Mecanismos de Segurança:** Métodos usados para detectar, prevenir ou recuperar-se de um ataque.
-3.  **Serviços de Segurança:** Serviços que melhoram a segurança dos sistemas de processamento e transferência de dados, utilizando um ou mais mecanismos.
+2.  **Mecanismos de Segurança:** As ferramentas (algoritmos, protocolos) usadas para detectar ou prevenir o ataque.
+3.  **Serviços de Segurança:** As soluções oferecidas pelo sistema (que usam os mecanismos) para proteger os dados.
+
+### Tabela Comparativa: Estrutura X.800
+
+| Categoria | Pergunta que responde | Exemplo Prático |
+| :--- | :--- | :--- |
+| **Ataque** | *Qual é a ameaça?* | Um hacker tentando ler a senha (Sniffing). |
+| **Mecanismo** | *Qual a ferramenta técnica?* | Algoritmo de Criptografia AES-256. |
+| **Serviço** | *O que o sistema entrega?* | Confidencialidade de Dados (Email seguro). |
 
 ---
 
 ## 3. Classificação dos Ataques de Segurança
 
-Os ataques são categorizados com base na natureza da interação do atacante com a rede.
+Os ataques são divididos pela forma como o intruso interage com a rede.
 
 
 
 ### 3.1 Ataques Passivos
-Nestes ataques, o objetivo do oponente é obter informações que estão sendo transmitidas. **Não há alteração dos dados**. O remetente e o destinatário geralmente não percebem que estão sendo atacados.
+O atacante apenas **monitora** a transmissão. O objetivo é obter informação. Não há alteração nos dados, o que torna a detecção muito difícil.
 
-* **Liberação de Conteúdo da Mensagem (Eavesdropping):**
-    * *Descrição:* O atacante escuta a transmissão e captura informações sensíveis (senhas, e-mails).
-    * *Exemplo:* Alice envia um e-mail confidencial para Bob; Darth intercepta e lê o e-mail, mas o deixa seguir para Bob.
-* **Análise de Tráfego:**
-    * *Descrição:* Mesmo que o conteúdo esteja criptografado (ilegível), o atacante observa o padrão das mensagens.
-    * *Objetivo:* Determinar a localização, identidade dos comunicantes, frequência e tamanho das mensagens para deduzir a natureza da comunicação.
+* **Liberação de Conteúdo (Eavesdropping):** Captura de dados sensíveis (senhas, e-mails).
+* **Análise de Tráfego:** Observação de padrões (quem fala com quem, frequência, tamanho dos pacotes) para deduzir informações, mesmo que os dados estejam criptografados.
 
-> **Nota Crítica:** Ataques passivos são difíceis de **detectar** (pois não deixam rastros nos dados), mas podem ser **prevenidos** (ex: via criptografia).
+> **Regra de Ouro:** Ataques passivos são difíceis de detectar, mas fáceis de prevenir (com criptografia).
 
 ### 3.2 Ataques Ativos
-Nestes ataques, o oponente tenta alterar os recursos do sistema ou afetar sua operação. Envolvem a modificação do fluxo de dados ou a criação de um fluxo falso.
+O atacante **interfere** na transmissão. Envolve alteração, criação ou bloqueio de dados.
 
-* **Mascaramento (Masquerade):**
-    * *Descrição:* Uma entidade finge ser outra entidade autorizada para ganhar privilégios extras.
-    * *Exemplo:* Darth captura as credenciais de autenticação de Alice e envia mensagens para Bob como se fosse Alice.
-* **Replay (Reencaminhamento):**
-    * *Descrição:* Captura passiva de uma unidade de dados e sua retransmissão subsequente para produzir um efeito não autorizado.
-    * *Exemplo:* Darth copia uma mensagem criptografada de "Transferir R$100 para Darth" enviada por Alice e a reenvia 50 vezes para o banco.
-* **Modificação de Mensagem:**
-    * *Descrição:* Uma parte de uma mensagem legítima é alterada, atrasada ou reordenada.
-    * *Exemplo:* Alice envia "Permitir acesso a Pedro"; Darth altera para "Permitir acesso a Darth".
-* **Negação de Serviço (DoS - Denial of Service):**
-    * *Descrição:* Impede ou inibe o uso normal das instalações de comunicação.
-    * *Exemplo:* Darth inunda o servidor de Bob com pedidos, impedindo que Alice consiga se comunicar com Bob.
+* **Mascaramento (Masquerade):** Fingir ser outra entidade para ganhar privilégios.
+* **Replay (Reencaminhamento):** Capturar uma mensagem legítima e reenviá-la depois (ex: reenviar uma ordem de pagamento).
+* **Modificação de Mensagem:** Alterar parte de uma mensagem legítima (mudar "Pague João" para "Pague Darth").
+* **Negação de Serviço (DoS):** Sobrecarregar o sistema para impedir o uso legítimo.
 
-> **Nota Crítica:** Ataques ativos são difíceis de **prevenir** completamente, então o foco é na **detecção** e recuperação.
+> **Regra de Ouro:** Ataques ativos são difíceis de prevenir completamente, então o foco é na detecção e recuperação.
 
----
+### Tabela Comparativa: Ataques Passivos vs. Ativos
 
-## 4. Serviços de Segurança (X.800)
-
-A norma X.800 define cinco categorias principais de serviços que um sistema deve prover para garantir segurança adequada:
-
-1.  **Autenticação:** Garante que a entidade de comunicação é quem diz ser.
-    * *Autenticação de Entidade:* Verifica a identidade no início da conexão (ex: Login).
-    * *Autenticação de Origem de Dados:* Verifica a fonte de uma unidade de dados específica (ex: E-mail).
-2.  **Controle de Acesso:** Limita e controla o acesso a sistemas e aplicações via links de comunicação. Define quem pode fazer o quê.
-3.  **Confidencialidade de Dados:** Protege os dados contra divulgação não autorizada. Pode ser aplicado a toda a mensagem, campos específicos ou ao fluxo de tráfego.
-4.  **Integridade de Dados:** Garante que os dados recebidos são exatamente os enviados por uma entidade autorizada (sem modificação, inserção ou exclusão).
-5.  **Não-Repúdio (Irretratabilidade):** Impede que o remetente ou o destinatário neguem ter transmitido ou recebido uma mensagem.
-    * *Exemplo:* Assinatura Digital prova que Alice enviou a mensagem, logo ela não pode negar o envio.
-
-### 4.1 Detalhamento dos Tipos de Autenticação (X.800)
-
-A arquitetura OSI distingue a autenticação baseada no tipo de comunicação (se há uma conexão contínua ou apenas envio de dados soltos).
-
-#### A. Autenticação de Entidade Pareada (Peer Entity Authentication)
-Este serviço é utilizado em comunicações orientadas a conexão (como uma chamada telefônica ou uma sessão TCP).
-* **Conceito:** Garante a identidade da entidade com a qual se está conectado no momento.
-* **Contexto de Uso:** Ocorre geralmente na fase de estabelecimento da conexão (handshake) e, opcionalmente, durante a transferência de dados.
-* **O que previne:** Garante que nenhuma entidade terceira esteja fingindo ser uma das partes (Mascaramento) e que a conexão anterior não esteja sendo retransmitida (Replay).
-* **Analogia:** Quando você atende o telefone e reconhece a voz da pessoa do outro lado, confirmando que é ela *naquele momento*.
-
-#### B. Autenticação de Origem de Dados (Data Origin Authentication)
-Este serviço é utilizado em comunicações sem conexão (connectionless), como o envio de um e-mail ou pacotes UDP.
-* **Conceito:** Corrobora a fonte de uma unidade de dados específica. Ele prova quem enviou o pacote.
-* **Contexto de Uso:** Validação de mensagens individuais onde não há garantia de ordem ou recebimento prévio.
-* **Limitação Importante:** Este serviço **não protege contra a duplicação ou modificação da ordem** dos pacotes, pois não existe uma "sessão" ativa monitorando a sequência. Ele apenas atesta: "Este pacote veio legitimamente de Alice".
-* **Analogia:** Receber uma carta selada e assinada. Você sabe quem enviou (a origem é autêntica), mas não sabe se essa foi a primeira ou a décima carta que ela escreveu, nem se outra carta foi perdida no caminho.
-
----
-
-### Tabela Comparativa: Entidade Pareada vs. Origem de Dados
-
-Para facilitar a decisão de qual usar na arquitetura de segurança:
-
-| Característica | Autenticação de Entidade Pareada | Autenticação de Origem de Dados |
+| Característica | Ataque Passivo | Ataque Ativo |
 | :--- | :--- | :--- |
-| **Tipo de Conexão** | Orientada a Conexão (ex: TCP, SSH). | Sem Conexão (ex: UDP, IP, E-mail). |
-| **Foco** | A pessoa/sistema "ao vivo". | A mensagem/pacote isolado. |
-| **Proteção contra Replay?** | **Sim**. Verifica se a conexão é nova e ao vivo. | **Não**. Verifica apenas quem assinou o dado. |
-| **Proteção contra Atraso?** | **Sim**. Detecta se a resposta demorou demais. | **Não**. |
-| **Mecanismo Comum** | *Handshake* criptográfico, Tokens de Sessão. | Assinatura Digital no arquivo/pacote. |
+| **Ação do Atacante** | Escutar / Monitorar. | Alterar / Criar / Bloquear. |
+| **Impacto nos Dados** | Nenhum (dados chegam intactos). | Dados alterados ou perdidos. |
+| **Percepção da Vítima** | Geralmente não percebe. | Percebe erros ou lentidão. |
+| **Estratégia de Defesa** | **Prevenção** (Criptografia). | **Detecção** e Recuperação. |
+| **Exemplos** | Escuta telefônica, Análise de tráfego. | DDoS, Phishing, Injeção de dados. |
+
+---
+
+## 4. Tipos de Autenticação (Detalhamento)
+
+Dentro dos Serviços de Segurança, a Autenticação é crítica. A norma X.800 a divide em dois tipos, dependendo se existe uma conexão contínua ou não.
+
+### 4.1 Autenticação de Entidade Pareada (Peer Entity)
+Usada em comunicações **orientadas a conexão** (ex: TCP).
+* **Conceito:** Garante a identidade da entidade com a qual se está conectado *em tempo real*.
+* **Proteção:** Confirma que não há um impostor na linha e que a conexão não é uma gravação antiga (Replay).
+
+### 4.2 Autenticação de Origem de Dados (Data Origin)
+Usada em comunicações **sem conexão** (ex: UDP, E-mail).
+* **Conceito:** Garante que um pacote específico veio da origem alegada.
+* **Limitação:** Não garante que o pacote chegou na ordem certa ou que não é uma cópia, pois não há uma "sessão" ativa controlando o fluxo.
+
+### Tabela Comparativa: Tipos de Autenticação
+
+| Característica | Entidade Pareada (Peer Entity) | Origem de Dados (Data Origin) |
+| :--- | :--- | :--- |
+| **Cenário de Uso** | Conexão ao vivo (Login, Chat). | Mensagem única (E-mail, Carta). |
+| **Fator Tempo** | Tempo Real (Síncrono). | Assíncrono (Pode chegar dias depois). |
+| **Proteção Anti-Replay** | **Sim** (Detecta repetição). | **Não** (Não detecta duplicação). |
+| **Garantia** | "Estou falando com Alice agora." | "Esta carta foi escrita por Alice." |
+
 ---
 
 ## 5. Modelo Geral de Segurança de Rede
 
-Para implementar segurança, utilizamos um modelo operacional padrão:
+Para proteger uma comunicação, assume-se o seguinte fluxo lógico:
 
-1.  **O Principal (Sender):** Quem envia a informação.
-2.  **O Canal:** O meio inseguro (Internet) por onde os dados trafegam.
-3.  **O Oponente:** O hacker ou software malicioso no canal.
-4.  **A Transformação Segura:** A técnica aplicada (como criptografia) que torna a informação ilegível para o oponente.
-5.  **Informação Secreta (Chave):** Um dado compartilhado apenas entre Sender e Receiver, necessário para a transformação.
+1.  **Mensagem:** O dado original (texto claro).
+2.  **Segredo (Chave):** Uma informação compartilhada apenas entre remetente e destinatário.
+3.  **Transformação Segura:** Um algoritmo que usa a Chave para embaralhar a Mensagem.
+4.  **Canal Inseguro:** A internet, onde o **Oponente** (Hacker) está escutando.
+
+
+
+### Tabela Comparativa: Componentes do Modelo
+
+| Componente | Função | Exemplo Prático |
+| :--- | :--- | :--- |
+| **Plaintext** | A informação original legível. | "Senha123". |
+| **Ciphertext** | A informação ilegível após transformação. | "Xy9#kL@m". |
+| **Algoritmo** | A fórmula matemática da transformação. | AES, RSA. |
+| **Chave** | O segredo único que controla o algoritmo. | Um arquivo `.pem` ou senha mestra. |
 
 ---
 
-## 6. Tabela Referência de Conceitos e Práticas
+## 6. Resumo Mestre: Conceitos, Ameaças e Soluções
 
-Esta tabela resume os termos técnicos, suas definições e o contexto prático de aplicação.
+Esta tabela final serve como guia rápido para identificar o problema e a solução correta na arquitetura de segurança.
 
-| Termo / Conceito | Definição Simplificada | Contexto de Uso | O que é necessário para aplicar? |
+| Conceito de Segurança | Tipo de Ameaça (O Ataque) | Contexto do Ataque | Solução Técnica (Mecanismo) |
 | :--- | :--- | :--- | :--- |
-| **Ataque Passivo** | Monitoramento sem alteração. | Espionagem industrial, roubo de credenciais via sniffing. | Ferramentas de captura de pacotes. Defesa: Criptografia forte. |
-| **Ataque Ativo** | Modificação ou criação de dados falsos. | Fraudes bancárias, derrubada de sites (DDoS), injeção de dados. | Acesso à rede. Defesa: Firewalls, IPS, Autenticação forte. |
-| **Criptografia (Encipherment)** | Mecanismo que torna os dados ilegíveis. | Garantir a **Confidencialidade**. Usado em HTTPS, VPNs. | Algoritmos matemáticos e Chaves (Públicas ou Privadas). |
-| **Assinatura Digital** | Dados anexados que garantem origem. | Garantir **Autenticação**, **Integridade** e **Não-Repúdio**. | Par de chaves criptográficas e função de Hash. |
-| **Controle de Acesso** | Restrição de permissões. | Limitar quem pode ver/editar arquivos em uma rede. | Identificação do usuário (Login) e Lista de Controle (ACL). |
-| **Integridade de Dados** | Verificação de não-alteração. | Assegurar que um download não está corrompido. | Algoritmos de Hash (ex: SHA-256) ou códigos de verificação. |
-| **Traffic Padding** | Inserção de dados "lixo" no tráfego. | Evitar **Análise de Tráfego** (esconder padrões). | Gerador de dados aleatórios para preencher lacunas na rede. |
-| **Routing Control** | Seleção de rotas seguras. | Evitar que dados sensíveis passem por redes não confiáveis. | Configuração de roteadores e políticas de rede. |
-
----
-
-## 7. Práticas Básicas de Segurança (Conclusão)
-
-Baseado na arquitetura apresentada, a segurança eficaz não depende de uma única ferramenta, mas de camadas:
-
-1.  **Previna o passivo:** Criptografe tudo (dados em repouso e em trânsito).
-2.  **Detecte o ativo:** Use sistemas de detecção de intrusão (IDS) e logs de auditoria.
-3.  **Garanta a identidade:** Use autenticação forte (Múltiplo Fator) para evitar Mascaramento.
-4.  **Mantenha a integridade:** Use Hashes e Assinaturas Digitais para validar documentos e softwares críticos.
-
----
+| **Confidencialidade** | **Eavesdropping** (Escuta) | Atacante lê dados trafegando na rede Wi-Fi. | **Criptografia** (Simétrica ou Assimétrica). |
+| **Confidencialidade** | **Traffic Analysis** | Atacante observa para quem você envia e-mails. | **Traffic Padding** (Inserção de dados lixo). |
+| **Autenticidade** | **Masquerade** (Mascaramento) | Atacante rouba senha e loga como Admin. | **Assinatura Digital** ou Autenticação de Dois Fatores (2FA). |
+| **Integridade** | **Modification** (Modificação) | Atacante altera valor de transação bancária. | **Hash** (Resumo Criptográfico) ou MAC (Message Authentication Code). |
+| **Disponibilidade** | **Denial of Service** (DoS) | Atacante derruba o servidor com excesso de pedidos. | Firewalls, Balanceadores de Carga, IPS. |
+| **Não-Repúdio** | **Repudation** (Negação) | Remetente diz que não enviou o contrato assinado. | **Assinatura Digital** (com Chave Privada). |
+| **Controle de Acesso** | **Unauthorized Access** | Usuário comum tenta acessar pasta do RH. | **ACLs** (Listas de Controle de Acesso) e Matrizes de Permissão. |

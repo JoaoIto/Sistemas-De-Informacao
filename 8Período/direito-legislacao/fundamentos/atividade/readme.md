@@ -1,0 +1,1 @@
+- Aqui está a documentação da entrega da primeira atividade dos fundamentos de direito e legislação **relacionado a TI**

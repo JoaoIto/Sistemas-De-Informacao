@@ -12,8 +12,6 @@
 **Notícia Local (Palmas - TO) e Aplicação do Direito**
 **O Fato:** Recentemente, a Justiça anulou um contrato de quase R$ 900 mil firmado entre a Prefeitura de Palmas e uma empresa de tecnologia. O contrato visava o uso de um "carro inteligente" equipado com software de visão computacional e câmeras para mapear buracos e problemas de infraestrutura nas ruas da capital. A anulação ocorreu porque o município contratou o serviço de TI de forma direta, sem licitação. O juiz aplicou a Lei de Licitações (Lei nº 14.133/21), determinando que o serviço de monitoramento não possuía a "singularidade e complexidade" exigidas para dispensar a concorrência pública.
 
-**Visão da Aplicação:** Na rotina de desenvolvimento full stack, seja arquitetando o back-end em Node.js ou construindo interfaces dinâmicas em React, a garantia de concorrência justa no mercado é essencial para o ecossistema de TI. A aplicação da lei neste caso demonstra que o Estado não pode simplesmente fechar as portas para outras soluções tecnológicas sem uma justificativa técnica irrefutável de singularidade do software. A exigência da licitação protege o orçamento público e promove um mercado onde diferentes empresas e desenvolvedores têm a oportunidade de apresentar seus sistemas de forma transparente.
-
 ---
 
 ### 2) Diferença entre Norma, Lei, Decreto, Resolução e Portaria

@@ -21,6 +21,9 @@ Imagine que Bob tenha uma caixa de correio com uma fenda aberta (Chave Pública)
 3. **Encriptação:** O emissor captura a Chave Pública do receptor e a usa como parâmetro no algoritmo junto com a mensagem original.
 4. **Decriptação:** O receptor recebe o texto ininteligível e aplica o algoritmo inverso usando sua Chave Privada.
 
+<img width="667" height="414" alt="image" src="https://github.com/user-attachments/assets/030e1375-b523-4d90-92c5-7a319208b170" />
+
+
 ---
 
 ## 2. O Algoritmo RSA: Matemática na Prática
@@ -40,7 +43,7 @@ Vamos simular a comunicação onde Alice quer enviar a mensagem secreta **"M = 9
 5. Bob calcula a Chave Privada `d`: O número `d` multiplicado por `e` (3), dividido por 20, deve deixar resto 1.
 * `3 * 7 = 21`. Dividindo 21 por 20, o resto é 1. Logo, `d = 7`.
 
-
+<img width="567" height="437" alt="image" src="https://github.com/user-attachments/assets/37510a51-c98e-4a03-ac17-140dc11d7ca3" />
 
 **Resumo das Chaves:**
 

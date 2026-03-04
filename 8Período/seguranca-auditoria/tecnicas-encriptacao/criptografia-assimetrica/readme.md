@@ -1,4 +1,4 @@
-# Criptografia Assimétrica, RSA e Complexidade
+# Capítulo 9: Criptografia Assimétrica, RSA e Complexidade
 
 Para que o entendimento seja completo e prático, esta revisão detalhada foca em analogias, fluxos visuais e exemplos matemáticos aplicados, com base na 6ª Edição de "Criptografia e Segurança de Redes" (William Stallings).
 

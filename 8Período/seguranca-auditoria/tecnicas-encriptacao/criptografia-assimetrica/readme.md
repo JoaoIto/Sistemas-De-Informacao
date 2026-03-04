@@ -70,6 +70,48 @@ Bob recebe `C = 3`. Ele usa sua Chave Privada `d = 7`.
 
 ---
 
+## Diferenças Fundamentais: Encriptação Convencional vs. Chave Pública
+
+Para concluir sua documentação, é vital estabelecer a diferença prática e teórica entre os dois mundos da criptografia. O livro baseia toda a segurança de redes no uso inteligente e combinado de ambas as técnicas.
+
+A tabela a seguir resume as distinções exatas entre cada modelo arquitetônico:
+
+| Característica | Encriptação Convencional (Simétrica) | Encriptação de Chave Pública (Assimétrica) |
+| --- | --- | --- |
+| **Quantidade de Chaves** | Apenas 1 chave secreta. | 2 chaves (1 Pública e 1 Privada). |
+| **Uso da Chave** | A mesma chave é usada para encriptar e decriptar os dados. | Uma chave encripta (Pública) e a outra decripta (Privada), ou vice-versa. |
+| **Distribuição e Sigilo** | Altamente crítica. A chave deve ser entregue ao receptor por um canal totalmente seguro, senão todo o sistema falha. | Simples e aberta. A chave pública pode ser enviada livremente por canais inseguros sem comprometer o sistema. |
+| **Fundamento Algorítmico** | Substituição e transposição estrutural (embaralhamento focado em bits e blocos). | Funções unidirecionais complexas (baseadas na Teoria dos Números, como fatoração de primos grandes). |
+| **Velocidade e Processamento** | Extremamente rápida e eficiente. Capaz de processar gigabytes de dados em frações de segundo. | Computacionalmente pesada e lenta (podendo ser centenas ou milhares de vezes mais lenta que a simétrica). |
+| **Uso Principal no Mundo Real** | Proteger grandes volumes de dados de aplicação, arquivos inteiros, bancos de dados e túneis de comunicação (VPNs). | Estabelecer a troca inicial segura de chaves de sessão, gerar assinaturas digitais e fornecer autenticação forte de identidade. |
+
+
+sequenceDiagram
+    autonumber
+    participant A as Alice (Emissor)
+    participant B as Bob (Receptor)
+    
+    Note over B: 1. Gera Par de Chaves (Pública e Privada)
+    B->>A: 2. Compartilha a Chave Pública (Canal Inseguro)
+    
+    Note over A: 3. Escreve a Mensagem Original
+    Note over A: 4. Encripta usando a Chave Pública de Bob
+    
+    A-->>B: 5. Transmite o Texto Cifrado (Lixo Digital)
+    
+    Note over B: 6. Recebe o Texto Cifrado
+    Note over B: 7. Decripta usando sua Chave Privada
+    Note over B: 8. Lê a Mensagem Original
+    
+### A Abordagem Híbrida (O Padrão Ouro)
+
+Conforme destacado na arquitetura de rede moderna abordada por Stallings, os sistemas não escolhem arbitrariamente uma ou outra; eles implementam uma **abordagem híbrida** para obter o melhor dos dois mundos:
+
+1. O sistema utiliza a criptografia assimétrica (mais lenta, mas excelente para distribuição) na fase de "aperto de mão" (*handshake*) inicial, apenas para empacotar e enviar uma **chave de sessão simétrica temporária**.
+2. Assim que ambas as partes possuem essa chave simétrica em mãos, a criptografia assimétrica é deixada de lado e toda a transferência bruta de dados da sessão passa a utilizar a criptografia simétrica (garantindo velocidade e eficiência).
+
+---
+
 ## 3. Ataques de Temporização (Timing Attacks)
 
 Mesmo que a matemática do RSA seja perfeita, a implementação física dele em um computador pode vazar informações.

@@ -117,16 +117,6 @@ $$Mo = 200 + \left( \frac{4}{14} \right) \cdot 50 = 200 + 14,28 = \textbf{214,28
     * Linha 5: $(325 - 212,5)^2 \cdot 2 = (112,5)^2 \cdot 2 = 12656,25 \cdot 2 = \textbf{25312,5}$
 * **Soma Total de Instabilidade:** $30625 + 16875 + 2500 + 23437,5 + 25312,5 = \textbf{98750}$.
 
-**Tabela Final Completa:**
-
-| Tempo Proc. | Requisições ($f_i$) | Tempo Rep. ($x_i$) | Fila ($F_{ac}$) | Carga ($x_i \cdot f_i$) | **Instabilidade $(x_i - \bar{x})^2 \cdot f_i$** |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| $100 \vdash 150$ | 4 | 125 | 4 | 500 | **30625** |
-| $150 \vdash 200$ | 12 | 175 | 16 | 2100 | **16875** |
-| $200 \vdash 250$ | 16 | 225 | 32 | 3600 | **2500** |
-| $250 \vdash 300$ | 6 | 275 | 38 | 1650 | **23437,5** |
-| $300 \vdash 350$ | 2 | 325 | 40 | 650 | **25312,5** |
-| **Totais** | **$n = 40$** | | | **$\sum = 8500$** | **$\sum = 98750$** |
 
 **Calculando o Indicador: Desvio Padrão ($S$)**
 Avaliamos a consistência da API dividindo a instabilidade total pelo total de requisições menos 1 ($n - 1$).
@@ -137,7 +127,74 @@ $$S = \sqrt{2532,05}$$
 
 **Resumo do Diagnóstico do BillLens:** O servidor processa a leitura de PDFs em **212,5 ms** em média. O comportamento do sistema é previsível e estável, com a maioria das variações ficando na faixa de **$\pm 50,32$ ms**.
 
-Dessa forma, fica claro como cada número é gerado antes de simplesmente aparecer na tabela. Você quer usar essa mesma lógica construtiva para fazer o passo a passo da Regressão Linear com o problema de "Linhas de Código vs Bugs"?
+---
+
+### Passo 6: Definindo os Marcos de SLA (Quartis e Percentis)
+O cálculo destas métricas utiliza a exata mesma lógica da Mediana, apenas mudando a "posição" que estamos buscando na fila de execução ($F_{ac}$).
+
+**A) Primeiro Quartil ($Q_1$): O Top 25%**
+* Posição: $\frac{1 \cdot 40}{4} = 10$. A décima requisição mais rápida está na **Linha 2** ($150 \vdash 200$).
+* Variáveis da classe: $l = 150$, $F_{ant} = 4$, $f_{q1} = 12$.
+$$Q_1 = 150 + \left( \frac{10 - 4}{12} \right) \cdot 50 = 150 + \left(\frac{6}{12}\right) \cdot 50 = 150 + 25 = \textbf{175 ms}$$
+* **Conclusão BI:** 25% das extrações do BillLens ocorrem de forma super otimizada, abaixo de 175 ms.
+
+**B) Terceiro Quartil ($Q_3$): O Marco dos 75%**
+* Posição: $\frac{3 \cdot 40}{4} = 30$. Cai na **Linha 3** ($200 \vdash 250$).
+* Variáveis da classe: $l = 200$, $F_{ant} = 16$, $f_{q3} = 16$.
+$$Q_3 = 200 + \left( \frac{30 - 16}{16} \right) \cdot 50 = 200 + \left(\frac{14}{16}\right) \cdot 50 = 200 + 43,75 = \textbf{243,75 ms}$$
+* **Conclusão BI:** 75% do tráfego é processado até 243,75 ms. Os 25% restantes formam o grupo de lentidão do servidor.
+
+**C) Percentil 10 ($P_{10}$): O Pico de Velocidade**
+* Posição: $\frac{10 \cdot 40}{100} = 4$. Cai exatamente no limite da **Linha 1** ($100 \vdash 150$).
+* Variáveis: $l = 100$, $F_{ant} = 0$, $f_{p10} = 4$.
+$$P_{10} = 100 + \left( \frac{4 - 0}{4} \right) \cdot 50 = 100 + 1 \cdot 50 = \textbf{150 ms}$$
+
+**D) Percentil 90 ($P_{90}$): O Limite de Tolerância**
+* Posição: $\frac{90 \cdot 40}{100} = 36$. Cai na **Linha 4** ($250 \vdash 300$).
+* Variáveis: $l = 250$, $F_{ant} = 32$, $f_{p90} = 6$.
+$$P_{90} = 250 + \left( \frac{36 - 32}{6} \right) \cdot 50 = 250 + \left(\frac{4}{6}\right) \cdot 50 = 250 + 33,33 = \textbf{283,33 ms}$$
+* **Conclusão BI:** Um alerta deve ser disparado se uma requisição demorar mais que 283,33 ms, pois ela entra nos piores 10% de performance da API.
+
+---
+
+### Passo 7: Análise de Forma da Curva (Assimetria e Curtose)
+
+**A) Coeficiente de Assimetria de Pearson ($As$)**
+Avalia para que lado o desempenho do LLM "pesa" mais.
+$$As = \frac{3(\bar{x} - Md)}{S}$$
+$$As = \frac{3(212,5 - 212,5)}{50,32} = \frac{0}{50,32} = \textbf{0}$$
+* **Conclusão BI:** Uma assimetria exatamente igual a **zero** indica que a API do BillLens possui uma latência perfeitamente simétrica. Não há "gargalos fantasmas" repuxando a média para cima ou para baixo. A distribuição do tempo é perfeitamente balanceada em torno do tempo médio de 212,5 ms.
+
+**B) Coeficiente de Curtose ($K$)**
+Mede se as requisições estão padronizadas em um tempo específico (Leptocúrtica), muito variadas (Platicúrtica) ou equilibradas (Mesocúrtica = $0,263$).
+$$K = \frac{Q_3 - Q_1}{2(P_{90} - P_{10})}$$
+$$K = \frac{243,75 - 175}{2(283,33 - 150)} = \frac{68,75}{2 \cdot 133,33} = \frac{68,75}{266,66} \approx \textbf{0,2578}$$
+* **Conclusão BI:** Como $0,2578 < 0,263$, a distribuição da API é levemente **Leptocúrtica**. Isso é um cenário positivo: significa que a maior parte dos processamentos de PDF estão muito concentrados próximos à faixa média de 212,5 ms, criando um "pico alto" de constância e previsibilidade no servidor.
+
+---
+
+## 3. Tabela de Fatos Completa
+
+Com todos os passos concluídos, esta é a tabela final processada, cruzando a base bruta com os indicadores de carga e instabilidade.
+
+| Clusters de Latência (ms) | Requisições ($f_i$) | Tempo Representativo ($x_i$) | Volume Acumulado ($F_{ac}$) | Carga de Processamento ($x_i \cdot f_i$) | Índice de Instabilidade ($(x_i - \bar{x})^2 \cdot f_i$) |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| $100 \vdash 150$ | 4 | 125 | 4 | $125 \cdot 4 = \textbf{500}$ | $(-87,5)^2 \cdot 4 = \textbf{30625}$ |
+| $150 \vdash 200$ | 12 | 175 | 16 | $175 \cdot 12 = \textbf{2100}$ | $(-37,5)^2 \cdot 12 = \textbf{16875}$ |
+| $200 \vdash 250$ | 16 | 225 | 32 | $225 \cdot 16 = \textbf{3600}$ | $(12,5)^2 \cdot 16 = \textbf{2500}$ |
+| $250 \vdash 300$ | 6 | 275 | 38 | $275 \cdot 6 = \textbf{1650}$ | $(62,5)^2 \cdot 6 = \textbf{23437,5}$ |
+| $300 \vdash 350$ | 2 | 325 | 40 | $325 \cdot 2 = \textbf{650}$ | $(112,5)^2 \cdot 2 = \textbf{25312,5}$ |
+| **Totais** | **$n = 40$** | | | **$\sum = 8500$** | **$\sum = 98750$** |
+
+**Resumo de Indicadores KPI - BillLens:**
+* SLA Médio ($\bar{x}$): 212,5 ms
+* Tempo Mediano ($Md$): 212,5 ms
+* Moda Operacional ($Mo$): 214,28 ms
+* Margem de Variação ($S$): $\pm 50,32$ ms
+* Top 25% mais rápidos ($Q_1$): $< 175$ ms
+* Cauda crítica 10% mais lentos ($P_{90}$): $> 283,33$ ms
+* Viés Operacional ($As$): Simetria Perfeita (0)
+* Concentração de Tráfego ($K$): Leptocúrtica (0,2578)
 
 ---
 ## 1. Dicionário de Variáveis (Contexto da API)
@@ -151,6 +208,10 @@ Para estruturar o banco de dados do BI, as variáveis estatísticas brutas foram
 * **$F_{ac}$ (Frequência Acumulada)**: O volume acumulado de requisições resolvidas até um determinado teto de latência. É a "fila de execução" do servidor, da resposta mais rápida para a mais lenta.
 * **$x_i \cdot f_i$**: O tempo total de processamento (carga) consumido pelo servidor para resolver todas as requisições de um cluster específico.
 * **$(x_i - \bar{x})^2 \cdot f_i$**: O índice de instabilidade de cada cluster. Mede o peso da variação de tempo dessas requisições em relação ao tempo médio geral do servidor.
+* **Quartis ($Q_1$ e $Q_3$)**: Os marcos de SLA fracionados. $Q_1$ define o teto de latência dos 25% usuários com a resposta mais rápida. $Q_3$ marca onde começam os 25% de requisições mais lentas.
+* **Percentis ($P_{10}$ e $P_{90}$)**: As margens extremas. $P_{10}$ é a performance máxima (Top 10% mais rápidos). $P_{90}$ é o limite crítico que engloba 90% das requisições, isolando os 10% de chamadas mais problemáticas (a cauda de latência).
+* **Assimetria ($As$)**: O viés do servidor. Mostra se a API tem uma tendência a processar notas fiscais mais rápido ou mais devagar do que a média esperada.
+* **Curtose ($K$)**: O nível de aglomeração de dados. Mede se as requisições acontecem quase sempre no mesmo tempo (pico alto) ou se são totalmente aleatórias e dispersas (curva achatada).
 
 ---
 

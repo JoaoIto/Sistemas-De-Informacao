@@ -230,4 +230,7 @@ Esta é a tabela de trabalho completa, com todos os dados processados e prontos 
 
 *(Nota: O valor de $\bar{x} = 212,5$, necessário para calcular a última coluna, foi obtido no Passo 3.1).*
 
+<img width="730" height="493" alt="{8161AF50-3F7B-4F68-8BE8-A708E3B427B2}" src="https://github.com/user-attachments/assets/bfd1fcb3-d680-4298-850b-fd1e013f9a93" />
+
+
 ---

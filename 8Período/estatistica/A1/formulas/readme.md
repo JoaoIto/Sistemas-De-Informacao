@@ -1,3 +1,8 @@
+# Mapa Mental com fórmulas
+
+<img width="2816" height="1536" alt="Gemini_Generated_Image_tpj8qntpj8qntpj8" src="https://github.com/user-attachments/assets/314348f4-008d-47e4-932a-432bc5fe3e2f" />
+
+
 # PARTE 1: Distribuição de Frequência (Dados Agrupados)
 
 Antes de aplicar qualquer fórmula desta seção, você precisa da **Tabela Base**. A partir das Classes e da Frequência Simples ($f_i$), você sempre deve calcular:

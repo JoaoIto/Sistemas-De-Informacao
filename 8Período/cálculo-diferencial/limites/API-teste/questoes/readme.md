@@ -39,14 +39,6 @@ $$\lim_{x \to +\infty} \frac{x^2 + 7x}{7x^2 + 5x + 5}$$
 
 ---
 
-O tempo está correndo! Se a prova é hoje, precisamos ter estratégia. Olhando para os seus PDFs, os próximos assuntos na sequência lógica são **Limites Trigonométricos Fundamentais**, **Continuidade** e **Derivadas Básicas (Regra do Tombo)**.
-
-A boa notícia? Esses três assuntos são muito mais fáceis e rápidos de aprender do que o Bhaskara que acabamos de fazer. São baseados em "macetes" e regras diretas. 
-
-Aqui estão três questões fresquinhas, extraídas e adaptadas diretamente das suas listas de exercícios. Pegue o papel!
-
----
-
 **Questão 4: Oscilação de Sinal (Limite Trigonométrico Fundamental)**
 *(Baseada na Atividade de 09/03/2026)*
 

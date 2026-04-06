@@ -1,28 +1,33 @@
-## Lista de Exercícios: Função do 2º Grau Aplicada
+# Lista de Exercícios: Função do 2º Grau Aplicada (Versão Limpa)
 
-**Questão 1: Análise Completa de Latência (Baseada na Questão 6 do material)**
-A variação de latência $y$ de uma das suas APIs no node-balancer em função da carga $x$ é dada pela equação: 
-[cite_start]$$y = x^2 - 2x - 8$$ [cite: 553]
+**Questão 1: Análise Completa de Latência**
+A variação de latência $y$ de uma das suas APIs no `node-balancer` em função da carga $x$ é dada pela seguinte equação: 
+$$y = x^2 - 2x - 8$$
 
-[cite_start]Faça um esboço mental ou no papel do gráfico dessa função, determinando [cite: 552, 558-561]:
+Faça um esboço do gráfico dessa função, determinando:
 **A)** As raízes da função (os pontos onde a variação de latência é zero).
 **B)** O ponto de intersecção da curva com o eixo $y$ (o que acontece quando a carga $x = 0$).
 **C)** As coordenadas do vértice (o ponto de mínima variação).
 
-**Questão 2: Descobrindo Constantes de Configuração (Baseada na Questão 4 do material)**
+---
+
+**Questão 2: Descobrindo Constantes de Configuração**
 Você está configurando uma variável de ambiente $c$ no seu sistema. A documentação diz que a função de falha do sistema é modelada por:
-[cite_start]$$y = x^2 - 7x - 2c$$ [cite: 548]
+$$y = x^2 - 7x - 2c$$
 
-[cite_start]Durante os testes, você descobriu que o sistema atinge o estado de falha (ou seja, a raiz, onde $y = 0$) exatamente quando o parâmetro de entrada é $x = -3$[cite: 548]. 
-[cite_start]Nessas condições, calcule e determine o valor da constante $c$[cite: 549].
-
-**Questão 3: Estudo de Sinais do Health Check (Baseada na Questão 7 do material)**
-O script de *Health Check* do seu servidor avalia a saúde da máquina através da função:
-[cite_start]$$f(x) = -x^2 + 2x + 3$$ [cite: 569]
-
-[cite_start]Faça o **estudo dos sinais** dessa função[cite: 563]. Determine em quais intervalos de $x$ a saúde do servidor é:
-**A)** Positiva ($y > 0$) - Máquina operando normalmente.
-**B)** Nula ($y = 0$) - Máquina no limite de alerta.
-**C)** Negativa ($y < 0$) - Máquina travada.
+Durante os testes de estresse, você descobriu que o sistema atinge o estado de falha (ou seja, a raiz, onde $y = 0$) exatamente quando o parâmetro de entrada de carga é $x = -3$. 
+Nessas condições matemáticas, calcule e determine o valor da constante $c$.
 
 ---
+
+**Questão 3: Estudo de Sinais do Health Check**
+[cite_start]O script de *Health Check* do seu servidor avalia a saúde da máquina em tempo real através da função:
+$$f(x) = -x^2 + 2x + 3$$
+
+Faça o **estudo dos sinais** dessa função. Determine em quais intervalos numéricos de $x$ a saúde do servidor é:
+**A)** Positiva ($y > 0$) - Máquina operando normalmente.
+**B)** Nula ($y = 0$) - Máquina no limite de alerta (ponto de virada).
+**C)** Negativa ($y < 0$) - Máquina travada/falhando.
+
+---
+

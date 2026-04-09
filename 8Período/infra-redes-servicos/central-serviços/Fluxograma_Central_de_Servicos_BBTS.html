@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Fluxograma - Central de Serviços BBTS</title>
+<style>
+body{margin:0;padding:40px;background:#fff;font-family:Arial,sans-serif;display:flex;justify-content:center}
+svg{max-width:700px}
+.th{font-size:14px;font-weight:600;fill:#1a1a1a}
+.ts{font-size:12px;fill:#555}
+.arr{stroke:#888;stroke-width:1.5}
+.leader{stroke:#bbb;stroke-width:0.5;stroke-dasharray:3 3}
+@media print{body{padding:20px}}
+</style>
+</head>
+<body>
+<svg width="100%" viewBox="0 0 680 940">
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+
+<text x="340" y="18" text-anchor="middle" font-size="16" font-weight="bold" fill="#1F4E79">Fluxograma do Processo de Atendimento — Central de Serviços BBTS</text>
+
+<!-- 1. Abertura -->
+<rect x="230" y="40" width="220" height="44" rx="22" fill="#F1EFE8" stroke="#888" stroke-width="0.5"/>
+<text class="th" x="340" y="62" text-anchor="middle" dominant-baseline="central">Abertura do chamado</text>
+<line x1="340" y1="84" x2="340" y2="110" class="arr" marker-end="url(#arrow)"/>
+
+<!-- 2. Registro -->
+<rect x="220" y="110" width="240" height="56" rx="8" fill="#E6F1FB" stroke="#85B7EB" stroke-width="0.5"/>
+<text class="th" x="340" y="128" text-anchor="middle" dominant-baseline="central">Registro no SysAid</text>
+<text class="ts" x="340" y="148" text-anchor="middle" dominant-baseline="central">Dados, localidade, descrição</text>
+<line x1="340" y1="166" x2="340" y2="192" class="arr" marker-end="url(#arrow)"/>
+
+<!-- 3. Categorização -->
+<rect x="200" y="192" width="280" height="56" rx="8" fill="#E6F1FB" stroke="#85B7EB" stroke-width="0.5"/>
+<text class="th" x="340" y="210" text-anchor="middle" dominant-baseline="central">Categorização e priorização</text>
+<text class="ts" x="340" y="230" text-anchor="middle" dominant-baseline="central">Urgência × Impacto → P1 a P5</text>
+<line x1="340" y1="248" x2="340" y2="274" class="arr" marker-end="url(#arrow)"/>
+
+<!-- 4. Diagnóstico N1 -->
+<rect x="210" y="274" width="260" height="56" rx="8" fill="#E1F5EE" stroke="#5DCAA5" stroke-width="0.5"/>
+<text class="th" x="340" y="292" text-anchor="middle" dominant-baseline="central">Diagnóstico inicial (N1)</text>
+<text class="ts" x="340" y="312" text-anchor="middle" dominant-baseline="central">Base de conhecimento, check básico</text>
+<line x1="340" y1="330" x2="340" y2="360" class="arr" marker-end="url(#arrow)"/>
+
+<!-- Decisão 1 -->
+<polygon points="340,360 430,395 340,430 250,395" fill="#FAEEDA" stroke="#EF9F27" stroke-width="0.5"/>
+<text class="th" x="340" y="395" text-anchor="middle" dominant-baseline="central">Resolvido?</text>
+
+<line x1="430" y1="395" x2="540" y2="395" class="arr" marker-end="url(#arrow)"/>
+<text class="ts" x="470" y="387">Sim</text>
+
+<rect x="540" y="367" width="120" height="56" rx="8" fill="#EAF3DE" stroke="#97C459" stroke-width="0.5"/>
+<text class="th" x="600" y="385" text-anchor="middle" dominant-baseline="central">Documenta</text>
+<text class="ts" x="600" y="405" text-anchor="middle" dominant-baseline="central">Base de conhec.</text>
+<line x1="600" y1="423" x2="600" y2="845" class="arr" marker-end="url(#arrow)"/>
+
+<line x1="340" y1="430" x2="340" y2="470" class="arr" marker-end="url(#arrow)"/>
+<text class="ts" x="350" y="452">Não</text>
+
+<!-- 5. N2 -->
+<rect x="200" y="470" width="280" height="56" rx="8" fill="#EEEDFE" stroke="#AFA9EC" stroke-width="0.5"/>
+<text class="th" x="340" y="488" text-anchor="middle" dominant-baseline="central">Diagnóstico avançado (N2)</text>
+<text class="ts" x="340" y="508" text-anchor="middle" dominant-baseline="central">Controladora, dashboards, captura</text>
+<line x1="340" y1="526" x2="340" y2="556" class="arr" marker-end="url(#arrow)"/>
+
+<!-- Decisão 2 -->
+<polygon points="340,556 430,591 340,626 250,591" fill="#FAEEDA" stroke="#EF9F27" stroke-width="0.5"/>
+<text class="th" x="340" y="591" text-anchor="middle" dominant-baseline="central">Resolvido?</text>
+
+<line x1="430" y1="591" x2="540" y2="591" class="arr" marker-end="url(#arrow)"/>
+<text class="ts" x="470" y="583">Sim</text>
+
+<rect x="540" y="563" width="120" height="56" rx="8" fill="#EAF3DE" stroke="#97C459" stroke-width="0.5"/>
+<text class="th" x="600" y="581" text-anchor="middle" dominant-baseline="central">Documenta</text>
+<text class="ts" x="600" y="601" text-anchor="middle" dominant-baseline="central">Base de conhec.</text>
+
+<line x1="340" y1="626" x2="340" y2="666" class="arr" marker-end="url(#arrow)"/>
+<text class="ts" x="350" y="648">Não</text>
+
+<!-- 6. N3 -->
+<rect x="200" y="666" width="280" height="56" rx="8" fill="#FAECE7" stroke="#F0997B" stroke-width="0.5"/>
+<text class="th" x="340" y="684" text-anchor="middle" dominant-baseline="central">Suporte N3 (fabricante)</text>
+<text class="ts" x="340" y="704" text-anchor="middle" dominant-baseline="central">Hardware, bugs, patches</text>
+<line x1="340" y1="722" x2="340" y2="752" class="arr" marker-end="url(#arrow)"/>
+
+<!-- 7. Resolução -->
+<rect x="210" y="752" width="260" height="56" rx="8" fill="#EAF3DE" stroke="#97C459" stroke-width="0.5"/>
+<text class="th" x="340" y="770" text-anchor="middle" dominant-baseline="central">Resolução e documentação</text>
+<text class="ts" x="340" y="790" text-anchor="middle" dominant-baseline="central">Atualiza base de conhecimento</text>
+<line x1="340" y1="808" x2="340" y2="845" class="arr" marker-end="url(#arrow)"/>
+
+<!-- 8. Encerramento -->
+<rect x="220" y="845" width="220" height="56" rx="22" fill="#F1EFE8" stroke="#888" stroke-width="0.5"/>
+<text class="th" x="340" y="863" text-anchor="middle" dominant-baseline="central">Encerramento</text>
+<text class="ts" x="340" y="883" text-anchor="middle" dominant-baseline="central">Pesquisa de satisfação (CSAT)</text>
+
+<!-- Level labels -->
+<rect x="40" y="268" width="40" height="64" rx="4" fill="#E1F5EE" stroke="#0F6E56" stroke-width="0.5"/>
+<text x="60" y="304" text-anchor="middle" font-size="13" font-weight="bold" fill="#0F6E56">N1</text>
+
+<rect x="40" y="464" width="40" height="64" rx="4" fill="#EEEDFE" stroke="#534AB7" stroke-width="0.5"/>
+<text x="60" y="500" text-anchor="middle" font-size="13" font-weight="bold" fill="#534AB7">N2</text>
+
+<rect x="40" y="660" width="40" height="64" rx="4" fill="#FAECE7" stroke="#993C1D" stroke-width="0.5"/>
+<text x="60" y="696" text-anchor="middle" font-size="13" font-weight="bold" fill="#993C1D">N3</text>
+
+<!-- Legend -->
+<text class="ts" x="340" y="930" text-anchor="middle">BB Tecnologia e Serviços S.A. — Central de Serviços de Infraestrutura de Redes — ITIL v4</text>
+</svg>
+</body>
+</html>

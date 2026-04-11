@@ -1,4 +1,4 @@
-# Módulo 3: Direito Empresarial
+# Direito Empresarial
 
 O Direito Empresarial é o ramo do Direito Privado que regulamenta as atividades econômicas organizadas para a produção ou circulação de bens e serviços. No Brasil, a partir do Código Civil de 2002, adotamos a **Teoria da Empresa**, que separa claramente os conceitos de quem exerce a atividade e a atividade em si.
 

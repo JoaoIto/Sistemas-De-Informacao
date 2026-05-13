@@ -110,3 +110,27 @@ Para consolidar o entendimento de como o pacote viaja por esses componentes dent
 <img width="683" height="614" alt="{A7BA05D6-8ECB-47EE-A745-62FC7D73CF2E}" src="https://github.com/user-attachments/assets/5d2f24a4-7ae8-4505-8ff2-1352346e5768" />
 
 <img width="666" height="560" alt="{01C9A3DF-2FDC-4FBE-933A-1A8E8ED6B8DD}" src="https://github.com/user-attachments/assets/169af17b-a8d6-46ab-b4f8-cbe3d78157d9" />
+
+---
+
+### 3.3. Gerenciamento de Chaves no IPSec: O Protocolo IKE
+
+Vimos que o IPSec utiliza Associações de Segurança (SAs) armazenadas no SAD para saber qual chave usar ao criptografar um pacote. No entanto, configurar chaves de forma manual (estática) em todos os roteadores de uma rede corporativa é um processo lento, suscetível a erros humanos e altamente inseguro (pois as chaves nunca mudariam).
+
+Para resolver isso, o IPSec utiliza um protocolo vital chamado **IKE (Internet Key Exchange)**.
+
+A principal característica do IKE é realizar a **gerência automática e dinâmica de chaves**. Ele estabelece um canal de comunicação seguro entre os roteadores (antes mesmo do túnel de dados principal ser formado) para que eles possam negociar parâmetros de segurança de forma autônoma.
+
+O IKE não é um protocolo monolítico; ele atua combinando duas engrenagens principais:
+
+* **ISAKMP (Internet Security Association and Key Management Protocol):**
+* **Função:** Responsável pela arquitetura de negociação e distribuição. Ele define os procedimentos e os formatos dos pacotes para estabelecer, modificar e deletar as Associações de Segurança (SAs). É o ISAKMP que define "como" os roteadores vão conversar para chegar a um acordo sobre as regras de segurança.
+
+
+* **OAKLEY (Protocolo de Determinação de Chave):**
+* **Função:** Responsável pela matemática da **geração das chaves** em si. Utilizando o algoritmo de troca de chaves Diffie-Hellman, o Oakley permite que os dois roteadores (como os gateways de SP e RJ) gerem uma chave secreta compartilhada idêntica através da internet pública, sem que essa chave precise ser enviada pela rede em nenhum momento.
+
+
+
+**Resumo prático no cenário Site-to-Site:**
+Quando o roteador de São Paulo recebe a instrução (via SPD) de que deve proteger um pacote para o Rio de Janeiro, mas percebe que ainda não tem as chaves no SAD, ele aciona o protocolo **IKE**. O IKE usa o **ISAKMP** para criar um canal de negociação com o RJ e o **OAKLEY** para gerar as chaves matemáticas seguras. Uma vez que as chaves são geradas e as regras acordadas, a SA é finalmente instalada no SAD, e o tráfego de dados pode começar a fluir de forma criptografada.

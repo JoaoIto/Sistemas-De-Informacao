@@ -134,3 +134,31 @@ O IKE não é um protocolo monolítico; ele atua combinando duas engrenagens pri
 
 **Resumo prático no cenário Site-to-Site:**
 Quando o roteador de São Paulo recebe a instrução (via SPD) de que deve proteger um pacote para o Rio de Janeiro, mas percebe que ainda não tem as chaves no SAD, ele aciona o protocolo **IKE**. O IKE usa o **ISAKMP** para criar um canal de negociação com o RJ e o **OAKLEY** para gerar as chaves matemáticas seguras. Uma vez que as chaves são geradas e as regras acordadas, a SA é finalmente instalada no SAD, e o tráfego de dados pode começar a fluir de forma criptografada.
+
+---
+
+### 3.4. Protocolos SSL/TLS (Secure Sockets Layer / Transport Layer Security)
+
+Desenvolvido originalmente pela Netscape e posteriormente padronizado pela IETF (Internet Engineering Task Force), o SSL e seu sucessor moderno, o TLS, representam uma abordagem diferente para a construção de Redes Privadas Virtuais. Em vez de proteger todo o tráfego IP de um roteador a outro, ele foca em proteger a comunicação de aplicações específicas.
+
+**Posicionamento na Arquitetura de Redes**
+
+Uma das características arquitetônicas mais marcantes do SSL/TLS é o seu local de atuação no modelo de rede.
+
+* **Atuação Intermediária:** O protocolo atua exatamente entre a camada de Aplicação e a camada de Transporte (sobre o protocolo TCP).
+* **Subcamadas Internas:** Como ilustrado na arquitetura TCP/IP adaptada, o SSL é subdividido funcionalmente:
+* *SSL Handshake:* Fica na parte superior, mais próximo à aplicação, sendo responsável por negociar as chaves, os algoritmos e realizar a autenticação antes do envio dos dados.
+* *SSL Record:* Fica logo abaixo, encapsulando os dados recebidos da aplicação, aplicando a criptografia definida no Handshake e repassando-os para o TCP na camada de Transporte.
+
+
+
+**Objetivos e Prioridades do Protocolo**
+
+A implementação de túneis via SSL/TLS foi projetada para atender a requisitos técnicos rigorosos, classificados por ordem de prioridade:
+
+1. **Sigilo e segurança dos dados:** Garantir que o payload da aplicação seja ilegível para interceptadores na nuvem pública.
+2. **Garantir interoperabilidade:** Permitir que aplicações e sistemas operacionais de diferentes fabricantes consigam estabelecer o túnel e trocar parâmetros criptográficos sem falhas de comunicação.
+3. **Estrutura de expansão criptográfica:** O protocolo possui uma arquitetura modular que permite a incorporação de novos métodos e algoritmos de criptografia (como a transição de RSA para Curvas Elípticas) conforme a tecnologia avança, sem precisar reescrever a base do protocolo.
+4. **Eficiência e Desempenho:** Realiza o armazenamento temporário de dados na sessão. Isso evita que o roteador/servidor precise refazer todo o processamento matemático pesado do *Handshake* a cada nova requisição, melhorando significativamente o desempenho do protocolo.
+
+---

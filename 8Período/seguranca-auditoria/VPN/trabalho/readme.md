@@ -143,3 +143,109 @@ Para a defesa do trabalho, a seguinte sequência de ações atesta o sucesso da 
 * Acessar a WebGUI do pfSense.
 * Navegar até `Status > OpenVPN`.
 * *Demonstrar à banca:* O *dashboard* listando o cliente conectado, exibindo seu IP real (Público), o IP virtual atribuído no túnel, e a métrica técnica de bytes transferidos e criptografados em tempo real.
+
+---
+
+## 6. Guia Operacional de Execução (Setup Passo a Passo)
+
+Para reproduzir a arquitetura descrita neste relatório, o ambiente virtual (VirtualBox ou VMware) deve ser preparado e configurado seguindo a ordem lógica abaixo.
+
+### 6.1. Preparação das Máquinas Virtuais (Hypervisor)
+
+A topologia exige a simulação de duas redes distintas: a rede externa (Internet) e a rede interna (LAN).
+
+* **VM 1: pfSense (Gateway)**
+* *SO:* FreeBSD 64-bit.
+* *Adaptador de Rede 1 (WAN):* Modo **Em Ponte (Bridged)** ou **NAT** (Simula a conexão com a Internet). Anote o IP que essa interface receber.
+* *Adaptador de Rede 2 (LAN):* Modo **Rede Interna (Internal Network)**. (Simula o switch da corporação).
+
+
+* **VM 2: Máquina Alvo / Interna (Opcional, mas recomendada para testes)**
+* *SO:* Windows ou Linux leve.
+* *Adaptador de Rede:* Modo **Rede Interna** (Deve estar na mesma rede do Adaptador 2 do pfSense).
+
+
+* **VM 3: Cliente Remoto (Windows 7 ou Linux - O "Roaming")**
+* *SO:* Windows 7 ou Ubuntu/Debian.
+* *Adaptador de Rede:* Modo **Em Ponte (Bridged)** ou **NAT** (Deve estar na mesma rede do Adaptador 1 do pfSense para simular que estão ambos na "Internet").
+
+
+
+### 6.2. Instalação e Configuração Base do pfSense
+
+1. Inicie a VM do pfSense com a ISO de instalação. Prossiga com as opções padrão (*Accept > Install > Auto (ZFS) > Reboot*).
+2. Após a instalação, no menu de console (tela preta do FreeBSD), o pfSense perguntará sobre a configuração de interfaces (VLANs). Responda `n` (não).
+3. **Associação de Interfaces:**
+* Defina a interface WAN (ex: `em0`).
+* Defina a interface LAN (ex: `em1`).
+
+
+4. **Atribuição de IP (Opção 2 do Menu):**
+* Selecione a interface LAN.
+* Atribua o endereço IP `192.168.1.1` com máscara `24`.
+* Habilite o servidor DHCP para a LAN (Range: `192.168.1.100` a `192.168.1.200`).
+
+
+5. Acesse a WebGUI do pfSense abrindo o navegador na **VM 2 (Interna)** e digitando `https://192.168.1.1` (Usuário: `admin`, Senha: `pfsense`). Conclua o assistente inicial (Next > Next...).
+
+### 6.3. Configurando o OpenVPN (O "Atalho" do Wizard)
+
+Para executar as **Fases 1, 2 e 3** descritas na documentação de forma automatizada e à prova de falhas, utilizaremos o assistente nativo do pfSense.
+
+1. Na WebGUI, vá em **VPN > OpenVPN > Wizards**.
+2. **Type of Server:** Escolha `Local User Access` e avance.
+3. **Certificate Authority (CA) - [Refere-se à Fase 1]:**
+* *Descriptive Name:* Digite `VPN_CA`.
+* Preencha os dados do certificado (País, Estado, Cidade, Organização). Clique em *Add new CA*.
+
+
+4. **Server Certificate - [Refere-se à Fase 1]:**
+* *Descriptive Name:* Digite `pfSense-VPN-Server`. Clique em *Create new Certificate*.
+
+
+5. **Server Setup - [Refere-se à Fase 2]:**
+* *Interface:* WAN.
+* *Protocol:* UDP on IPv4 only.
+* *Local Port:* 1194.
+* *Cryptographic Settings:* Deixe os padrões (AES-256-GCM / SHA256).
+* *IPv4 Tunnel Network:* Digite `10.0.8.0/24`.
+* *IPv4 Local Network:* Digite `192.168.1.0/24`.
+
+
+6. **Firewall Rules - [Refere-se à Fase 3]:**
+* Marque **ambas** as caixas de seleção (*Firewall Rule* e *OpenVPN rule*). Isso cria automaticamente as regras de liberação detalhadas no tópico 3. Clique em *Finish*.
+
+
+
+### 6.4. Criação do Usuário e Instalação do Exportador
+
+Como o servidor foi configurado para exigir Usuário, Senha e Certificado, precisamos criar a credencial para o Cliente.
+
+1. **Criação do Usuário:**
+* Vá em **System > User Manager > Add**.
+* *Username:* Digite `aluno_vpn` (ou qualquer nome).
+* *Password:* Digite uma senha segura.
+* **CRÍTICO:** Marque a caixa `Click to create a user certificate`.
+* *Descriptive name:* `Certificado Aluno`.
+* *Certificate authority:* Selecione a `VPN_CA` que criamos. Salve.
+
+
+2. **Instalação do Pacote de Exportação:**
+* Vá em **System > Package Manager > Available Packages**.
+* Pesquise por `openvpn-client-export`. Clique em *Install* e confirme.
+
+
+
+### 6.5. Exportando as Configurações para a VM Cliente (VM 3)
+
+1. Vá em **VPN > OpenVPN > Client Export**.
+2. Desça até a seção *OpenVPN Clients*. Você verá o usuário `aluno_vpn` listado.
+3. **Para Cliente Windows 7:** Clique no botão de download referente a `Current Windows Installer` (Geralmente a versão 2.5.x ou 2.6.x dependendo do pfSense).
+4. **Para Cliente Linux:** Clique em `Inline Configurations > Most Clients`. Isso baixará o arquivo `.ovpn`.
+5. Transfira este arquivo baixado para a sua **VM 3 (Cliente Externo)**.
+
+### 6.6. Execução e Demonstração
+
+Com o ambiente devidamente provisionado, basta seguir exatamente o roteiro já descrito no tópico **5. Roteiro de Demonstração em Sala (Validação Prática)** deste documento, executando os testes de *ping*, *traceroute* e visualizando os logs na aba `Status > OpenVPN` do pfSense perante a banca.
+
+---

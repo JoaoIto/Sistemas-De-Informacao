@@ -4,8 +4,7 @@
 
 A Lei Geral de Proteção de Dados Pessoais (Lei nº 13.709/2018) tem como foco principal a **proteção dos dados pessoais** dos cidadãos. Ela foi criada para colocar o Brasil em harmonia com uma tendência mundial de garantir a privacidade e os direitos dos titulares das informações.
 
-* 
-**Inspiração:** A LGPD é fortemente baseada na GDPR (*General Data Protection Regulation*), a rigorosa lei de proteção de dados da União Europeia, que entrou em vigor em maio de 2018.
+* **Inspiração:** A LGPD é fortemente baseada na GDPR (*General Data Protection Regulation*), a rigorosa lei de proteção de dados da União Europeia, que entrou em vigor em maio de 2018.
 
 
 * **Linha do Tempo:** Sancionada em agosto de 2018, a lei entrou em vigor em agosto de 2020 (através do PL 1.179/2020), mas as multas e sanções administrativas passaram a valer apenas a partir de 1º de agosto de 2021.

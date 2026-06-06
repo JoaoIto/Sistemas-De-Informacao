@@ -45,17 +45,9 @@ Para entender a dinâmica da LGPD, é fundamental conhecer os papéis de quem fo
 | Ator | Definição na LGPD |
 | --- | --- |
 | **Titular** | É a pessoa natural (física) a quem se referem os dados pessoais que estão sendo tratados.
-
- |
 | **Controlador** | Pessoa natural ou jurídica (pública ou privada) a quem competem as **decisões** referentes ao tratamento de dados pessoais. É o "dono do negócio".
-
- |
 | **Operador** | Pessoa natural ou jurídica que **realiza o tratamento** de dados em nome do controlador e segundo as instruções fornecidas por ele.
-
- |
 | **Encarregado (DPO)** | Pessoa indicada para atuar como o **canal de comunicação** entre o controlador, os titulares dos dados e a ANPD.
-
- |
 
 Nota: O Controlador e o Operador são chamados conjuntamente de "Agentes de Tratamento".
 

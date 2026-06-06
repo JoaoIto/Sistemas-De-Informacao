@@ -4,8 +4,6 @@
 
 * **Resposta Correta:** A. Stalking. 
 
-
-* 
 **Justificativa:** O comportamento descrito no enunciado (aproximação indesejada, obsessiva e intrusiva para controlar a vida da vítima)  tipifica o crime de perseguição (Stalking), previsto no Art. 147-A do Código Penal.
 
 
@@ -20,9 +18,7 @@
 **3. (0.5) Assinale um tipo de dado que não se enquadra na categoria de dados sensíveis.**
 
 * **Resposta Correta:** C. Data de nascimento. 
-
-
-* 
+ 
 **Justificativa:** Dados sensíveis são aqueles que podem gerar discriminação (religião, biometria, filiação sindical, etnia). Data de nascimento é apenas um dado pessoal comum.
 
 
@@ -30,16 +26,12 @@
 **4. (0.5) Esse princípio básico do Marco Civil da Internet chama-se:**
 
 * **Resposta Correta:** B. Neutralidade de rede. 
-
-
-* 
+ 
 **Justificativa:** A garantia de que todos os pacotes de dados devem trafegar sem distinção de conteúdo, origem, destino ou aplicação é o que chamamos de neutralidade da rede.
-
 
 
 **5. (0.5) No caso em questão, Ciclano incidiu em que crime?**
 
-* 
 **Resposta Correta:** **Crime de Injúria (Art. 140 do Código Penal).** * **Justificativa:** Chamar alguém de "tapada" e "retardada"  ofende a honra subjetiva da vítima (sua autoestima, dignidade e decoro). Não é calúnia (pois não imputou um crime falso) nem difamação (pois não espalhou um fato desonroso para terceiros, mas sim proferiu xingamentos diretos).
 
 

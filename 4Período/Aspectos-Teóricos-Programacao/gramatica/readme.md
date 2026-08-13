@@ -178,25 +178,12 @@ As regras de substituição definem a restrição da gramática de acordo com a 
 
 | Tipo | Gramática | Regra de Substituição Permitida | Reconhecedor Associado |
 | --- | --- | --- | --- |
-| **Tipo 3** | Regular | <br>$A \rightarrow aB$ ou $A \rightarrow a$ 
-
- | Autômato Finito (DFA / NFA) 
-
- |
-| **Tipo 2** | Livre de Contexto | <br>$A \rightarrow \gamma$ (Onde $A$ é uma variável única) 
-
- | Autômato de Pilha (PDA) 
-
- |
-| **Tipo 1** | Sensível ao Contexto | <br>$\alpha A \beta \rightarrow \alpha \gamma \beta$ 
-
- | Autômato Limitado por Límite (LBA) 
-
- |
-| **Tipo 0** | Irrestrita | <br>$\alpha \rightarrow \beta$ (Qualquer reescrita) 
-
- | Máquina de Turing 
-
- |
+| **Tipo 3** | Regular | <br>$A \rightarrow aB$ ou $A \rightarrow a$ |
+| Autômato Finito (DFA / NFA) |
+| **Tipo 2** | Livre de Contexto | <br>$A \rightarrow \gamma$ (onde $A$ é uma variável única) |
+| Autômato de Pilha (PDA) |
+| **Tipo 1** | Sensível ao Contexto | <br>$\alpha A \beta \rightarrow \alpha \gamma \beta$ |
+| Autômato Limitado por Limite (LBA) |
+| **Tipo 0** | Irrestrita | <br>$\alpha \rightarrow \beta$ (qualquer reescrita) | Máquina de Turing |
 
 ---

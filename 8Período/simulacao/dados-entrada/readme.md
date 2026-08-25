@@ -116,46 +116,12 @@ A seleção de uma distribuição teórica apoia-se nas propriedades matemática
 
 | Distribuição | Parâmetros | Características da Curva | Aplicabilidade Típica |
 | --- | --- | --- | --- |
-| **Exponencial** | Média ($\mu = 1/\lambda$)
-
- | Variância alta, cauda longa à direita, sem memória.
-
- | Tempos entre chegadas sucessivas e tempos até falhas de equipamentos.
-
- |
-| **Triangular** | Mínimo ($a$), Moda ($m$), Máximo ($b$)
-
- | Simétrica ou assimétrica, suporte estritamente finito $[a, b]$.
-
- | Cenários com ausência de dados históricos onde especialistas estimam limites e o valor mais frequente.
-
- |
-| **Normal** | Média ($\mu$), Desvio-Padrão ($\sigma$)
-
- | Formato de sino perfeitamente simétrico, variação controlada por $\sigma$.
-
- | Processos manuais ou tarefas cujo tempo total corresponde à soma de subprocessos (Teorema Central do Limite).
-
- |
-| **Uniforme** | Mínimo ($a$), Máximo ($b$)
-
- | Densidade constante $f(x) = \frac{1}{b-a}$; todos os valores no intervalo são equiprováveis.
-
- | Total desconhecimento do comportamento interno além dos limites físicos (cenário de pior caso).
-
- |
-| **Discreta** | Vetor de valores $\{x_i\}$ e probabilidades $\{p_i\}$<br> | Assume estritamente o conjunto finito de valores mapeados.
-
- | Atribuição de parâmetros a entidades e roteamento probabilístico (ex.: 30% balcão, 70% prateleiras).
-
- |
-| **Outras (Erlang, Gama, Weibull, Lognormal, Poisson, Beta)** | Parâmetros de forma ($\alpha, k$), escala ($\beta, \lambda$) e localização
-
- | Flexibilidade em taxas de falhas monotônicas ou curvas assimétricas não exponenciais.
-
- | Tempos de reparo complexos, processos químicos e taxas de fluxo multietapas.
-
- |
+| **Exponencial** | Média ($\mu = 1/\lambda$) | | Variância alta, cauda longa à direita, sem memória. | Tempos entre chegadas sucessivas e tempos até falhas de equipamentos. |
+| **Triangular** | Mínimo ($a$), Moda ($m$), Máximo ($b$) | Simétrica ou assimétrica, suporte estritamente finito $[a, b]$. |Cenários com ausência de dados históricos onde especialistas estimam limites e o valor mais frequente. |
+| **Normal** | Média ($\mu$), Desvio-Padrão ($\sigma$) | Formato de sino perfeitamente simétrico, variação controlada por $\sigma$. | Processos manuais ou tarefas cujo tempo total corresponde à soma de subprocessos (Teorema Central do Limite).
+| **Uniforme** | Mínimo ($a$), Máximo ($b$) | Densidade constante $f(x) = \frac{1}{b-a}$; todos os valores no intervalo são equiprováveis.| Total desconhecimento do comportamento interno além dos limites físicos (cenário de pior caso).|
+| **Discreta** | Vetor de valores $\{x_i\}$ e probabilidades $\{p_i\}$<br> | Assume estritamente o conjunto finito de valores mapeados. | Atribuição de parâmetros a entidades e roteamento probabilístico (ex.: 30% balcão, 70% prateleiras). 
+| **Outras (Erlang, Gama, Weibull, Lognormal, Poisson, Beta)** | Parâmetros de forma ($\alpha, k$), escala ($\beta, \lambda$) e localização | Flexibilidade em taxas de falhas monotônicas ou curvas assimétricas não exponenciais. | Tempos de reparo complexos, processos químicos e taxas de fluxo multietapas. |
 
 ---
 
@@ -189,23 +155,7 @@ O $p\text{-value}$ mensura a probabilidade de se obter uma estatística de teste
 
 | Faixa do $p\text{-value}$ | Interpretação Estatística | Decisão sobre $H_0$ |
 | --- | --- | --- |
-| **$p\text{-value} < 0,01$** | Evidência forte contra a hipótese de aderência.
-
- | Rejeita-se $H_0$.
-
- |
-| **$0,01 \le p\text{-value} < 0,05$** | Evidência moderada contra a hipótese de aderência.
-
- | Rejeita-se $H_0$ a $\alpha = 0,05$.
-
- |
-| **$0,05 \le p\text{-value} < 0,10$** | Evidência potencial contra a hipótese de aderência.
-
- | Região marginal de incerteza.
-
- |
-| **$p\text{-value} \ge 0,10$** | Evidência fraca ou inexistente contra a hipótese de aderência.
-
- | Não se rejeita $H_0$ (modelo aprovado).
-
- |
+| **$p\text{-value} < 0,01$** | Evidência forte contra a hipótese de aderência. | Rejeita-se $H_0$. |
+| **$0,01 \le p\text{-value} < 0,05$** | Evidência moderada contra a hipótese de aderência. | Rejeita-se $H_0$ a $\alpha = 0,05$. |
+| **$0,05 \le p\text{-value} < 0,10$** | Evidência potencial contra a hipótese de aderência. | Região marginal de incerteza.|
+| **$p\text{-value} \ge 0,10$** | Evidência fraca ou inexistente contra a hipótese de aderência. | Não se rejeita $H_0$ (modelo aprovado).|

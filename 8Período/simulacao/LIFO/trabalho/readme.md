@@ -22,3 +22,16 @@
 * Prioriza requisições com dados mais recentes (*cache locality* ou processamento de pacotes urgentes mais recentes).
 
 ---
+
+**Mapeamento dos Requisitos Obrigatórios**
+
+| Requisito do Trabalho | Seção Correspondente no Prompt | Foco de Avaliação |
+| --- | --- | --- |
+| **Características da Teoria das Filas**<br> | Seção 1 | Definição estrutural de pilha ($Top$), transição de estados e contraste formal com FIFO, Prioridade, Round Robin e SIRO.|
+| **Uso em Simulação**<br> | Seção 2 | Interação entre a lista de eventos futuros (FEL) e os recursos com fila LIFO. |
+| **Determinístico vs. Estocástico (Justificativa)**<br> | Seção 3 | Demonstração analítica de que LIFO é uma regra de atendimento aplicável a ambos os modelos ($D/D/1$ e $M/M/1$), comprovando o impacto na variância $\text{Var}(W)$.|
+| **Exemplos de Simulação (Mín. 3)**<br> | Seção 4 | 3 estudos de caso completos (Logística/Armazém, Sistemas/Buffers e Manufatura/Silos).|
+| **Principais Vantagens**<br> | Seção 5 | Economia de movimentação mecânica, localidade temporal e representação realista de limitações de acesso físico.|
+| **Normas e Estrutura ABNT**<br> | Seção 6 | Texto contínuo, capa, contracapa, sumário, desenvolvimento teórico e referências formais.|
+
+---
